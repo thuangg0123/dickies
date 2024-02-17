@@ -1,5 +1,6 @@
 const User = require('../models/user')
 const asyncHandler = require('express-async-handler')
+const { generateAccessToken, generateRefreshToken } = require('../middleware/jwt')
 
 const register = asyncHandler(async (req, res) => {
     const { email, password, firstName, lastName } = req.body
@@ -30,6 +31,9 @@ const register = asyncHandler(async (req, res) => {
     }
 })
 
+// refreshToken dùng để cấp mới lại token
+// accessToken dùng để xác thực người dùng, phân quyền user
+
 const login = asyncHandler(async (req, res) => {
     const { email, password } = req.body
 
@@ -45,10 +49,21 @@ const login = asyncHandler(async (req, res) => {
         email: email
     })
     if (response && await response.isCorrectPassword(password)) {
+        // tách password và role ra khỏi response
         const { password, role, ...userData } = response.toObject()
+        // tạo access token
+        const accessToken = generateAccessToken(response._id, role)
+        // tạo refresh token
+        const refreshToken = generateRefreshToken(response._id, role)
+        // lưu refresh token vào database 
+        await User.findByIdAndUpdate(response._id, { refreshToken: refreshToken }, { new: true })
+        // lưu refresh token vào cookie
+        res.cookie("refreshToken", refreshToken, { httpOnly: true, maxAge: 24 * 60 * 60 * 1000 })
         return res.status(200).json({
             sucess: true,
             message: "Login successfully !",
+            accessToken: accessToken,
+            refreshToken: refreshToken,
             userData: userData,
             errorCode: 0
         })
@@ -58,7 +73,22 @@ const login = asyncHandler(async (req, res) => {
     }
 })
 
+const getCurrent = asyncHandler(async (req, res) => {
+    const { _id } = req.user
+    const user = await User.findById({
+        _id: _id
+    }).select('-refreshToken -password -role')
+
+    return res.status(200).json({
+        sucess: false,
+        message: user ? "Register is successfully, please go to login" : " Something went wrong, please try again ... ",
+        data: user ? user : "User is not found",
+        errorCode: user ? 0 : -1
+    })
+})
+
 module.exports = {
     register,
-    login
+    login,
+    getCurrent
 }

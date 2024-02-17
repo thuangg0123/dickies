@@ -39,7 +39,7 @@ var userSchema = new mongoose.Schema({
         type: Boolean,
         default: false
     },
-    refereshToken: {
+    refreshToken: {
         type: String,
     },
     passwordChangedAt: {
