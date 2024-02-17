@@ -1,6 +1,7 @@
 const User = require('../models/user')
 const asyncHandler = require('express-async-handler')
 const { generateAccessToken, generateRefreshToken } = require('../middleware/jwt')
+const jwt = require('jsonwebtoken')
 
 const register = asyncHandler(async (req, res) => {
     const { email, password, firstName, lastName } = req.body
@@ -87,8 +88,51 @@ const getCurrent = asyncHandler(async (req, res) => {
     })
 })
 
+const refreshAccesstoken = asyncHandler(async (req, res) => {
+    // lấy token từ cookies
+    const cookie = req.cookies
+    // check xem có token hay không?
+    if (cookie && !cookie.refreshToken) {
+        throw new Error("No refresh token in cookies")
+    }
+    // check token có hợp lệ hay không
+    const rs = await jwt.verify(cookie.refreshToken, process.env.JWT_SECRET)
+    const response = await User.findOne({
+        _id: rs._id,
+        refreshToken: cookie.refreshToken
+    })
+
+    return res.status(200).json({
+        sucess: response ? true : false,
+        newAccessToken: response ? generateAccessToken({
+            _id: response._id,
+            role: response.role
+        }) : "Refresh token is not matched",
+        errorCode: response ? 0 : -1
+    })
+})
+
+const logout = asyncHandler(async (req, res) => {
+    const cookie = req.cookies
+    if (!cookie || !cookie.refreshToken) {
+        throw new Error("no refresh token in cookies")
+    }
+    // tìm và xóa refresh token ở db
+    await User.findOneAndUpdate({
+        refreshToken: cookie.refreshToken
+    }, { refreshToken: '' }, { new: true })
+    res.clearCookie("refreshToken", { httpOnly: true, secure: true })
+    return res.status(200).json({
+        sucess: true,
+        message: "Logout is successfully !",
+        errorCode: 0
+    })
+})
+
 module.exports = {
     register,
     login,
-    getCurrent
+    getCurrent,
+    refreshAccesstoken,
+    logout
 }
