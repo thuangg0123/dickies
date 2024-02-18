@@ -26,6 +26,19 @@ const verifyAccessToken = asyncHandler(async (req, res, next) => {
     }
 })
 
+const isAdmin = asyncHandler(async (req, res, next) => {
+    const { role } = req.user
+    if (role !== 'Admin') {
+        return res.status(401).json({
+            succes: false,
+            message: "Require admin role",
+            errorCode: -1,
+        })
+    }
+    next()
+})
+
 module.exports = {
-    verifyAccessToken
+    verifyAccessToken,
+    isAdmin
 }

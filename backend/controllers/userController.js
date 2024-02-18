@@ -53,20 +53,19 @@ const login = asyncHandler(async (req, res) => {
     })
     if (response && await response.isCorrectPassword(password)) {
         // tách password và role ra khỏi response
-        const { password, role, ...userData } = response.toObject()
+        const { password, role, refreshToken, ...userData } = response.toObject()
         // tạo access token
         const accessToken = generateAccessToken(response._id, role)
         // tạo refresh token
-        const refreshToken = generateRefreshToken(response._id, role)
+        const newRefreshToken = generateRefreshToken(response._id, role)
         // lưu refresh token vào database 
-        await User.findByIdAndUpdate(response._id, { refreshToken: refreshToken }, { new: true })
+        await User.findByIdAndUpdate(response._id, { refreshToken: newRefreshToken }, { new: true })
         // lưu refresh token vào cookie
-        res.cookie("refreshToken", refreshToken, { httpOnly: true, maxAge: 24 * 60 * 60 * 1000 })
+        res.cookie("refreshToken", newRefreshToken, { httpOnly: true, maxAge: 24 * 60 * 60 * 1000 })
         return res.status(200).json({
             sucess: true,
             message: "Login successfully !",
             accessToken: accessToken,
-            refreshToken: refreshToken,
             userData: userData,
             errorCode: 0
         })
@@ -83,7 +82,7 @@ const getCurrent = asyncHandler(async (req, res) => {
     }).select('-refreshToken -password -role')
 
     return res.status(200).json({
-        sucess: false,
+        sucess: user ? true : false,
         message: user ? "Register is successfully, please go to login" : " Something went wrong, please try again ... ",
         data: user ? user : "User is not found",
         errorCode: user ? 0 : -1
@@ -191,12 +190,60 @@ const resetPassword = asyncHandler(async (req, res) => {
     })
 })
 
+const getUsers = asyncHandler(async (req, res) => {
+    const response = await User.find().select('-refreshToken -password -role')
+    return res.status(200).json({
+        sucess: response ? true : false,
+        message: response ? "Get all users" : "Something wrong, please try again ....",
+        data: response ? response : [],
+        errorcode: response ? 1 : 0
+    })
+})
+
+const deleteUser = asyncHandler(async (req, res) => {
+    const { _id } = req.query
+    if (!_id) {
+        throw new Error("Missing inputs")
+    }
+    const response = await User.findByIdAndDelete(_id)
+    return res.status(200).json({
+        sucess: response ? true : false,
+        message: response ? `Delete user with email ${response.email} is susccessfully` : "Something wrong, please try again ....",
+        errorcode: response ? 1 : 0
+    })
+})
+
+const updateUser = asyncHandler(async (req, res) => {
+    const { _id } = req.user
+    console.log(req.user)
+    if (!_id || Object.keys(req.body).length === 0) {
+        throw new Error("Missing inputs")
+    }
+    const response = await User.findByIdAndUpdate(_id, req.body, { new: true }).select('-password -role')
+    return res.status(200).json({
+        sucess: response ? true : false,
+        message: response ? `Update user is susccessfully` : "Something wrong, please try again ....",
+        data: response ? response : [],
+        errorcode: response ? 1 : 0
+    })
+})
+
+const updateUserByAdmin = asyncHandler(async (req, res) => {
+    const { userId } = req.params
+    console.log(req.params)
+    if (Object.keys(req.body).length === 0) {
+        throw new Error("Missing inputs")
+    }
+    const response = await User.findByIdAndUpdate(userId, req.body, { new: true }).select('-password -role')
+    return res.status(200).json({
+        sucess: response ? true : false,
+        message: response ? `Update user is susccessfully` : "Something wrong, please try again ....",
+        data: response ? response : [],
+        errorcode: response ? 1 : 0
+    })
+})
+
 module.exports = {
-    register,
-    login,
-    getCurrent,
-    refreshAccesstoken,
-    logout,
-    forgotPassword,
-    resetPassword
+    register, login, getCurrent, refreshAccesstoken, logout, forgotPassword, resetPassword,
+    getUsers, deleteUser, updateUser, updateUserByAdmin
 }
