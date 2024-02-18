@@ -1,4 +1,5 @@
 const { default: mongoose } = require('mongoose')
+mongoose.set('strictQuery', false)
 
 const dbConnect = async () => {
     // 0: disconnected
@@ -14,11 +15,9 @@ const dbConnect = async () => {
             console.log("DB connecting")
         }
     } catch (error) {
-        console.log("Db connection is failed")
+        console.log("Db connection is failed", error)
         throw new Error(error)
     }
 }
 
-module.exports = {
-    dbConnect
-}
+module.exports = dbConnect
