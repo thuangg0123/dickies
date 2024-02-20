@@ -64,7 +64,6 @@ const getAllProducts = asyncHandler(async (req, res) => {
     const skip = (page - 1) * limit
 
     queryCommand.skip(skip).limit(limit)
-
     queryCommand.then(async (response) => {
         const counts = await Product.find(formattedQueries).countDocuments()
         return res.status(200).json({
@@ -107,10 +106,52 @@ const deleteProduct = asyncHandler(async (req, res) => {
     })
 })
 
+const ratings = asyncHandler(async (req, res) => {
+    const { _id } = req.user
+    const { star, comment, productId } = req.body
+    if (!star || !productId) {
+        throw new Error("Missing inputs")
+    }
+    const ratingProduct = await Product.findById(productId)
+    //postedBy đang là objId nên phải convert sang string mới match với _id
+    const isExistRating = ratingProduct?.ratings?.find(element => element.postedBy.toString() === _id)
+    if (isExistRating) {
+        //update star && comment
+        const response = await Product.updateOne({
+            ratings: { $elemMatch: isExistRating }
+        }, {
+            $set: { "ratings.$.star": star, "ratings.$.comment": comment }
+        }, { new: true })
+    }
+    else {
+        // add star && comment
+        const response = await Product.findByIdAndUpdate(productId, {
+            $push: {
+                ratings: { star, comment, postedBy: _id }
+            }
+        }, { new: true })
+    }
+
+    //total ratings
+    const updateProduct = await Product.findById(productId)
+    const ratingCount = updateProduct.ratings.length
+    const totalRatings = updateProduct.ratings.reduce((total, element) => {
+        return total + element.star
+    }, 0)
+    updateProduct.totalRatings = Math.round(totalRatings * 10 / ratingCount) / 10
+
+    await updateProduct.save()
+    return res.status(200).json({
+        susccess: true,
+        data: updateProduct
+    })
+})
+
 module.exports = {
     createProduct,
     getProduct,
     getAllProducts,
     updateProduct,
-    deleteProduct
+    deleteProduct,
+    ratings
 }

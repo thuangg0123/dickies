@@ -4,6 +4,7 @@ const { verifyAccessToken, isAdmin } = require('../middleware/verifyToken')
 
 router.post('/', verifyAccessToken, isAdmin, productController.createProduct)
 router.get('/', productController.getAllProducts)
+router.put('/ratings', verifyAccessToken, productController.ratings)
 
 router.put('/:productId', verifyAccessToken, isAdmin, productController.updateProduct)
 router.delete('/:productId', verifyAccessToken, isAdmin, productController.deleteProduct)
