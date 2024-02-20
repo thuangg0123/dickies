@@ -51,13 +51,27 @@ const getAllProducts = asyncHandler(async (req, res) => {
         queryCommand = queryCommand.sort(sortBy)
     }
 
+    //fields limiting
+    if (req.query.fields) {
+        const fields = req.query.fields.split(',').join(' ')
+        queryCommand = queryCommand.select(fields)
+    }
+
+    //pagination
+    // limit, page (skip)
+    const page = +req.query.page || 1
+    const limit = +req.query.limit || process.env.LIMIT_PRODUCT
+    const skip = (page - 1) * limit
+
+    queryCommand.skip(skip).limit(limit)
+
     queryCommand.then(async (response) => {
         const counts = await Product.find(formattedQueries).countDocuments()
         return res.status(200).json({
+            counts: counts,
             susccess: counts > 0 ? true : false,
             dataProduct: counts > 0 ? response : 'cannot get products',
             errorCode: counts > 0 ? 1 : 0,
-            counts: counts
         })
     }).catch((err) => {
         console.log("Error: ", err)
