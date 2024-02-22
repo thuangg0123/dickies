@@ -1,4 +1,3 @@
-const { query } = require('express')
 const Product = require('../models/product')
 const asyncHandler = require('express-async-handler')
 var slugify = require('slugify')
@@ -117,7 +116,7 @@ const ratings = asyncHandler(async (req, res) => {
     const isExistRating = ratingProduct?.ratings?.find(element => element.postedBy.toString() === _id)
     if (isExistRating) {
         //update star && comment
-        const response = await Product.updateOne({
+        await Product.updateOne({
             ratings: { $elemMatch: isExistRating }
         }, {
             $set: { "ratings.$.star": star, "ratings.$.comment": comment }
@@ -125,7 +124,7 @@ const ratings = asyncHandler(async (req, res) => {
     }
     else {
         // add star && comment
-        const response = await Product.findByIdAndUpdate(productId, {
+        await Product.findByIdAndUpdate(productId, {
             $push: {
                 ratings: { star, comment, postedBy: _id }
             }
