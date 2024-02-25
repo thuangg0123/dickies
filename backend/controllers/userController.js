@@ -229,7 +229,6 @@ const updateUser = asyncHandler(async (req, res) => {
 
 const updateUserByAdmin = asyncHandler(async (req, res) => {
     const { userId } = req.params
-    console.log(req.params)
     if (Object.keys(req.body).length === 0) {
         throw new Error("Missing inputs")
     }
@@ -242,7 +241,60 @@ const updateUserByAdmin = asyncHandler(async (req, res) => {
     })
 })
 
+const updateAddressUser = asyncHandler(async (req, res) => {
+    const { _id } = req.user
+    if (!req.body.address) {
+        throw new Error("Missing inputs")
+    }
+    const response = await User.findByIdAndUpdate(_id, { $addToSet: { address: req.body.address } }, { new: true }).select('-password -role -refreshToken -createdAt -updatedAt -__v -passwordChangedAt')
+    return res.status(200).json({
+        sucess: response ? true : false,
+        message: response ? `Update address is susccessfully` : "Something wrong, please try again ....",
+        data: response ? response : [],
+        errorcode: response ? 1 : 0
+    })
+})
+
+const updateCart = asyncHandler(async (req, res) => {
+    const { _id } = req.user
+    const { productId, quantity, color } = req.body
+    if (!productId || !quantity || !color) {
+        throw new Error("Missing inputs")
+    }
+    const user = await User.findById(_id)
+    const isExistProduct = user?.cart.find(element => element.product.toString() === productId)
+    if (isExistProduct) {
+        if (isExistProduct.color === color) {
+            const response = await User.updateOne({ cart: { $elemMatch: isExistProduct } }, { $set: { "cart.$.quantity": quantity } }, { new: true })
+            return res.status(200).json({
+                sucess: response ? true : false,
+                message: response ? `Update color is susccessfully` : "Something wrong, please try again ....",
+                data: response ? response : [],
+                errorcode: response ? 1 : 0
+            })
+        }
+        else {
+            const response = await User.findByIdAndUpdate(_id, { $push: { cart: { product: productId, quantity, color } } }, { new: true })
+            return res.status(200).json({
+                sucess: response ? true : false,
+                message: response ? `Add new color is susccessfully` : "Something wrong, please try again ....",
+                data: response ? response : [],
+                errorcode: response ? 1 : 0
+            })
+        }
+    }
+    else {
+        const response = await User.findByIdAndUpdate(_id, { $push: { cart: { product: productId, quantity, color } } }, { new: true })
+        return res.status(200).json({
+            sucess: response ? true : false,
+            message: response ? `Update cart is susccessfully` : "Something wrong, please try again ....",
+            data: response ? response : [],
+            errorcode: response ? 1 : 0
+        })
+    }
+})
+
 module.exports = {
     register, login, getCurrent, refreshAccesstoken, logout, forgotPassword, resetPassword,
-    getUsers, deleteUser, updateUser, updateUserByAdmin
+    getUsers, deleteUser, updateUser, updateUserByAdmin, updateAddressUser, updateCart
 }

@@ -111,8 +111,6 @@ const dislikeBlog = asyncHandler(async (req, res) => {
     }
 })
 
-const excludedFields = '-refreshToken -password -role -createdAt -updatedAt'
-
 const getBlog = asyncHandler(async (req, res) => {
     const { blogId } = req.params
     const blog = await Blog.findByIdAndUpdate(blogId, { $inc: { numberViews: 1 } }, { new: true })
@@ -135,6 +133,18 @@ const deleteBlog = asyncHandler(async (req, res) => {
     })
 })
 
+const uploadImageBlog = asyncHandler(async (req, res) => {
+    const { blogId } = req.params
+    if (!req.file) {
+        throw new Error("missing inputs")
+    }
+    const response = await Blog.findByIdAndUpdate(blogId, { image: req.file.path }, { new: true })
+    return res.status(200).json({
+        success: response ? true : false,
+        data: response ? response : 'cannot upload image blog'
+    })
+})
+
 module.exports = {
     createNewBlog,
     updateBlog,
@@ -142,5 +152,6 @@ module.exports = {
     likeBlog,
     dislikeBlog,
     getBlog,
-    deleteBlog
+    deleteBlog,
+    uploadImageBlog
 }

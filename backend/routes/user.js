@@ -9,9 +9,13 @@ router.post("/refresh-token", userController.refreshAccesstoken)
 router.post("/logout", userController.logout)
 router.get("/forgot-password", userController.forgotPassword)
 router.put("/reset-password", userController.resetPassword)
+
 router.get("/", verifyAccessToken, isAdmin, userController.getUsers)
 router.delete("/", verifyAccessToken, isAdmin, userController.deleteUser)
 router.put("/update", verifyAccessToken, userController.updateUser)
+router.put("/update-address", verifyAccessToken, isAdmin, userController.updateAddressUser)
+router.put("/update-cart", verifyAccessToken, isAdmin, userController.updateCart)
+
 router.put("/update-user-by-admin/:userId", verifyAccessToken, isAdmin, userController.updateUserByAdmin)
 
 //CREATE (POST) + PUT: body

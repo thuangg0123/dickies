@@ -1,4 +1,5 @@
 const mongoose = require('mongoose'); // Erase if already required
+const asyncHandler = require('express-async-handler')
 
 // Declare the Schema of the Mongo model
 var productSchema = new mongoose.Schema({
@@ -38,8 +39,7 @@ var productSchema = new mongoose.Schema({
         default: 0
     },
     images: {
-        type: String,
-        required: true,
+        type: Array
     },
     color: {
         type: String,
@@ -59,6 +59,5 @@ var productSchema = new mongoose.Schema({
 }, {
     timestamps: true
 });
-
 //Export the model
 module.exports = mongoose.model('Product', productSchema);
