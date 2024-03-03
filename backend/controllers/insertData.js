@@ -12,11 +12,13 @@ const fn = async (product) => {
         description: product?.description,
         brand: product?.brand,
         price: product?.price,
+        thumb: product?.thumb,
         category: product?.category,
         quantity: Math.round(Math.random() * 1000),
         sold: Math.round(Math.random() * 1000),
         images: product?.images,
-        color: product?.color
+        color: product?.color,
+        gender: product?.gender,
     })
 }
 

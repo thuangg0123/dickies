@@ -1,30 +1,42 @@
 const data = [
     {
-        cate: "QUẦN DICKIES 874",
+        cate: "PANTS",
         brand: "Dickies"
     },
     {
-        cate: "QUẦN SHORT DICKIES",
+        cate: "PANT SHORTS",
         brand: "Dickies"
     },
     {
-        cate: "ÁO THUN DICKIES",
+        cate: "SKATE SHORTS",
         brand: "Dickies"
     },
     {
-        cate: "ÁO SOMI DICKIES",
+        cate: "SHIRTS",
         brand: "Dickies"
     },
     {
-        cate: "ÁO SWEATER DICKIES",
+        cate: "OUTERWEAR",
         brand: "Dickies"
     },
     {
-        cate: "ÁO SWEATER",
+        cate: "COASTS JACKETS",
         brand: "Dickies"
     },
     {
-        cate: "NÓN DICKIES",
+        cate: "BACKPACK",
+        brand: "Dickies"
+    },
+    {
+        cate: "SOCKS",
+        brand: "Dickies"
+    },
+    {
+        cate: "HATS",
+        brand: "Dickies"
+    },
+    {
+        cate: "SKIRTS DRESSES",
         brand: "Dickies"
     },
 ]

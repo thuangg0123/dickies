@@ -8,13 +8,21 @@ var productSchema = new mongoose.Schema({
         required: true,
         trim: true
     },
+    gender: {
+        type: String,
+        enum: ['men', 'women', 'kids'],
+        required: true
+    },
     slug: {
         type: String,
         required: true,
-        // unique: true,
         lowercase: true
     },
     description: {
+        type: String,
+        required: true,
+    },
+    thumb: {
         type: String,
         required: true,
     },
@@ -42,7 +50,7 @@ var productSchema = new mongoose.Schema({
         type: Array
     },
     color: {
-        type: String,
+        type: [String],
         require: true
     },
     ratings: [
