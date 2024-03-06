@@ -4,6 +4,8 @@ import { Route, Routes } from "react-router-dom";
 import { Login, Home, Public } from "./pages/public";
 import path from "./ultils/path";
 
+import "react-multi-carousel/lib/styles.css";
+
 function App() {
   return (
     <div className="min-h-screen font-main">

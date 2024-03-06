@@ -757,7 +757,7 @@
     "color": ["Black", "Blue", "White"]
   },
   {
-    "gender": "men",
+    "gender": "all",
     "category": "socks",
     "name": "Moisture Control Crew Work Socks Black",
     "brand": "Dickies",
@@ -769,7 +769,7 @@
     "color": ["Black"]
   },
   {
-    "gender": "men",
+    "gender": "all",
     "category": "socks",
     "name": "Moisture Control Quarter Socks",
     "brand": "Dickies",
@@ -781,7 +781,7 @@
     "color": ["Gray"]
   },
   {
-    "gender": "men",
+    "gender": "all",
     "category": "socks",
     "name": "Moisture Control Crew Work Socks White",
     "brand": "Dickies",
@@ -793,7 +793,7 @@
     "color": ["White/Gray"]
   },
   {
-    "gender": "men",
+    "gender": "all",
     "category": "socks",
     "name": "Max Cushion Crew Socks",
     "brand": "Dickies",
@@ -805,7 +805,7 @@
     "color": ["Black", "Blue", "White"]
   },
   {
-    "gender": "men",
+    "gender": "all",
     "category": "socks",
     "name": "Heavyweight Crew Socks",
     "brand": "Dickies",
@@ -817,7 +817,7 @@
     "color": ["Black", "Blue", "White"]
   },
   {
-    "gender": "men",
+    "gender": "all",
     "category": "socks",
     "name": "Rugby Stripe Socks",
     "brand": "Dickies",
@@ -829,7 +829,7 @@
     "color": ["Gray"]
   },
   {
-    "gender": "men",
+    "gender": "all",
     "category": "socks",
     "name": "Heavyweight Charcoal Fiber Crew Socks",
     "brand": "Dickies",
@@ -841,7 +841,7 @@
     "color": ["Black/Yellow"]
   },
   {
-    "gender": "men",
+    "gender": "all",
     "category": "socks",
     "name": "KEVLAR® Crew Socks",
     "brand": "Dickies",
@@ -853,7 +853,7 @@
     "color": ["Grey"]
   },
   {
-    "gender": "men",
+    "gender": "all",
     "category": "socks",
     "name": "Tie-Dye Crew Socks",
     "brand": "Dickies",
@@ -865,7 +865,7 @@
     "color": ["Gray/Orange"]
   },
   {
-    "gender": "men",
+    "gender": "all",
     "category": "hats",
     "name": "Cuffed Fisherman Beanie",
     "brand": "Dickies",
@@ -880,7 +880,7 @@
     "color": ["Black", "Blue", "White"]
   },
   {
-    "gender": "men",
+    "gender": "all",
     "category": "hats",
     "name": "Rib Knit Balaclava",
     "brand": "Dickies",
@@ -892,7 +892,7 @@
     "color": ["Orange", "Blue", "White"]
   },
   {
-    "gender": "men",
+    "gender": "all",
     "category": "hats",
     "name": "Mid Pro Vintage Corduroy Cap",
     "brand": "Dickies",
@@ -904,7 +904,7 @@
     "color": ["Blue", "Green", "White"]
   },
   {
-    "gender": "men",
+    "gender": "all",
     "category": "hats",
     "name": "Waxed Canvas Hat",
     "brand": "Dickies",
@@ -916,7 +916,7 @@
     "color": ["Brown", "Red"]
   },
   {
-    "gender": "men",
+    "gender": "all",
     "category": "hats",
     "name": "Low Pro Logo Dad Hat",
     "brand": "Dickies",
@@ -931,7 +931,7 @@
     "color": ["Green", "Egret", "Moss Green"]
   },
   {
-    "gender": "men",
+    "gender": "all",
     "category": "hats",
     "name": "Canvas Trucker Hat",
     "brand": "Dickies",
@@ -946,7 +946,7 @@
     "color": ["Black", "Blue", "White"]
   },
   {
-    "gender": "men",
+    "gender": "all",
     "category": "hats",
     "name": "Work Worthy Mesh Trucker Hat",
     "brand": "Dickies",
@@ -961,7 +961,7 @@
     "color": ["Black", "Blue", "White"]
   },
   {
-    "gender": "men",
+    "gender": "all",
     "category": "hats",
     "name": "Neon Cuffed Beanie",
     "brand": "Dickies",
@@ -973,7 +973,7 @@
     "color": ["Neon Yellow", "Neon Orange"]
   },
   {
-    "gender": "men",
+    "gender": "all",
     "category": "hats",
     "name": "Canvas Bucket Hat",
     "brand": "Dickies",
@@ -988,7 +988,7 @@
     "color": ["Black", "Khaki"]
   },
   {
-    "gender": "men",
+    "gender": "all",
     "category": "hats",
     "name": "Low Pro Logo Trucker Hat",
     "brand": "Dickies",
@@ -1003,7 +1003,7 @@
     "color": ["Black", "Dark Navy", "Khaki"]
   },
   {
-    "gender": "men",
+    "gender": "all",
     "category": "hats",
     "name": "Breast Cancer Awareness Patch Beanie",
     "brand": "Dickies",
@@ -1017,7 +1017,7 @@
     "color": ["Black"]
   },
   {
-    "gender": "men",
+    "gender": "all",
     "category": "hats",
     "name": "Relaxed Low Pro Cap",
     "brand": "Dickies",
@@ -1032,7 +1032,7 @@
     "color": ["Black", "White", "Moss Green"]
   },
   {
-    "gender": "men",
+    "gender": "all",
     "category": "backpack",
     "name": "Tradesman XL Backpack",
     "brand": "Dickies",
@@ -1048,7 +1048,7 @@
     "color": ["Black"]
   },
   {
-    "gender": "men",
+    "gender": "all",
     "category": "backpack",
     "name": "Lisbon Backpack",
     "brand": "Dickies",
@@ -1065,7 +1065,7 @@
     "color": ["Black", "Blue"]
   },
   {
-    "gender": "men",
+    "gender": "all",
     "category": "backpack",
     "name": "Essential Backpack",
     "brand": "Dickies",
@@ -1081,7 +1081,7 @@
     "color": ["Brown", "Blue", "White"]
   },
   {
-    "gender": "men",
+    "gender": "all",
     "category": "backpack",
     "name": "Double Pocket Backpack",
     "brand": "Dickies",
@@ -1097,7 +1097,7 @@
     "color": ["Black", "Blue", "White"]
   },
   {
-    "gender": "men",
+    "gender": "all",
     "category": "backpack",
     "name": "Logo Backpack",
     "brand": "Dickies",
@@ -1113,7 +1113,7 @@
     "color": ["Black", "Blue", "White"]
   },
   {
-    "gender": "men",
+    "gender": "all",
     "category": "backpack",
     "name": "Lodge Backpack",
     "brand": "Dickies",
@@ -1127,7 +1127,7 @@
     "color": ["Brown"]
   },
   {
-    "gender": "men",
+    "gender": "all",
     "category": "backpack",
     "name": "Essential Clear Backpack",
     "brand": "Dickies",
@@ -1143,7 +1143,7 @@
     "color": ["Black", "Blue", "White"]
   },
   {
-    "gender": "men",
+    "gender": "all",
     "category": "backpack",
     "name": "Mini Backpack",
     "brand": "Dickies",
@@ -1158,7 +1158,7 @@
     "color": ["White"]
   },
   {
-    "gender": "men",
+    "gender": "all",
     "category": "backpack",
     "name": "Duck Canvas Mini Backpack",
     "brand": "Dickies",
@@ -1173,7 +1173,7 @@
     "color": ["Black"]
   },
   {
-    "gender": "men",
+    "gender": "all",
     "category": "backpack",
     "name": "Clear Mini Backpack",
     "brand": "Dickies",
@@ -1188,7 +1188,7 @@
     "color": ["Clear"]
   },
   {
-    "gender": "men",
+    "gender": "all",
     "category": "backpack",
     "name": "Logo Mini Backpack",
     "brand": "Dickies",
@@ -1202,7 +1202,7 @@
     "color": ["Black"]
   },
   {
-    "gender": "men",
+    "gender": "all",
     "category": "backpack",
     "name": "Duck Canvas Belt Bag",
     "brand": "Dickies",
@@ -1929,5 +1929,496 @@
     "sizes": ["XXS", "XS", "S", "M", "L", "XL"],
     "description": "With a silhouette based on our Eisenhower jacket, the Overbrook women’s style reimagines the icon with a modern look. The puffer jacket offers light insulation and is built for outdoor adventures that continue long into winter. It has a water resistant exterior, a contrasting corduroy collar, and a utility-style pocket on the sleeve.",
     "color": ["Black", "Blue", "White"]
+  },
+  {
+    "gender": "kids",
+    "category": "pant",
+    "name": "Boys' 873 Slim Fit Pants",
+    "brand": "Dickies",
+    "thumb": "https://www.dickies.com/dw/image/v2/AAYI_PRD/on/demandware.static/-/Sites-master-catalog-dickies/default/dwfc57718f/images/main/QP873_OG_FR.jpg?sw=740&sh=740&sm=cut&q=65",
+    "images": [
+      "https://www.dickies.com/dw/image/v2/AAYI_PRD/on/demandware.static/-/Sites-master-catalog-dickies/default/dw7c39786d/images/main/QP873_OG_BK.jpg?sw=740&sh=740&sm=cut&q=65",
+      "https://www.dickies.com/dw/image/v2/AAYI_PRD/on/demandware.static/-/Sites-master-catalog-dickies/default/dw1a1b4e21/images/main/QP873_OG_A2.jpg?sw=740&sh=740&sm=cut&q=65",
+      "https://www.dickies.com/dw/image/v2/AAYI_PRD/on/demandware.static/-/Sites-master-catalog-dickies/default/dw5be5731d/images/main/QP873_OG_A4.jpg?sw=740&sh=740&sm=cut&q=65"
+    ],
+    "price": "20.00",
+    "sizes": ["4", "5", "6", "7", "8", "10", "12", "14", "16", "18", "20"],
+    "description": "Keep him feeling and looking his best with our boys’ slim fit pants. Crafted from our signature twill blend, these boys’ pants provide a classic look with a fabric that resists stains, wrinkles, and fading. The long-lasting style features a slim fit, straight leg style, and a printed Dickies interior waistband",
+    "color": ["Black", "Blue", "White"]
+  },
+  {
+    "gender": "kids",
+    "category": "pant",
+    "name": "Boys' FLEX Slim Fit Pants",
+    "brand": "Dickies",
+    "thumb": "https://www.dickies.com/dw/image/v2/AAYI_PRD/on/demandware.static/-/Sites-master-catalog-dickies/default/dwc5a36fc8/images/main/KP701_BK_FR.jpg?sw=740&sh=740&sm=cut&q=65",
+    "images": [
+      "https://www.dickies.com/dw/image/v2/AAYI_PRD/on/demandware.static/-/Sites-master-catalog-dickies/default/dwbf274851/images/main/KP701_BK_BK.jpg?sw=740&sh=740&sm=cut&q=65",
+      "https://www.dickies.com/dw/image/v2/AAYI_PRD/on/demandware.static/-/Sites-master-catalog-dickies/default/dw6b91cf78/images/main/KP701_BK_A1.jpg?sw=740&sh=740&sm=cut&q=65"
+    ],
+    "price": "20.00",
+    "sizes": ["4", "5", "6", "7", "8", "10", "12", "14", "16", "18", "20"],
+    "description": "Send him to school looking sharp in Dickies' Boys' FlexWaist® Slim Fit Straight Leg Ultimate Khaki Pants. Featuring a mechanical stretch and a Flexwaist® adjustable waistband, he can stretch his legs and move freely all day. Select sizes have reinforced knees to keep him comfortable on those rough-and-tumble days on the playground—all at a value you'll love.",
+    "color": ["Black", "Blue", "White"]
+  },
+  {
+    "gender": "kids",
+    "category": "pant",
+    "name": "Boys' Classic Fit Pants Black",
+    "brand": "Dickies",
+    "thumb": "https://www.dickies.com/dw/image/v2/AAYI_PRD/on/demandware.static/-/Sites-master-catalog-dickies/default/dwde241ed4/images/main/KP123_BK_FR.jpg?sw=740&sh=740&sm=cut&q=65",
+    "images": [
+      "https://www.dickies.com/dw/image/v2/AAYI_PRD/on/demandware.static/-/Sites-master-catalog-dickies/default/dw60fb9e07/images/main/KP123_BK_A4.jpg?sw=740&sh=740&sm=cut&q=65",
+      "https://www.dickies.com/dw/image/v2/AAYI_PRD/on/demandware.static/-/Sites-master-catalog-dickies/default/dw8868e4b5/images/main/KP123_BK_A7.jpg?sw=740&sh=740&sm=cut&q=65"
+    ],
+    "price": "20.00",
+    "sizes": ["4", "5", "6", "7", "8", "10", "12", "14", "16", "18", "20"],
+    "description": "These Flat Front Pants for boys have a classic fit with a straight leg style. Their durable polyester/cotton twill fabric won't get torn up on the playground. FlexWaist® technology keeps comfort top of mind with an adjustable waistband. Care is easy with smooth stain removal and wrinkle and fade resistance.",
+    "color": ["Black", "Blue", "White"]
+  },
+  {
+    "gender": "kids",
+    "category": "pant",
+    "name": "Boys' FLEX Skinny Fit Double Knee Pants",
+    "brand": "Dickies",
+    "thumb": "https://www.dickies.com/dw/image/v2/AAYI_PRD/on/demandware.static/-/Sites-master-catalog-dickies/default/dwf3110fb9/images/main/QP811_BK_FR.jpg?sw=740&sh=740&sm=cut&q=65",
+    "images": [
+      "https://www.dickies.com/dw/image/v2/AAYI_PRD/on/demandware.static/-/Sites-master-catalog-dickies/default/dw1cc547ce/images/main/QP811_BK_BK.jpg?sw=740&sh=740&sm=cut&q=65"
+    ],
+    "price": "20.00",
+    "sizes": ["4", "5", "6", "7", "8", "10", "12", "14", "16", "18", "20"],
+    "description": "For all day wear without any tear, these skinny fit pants feature reinforced double knees and resist stains and wrinkles. Flex fabric is perfect for all kinds of play, from roaming around the park to kicking back on the couch with a favorite book. Plus, multi-use pockets keep tiny essentials protected",
+    "color": ["Black", "Blue", "White"]
+  },
+  {
+    "gender": "kids",
+    "category": "pant",
+    "name": "Boys' Classic Fit Pants Black 2",
+    "brand": "Dickies",
+    "thumb": "https://www.dickies.com/dw/image/v2/AAYI_PRD/on/demandware.static/-/Sites-master-catalog-dickies/default/dwb269209c/images/main/KP0123_BK_FR.jpg?sw=740&sh=740&sm=cut&q=65",
+    "images": [
+      "https://www.dickies.com/dw/image/v2/AAYI_PRD/on/demandware.static/-/Sites-master-catalog-dickies/default/dw7cf229e4/images/main/KP0123_BK_BK.jpg?sw=740&sh=740&sm=cut&q=65",
+      "https://www.dickies.com/dw/image/v2/AAYI_PRD/on/demandware.static/-/Sites-master-catalog-dickies/default/dw37808439/images/main/KP0123_BK_A1.jpg?sw=740&sh=740&sm=cut&q=65",
+      "https://www.dickies.com/dw/image/v2/AAYI_PRD/on/demandware.static/-/Sites-master-catalog-dickies/default/dwc402b36a/images/main/KP0123_BK_A7.jpg?sw=740&sh=740&sm=cut&q=65"
+    ],
+    "price": "20.00",
+    "sizes": ["4", "5", "6", "7", "8", "10", "12", "14", "16", "18", "20"],
+    "description": "Whether on the schoolyard, in the classroom, or out on a day trip around town, these pants have the kids covered. This pair features a classic fit and straight leg that sits slightly below the waist. Our signature FlexWaist® allows kids to fine-tune the fit for comfort. With easy care stain removal and fade and wrinkle resistance, these pants hold up through it all.",
+    "color": ["Black", "Blue", "White"]
+  },
+  {
+    "gender": "kids",
+    "category": "pant",
+    "name": "Boys' FLEX Skinny Fit Pants",
+    "brand": "Dickies",
+    "thumb": "https://www.dickies.com/dw/image/v2/AAYI_PRD/on/demandware.static/-/Sites-master-catalog-dickies/default/dw6919d96d/images/main/QP801_BK_FR.jpg?sw=740&sh=740&sm=cut&q=65",
+    "images": [
+      "https://www.dickies.com/dw/image/v2/AAYI_PRD/on/demandware.static/-/Sites-master-catalog-dickies/default/dwbd0c6000/images/main/QP801_BK_BK.jpg?sw=740&sh=740&sm=cut&q=65"
+    ],
+    "price": "20.00",
+    "sizes": ["4", "5", "6", "7", "8", "10", "12", "14", "16", "18", "20"],
+    "description": "The Boys' Flex Skinny Fit Straight Leg Pants sit just below the waist and are slim in the seat and thigh for a more fitted look and no stress about getting caught on anything. This well-fitted pair of pants comes in a variety of colors suited for any activity. Stain and wrinkle resistance means less work for parents.",
+    "color": ["Black", "Blue", "White"]
+  },
+  {
+    "gender": "kids",
+    "category": "pant",
+    "name": "Boys’ Original 874® Work Pants",
+    "brand": "Dickies",
+    "thumb": "https://www.dickies.com/dw/image/v2/AAYI_PRD/on/demandware.static/-/Sites-master-catalog-dickies/default/dw53f60506/images/main/QP874_BSK_FR.jpg?sw=740&sh=740&sm=cut&q=65",
+    "images": [
+      "https://www.dickies.com/dw/image/v2/AAYI_PRD/on/demandware.static/-/Sites-master-catalog-dickies/default/dwdb213c9b/images/main/QP874_BSK_BK.jpg?sw=740&sh=740&sm=cut&q=65",
+      "https://www.dickies.com/dw/image/v2/AAYI_PRD/on/demandware.static/-/Sites-master-catalog-dickies/default/dweb3018d6/images/main/QP874_BSK_A1.jpg?sw=740&sh=740&sm=cut&q=65",
+      "https://www.dickies.com/dw/image/v2/AAYI_PRD/on/demandware.static/-/Sites-master-catalog-dickies/default/dwe4bc2747/images/main/QP874_BSK_A4.jpg?sw=740&sh=740&sm=cut&q=65"
+    ],
+    "price": "20.00",
+    "sizes": ["4", "5", "6", "7", "8", "10", "12", "14", "16", "18", "20"],
+    "description": "Just like the original. Our Boys' Original 874® Work Pants are styled just like the men’s version with generous room through the seat and thigh for comfort. They're long-lasting with a classic twill blend fabric that resists stains, wrinkles, and fading. The pants sit at the waist and feature our signature printed interior waistband.",
+    "color": ["Black", "Blue", "White"]
+  },
+  {
+    "gender": "kids",
+    "category": "pant",
+    "name": "Boys’ Double Knee Work Pants",
+    "brand": "Dickies",
+    "thumb": "https://www.dickies.com/dw/image/v2/AAYI_PRD/on/demandware.static/-/Sites-master-catalog-dickies/default/dw87ed7283/images/main/QP200_DN_FR.jpg?sw=740&sh=740&sm=cut&q=65",
+    "images": [
+      "https://www.dickies.com/dw/image/v2/AAYI_PRD/on/demandware.static/-/Sites-master-catalog-dickies/default/dw8ac105f6/images/main/QP200_DN_BK.jpg?sw=740&sh=740&sm=cut&q=65",
+      "https://www.dickies.com/dw/image/v2/AAYI_PRD/on/demandware.static/-/Sites-master-catalog-dickies/default/dw9f840016/images/main/QP200_DN_A1.jpg?sw=740&sh=740&sm=cut&q=65",
+      "https://www.dickies.com/dw/image/v2/AAYI_PRD/on/demandware.static/-/Sites-master-catalog-dickies/default/dw5c72205e/images/main/QP200_DN_A4.jpg?sw=740&sh=740&sm=cut&q=65"
+    ],
+    "price": "20.00",
+    "sizes": ["4", "5", "6", "7", "8", "10", "12", "14", "16", "18", "20"],
+    "description": "Send him to school in comfort and style. The classic double knee pants for boys are styled just like the original with a straight leg style, relaxed fit, reinforced double knees for durability, and moisture-wicking properties to keep him dry and comfortable. The boys’ pants sit just below the waist with an adjustable elastic waistband and are equipped with a workwear twill fabric that resists wrinkles, stains, and fading.",
+    "color": ["Black", "Blue", "White"]
+  },
+  {
+    "gender": "kids",
+    "category": "pant-short",
+    "name": "Boys' Classic Fit Shorts",
+    "brand": "Dickies",
+    "thumb": "https://www.dickies.com/dw/image/v2/AAYI_PRD/on/demandware.static/-/Sites-master-catalog-dickies/default/dw7a65e6e3/images/main/KR123_BK_FR.jpg?sw=740&sh=740&sm=cut&q=65",
+    "images": [
+      "https://www.dickies.com/dw/image/v2/AAYI_PRD/on/demandware.static/-/Sites-master-catalog-dickies/default/dw78c7d86c/images/main/KR123_BK_BK.jpg?sw=740&sh=740&sm=cut&q=65",
+      "https://www.dickies.com/dw/image/v2/AAYI_PRD/on/demandware.static/-/Sites-master-catalog-dickies/default/dwb074217c/images/main/KR123_BK_A2.jpg?sw=740&sh=740&sm=cut&q=65",
+      "https://www.dickies.com/dw/image/v2/AAYI_PRD/on/demandware.static/-/Sites-master-catalog-dickies/default/dw18ba1f96/images/main/KR123_BK_A4.jpg?sw=740&sh=740&sm=cut&q=65"
+    ],
+    "price": "15.00",
+    "sizes": ["4", "5", "6", "7", "8", "10", "12", "14", "16", "18", "20"],
+    "description": "The Boys' FlexWaist® Flat Front Shorts are great for going anywhere from the classroom to the playground and after school activities. Sitting slightly below the waist with a classic fit, these shorts have a flat front style that remains crisp all day. The FlexWaist® waistband can be easily adjusted to always ensure the perfect fit. Parents can rely on easy cleaning with stain-free technology and wrinkle and fade resistance.",
+    "color": ["Black", "Blue", "White"]
+  },
+  {
+    "gender": "kids",
+    "category": "pant-short",
+    "name": "Boys' FLEX Slim Fit Shorts",
+    "brand": "Dickies",
+    "thumb": "https://www.dickies.com/dw/image/v2/AAYI_PRD/on/demandware.static/-/Sites-master-catalog-dickies/default/dw5791c504/images/main/KR701_BK_FR.jpg?sw=740&sh=740&sm=cut&q=65",
+    "images": [
+      "https://www.dickies.com/dw/image/v2/AAYI_PRD/on/demandware.static/-/Sites-master-catalog-dickies/default/dw41332c8c/images/main/KR701_BK_BK.jpg?sw=740&sh=740&sm=cut&q=65"
+    ],
+    "price": "15.00",
+    "sizes": ["4", "5", "6", "7", "8", "10", "12", "14", "16", "18", "20"],
+    "description": "The Boys' Flex Slim Fit Shorts are the solution for bringing a uniform into an after-school activity. Sitting slightly below the waist, this twill style has mechanical stretch that allows for movement and creates lasting comfort. Stain release technology means keeping fresh and clean while wrinkle resistance offers a sharp, sturdy fit.",
+    "color": ["Black", "Blue", "White"]
+  },
+  {
+    "gender": "kids",
+    "category": "pant-short",
+    "name": "Boys' Husky Classic Fit Shorts",
+    "brand": "Dickies",
+    "thumb": "https://www.dickies.com/dw/image/v2/AAYI_PRD/on/demandware.static/-/Sites-master-catalog-dickies/default/dw69fcb986/images/main/KR0123_BK_FR.jpg?sw=740&sh=740&sm=cut&q=65",
+    "images": [
+      "https://www.dickies.com/dw/image/v2/AAYI_PRD/on/demandware.static/-/Sites-master-catalog-dickies/default/dw84d49cfc/images/main/KR0123_BK_BK.jpg?sw=740&sh=740&sm=cut&q=65",
+      "https://www.dickies.com/dw/image/v2/AAYI_PRD/on/demandware.static/-/Sites-master-catalog-dickies/default/dw8e287832/images/main/KR0123_BK_A2.jpg?sw=740&sh=740&sm=cut&q=65",
+      "https://www.dickies.com/dw/image/v2/AAYI_PRD/on/demandware.static/-/Sites-master-catalog-dickies/default/dw230a42ac/images/main/KR0123_BK_A4.jpg?sw=740&sh=740&sm=cut&q=65"
+    ],
+    "price": "15.00",
+    "sizes": ["4", "5", "6", "7", "8", "10", "12", "14", "16", "18", "20"],
+    "description": "These shorts have a classic fit that sits slightly below the waist. The FlexWaist® adjustable waistband allows your child to create a custom fit for extra comfort. These shorts feature easy care stain removal, wrinkle resistant fabric, and mechanical stretch for comfort and movement.",
+    "color": ["Black", "Blue", "White"]
+  },
+  {
+    "gender": "kids",
+    "category": "pant-short",
+    "name": "Adult Size Classic Fit Shorts",
+    "brand": "Dickies",
+    "thumb": "https://www.dickies.com/dw/image/v2/AAYI_PRD/on/demandware.static/-/Sites-master-catalog-dickies/default/dw0948c646/images/main/27282_DN_FR.jpg?sw=740&sh=740&sm=cut&q=65",
+    "images": [
+      "https://www.dickies.com/dw/image/v2/AAYI_PRD/on/demandware.static/-/Sites-master-catalog-dickies/default/dw05fede44/images/main/27282_DN_BK.jpg?sw=740&sh=740&sm=cut&q=65"
+    ],
+    "price": "15.00",
+    "sizes": ["4", "5", "6", "7", "8", "10", "12", "14", "16", "18", "20"],
+    "description": "No exterior logo. Relaxed fit. Right back welt pocket with button closure. Hook and eye front closure. Slash front pockets. Stretch interlining in waistband for expanded comfort waist. Industrial laundry friendly.",
+    "color": ["Black", "Blue", "White"]
+  },
+  {
+    "gender": "kids",
+    "category": "shirts",
+    "name": "Adult Size Piqué Short Sleeve Polo",
+    "brand": "Dickies",
+    "thumb": "https://www.dickies.com/dw/image/v2/AAYI_PRD/on/demandware.static/-/Sites-master-catalog-dickies/default/dw53ce0383/images/main/KS5552_LB_FR.jpg?sw=740&sh=740&sm=cut&q=65",
+    "images": [
+      "https://www.dickies.com/dw/image/v2/AAYI_PRD/on/demandware.static/-/Sites-master-catalog-dickies/default/dwe149ea27/images/main/KS5552_LB_BK.jpg?sw=740&sh=740&sm=cut&q=65",
+      "https://www.dickies.com/dw/image/v2/AAYI_PRD/on/demandware.static/-/Sites-master-catalog-dickies/default/dwbd93e8af/images/main/KS5552_LB_A1.jpg?sw=740&sh=740&sm=cut&q=65",
+      "https://www.dickies.com/dw/image/v2/AAYI_PRD/on/demandware.static/-/Sites-master-catalog-dickies/default/dw2970dcc1/images/main/KS5552_LB_A4.jpg?sw=740&sh=740&sm=cut&q=65"
+    ],
+    "price": "15.00",
+    "sizes": ["S", "M", "L", "XL", "2XL", "3XL", "4XL"],
+    "description": "Whether at work or after hours, look sharp in this Short Sleeve Pique Polo Shirt. Designed to be spacious throughout the chest and arms, this style also features a tagless label for extra comfort. Wrinkle and fade resistance means easy care for an all-around great polo shirt.",
+    "color": ["Black", "Blue", "White"]
+  },
+  {
+    "gender": "kids",
+    "category": "shirts",
+    "name": "Kids' Piqué Short Sleeve Polo",
+    "brand": "Dickies",
+    "thumb": "https://www.dickies.com/dw/image/v2/AAYI_PRD/on/demandware.static/-/Sites-master-catalog-dickies/default/dw1e5f297d/images/main/KS4552_BK_FR.jpg?sw=740&sh=740&sm=cut&q=65",
+    "images": [
+      "https://www.dickies.com/dw/image/v2/AAYI_PRD/on/demandware.static/-/Sites-master-catalog-dickies/default/dw3dfe42a3/images/main/KS4552_BK_BK.jpg?sw=740&sh=740&sm=cut&q=65"
+    ],
+    "price": "15.00",
+    "sizes": ["S", "M", "L", "XL", "2XL", "3XL", "4XL"],
+    "description": "The Kids' Short Sleeve Pique Polo Shirt comes in colors to match any kid's uniform. The tagless label is designed for comfort, which means no scratching or irritation throughout the day. The shirt also requires minimal upkeep because it's machine washable and wrinkle and fade resistant.",
+    "color": ["Black", "Blue", "White"]
+  },
+  {
+    "gender": "kids",
+    "category": "coasts-jackets",
+    "name": "Kids' Fleece Lined Jacket",
+    "brand": "Dickies",
+    "thumb": "https://www.dickies.com/dw/image/v2/AAYI_PRD/on/demandware.static/-/Sites-master-catalog-dickies/default/dw57c84f1f/images/main/KJ237_DN_FR.jpg?sw=740&sh=740&sm=cut&q=65",
+    "images": [
+      "https://www.dickies.com/dw/image/v2/AAYI_PRD/on/demandware.static/-/Sites-master-catalog-dickies/default/dw6dae8562/images/main/KJ237_DN_BK.jpg?sw=740&sh=740&sm=cut&q=65"
+    ],
+    "price": "15.00",
+    "sizes": ["S", "M", "L", "XL", "2XL", "3XL", "4XL"],
+    "description": "This lightweight, water resistant, fleece lined jacket is essential for any unexpected changes in weather. The hooded style has slash hand warmer pockets and one interior pocket. Zip front. Elastic cuffs. Drawstring bottom. Fully lined.",
+    "color": ["Black", "Blue", "White"]
+  },
+  {
+    "gender": "kids",
+    "category": "overalls",
+    "name": "Kids' Denim Overalls",
+    "brand": "Dickies",
+    "thumb": "https://www.dickies.com/dw/image/v2/AAYI_PRD/on/demandware.static/-/Sites-master-catalog-dickies/default/dw2605e5eb/images/main/KB102_SNB_FR.jpg?sw=740&sh=740&sm=cut&q=65",
+    "images": [
+      "https://www.dickies.com/dw/image/v2/AAYI_PRD/on/demandware.static/-/Sites-master-catalog-dickies/default/dw9bd4ae24/images/main/KB102_SNB_BK.jpg?sw=740&sh=740&sm=cut&q=65",
+      "https://www.dickies.com/dw/image/v2/AAYI_PRD/on/demandware.static/-/Sites-master-catalog-dickies/default/dw30d56921/images/main/KB102_SNB_A1.jpg?sw=740&sh=740&sm=cut&q=65",
+      "https://www.dickies.com/dw/image/v2/AAYI_PRD/on/demandware.static/-/Sites-master-catalog-dickies/default/dw1d27d25d/images/main/KB102_SNB_A2.jpg?sw=740&sh=740&sm=cut&q=65",
+      "https://www.dickies.com/dw/image/v2/AAYI_PRD/on/demandware.static/-/Sites-master-catalog-dickies/default/dwa4d63b67/images/main/KB102_SNB_A4.jpg?sw=740&sh=740&sm=cut&q=65"
+    ],
+    "price": "15.00",
+    "sizes": ["S", "M", "L", "XL", "2XL", "3XL", "4XL"],
+    "description": "Send them to play in Dickies' Kids Denim Overalls, a go-to durable and comfortable outfit. Machine washable with a dual tool pocket and hammer loop that can be used to carry necessities.",
+    "color": ["Black", "Blue", "White"]
+  },
+  {
+    "gender": "kids",
+    "category": "overalls",
+    "name": "Kids' Duck Overalls",
+    "brand": "Dickies",
+    "thumb": "https://www.dickies.com/dw/image/v2/AAYI_PRD/on/demandware.static/-/Sites-master-catalog-dickies/default/dw8772c721/images/main/KB103_RBD_FR.jpg?sw=740&sh=740&sm=cut&q=65",
+    "images": [
+      "https://www.dickies.com/dw/image/v2/AAYI_PRD/on/demandware.static/-/Sites-master-catalog-dickies/default/dw9ea4dee5/images/main/KB103_RBD_BK.jpg?sw=740&sh=740&sm=cut&q=65",
+      "https://www.dickies.com/dw/image/v2/AAYI_PRD/on/demandware.static/-/Sites-master-catalog-dickies/default/dw4b51356c/images/main/KB103_RBD_A1.jpg?sw=740&sh=740&sm=cut&q=65",
+      "https://www.dickies.com/dw/image/v2/AAYI_PRD/on/demandware.static/-/Sites-master-catalog-dickies/default/dw8bfd49f8/images/main/KB103_RBD_A2.jpg?sw=740&sh=740&sm=cut&q=65",
+      "https://www.dickies.com/dw/image/v2/AAYI_PRD/on/demandware.static/-/Sites-master-catalog-dickies/default/dw6bc9295c/images/main/KB103_RBD_A4.jpg?sw=740&sh=740&sm=cut&q=65"
+    ],
+    "price": "15.00",
+    "sizes": ["S", "M", "L", "XL", "2XL", "3XL", "4XL"],
+    "description": "Little helpers can count on protection in Dickies' Kids' Duck Overalls. Designed to look just like the grown-up version, dual-tool pockets will get them through a day in the shop or garage. Sanded duck fabric is made of a cotton/polyester blend that's tough as nails. The hammer loop creates space for an extra tool. Machine washable for easy care.",
+    "color": ["Brown"]
+  },
+  {
+    "gender": "all",
+    "category": "patches",
+    "name": "Dickies Logo Iron-on Patches",
+    "brand": "Dickies",
+    "thumb": "https://www.dickies.com/dw/image/v2/AAYI_PRD/on/demandware.static/-/Sites-master-catalog-dickies/default/dw9541156a/images/main/EPK001_QA_FR.jpg?sw=740&sh=740&sm=cut&q=65",
+    "images": [],
+    "price": "12.99",
+    "sizes": ["One Size"],
+    "description": "Dickies’ Patches help to showcase the global leader in performance workwear. Sewn or attached to anything from shirts to backpacks, these patches will add a unique characteristic to your look—while showing off your loyalty to the brand. Care for each patch by washing the garment on a gentle cycle with cold water. This will lengthen the effectiveness of the wax adhesive. If you want to extend the life of the patches even further, sewing the edges to the chosen garment will give you more long-lasting wear.",
+    "color": ["Red/Yellow/White"]
+  },
+  {
+    "gender": "all",
+    "category": "patches",
+    "name": "Dickies Logo & Flag Iron-on Patches",
+    "brand": "Dickies",
+    "thumb": "https://www.dickies.com/dw/image/v2/AAYI_PRD/on/demandware.static/-/Sites-master-catalog-dickies/default/dwa28febff/images/main/EPK003_QA_FR.jpg?sw=740&sh=740&sm=cut&q=65",
+    "images": [],
+    "price": "12.99",
+    "sizes": ["One Size"],
+    "description": "Dickies’ Patches help to showcase the global leader in performance workwear. Sewn or attached to anything from shirts to backpacks, these patches will add a unique characteristic to your look—while showing off your loyalty to the brand. Care for each patch by washing the garment on a gentle cycle with cold water. This will lengthen the effectiveness of the wax adhesive. If you want to extend the life of the patches even further, sewing the edges to the chosen garment will give you more long-lasting wear.",
+    "color": ["Red/Black/White"]
+  },
+  {
+    "gender": "all",
+    "category": "patches",
+    "name": "Dickies Camo Logo Iron-on Patches",
+    "brand": "Dickies",
+    "thumb": "https://www.dickies.com/dw/image/v2/AAYI_PRD/on/demandware.static/-/Sites-master-catalog-dickies/default/dwd2ce77fd/images/main/EPK002_QA_FR.jpg?sw=740&sh=740&sm=cut&q=65",
+    "images": [],
+    "price": "12.99",
+    "sizes": ["One Size"],
+    "description": "Dickies’ Patches help to showcase the global leader in performance workwear. Sewn or attached to anything from shirts to backpacks, these patches will add a unique characteristic to your look—while showing off your loyalty to the brand. Care for each patch by washing the garment on a gentle cycle with cold water. This will lengthen the effectiveness of the wax adhesive. If you want to extend the life of the patches even further, sewing the edges to the chosen garment will give you more long-lasting wear.",
+    "color": ["Red/Yellow/White/Black"]
+  },
+  {
+    "gender": "men",
+    "category": "jean-pants",
+    "name": "Relaxed Fit Carpenter Jeans",
+    "brand": "Dickies",
+    "thumb": "https://www.dickies.com/dw/image/v2/AAYI_PRD/on/demandware.static/-/Sites-master-catalog-dickies/default/dw96686121/images/main/19294_SNB_FR.jpg?sw=740&sh=740&sm=cut&q=65",
+    "images": [
+      "https://www.dickies.com/dw/image/v2/AAYI_PRD/on/demandware.static/-/Sites-master-catalog-dickies/default/dw7754eef5/images/main/19294_SNB_BK.jpg?sw=740&sh=740&sm=cut&q=65",
+      "https://www.dickies.com/dw/image/v2/AAYI_PRD/on/demandware.static/-/Sites-master-catalog-dickies/default/dw18c9fc6f/images/main/19294_SNB_A1.jpg?sw=740&sh=740&sm=cut&q=65",
+      "https://www.dickies.com/dw/image/v2/AAYI_PRD/on/demandware.static/-/Sites-master-catalog-dickies/default/dw65baf08a/images/main/19294_SNB_A2.jpg?sw=740&sh=740&sm=cut&q=65",
+      "https://www.dickies.com/dw/image/v2/AAYI_PRD/on/demandware.static/-/Sites-master-catalog-dickies/default/dw93542bd8/images/main/19294_SNB_A4.jpg?sw=740&sh=740&sm=cut&q=65"
+    ],
+    "price": "36.99",
+    "sizes": ["28", "30", "32", "34", "36", "38", "40", "42"],
+    "description": "Carry everything you need, without a bulky look. These Dickies Relaxed Fit Stonewashed Carpenter Denim Jeans have the perfect balance. Deep back pockets and a side stash for nails and small gadgets hide away all your necessities, while you look pulled-together with a smooth front and belt loops that won't bunch.",
+    "color": ["Blue", "Black"]
+  },
+  {
+    "gender": "women",
+    "category": "jean-pants",
+    "name": "Women’s Regular Fit Work Jeans",
+    "brand": "Dickies",
+    "thumb": "https://www.dickies.com/dw/image/v2/AAYI_PRD/on/demandware.static/-/Sites-master-catalog-dickies/default/dw1f73385a/images/main/FD086_A1K_FR.jpg?sw=740&sh=740&sm=cut&q=65",
+    "images": [
+      "https://www.dickies.com/dw/image/v2/AAYI_PRD/on/demandware.static/-/Sites-master-catalog-dickies/default/dw7d286fde/images/main/FD086_A1K_BK.jpg?sw=740&sh=740&sm=cut&q=65",
+      "https://www.dickies.com/dw/image/v2/AAYI_PRD/on/demandware.static/-/Sites-master-catalog-dickies/default/dw4477fb56/images/main/FD086_A1K_A1.jpg?sw=740&sh=740&sm=cut&q=65",
+      "https://www.dickies.com/dw/image/v2/AAYI_PRD/on/demandware.static/-/Sites-master-catalog-dickies/default/dwb9fa80c9/images/main/FD086_A1K_A4.jpg?sw=740&sh=740&sm=cut&q=65",
+      "https://www.dickies.com/dw/image/v2/AAYI_PRD/on/demandware.static/-/Sites-master-catalog-dickies/default/dwf2d09fb4/images/main/FD086_A1K_A7.jpg?sw=740&sh=740&sm=cut&q=65"
+    ],
+    "price": "36.99",
+    "sizes": ["28", "30", "32", "34", "36", "38", "40", "42"],
+    "description": "Renegade denim is designed to help you take on your toughest jobs. These women’s work jeans feature reinforced fabric and stitching at the seams, back hem, and chap front. They’re built for function with utility tool pockets, hammer and tape measure loops, knee pad pockets, and our durable denim construction with a bit of added stretch to ensure you stay comfortable into overtime.",
+    "color": ["Blue", "Black"]
+  },
+  {
+    "gender": "men",
+    "category": "jean-pants",
+    "name": "Regular Fit Jeans",
+    "brand": "Dickies",
+    "thumb": "https://www.dickies.com/dw/image/v2/AAYI_PRD/on/demandware.static/-/Sites-master-catalog-dickies/default/dwd8977fd5/images/main/9393_NB_FR.jpg?sw=740&sh=740&sm=cut&q=65",
+    "images": [
+      "https://www.dickies.com/dw/image/v2/AAYI_PRD/on/demandware.static/-/Sites-master-catalog-dickies/default/dwfba50667/images/main/9393_NB_BK.jpg?sw=740&sh=740&sm=cut&q=65",
+      "https://www.dickies.com/dw/image/v2/AAYI_PRD/on/demandware.static/-/Sites-master-catalog-dickies/default/dw7c634a94/images/main/9393_NB_A2.jpg?sw=740&sh=740&sm=cut&q=65"
+    ],
+    "price": "36.99",
+    "sizes": ["28", "30", "32", "34", "36", "38", "40", "42"],
+    "description": "The authentic, classic shape of the original blue jean is unbeatable. The Dickies Regular Fit Jeans are a classic for a reason. Brass rivets reinforce every tough seam on this favorite 5-pocket style, with work-ready details like extra deep pockets and space for a multipurpose knife.",
+    "color": ["Blue", "Black"]
+  },
+  {
+    "gender": "all",
+    "category": "jean-pants",
+    "name": "Women's Perfect Shape Straight Fit Jeans",
+    "brand": "Dickies",
+    "thumb": "https://www.dickies.com/dw/image/v2/AAYI_PRD/on/demandware.static/-/Sites-master-catalog-dickies/default/dwd8090647/images/main/FD146_RBK_FR.jpg?sw=740&sh=740&sm=cut&q=65",
+    "images": [
+      "https://www.dickies.com/dw/image/v2/AAYI_PRD/on/demandware.static/-/Sites-master-catalog-dickies/default/dw0b813722/images/main/FD146_RBK_BK.jpg?sw=740&sh=740&sm=cut&q=65",
+      "https://www.dickies.com/dw/image/v2/AAYI_PRD/on/demandware.static/-/Sites-master-catalog-dickies/default/dw2c5de741/images/main/FD146_RBK_A1.jpg?sw=740&sh=740&sm=cut&q=65",
+      "https://www.dickies.com/dw/image/v2/AAYI_PRD/on/demandware.static/-/Sites-master-catalog-dickies/default/dw67f18abb/images/main/FD146_RBK_A4.jpg?sw=740&sh=740&sm=cut&q=65",
+      "https://www.dickies.com/dw/image/v2/AAYI_PRD/on/demandware.static/-/Sites-master-catalog-dickies/default/dw66052a11/images/main/FD146_RBK_A7.jpg?sw=740&sh=740&sm=cut&q=65"
+    ],
+    "price": "36.99",
+    "sizes": ["28", "30", "32", "34", "36", "38", "40", "42"],
+    "description": "Your flawless workday fit is finally attainable in Dickies Women's Perfect Shape Jeans. You can say goodbye to the days spent pulling up a gapping waistband or sagging knees. Perfect Shape Denim are designed with Cone's S Gene® technology, delivering superior stretch and recovery through a soft performance denim that won't give out over time. Plus, the flex tummy panel offers added support that flattens and smooths to provide a slender silhouette. With a generous 46% stretch, you'll comfortably tackle any task while these jeans hold their shape and yours. The reinforced double needle stitching makes these durable work jeans a go-to for every task you need to tackle. You'll gain long-lasting wear and tear in this abrasion tested denim; where fit, function and feel combine to create effortless perfection.",
+    "color": ["Blue", "Black"]
+  },
+  {
+    "gender": "men",
+    "category": "jean-pants",
+    "name": "FLEX Active Waist Relaxed Fit Jeans",
+    "brand": "Dickies",
+    "thumb": "https://www.dickies.com/dw/image/v2/AAYI_PRD/on/demandware.static/-/Sites-master-catalog-dickies/default/dw0bd0d0df/images/main/DD220_RNB_FR.jpg?sw=740&sh=740&sm=cut&q=65",
+    "images": [
+      "https://www.dickies.com/dw/image/v2/AAYI_PRD/on/demandware.static/-/Sites-master-catalog-dickies/default/dwf7f532e3/images/main/DD220_RNB_BK.jpg?sw=740&sh=740&sm=cut&q=65",
+      "https://www.dickies.com/dw/image/v2/AAYI_PRD/on/demandware.static/-/Sites-master-catalog-dickies/default/dwfa766f65/images/main/DD220_RNB_A2.jpg?sw=740&sh=740&sm=cut&q=65"
+    ],
+    "price": "36.99",
+    "sizes": ["28", "30", "32", "34", "36", "38", "40", "42"],
+    "description": "The FLEX Active Waist Relaxed Fit Jeans are the perfect mix of performance denim and total comfort. Built strong and soft, the flex denim fabric and active waist stretch with you, so you can move effortlessly on the job. When you need to feel comfortable and move freely, this is the pair to reach for time and again.",
+    "color": ["Blue", "Black"]
+  },
+  {
+    "gender": "women",
+    "category": "jean-pants",
+    "name": "Women's FLEX Relaxed Fit Carpenter Jeans",
+    "brand": "Dickies",
+    "thumb": "https://www.dickies.com/dw/image/v2/AAYI_PRD/on/demandware.static/-/Sites-master-catalog-dickies/default/dwc21a2c35/images/main/FD270_DSW_FR.jpg?sw=740&sh=740&sm=cut&q=65",
+    "images": [
+      "https://www.dickies.com/dw/image/v2/AAYI_PRD/on/demandware.static/-/Sites-master-catalog-dickies/default/dw40352a12/images/main/FD270_DSW_BK.jpg?sw=740&sh=740&sm=cut&q=65",
+      "https://www.dickies.com/dw/image/v2/AAYI_PRD/on/demandware.static/-/Sites-master-catalog-dickies/default/dwffb37c08/images/main/FD270_DSW_A1.jpg?sw=740&sh=740&sm=cut&q=65",
+      "https://www.dickies.com/dw/image/v2/AAYI_PRD/on/demandware.static/-/Sites-master-catalog-dickies/default/dw3aa7283a/images/main/FD270_DSW_A2.jpg?sw=740&sh=740&sm=cut&q=65",
+      "https://www.dickies.com/dw/image/v2/AAYI_PRD/on/demandware.static/-/Sites-master-catalog-dickies/default/dw80c93748/images/main/FD270_DSW_A4.jpg?sw=740&sh=740&sm=cut&q=65"
+    ],
+    "price": "36.99",
+    "sizes": ["28", "30", "32", "34", "36", "38", "40", "42"],
+    "description": "Keep focused on any job or craft in these comfortable carpenter pants. They're made with a flexible fabric that moves with you, so you can bend and move in any direction with ease, and the mid-rise tailoring gives you plenty of coverage. Plus, there are plenty of pockets for all your stuff.",
+    "color": ["Blue", "Black"]
+  },
+  {
+    "gender": "men",
+    "category": "carpenter-pants",
+    "name": "Relaxed Fit Heavyweight Duck Carpenter Pants",
+    "brand": "Dickies",
+    "thumb": "https://www.dickies.com/dw/image/v2/AAYI_PRD/on/demandware.static/-/Sites-master-catalog-dickies/default/dw5fb9c9d0/images/main/1939_RBD_FR.jpg?sw=740&sh=740&sm=cut&q=65",
+    "images": [
+      "https://www.dickies.com/dw/image/v2/AAYI_PRD/on/demandware.static/-/Sites-master-catalog-dickies/default/dwbe2eb509/images/main/1939_RBD_BK.jpg?sw=740&sh=740&sm=cut&q=65",
+      "https://www.dickies.com/dw/image/v2/AAYI_PRD/on/demandware.static/-/Sites-master-catalog-dickies/default/dw063cf439/images/main/1939_RBD_A1.jpg?sw=740&sh=740&sm=cut&q=65",
+      "https://www.dickies.com/dw/image/v2/AAYI_PRD/on/demandware.static/-/Sites-master-catalog-dickies/default/dw5f8b09d2/images/main/1939_RBD_A2.jpg?sw=740&sh=740&sm=cut&q=65",
+      "https://www.dickies.com/dw/image/v2/AAYI_PRD/on/demandware.static/-/Sites-master-catalog-dickies/default/dwf96ac572/images/main/1939_RBD_BT1.jpg?sw=740&sh=740&sm=cut&q=65"
+    ],
+    "price": "36.99",
+    "sizes": ["28", "30", "32", "34", "36", "38", "40", "42"],
+    "description": "Get comfort and function you can count on for every job. These carpenter pants are built from heavyweight, 100% cotton duck for a durable fabrication that resists wear and tear. The pants have a relaxed fit, straight leg that fits easily over work boots, side utility pockets, a hammer loop, and reinforced seams for added durability.",
+    "color": ["Brown", "Black"]
+  },
+  {
+    "gender": "women",
+    "category": "carpenter-pants",
+    "name": "Women's FLEX Relaxed Fit Duck Carpenter Pants",
+    "brand": "Dickies",
+    "thumb": "https://www.dickies.com/dw/image/v2/AAYI_PRD/on/demandware.static/-/Sites-master-catalog-dickies/default/dwab49b14e/images/main/FD2500_RBD_FR.jpg?sw=740&sh=740&sm=cut&q=65",
+    "images": [
+      "https://www.dickies.com/dw/image/v2/AAYI_PRD/on/demandware.static/-/Sites-master-catalog-dickies/default/dw207e9c99/images/main/FD2500_RBD_BK.jpg?sw=740&sh=740&sm=cut&q=65",
+      "https://www.dickies.com/dw/image/v2/AAYI_PRD/on/demandware.static/-/Sites-master-catalog-dickies/default/dw683e80da/images/main/FD2500_RBD_A2.jpg?sw=740&sh=740&sm=cut&q=65"
+    ],
+    "price": "36.99",
+    "sizes": ["28", "30", "32", "34", "36", "38", "40", "42"],
+    "description": "Tough as nails and comfy as heck. Dickies' Women's Stretch Double-Front Duck Carpenter Pants are made to wear on or off the job with upgraded fabrics and a timeless style. Sturdy rivets and a tough duck material keeps things durable, while the stretch fabric lets you move in comfort. Plus, there are plenty of added pockets, tool loops and knee pad openings.",
+    "color": ["Brown", "Black"]
+  },
+  {
+    "gender": "men",
+    "category": "carpenter-pants",
+    "name": "FLEX Regular Fit Duck Carpenter Pants",
+    "brand": "Dickies",
+    "thumb": "https://www.dickies.com/dw/image/v2/AAYI_PRD/on/demandware.static/-/Sites-master-catalog-dickies/default/dw24a0cf34/images/main/DP802_SBD_FR.jpg?sw=740&sh=740&sm=cut&q=65",
+    "images": [
+      "https://www.dickies.com/dw/image/v2/AAYI_PRD/on/demandware.static/-/Sites-master-catalog-dickies/default/dw4c009c17/images/main/DP802_SBD_BK.jpg?sw=740&sh=740&sm=cut&q=65",
+      "https://www.dickies.com/dw/image/v2/AAYI_PRD/on/demandware.static/-/Sites-master-catalog-dickies/default/dw5639adf4/images/main/DP802_SBD_A4.jpg?sw=740&sh=740&sm=cut&q=65",
+      "https://www.dickies.com/dw/image/v2/AAYI_PRD/on/demandware.static/-/Sites-master-catalog-dickies/default/dw27dc67b9/images/main/DP802_SBD_A5.jpg?sw=740&sh=740&sm=cut&q=65",
+      "https://www.dickies.com/dw/image/v2/AAYI_PRD/on/demandware.static/-/Sites-master-catalog-dickies/default/dwf927706e/images/main/DP802_SBD_A6.jpg?sw=740&sh=740&sm=cut&q=65"
+    ],
+    "price": "36.99",
+    "sizes": ["28", "30", "32", "34", "36", "38", "40", "42"],
+    "description": "Made with our toughest technology, these carpenter pants keep you comfortable and covered during hard jobs. Reinforced seams, durable fabric and abrasion-resistant material mean they're strong enough to keep going for years.",
+    "color": ["Brown", "Black"]
+  },
+  {
+    "gender": "women",
+    "category": "carpenter-pants",
+    "name": "Women's FLEX Relaxed Straight Fit Duck Carpenter Pants",
+    "brand": "Dickies",
+    "thumb": "https://www.dickies.com/dw/image/v2/AAYI_PRD/on/demandware.static/-/Sites-master-catalog-dickies/default/dw7486c476/images/main/FD2700_RBD_FR.jpg?sw=740&sh=740&sm=cut&q=65",
+    "images": [
+      "https://www.dickies.com/dw/image/v2/AAYI_PRD/on/demandware.static/-/Sites-master-catalog-dickies/default/dw398b47f5/images/main/FD2700_RBD_BK.jpg?sw=740&sh=740&sm=cut&q=65",
+      "https://www.dickies.com/dw/image/v2/AAYI_PRD/on/demandware.static/-/Sites-master-catalog-dickies/default/dwddb5a762/images/main/FD2700_RBD_A1.jpg?sw=740&sh=740&sm=cut&q=65",
+      "https://www.dickies.com/dw/image/v2/AAYI_PRD/on/demandware.static/-/Sites-master-catalog-dickies/default/dw4ac398d3/images/main/FD2700_RBD_A2.jpg?sw=740&sh=740&sm=cut&q=65",
+      "https://www.dickies.com/dw/image/v2/AAYI_PRD/on/demandware.static/-/Sites-master-catalog-dickies/default/dwd79613cf/images/main/FD2700_RBD_A4.jpg?sw=740&sh=740&sm=cut&q=65"
+    ],
+    "price": "36.99",
+    "sizes": ["28", "30", "32", "34", "36", "38", "40", "42"],
+    "description": "From big projects to detailed craft, these carpenter pants have you covered. They're made with a soft, flexible material that keeps you comfortable and gives you plenty of room to move. Plus, plenty of pockets and a hammer loop keep all your tools at hand.",
+    "color": ["Brown", "Black"]
+  },
+  {
+    "gender": "men",
+    "category": "carpenter-pants",
+    "name": "Relaxed Fit Sanded Duck Carpenter Pants",
+    "brand": "Dickies",
+    "thumb": "https://www.dickies.com/dw/image/v2/AAYI_PRD/on/demandware.static/-/Sites-master-catalog-dickies/default/dw80ce0a8b/images/main/DU336_RBD_FR.jpg?sw=740&sh=740&sm=cut&q=65",
+    "images": [
+      "https://www.dickies.com/dw/image/v2/AAYI_PRD/on/demandware.static/-/Sites-master-catalog-dickies/default/dwe2e89955/images/main/DU336_RBD_BK.jpg?sw=740&sh=740&sm=cut&q=65"
+    ],
+    "price": "36.99",
+    "sizes": ["28", "30", "32", "34", "36", "38", "40", "42"],
+    "description": "Start your workday with jeans that are already broken-in and ready to go. Brushed fabric has the great feeling of a worn pair of jeans, but triple-needle stitching and riveted seams mean these carpenter cut favorites will keep on working. The relaxed fit and boot-ready wide leg combine with extensive tool pockets to move with ease.",
+    "color": ["Brown", "Black"]
+  },
+  {
+    "gender": "women",
+    "category": "carpenter-pants",
+    "name": "Women's FLEX DuraTech Straight Fit Pants",
+    "brand": "Dickies",
+    "thumb": "https://www.dickies.com/dw/image/v2/AAYI_PRD/on/demandware.static/-/Sites-master-catalog-dickies/default/dwbba5a127/images/main/FD085_BD_FR.jpg?sw=740&sh=740&sm=cut&q=65",
+    "images": [
+      "https://www.dickies.com/dw/image/v2/AAYI_PRD/on/demandware.static/-/Sites-master-catalog-dickies/default/dwcc5e0456/images/main/FD085_BD_BK.jpg?sw=740&sh=740&sm=cut&q=65",
+      "https://www.dickies.com/dw/image/v2/AAYI_PRD/on/demandware.static/-/Sites-master-catalog-dickies/default/dw4a29fdb6/images/main/FD085_BD_A1.jpg?sw=740&sh=740&sm=cut&q=65",
+      "https://www.dickies.com/dw/image/v2/AAYI_PRD/on/demandware.static/-/Sites-master-catalog-dickies/default/dwa6d2454b/images/main/FD085_BD_A4.jpg?sw=740&sh=740&sm=cut&q=65",
+      "https://www.dickies.com/dw/image/v2/AAYI_PRD/on/demandware.static/-/Sites-master-catalog-dickies/default/dwbcba1a0c/images/main/FD085_BD_A7.jpg?sw=740&sh=740&sm=cut&q=65"
+    ],
+    "price": "36.99",
+    "sizes": ["28", "30", "32", "34", "36", "38", "40", "42"],
+    "description": "Rise to the demands of your workday without sacrificing protection in Dickies Women’s Duratech Renegade Pants. Featuring cutting edge DuraTech technology that’s no longer only for the boys, Dickies has revolutionized the ultimate defense when it comes to your work environment. They're equipped with a Durable Water Repellent finish as well as our FLEX fabrication for superior mobility. Plus, with details like the reinforced back hem including kick plates, these pants are solid enough to stand up to the toughest tasks. An extra wide center back belt loop is built to carry your heaviest tool bag while the knee pad openings safeguard you when you are required to kneel, crawl or stoop. The double front panel offers even more durability, including one zipper pocket to provide extra storage for all your tools. But the utility doesn’t stop there, with 10 total pockets throughout the construction, including an L-shape pocket and front knife pocket, as well as a hammer and key loop, the height of function is found in these performance proven and protective pants.",
+    "color": ["Brown", "Black"]
   }
 ]

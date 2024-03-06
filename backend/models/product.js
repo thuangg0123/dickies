@@ -10,7 +10,7 @@ var productSchema = new mongoose.Schema({
     },
     gender: {
         type: String,
-        enum: ['men', 'women', 'kids'],
+        enum: ['men', 'women', 'kids', 'all'],
         required: true
     },
     slug: {

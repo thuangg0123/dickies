@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 import banner from "../img/banner-home.jpg";
 
-function Banner() {
+function SubBanner() {
   return (
     <>
       <div className="relative">
@@ -27,4 +27,4 @@ function Banner() {
   );
 }
 
-export default Banner;
+export default SubBanner;
