@@ -41,6 +41,11 @@ const getAllProducts = asyncHandler(async (req, res) => {
     if (queries.title) {
         formattedQueries.title = { $regex: queries.title, $options: 'i' }
     }
+
+    if (req.query.category) {
+        formattedQueries.category = req.query.category; // Sử dụng giá trị từ query parameters
+    }
+
     let queryCommand = Product.find(formattedQueries)
     //excute query
 
