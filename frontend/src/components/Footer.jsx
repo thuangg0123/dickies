@@ -1,15 +1,19 @@
 import React from "react";
 
-import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
-import FacebookIcon from "@mui/icons-material/Facebook";
-import InstagramIcon from "@mui/icons-material/Instagram";
-import XIcon from "@mui/icons-material/X";
-import PinterestIcon from "@mui/icons-material/Pinterest";
-import YouTubeIcon from "@mui/icons-material/YouTube";
+import icons from "../ultils/icons";
 
 import { menuItems } from "../ultils/itemFooter";
 
 function Footer() {
+  const {
+    ArrowForwardIcon,
+    FacebookIcon,
+    InstagramIcon,
+    XIcon,
+    PinterestIcon,
+    YouTubeIcon,
+  } = icons;
+
   return (
     <>
       <div className="bg-[#1A1A1A] px-10 py-20 text-white">
@@ -61,7 +65,7 @@ function Footer() {
               </ul>
             </div>
           </div>
-          <div className="w-full text-sm grid grid-cols-3">
+          <div className="font-second w-full text-base grid grid-cols-3">
             {menuItems &&
               menuItems.length > 0 &&
               menuItems.map((item, index) => {

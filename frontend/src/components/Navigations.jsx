@@ -1,22 +1,40 @@
 import React, { useState } from "react";
 import { nav } from "../ultils/constans";
 import { NavLink } from "react-router-dom";
-import DropDrownMenu from "./DropDrownMenu"; // Import DropDrownMenu component
+import DropDrownMenu from "./DropDrownMenu";
 
 function Navigations() {
-  const [showSubMenu, setShowSubMenu] = useState(false); // State to control submenu visibility
+  const [showSubMenu, setShowSubMenu] = useState(false);
+  const [currentCategory, setCurrentCategory] = useState(null);
+
+  const handleMouseEnter = (category) => {
+    setCurrentCategory(category);
+    setShowSubMenu(true);
+  };
+
+  const handleMouseLeave = () => {
+    setShowSubMenu(false);
+  };
 
   return (
     <>
       <div className="flex">
         {nav &&
           nav.map((item) => {
+            let hoveredCategory = null;
+
             return (
               <div
                 key={item.id}
                 className="relative"
-                onMouseEnter={() => setShowSubMenu(true)}
-                onMouseLeave={() => setShowSubMenu(false)}
+                onMouseEnter={() => {
+                  hoveredCategory = item.value;
+                  handleMouseEnter(item.value);
+                }}
+                onMouseLeave={() => {
+                  hoveredCategory = null;
+                  handleMouseLeave();
+                }}
               >
                 <NavLink
                   to={item.path}
@@ -28,7 +46,9 @@ function Navigations() {
                 >
                   {item.value}
                 </NavLink>
-                {showSubMenu && <DropDrownMenu />}
+                {showSubMenu && currentCategory === item.value && (
+                  <DropDrownMenu category={currentCategory} />
+                )}
               </div>
             );
           })}

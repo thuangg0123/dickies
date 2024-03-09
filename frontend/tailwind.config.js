@@ -6,7 +6,8 @@ export default {
   ],
   theme: {
     fontFamily: {
-      main: ["IBM Plex Mono", "monospace"]
+      main: ["IBM Plex Mono", "monospace"],
+      second: ["IBM Plex Sans Condensed", "sans-serif"]
     },
     extend: {
       width: {

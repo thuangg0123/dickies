@@ -2,9 +2,10 @@ import React from "react";
 
 import { Link } from "react-router-dom";
 
-import ChatBubbleOutlineIcon from "@mui/icons-material/ChatBubbleOutline";
+import icons from "../../ultils/icons";
 
 const NeedHelps = () => {
+  const { ChatBubbleOutlineIcon } = icons;
   return (
     <>
       <section className="mb-20 bg-[#F5F5F5] p-10 tracking-tighter">

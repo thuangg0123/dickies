@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
-import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
+import icons from "../ultils/icons";
 
 const BtnScrollTop = () => {
+  const { ArrowUpwardIcon } = icons;
   const [isVisible, setIsVisible] = useState(false);
 
   const toggleVisibility = () => {

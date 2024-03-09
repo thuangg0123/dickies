@@ -1,16 +1,20 @@
 import React from "react";
 import Navigations from "./Navigations";
 
-import Input from "@mui/material/Input";
-import SearchIcon from "@mui/icons-material/Search";
-import Person2OutlinedIcon from "@mui/icons-material/Person2Outlined";
-import BookmarkBorderOutlinedIcon from "@mui/icons-material/BookmarkBorderOutlined";
-import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
+import icons from "../ultils/icons";
 
 import { Link } from "react-router-dom";
 import path from "../ultils/path";
 
 function Header() {
+  const {
+    Input,
+    SearchIcon,
+    Person2OutlinedIcon,
+    BookmarkBorderOutlinedIcon,
+    ShoppingCartOutlinedIcon,
+  } = icons;
+
   return (
     <>
       <div className="flex justify-between items-center border h-[80px] w-main px-10 py-2 fixed top-0 left-0 z-50 bg-white">
