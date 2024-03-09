@@ -3,7 +3,7 @@ import Carousel from "react-multi-carousel";
 import { useSelector } from "react-redux";
 
 import { NavLink } from "react-router-dom";
-import { createSlug } from "../ultils/helper.js";
+import { createSlug } from "../../ultils/helper.js";
 
 function Carousels() {
   const categories = useSelector((state) => {

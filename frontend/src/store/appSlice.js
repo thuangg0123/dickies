@@ -7,6 +7,9 @@ export const appSlice = createSlice({
         categories: [],
         isLoading: false,
         isError: false,
+        productByCategory: [],
+        isLoadingProducts: false,
+        isErrorProducts: false,
     },
     reducers: {
 
@@ -23,6 +26,19 @@ export const appSlice = createSlice({
             state.isLoading = false
             state.categories = null
             state.isError = action.payload.message
+        })
+
+        // get product by category
+        builder.addCase(actions.getProductByCategory.pending, (state, action) => {
+            state.isLoadingProducts = true
+        })
+        builder.addCase(actions.getProductByCategory.fulfilled, (state, action) => {
+            state.isLoadingProducts = false;
+            state.productByCategory.push(...action.payload);
+        })
+        builder.addCase(actions.getProductByCategory.rejected, (state, action) => {
+            state.isLoadingProducts = false
+            state.isErrorProducts = true
         })
     }
 })

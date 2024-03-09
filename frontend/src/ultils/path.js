@@ -8,6 +8,7 @@ const path = {
     KIDS: "kids-clothing",
     SCRUBS: "scrubs",
     SALE: "sale",
+    OVERALLS: "overalls"
 }
 
 export default path

@@ -1,2 +1,12 @@
 export { default as Header } from './Header'
-export { default as Banner } from './Banner'
+export { default as Footer } from './Footer'
+export { default as Navigations } from './Navigations'
+export { default as BtnScrollTop } from './BtnScrollTop'
+export { default as DropDrownMenu } from './DropDrownMenu'
+
+export { default as Banner } from './Home/Banner'
+export { default as BoxSubBanner } from './Home/BoxSubBanner'
+export { default as CarouselProduct } from './Home/CarouselProduct'
+export { default as Carousels } from './Home/Carousels'
+export { default as NeedHelps } from './Home/NeedHelps'
+export { default as SubBanner } from './Home/SubBanner'

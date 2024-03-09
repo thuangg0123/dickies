@@ -1,6 +1,6 @@
 [
   {
-    "gender": "men",
+    "gender": ["men", "all"],
     "category": "pant",
     "name": "874® FLEX Work Pants",
     "brand": "Dickies",
@@ -17,7 +17,7 @@
     "color": ["Black", "Blue", "White"]
   },
   {
-    "gender": "men",
+    "gender": ["men", "all"],
     "category": "pant",
     "name": "Dickies x Jameson Double Knee Pants",
     "brand": "Dickies",
@@ -34,7 +34,7 @@
     "color": ["Brown"]
   },
   {
-    "gender": "men",
+    "gender": ["men", "all"],
     "category": "pant",
     "name": "Loose Fit Double Knee Work Pants",
     "brand": "Dickies",
@@ -51,7 +51,7 @@
     "color": ["Black", "Blue", "Dark Brown"]
   },
   {
-    "gender": "men",
+    "gender": ["men", "all"],
     "category": "pant",
     "name": "FLEX Regular Fit Cargo Pants",
     "brand": "Dickies",
@@ -67,7 +67,7 @@
     "color": ["Black", "Blue", "White"]
   },
   {
-    "gender": "men",
+    "gender": ["men", "all"],
     "category": "pant",
     "name": "Skinny Fit Double Knee Work Pants",
     "brand": "Dickies",
@@ -84,7 +84,7 @@
     "color": ["Black", "Blue", "White"]
   },
   {
-    "gender": "men",
+    "gender": ["men", "all"],
     "category": "pant",
     "name": "Slim Fit Duck Canvas Double Knee Pants",
     "brand": "Dickies",
@@ -101,7 +101,7 @@
     "color": ["Black", "Blue", "White"]
   },
   {
-    "gender": "men",
+    "gender": ["men", "all"],
     "category": "pant",
     "name": "Temp-iQ® 365 Regular Fit Double Knee Tapered Duck Pants",
     "brand": "Dickies",
@@ -118,7 +118,7 @@
     "color": ["Black", "Blue", "White"]
   },
   {
-    "gender": "men",
+    "gender": ["men", "all"],
     "category": "pant",
     "name": "Slim Fit Holster Double Knee Work Pants",
     "brand": "Dickies",
@@ -135,7 +135,7 @@
     "color": ["Black", "Blue", "White"]
   },
   {
-    "gender": "men",
+    "gender": ["men", "all"],
     "category": "pant",
     "name": "FLEX Slim Fit Double Knee Tapered Pants",
     "brand": "Dickies",
@@ -152,7 +152,7 @@
     "color": ["Black", "Moss/Black", "White"]
   },
   {
-    "gender": "men",
+    "gender": ["men", "all"],
     "category": "pant",
     "name": "873 FLEX Slim Fit Work Pants",
     "brand": "Dickies",
@@ -169,7 +169,7 @@
     "color": ["Black", "Blue", "White"]
   },
   {
-    "gender": "men",
+    "gender": ["men", "all"],
     "category": "pant-short",
     "name": "Relaxed Fit Work Shorts",
     "brand": "Dickies",
@@ -184,7 +184,7 @@
     "color": ["Black", "Blue", "White"]
   },
   {
-    "gender": "men",
+    "gender": ["men", "all"],
     "category": "pant-short",
     "name": "Loose Fit Flat Front Work Shorts",
     "brand": "Dickies",
@@ -201,7 +201,7 @@
     "color": ["Black", "Blue", "White"]
   },
   {
-    "gender": "men",
+    "gender": ["men", "all"],
     "category": "pant-short",
     "name": "Loose Fit Multi-Use Pocket Work Shorts",
     "brand": "Dickies",
@@ -218,7 +218,7 @@
     "color": ["Black", "Blue", "White"]
   },
   {
-    "gender": "men",
+    "gender": ["men", "all"],
     "category": "pant-short",
     "name": "Relaxed Fit Multi-Use Pocket Work Shorts",
     "brand": "Dickies",
@@ -233,7 +233,7 @@
     "color": ["Black", "Blue", "White"]
   },
   {
-    "gender": "men",
+    "gender": ["men", "all"],
     "category": "pant-short",
     "name": "Pelican Rapids Relaxed Fit Shorts",
     "brand": "Dickies",
@@ -250,7 +250,7 @@
     "color": ["Black", "Blue", "White"]
   },
   {
-    "gender": "men",
+    "gender": ["men", "all"],
     "category": "shirts",
     "name": "Short Sleeve Work Shirt 1",
     "brand": "Dickies",
@@ -267,7 +267,7 @@
     "color": ["Black", "Blue", "White"]
   },
   {
-    "gender": "men",
+    "gender": ["men", "all"],
     "category": "shirts",
     "name": "Short Sleeve Work Shirt 2",
     "brand": "Dickies",
@@ -284,7 +284,7 @@
     "color": ["Black", "Blue", "White"]
   },
   {
-    "gender": "men",
+    "gender": ["men", "all"],
     "category": "shirts",
     "name": "Heavyweight Short Sleeve Pocket T-Shirt",
     "brand": "Dickies",
@@ -301,7 +301,7 @@
     "color": ["Black", "Blue", "White"]
   },
   {
-    "gender": "men",
+    "gender": ["men", "all"],
     "category": "shirts",
     "name": "Long Sleeve Work Shirt",
     "brand": "Dickies",
@@ -318,7 +318,7 @@
     "color": ["Black", "Blue", "White"]
   },
   {
-    "gender": "men",
+    "gender": ["men", "all"],
     "category": "shirts",
     "name": "Heavyweight Long Sleeve Pocket T-Shirt",
     "brand": "Dickies",
@@ -335,7 +335,7 @@
     "color": ["Black", "Blue", "White"]
   },
   {
-    "gender": "men",
+    "gender": ["men", "all"],
     "category": "shirts",
     "name": "Cooling Short Sleeve Pocket T-Shirt",
     "brand": "Dickies",
@@ -352,7 +352,7 @@
     "color": ["Black", "Blue", "White"]
   },
   {
-    "gender": "men",
+    "gender": ["men", "all"],
     "category": "shirts",
     "name": "FLEX Relaxed Fit Short Sleeve Work Shirt",
     "brand": "Dickies",
@@ -369,7 +369,7 @@
     "color": ["Black", "Blue", "White"]
   },
   {
-    "gender": "men",
+    "gender": ["men", "all"],
     "category": "shirts",
     "name": "Two-Tone Short Sleeve Work Shirt",
     "brand": "Dickies",
@@ -386,7 +386,7 @@
     "color": ["Black Dark/Gray", "Black/Blue", "Black/White"]
   },
   {
-    "gender": "men",
+    "gender": ["men", "all"],
     "category": "shirts",
     "name": "FLEX Relaxed Fit Long Sleeve Work Shirt",
     "brand": "Dickies",
@@ -403,7 +403,7 @@
     "color": ["Black", "Blue", "White"]
   },
   {
-    "gender": "men",
+    "gender": ["men", "all"],
     "category": "shirts",
     "name": "Cooling Long Sleeve Pocket T-Shirt",
     "brand": "Dickies",
@@ -420,7 +420,7 @@
     "color": ["Black", "Blue", "White"]
   },
   {
-    "gender": "men",
+    "gender": ["men", "all"],
     "category": "shirts",
     "name": "Glade Spring Long Sleeve Shirt",
     "brand": "Dickies",
@@ -437,7 +437,7 @@
     "color": ["Black", "Blue", "White"]
   },
   {
-    "gender": "men",
+    "gender": ["men", "all"],
     "category": "shirts",
     "name": "Newington Short Sleeve Shirt",
     "brand": "Dickies",
@@ -454,7 +454,7 @@
     "color": ["Black", "Blue", "White"]
   },
   {
-    "gender": "men",
+    "gender": ["men", "all"],
     "category": "shirts",
     "name": "Newington T-Shirt",
     "brand": "Dickies",
@@ -471,7 +471,7 @@
     "color": ["Black", "Blue", "White"]
   },
   {
-    "gender": "men",
+    "gender": ["men", "all"],
     "category": "outerwear",
     "name": "Insulated Eisenhower Jacket",
     "brand": "Dickies",
@@ -488,7 +488,7 @@
     "color": ["Black", "Blue", "White"]
   },
   {
-    "gender": "men",
+    "gender": ["men", "all"],
     "category": "outerwear",
     "name": "Unlined Eisenhower Jacket",
     "brand": "Dickies",
@@ -505,7 +505,7 @@
     "color": ["Black", "Blue", "White"]
   },
   {
-    "gender": "men",
+    "gender": ["men", "all"],
     "category": "outerwear",
     "name": "Diamond Quilted Jacket",
     "brand": "Dickies",
@@ -522,7 +522,7 @@
     "color": ["Black", "Blue", "White"]
   },
   {
-    "gender": "men",
+    "gender": ["men", "all"],
     "category": "skate-shorts",
     "name": "FLEX Skateboarding Slim Fit Shorts",
     "brand": "Dickies",
@@ -538,7 +538,7 @@
     "color": ["Black", "Blue", "White"]
   },
   {
-    "gender": "men",
+    "gender": ["men", "all"],
     "category": "skate-shorts",
     "name": "Jake Hayes Relaxed Fit Corduroy Shorts",
     "brand": "Dickies",
@@ -555,7 +555,7 @@
     "color": ["Black", "Blue", "White"]
   },
   {
-    "gender": "men",
+    "gender": ["men", "all"],
     "category": "skate-shorts",
     "name": "Dickies Skateboarding Regular Fit Cargo Shorts",
     "brand": "Dickies",
@@ -572,7 +572,7 @@
     "color": ["Black", "Blue", "White"]
   },
   {
-    "gender": "men",
+    "gender": ["men", "all"],
     "category": "skate-shorts",
     "name": "SVincent Alvarez El Sereno Loose Fit Shorts",
     "brand": "Dickies",
@@ -589,7 +589,7 @@
     "color": ["Brown", "Blue", "White"]
   },
   {
-    "gender": "men",
+    "gender": ["men", "all"],
     "category": "skate-shorts",
     "name": "Dickies Skateboarding Grants Pass Relaxed Fit Shorts,",
     "brand": "Dickies",
@@ -606,7 +606,7 @@
     "color": ["Black", "Blue", "White"]
   },
   {
-    "gender": "men",
+    "gender": ["men", "all"],
     "category": "skate-shorts",
     "name": "Dickies Skateboarding Loose Fit Wingville Shorts",
     "brand": "Dickies",
@@ -623,7 +623,7 @@
     "color": ["Black", "Blue", "White"]
   },
   {
-    "gender": "men",
+    "gender": ["men", "all"],
     "category": "coats-jackets",
     "name": "Eisenhower Puffer Jacket",
     "brand": "Dickies",
@@ -640,7 +640,7 @@
     "color": ["Black", "Blue", "White"]
   },
   {
-    "gender": "men",
+    "gender": ["men", "all"],
     "category": "coats-jackets",
     "name": "Lucas Fully Waxed Puffer Jacket",
     "brand": "Dickies",
@@ -657,7 +657,7 @@
     "color": ["Black", "Blue", "White"]
   },
   {
-    "gender": "men",
+    "gender": ["men", "all"],
     "category": "coats-jackets",
     "name": "Overbrook Puffer Jacket",
     "brand": "Dickies",
@@ -672,7 +672,7 @@
     "color": ["Black", "Blue", "White"]
   },
   {
-    "gender": "men",
+    "gender": ["men", "all"],
     "category": "coats-jackets",
     "name": "Insulated Parka Jacket",
     "brand": "Dickies",
@@ -689,7 +689,7 @@
     "color": ["Black", "Blue", "White"]
   },
   {
-    "gender": "men",
+    "gender": ["men", "all"],
     "category": "coats-jackets",
     "name": "Performance Workwear Insulated Jacket",
     "brand": "Dickies",
@@ -706,7 +706,7 @@
     "color": ["Black", "Blue", "White"]
   },
   {
-    "gender": "men",
+    "gender": ["men", "all"],
     "category": "coats-jackets",
     "name": "Fully Waxed Canvas Chore Coat",
     "brand": "Dickies",
@@ -723,7 +723,7 @@
     "color": ["Black", "Blue", "White"]
   },
   {
-    "gender": "men",
+    "gender": ["men", "all"],
     "category": "skate-shorts",
     "name": "Dickies Skateboarding Grants Pass Jacket",
     "brand": "Dickies",
@@ -740,7 +740,7 @@
     "color": ["Black", "Blue", "White"]
   },
   {
-    "gender": "men",
+    "gender": ["men", "all"],
     "category": "skate-shorts",
     "name": "Denim Chore Coat",
     "brand": "Dickies",
@@ -1217,7 +1217,7 @@
     "color": ["Black"]
   },
   {
-    "gender": "women",
+    "gender": ["women", "all"],
     "category": "pant",
     "name": "Women’s 874 Work Pants Black",
     "brand": "Dickies",
@@ -1234,7 +1234,7 @@
     "color": ["Black", "Blue", "White"]
   },
   {
-    "gender": "women",
+    "gender": ["women", "all"],
     "category": "pant",
     "name": "WWomen’s 874 Work Pants Green",
     "brand": "Dickies",
@@ -1251,7 +1251,7 @@
     "color": ["Black", "Blue", "White"]
   },
   {
-    "gender": "women",
+    "gender": ["women", "all"],
     "category": "pant",
     "name": "Women’s 874 Work Pants Dark Navy",
     "brand": "Dickies",
@@ -1268,7 +1268,7 @@
     "color": ["Black", "Blue", "White"]
   },
   {
-    "gender": "women",
+    "gender": ["women", "all"],
     "category": "pant",
     "name": "Women’s 874 Work Pants Khaki",
     "brand": "Dickies",
@@ -1285,7 +1285,7 @@
     "color": ["Black", "Blue", "White"]
   },
   {
-    "gender": "women",
+    "gender": ["women", "all"],
     "category": "pant",
     "name": "Women's Plus 874 Original Work Pants",
     "brand": "Dickies",
@@ -1302,7 +1302,7 @@
     "color": ["Black", "Blue", "White"]
   },
   {
-    "gender": "women",
+    "gender": ["women", "all"],
     "category": "pant-short",
     "name": "Women's Relaxed Fit Cargo Shorts Black",
     "brand": "Dickies",
@@ -1318,7 +1318,7 @@
     "color": ["Black", "Blue", "White"]
   },
   {
-    "gender": "women",
+    "gender": ["women", "all"],
     "category": "pant-short",
     "name": "Women's FLEX DuraTech Straight Fit Shorts",
     "brand": "Dickies",
@@ -1335,7 +1335,7 @@
     "color": ["Black", "Blue", "White"]
   },
   {
-    "gender": "women",
+    "gender": ["women", "all"],
     "category": "pant-short",
     "name": "Women's Cooling Slim Fit Cargo Shorts",
     "brand": "Dickies",
@@ -1352,7 +1352,7 @@
     "color": ["Black", "Blue", "White"]
   },
   {
-    "gender": "women",
+    "gender": ["women", "all"],
     "category": "pant-short",
     "name": "Women's Temp-iQ 365 Shorts",
     "brand": "Dickies",
@@ -1369,7 +1369,7 @@
     "color": ["Black", "Blue", "White"]
   },
   {
-    "gender": "women",
+    "gender": ["women", "all"],
     "category": "pant-short",
     "name": "Women's Ripstop Cargo Shorts",
     "brand": "Dickies",
@@ -1385,7 +1385,7 @@
     "color": ["Black", "Blue", "White"]
   },
   {
-    "gender": "women",
+    "gender": ["women", "all"],
     "category": "pant-short",
     "name": "Traeger x Dickies Women's Relaxed Fit Shorts",
     "brand": "Dickies",
@@ -1401,7 +1401,7 @@
     "color": ["Black", "Blue", "White"]
   },
   {
-    "gender": "women",
+    "gender": ["women", "all"],
     "category": "pant-short",
     "name": "Women’s Relaxed Fit Carpenter Shorts",
     "brand": "Dickies",
@@ -1417,7 +1417,7 @@
     "color": ["Black", "Blue", "White"]
   },
   {
-    "gender": "women",
+    "gender": ["women", "all"],
     "category": "pant-short",
     "name": "Women’s Relaxed Fit Carpenter Shorts 2",
     "brand": "Dickies",
@@ -1433,7 +1433,7 @@
     "color": ["Black", "Blue", "White"]
   },
   {
-    "gender": "women",
+    "gender": ["women", "all"],
     "category": "skirts-dresses",
     "name": "Women's Twill Pleated Skirt",
     "brand": "Dickies",
@@ -1449,7 +1449,7 @@
     "color": ["Black", "Blue", "White"]
   },
   {
-    "gender": "women",
+    "gender": ["women", "all"],
     "category": "skirts-dresses",
     "name": "Women's Chain Lake Tank Dress",
     "brand": "Dickies",
@@ -1466,7 +1466,7 @@
     "color": ["Black", "Blue", "White"]
   },
   {
-    "gender": "women",
+    "gender": ["women", "all"],
     "category": "skirts-dresses",
     "name": "Women's High Waisted Carpenter Skirt",
     "brand": "Dickies",
@@ -1482,7 +1482,7 @@
     "color": ["Black", "Blue", "White"]
   },
   {
-    "gender": "women",
+    "gender": ["women", "all"],
     "category": "skirts-dresses",
     "name": "Women's Regular Fit Hickory Stripe Bib Overall Dress",
     "brand": "Dickies",
@@ -1498,7 +1498,7 @@
     "color": ["Black", "Blue", "White"]
   },
   {
-    "gender": "women",
+    "gender": ["women", "all"],
     "category": "skirts-dresses",
     "name": "Women's Elizaville Skirt",
     "brand": "Dickies",
@@ -1514,7 +1514,7 @@
     "color": ["Black", "Blue", "White"]
   },
   {
-    "gender": "women",
+    "gender": ["women", "all"],
     "category": "skirts-dresses",
     "name": "Women's Bib Overall Dress",
     "brand": "Dickies",
@@ -1530,7 +1530,7 @@
     "color": ["Black", "Blue", "White"]
   },
   {
-    "gender": "women",
+    "gender": ["women", "all"],
     "category": "skirts-dresses",
     "name": "Women’s Madison Skirt",
     "brand": "Dickies",
@@ -1546,7 +1546,7 @@
     "color": ["Black", "Blue", "White"]
   },
   {
-    "gender": "women",
+    "gender": ["women", "all"],
     "category": "skirts-dresses",
     "name": "Women's Mapleton T-Shirt Dress",
     "brand": "Dickies",
@@ -1561,7 +1561,7 @@
     "color": ["Black", "Blue", "White"]
   },
   {
-    "gender": "women",
+    "gender": ["women", "all"],
     "category": "shirts",
     "name": "Women’s V-Neck T-Shirt",
     "brand": "Dickies",
@@ -1578,7 +1578,7 @@
     "color": ["Black", "Blue", "White"]
   },
   {
-    "gender": "women",
+    "gender": ["women", "all"],
     "category": "shirts",
     "name": "Women’s Altoona Striped T-Shirt",
     "brand": "Dickies",
@@ -1595,7 +1595,7 @@
     "color": ["Black", "Blue", "White"]
   },
   {
-    "gender": "women",
+    "gender": ["women", "all"],
     "category": "shirts",
     "name": "Women’s Floral Graphic Boxy T-Shirt",
     "brand": "Dickies",
@@ -1611,7 +1611,7 @@
     "color": ["Black", "Blue", "White"]
   },
   {
-    "gender": "women",
+    "gender": ["women", "all"],
     "category": "shirts",
     "name": "Women’s Boxy Graphic T-Shirt",
     "brand": "Dickies",
@@ -1627,7 +1627,7 @@
     "color": ["Black", "Blue", "White"]
   },
   {
-    "gender": "women",
+    "gender": ["women", "all"],
     "category": "shirts",
     "name": "Women’s Altoona Graphic T-Shirt",
     "brand": "Dickies",
@@ -1643,7 +1643,7 @@
     "color": ["Black", "Blue", "White"]
   },
   {
-    "gender": "women",
+    "gender": ["women", "all"],
     "category": "shirts",
     "name": "Women’s Newington Long Sleeve T-Shirt",
     "brand": "Dickies",
@@ -1659,7 +1659,7 @@
     "color": ["Black", "Blue", "White"]
   },
   {
-    "gender": "women",
+    "gender": ["women", "all"],
     "category": "shirts",
     "name": "Women's Distressed Logo Cropped T-Shirt",
     "brand": "Dickies",
@@ -1675,7 +1675,7 @@
     "color": ["Black", "Blue", "White"]
   },
   {
-    "gender": "women",
+    "gender": ["women", "all"],
     "category": "shirts",
     "name": "Breast Cancer Awareness Heavyweight T-Shirt",
     "brand": "Dickies",
@@ -1691,7 +1691,7 @@
     "color": ["Pink", "Blue", "White"]
   },
   {
-    "gender": "women",
+    "gender": ["women", "all"],
     "category": "outerwear",
     "name": "Women’s Plus Duck Hooded Shirt Jacket",
     "brand": "Dickies",
@@ -1707,7 +1707,7 @@
     "color": ["Pink", "Blue", "White"]
   },
   {
-    "gender": "women",
+    "gender": ["women", "all"],
     "category": "outerwear",
     "name": "Women's Plus Quilted Bomber Jacket",
     "brand": "Dickies",
@@ -1723,7 +1723,7 @@
     "color": ["Pink", "Blue", "White"]
   },
   {
-    "gender": "women",
+    "gender": ["women", "all"],
     "category": "outerwear",
     "name": "Women's Plus Water Repellent Sleeve Logo Hoodie",
     "brand": "Dickies",
@@ -1739,7 +1739,7 @@
     "color": ["Pink", "Blue", "White"]
   },
   {
-    "gender": "women",
+    "gender": ["women", "all"],
     "category": "outerwear",
     "name": "Women’s Plus Quilted Vest",
     "brand": "Dickies",
@@ -1755,7 +1755,7 @@
     "color": ["Black", "Blue", "White"]
   },
   {
-    "gender": "women",
+    "gender": ["women", "all"],
     "category": "outerwear",
     "name": "Women's Plus Heavyweight Full-Zip Hoodie",
     "brand": "Dickies",
@@ -1771,7 +1771,7 @@
     "color": ["Black"]
   },
   {
-    "gender": "women",
+    "gender": ["women", "all"],
     "category": "outerwear",
     "name": "Women's Plus Performance Hooded Jacket",
     "brand": "Dickies",
@@ -1787,7 +1787,7 @@
     "color": ["Black", "Blue", "White"]
   },
   {
-    "gender": "women",
+    "gender": ["women", "all"],
     "category": "coasts-jackets",
     "name": "Women’s Insulated Waterproof Jacket",
     "brand": "Dickies",
@@ -1803,7 +1803,7 @@
     "color": ["Black", "Blue", "White"]
   },
   {
-    "gender": "women",
+    "gender": ["women", "all"],
     "category": "coasts-jackets",
     "name": "Women's Duck High Pile Fleece Lined Chore Coat",
     "brand": "Dickies",
@@ -1819,7 +1819,7 @@
     "color": ["Black", "Blue", "White"]
   },
   {
-    "gender": "women",
+    "gender": ["women", "all"],
     "category": "coasts-jackets",
     "name": "Women’s Duck Canvas Fleece Lined Jacket",
     "brand": "Dickies",
@@ -1835,7 +1835,7 @@
     "color": ["Black", "Blue", "White"]
   },
   {
-    "gender": "women",
+    "gender": ["women", "all"],
     "category": "coasts-jackets",
     "name": "Women's Madison Denim Jacket",
     "brand": "Dickies",
@@ -1851,7 +1851,7 @@
     "color": ["Black", "Blue", "White"]
   },
   {
-    "gender": "women",
+    "gender": ["women", "all"],
     "category": "coasts-jackets",
     "name": "Women's Duck Canvas Chore Coat",
     "brand": "Dickies",
@@ -1867,7 +1867,7 @@
     "color": ["Black", "Blue", "White"]
   },
   {
-    "gender": "women",
+    "gender": ["women", "all"],
     "category": "coasts-jackets",
     "name": "Women’s Oakport Cropped Coaches Jacket",
     "brand": "Dickies",
@@ -1883,7 +1883,7 @@
     "color": ["Black", "Blue", "White"]
   },
   {
-    "gender": "women",
+    "gender": ["women", "all"],
     "category": "coasts-jackets",
     "name": "Women's Flannel High Pile Fleece Lined Chore Coat",
     "brand": "Dickies",
@@ -1899,7 +1899,7 @@
     "color": ["Black", "Blue", "White"]
   },
   {
-    "gender": "women",
+    "gender": ["women", "all"],
     "category": "coasts-jackets",
     "name": "Women’s Waterproof Rain Jacket",
     "brand": "Dickies",
@@ -1915,7 +1915,7 @@
     "color": ["Black", "Blue", "White"]
   },
   {
-    "gender": "women",
+    "gender": ["women", "all"],
     "category": "coasts-jackets",
     "name": "Women’s Overbrook Puffer Jacket",
     "brand": "Dickies",
@@ -1931,7 +1931,7 @@
     "color": ["Black", "Blue", "White"]
   },
   {
-    "gender": "kids",
+    "gender": ["kids", "all"],
     "category": "pant",
     "name": "Boys' 873 Slim Fit Pants",
     "brand": "Dickies",
@@ -1947,7 +1947,7 @@
     "color": ["Black", "Blue", "White"]
   },
   {
-    "gender": "kids",
+    "gender": ["kids", "all"],
     "category": "pant",
     "name": "Boys' FLEX Slim Fit Pants",
     "brand": "Dickies",
@@ -1962,7 +1962,7 @@
     "color": ["Black", "Blue", "White"]
   },
   {
-    "gender": "kids",
+    "gender": ["kids", "all"],
     "category": "pant",
     "name": "Boys' Classic Fit Pants Black",
     "brand": "Dickies",
@@ -1977,7 +1977,7 @@
     "color": ["Black", "Blue", "White"]
   },
   {
-    "gender": "kids",
+    "gender": ["kids", "all"],
     "category": "pant",
     "name": "Boys' FLEX Skinny Fit Double Knee Pants",
     "brand": "Dickies",
@@ -1991,7 +1991,7 @@
     "color": ["Black", "Blue", "White"]
   },
   {
-    "gender": "kids",
+    "gender": ["kids", "all"],
     "category": "pant",
     "name": "Boys' Classic Fit Pants Black 2",
     "brand": "Dickies",
@@ -2007,7 +2007,7 @@
     "color": ["Black", "Blue", "White"]
   },
   {
-    "gender": "kids",
+    "gender": ["kids", "all"],
     "category": "pant",
     "name": "Boys' FLEX Skinny Fit Pants",
     "brand": "Dickies",
@@ -2021,7 +2021,7 @@
     "color": ["Black", "Blue", "White"]
   },
   {
-    "gender": "kids",
+    "gender": ["kids", "all"],
     "category": "pant",
     "name": "Boys’ Original 874® Work Pants",
     "brand": "Dickies",
@@ -2037,7 +2037,7 @@
     "color": ["Black", "Blue", "White"]
   },
   {
-    "gender": "kids",
+    "gender": ["kids", "all"],
     "category": "pant",
     "name": "Boys’ Double Knee Work Pants",
     "brand": "Dickies",
@@ -2053,7 +2053,7 @@
     "color": ["Black", "Blue", "White"]
   },
   {
-    "gender": "kids",
+    "gender": ["kids", "all"],
     "category": "pant-short",
     "name": "Boys' Classic Fit Shorts",
     "brand": "Dickies",
@@ -2069,7 +2069,7 @@
     "color": ["Black", "Blue", "White"]
   },
   {
-    "gender": "kids",
+    "gender": ["kids", "all"],
     "category": "pant-short",
     "name": "Boys' FLEX Slim Fit Shorts",
     "brand": "Dickies",
@@ -2083,7 +2083,7 @@
     "color": ["Black", "Blue", "White"]
   },
   {
-    "gender": "kids",
+    "gender": ["kids", "all"],
     "category": "pant-short",
     "name": "Boys' Husky Classic Fit Shorts",
     "brand": "Dickies",
@@ -2099,7 +2099,7 @@
     "color": ["Black", "Blue", "White"]
   },
   {
-    "gender": "kids",
+    "gender": ["kids", "all"],
     "category": "pant-short",
     "name": "Adult Size Classic Fit Shorts",
     "brand": "Dickies",
@@ -2113,7 +2113,7 @@
     "color": ["Black", "Blue", "White"]
   },
   {
-    "gender": "kids",
+    "gender": ["kids", "all"],
     "category": "shirts",
     "name": "Adult Size Piqué Short Sleeve Polo",
     "brand": "Dickies",
@@ -2129,7 +2129,7 @@
     "color": ["Black", "Blue", "White"]
   },
   {
-    "gender": "kids",
+    "gender": ["kids", "all"],
     "category": "shirts",
     "name": "Kids' Piqué Short Sleeve Polo",
     "brand": "Dickies",
@@ -2143,7 +2143,7 @@
     "color": ["Black", "Blue", "White"]
   },
   {
-    "gender": "kids",
+    "gender": ["kids", "all"],
     "category": "coasts-jackets",
     "name": "Kids' Fleece Lined Jacket",
     "brand": "Dickies",
@@ -2157,7 +2157,7 @@
     "color": ["Black", "Blue", "White"]
   },
   {
-    "gender": "kids",
+    "gender": ["kids", "all"],
     "category": "overalls",
     "name": "Kids' Denim Overalls",
     "brand": "Dickies",
@@ -2174,7 +2174,7 @@
     "color": ["Black", "Blue", "White"]
   },
   {
-    "gender": "kids",
+    "gender": ["kids", "all"],
     "category": "overalls",
     "name": "Kids' Duck Overalls",
     "brand": "Dickies",
@@ -2227,7 +2227,7 @@
     "color": ["Red/Yellow/White/Black"]
   },
   {
-    "gender": "men",
+    "gender": ["men", "all"],
     "category": "jean-pants",
     "name": "Relaxed Fit Carpenter Jeans",
     "brand": "Dickies",
@@ -2244,7 +2244,7 @@
     "color": ["Blue", "Black"]
   },
   {
-    "gender": "women",
+    "gender": ["women", "all"],
     "category": "jean-pants",
     "name": "Women’s Regular Fit Work Jeans",
     "brand": "Dickies",
@@ -2261,7 +2261,7 @@
     "color": ["Blue", "Black"]
   },
   {
-    "gender": "men",
+    "gender": ["men", "all"],
     "category": "jean-pants",
     "name": "Regular Fit Jeans",
     "brand": "Dickies",
@@ -2293,7 +2293,7 @@
     "color": ["Blue", "Black"]
   },
   {
-    "gender": "men",
+    "gender": ["men", "all"],
     "category": "jean-pants",
     "name": "FLEX Active Waist Relaxed Fit Jeans",
     "brand": "Dickies",
@@ -2308,7 +2308,7 @@
     "color": ["Blue", "Black"]
   },
   {
-    "gender": "women",
+    "gender": ["women", "all"],
     "category": "jean-pants",
     "name": "Women's FLEX Relaxed Fit Carpenter Jeans",
     "brand": "Dickies",
@@ -2325,7 +2325,7 @@
     "color": ["Blue", "Black"]
   },
   {
-    "gender": "men",
+    "gender": ["men", "all"],
     "category": "carpenter-pants",
     "name": "Relaxed Fit Heavyweight Duck Carpenter Pants",
     "brand": "Dickies",
@@ -2342,7 +2342,7 @@
     "color": ["Brown", "Black"]
   },
   {
-    "gender": "women",
+    "gender": ["women", "all"],
     "category": "carpenter-pants",
     "name": "Women's FLEX Relaxed Fit Duck Carpenter Pants",
     "brand": "Dickies",
@@ -2357,7 +2357,7 @@
     "color": ["Brown", "Black"]
   },
   {
-    "gender": "men",
+    "gender": ["men", "all"],
     "category": "carpenter-pants",
     "name": "FLEX Regular Fit Duck Carpenter Pants",
     "brand": "Dickies",
@@ -2374,7 +2374,7 @@
     "color": ["Brown", "Black"]
   },
   {
-    "gender": "women",
+    "gender": ["women", "all"],
     "category": "carpenter-pants",
     "name": "Women's FLEX Relaxed Straight Fit Duck Carpenter Pants",
     "brand": "Dickies",
@@ -2391,7 +2391,7 @@
     "color": ["Brown", "Black"]
   },
   {
-    "gender": "men",
+    "gender": ["men", "all"],
     "category": "carpenter-pants",
     "name": "Relaxed Fit Sanded Duck Carpenter Pants",
     "brand": "Dickies",
@@ -2405,7 +2405,7 @@
     "color": ["Brown", "Black"]
   },
   {
-    "gender": "women",
+    "gender": ["women", "all"],
     "category": "carpenter-pants",
     "name": "Women's FLEX DuraTech Straight Fit Pants",
     "brand": "Dickies",

@@ -18,12 +18,7 @@ export const nav = [
     },
     {
         id: 4,
-        value: "Scrubs",
-        path: `/${path.SCRUBS}`
-    },
-    {
-        id: 5,
-        value: "Sale",
-        path: `/${path.SALE}`
-    },
+        value: "All",
+        path: `${path.ALL}`
+    }
 ]

@@ -6,7 +6,7 @@ import { Login, Home, Public } from "./pages/public";
 import path from "./ultils/path";
 
 import "react-multi-carousel/lib/styles.css";
-import { getCategories } from "./store/asyncActions";
+import { getCategories, getProductByCategory } from "./store/asyncActions";
 import { useEffect } from "react";
 
 function App() {

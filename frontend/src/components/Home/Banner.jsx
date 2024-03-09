@@ -2,7 +2,7 @@ import React from "react";
 
 import { Link } from "react-router-dom";
 
-import banner from "../img/banner-home.jpg";
+import banner from "../../img/banner-home.jpg";
 
 function Banner() {
   return (

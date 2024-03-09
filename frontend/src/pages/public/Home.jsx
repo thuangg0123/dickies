@@ -1,15 +1,36 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import path from "../../ultils/path.js";
 
-import { Banner } from "../../components";
-import Carousels from "../../components/Carousels.jsx";
-import SubBanner from "../../components/SubBanner.jsx";
+import {
+  Banner,
+  CarouselProduct,
+  Carousels,
+  SubBanner,
+  BoxSubBanner,
+  NeedHelps,
+  Footer,
+  BtnScrollTop,
+} from "../../components";
 
 import subbanner1 from "../../img/banner-sub1.jpg";
 import subbanner2 from "../../img/banner-sub2.jpg";
 import subbanner3 from "../../img/banner-sub3.jpg";
-import CarouselProduct from "../../components/CarouselProduct.jsx";
+import boxbanner1 from "../../img/box-banner1.jpg";
+import boxbanner2 from "../../img/box-banner2.jpg";
+
+import { getProductByCategory } from "../../store/asyncActions.js";
 
 function Home() {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    const categories = ["jean-pants", "carpenter-pants", "pant"];
+    categories.forEach((category) => {
+      dispatch(getProductByCategory(category));
+    });
+  }, []);
+
   return (
     <>
       <div className="w-main pt-[80px]">
@@ -27,7 +48,7 @@ function Home() {
             subtitle={"RESPECT THE CLASSICS"}
           />
           <div className="px-10 py-2 my-10">
-            <CarouselProduct />
+            <CarouselProduct category="jean-pants" />
           </div>
         </div>
         <div>
@@ -37,7 +58,7 @@ function Home() {
             subtitle={"RESPECT THE CLASSICS"}
           />
           <div className="px-10 py-2 my-10">
-            <CarouselProduct />
+            <CarouselProduct category="carpenter-pants" />
           </div>
         </div>
         <div>
@@ -47,10 +68,25 @@ function Home() {
             subtitle={"RESPECT THE CLASSICS"}
           />
           <div className="px-10 py-2 my-10">
-            <CarouselProduct />
+            <CarouselProduct category="pant" />
           </div>
         </div>
+        <div className="flex px-10 py-2 mb-10 justify-between gap-10">
+          <BoxSubBanner
+            img={boxbanner1}
+            title="Premium Collection"
+            path={path.ALL}
+          />
+          <BoxSubBanner
+            img={boxbanner2}
+            title="Coveralls & Overalls"
+            path={path.OVERALLS}
+          />
+        </div>
+        <NeedHelps />
       </div>
+      <Footer />
+      <BtnScrollTop />
     </>
   );
 }
