@@ -24,8 +24,8 @@ export const appSlice = createSlice({
         })
         builder.addCase(actions.getCategories.rejected, (state, action) => {
             state.isLoading = false
-            state.categories = null
-            state.isError = action.payload.message
+            state.categories = []
+            state.isError = true
         })
 
         // get product by category
@@ -34,7 +34,7 @@ export const appSlice = createSlice({
         })
         builder.addCase(actions.getProductByCategory.fulfilled, (state, action) => {
             state.isLoadingProducts = false;
-            state.productByCategory.push(...action.payload);
+            state.productByCategory = [...state.productByCategory, ...action.payload];
         })
         builder.addCase(actions.getProductByCategory.rejected, (state, action) => {
             state.isLoadingProducts = false

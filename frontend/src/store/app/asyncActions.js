@@ -1,16 +1,19 @@
 import { createAsyncThunk } from '@reduxjs/toolkit'
-import * as apis from '../apis'
+import * as apis from '../../apis'
 
 export const getCategories = createAsyncThunk(
     'app/categories',
-    async (data, { rejectWithValue }) => {
-        const response = await apis.apiGetCategories()
-        if (!response.success) {
-            return rejectWithValue(response)
+    async (_, { rejectWithValue }) => {
+        try {
+            const response = await apis.apiGetCategories()
+            console.log(response)
+            return response.data
+        } catch (error) {
+            return rejectWithValue(error.response.data)
         }
-        return response.data
     },
 )
+
 
 export const getProductByCategory = createAsyncThunk(
     'app/productsByCategory',
@@ -19,7 +22,7 @@ export const getProductByCategory = createAsyncThunk(
             const response = await apis.apiGetProductByCategory(category)
             return response.dataProduct
         } catch (error) {
-            rejectWithValue(response)
+            rejectWithValue(error)
         }
     },
 )

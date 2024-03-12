@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import { nav } from "../ultils/constans";
 import { NavLink } from "react-router-dom";
 import DropDrownMenu from "./DropDrownMenu";
+
+import { nav } from "../ultils/constans";
 
 function Navigations() {
   const [showSubMenu, setShowSubMenu] = useState(false);
@@ -46,9 +47,12 @@ function Navigations() {
                 >
                   {item.value}
                 </NavLink>
-                {showSubMenu && currentCategory === item.value && (
-                  <DropDrownMenu category={currentCategory} />
-                )}
+                {showSubMenu &&
+                  currentCategory === item.value &&
+                  item.value !== "Blog" &&
+                  item.value !== "FAQ" && (
+                    <DropDrownMenu category={currentCategory} />
+                  )}
               </div>
             );
           })}

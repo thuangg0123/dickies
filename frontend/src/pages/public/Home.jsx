@@ -19,13 +19,13 @@ import subbanner3 from "../../img/banner-sub3.jpg";
 import boxbanner1 from "../../img/box-banner1.jpg";
 import boxbanner2 from "../../img/box-banner2.jpg";
 
-import { getProductByCategory } from "../../store/asyncActions.js";
+import { getProductByCategory } from "../../store/app/asyncActions";
 
 function Home() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    const categories = ["jean-pants", "carpenter-pants", "pant"];
+    const categories = ["jean-pants", "carpenter-pants", "pants"];
     categories.forEach((category) => {
       dispatch(getProductByCategory(category));
     });
@@ -33,7 +33,7 @@ function Home() {
 
   return (
     <>
-      <div className="w-main pt-[80px]">
+      <div>
         <Banner />
         <div className="px-10 py-2 mb-10">
           <h2 className="mb-10 font-bold text-[54px] tracking-tighter">
@@ -68,7 +68,7 @@ function Home() {
             subtitle={"RESPECT THE CLASSICS"}
           />
           <div className="px-10 py-2 my-10">
-            <CarouselProduct category="pant" />
+            <CarouselProduct category="pants" />
           </div>
         </div>
         <div className="flex px-10 py-2 mb-10 justify-between gap-10">

@@ -9,6 +9,9 @@ function Carousels() {
   const categories = useSelector((state) => {
     return state.app.categories;
   });
+
+  const categoriesHaveImg = categories.filter((category) => category.img);
+
   const responsive = {
     desktop: {
       breakpoint: { max: 3000, min: 1024 },
@@ -30,12 +33,14 @@ function Carousels() {
         responsive={responsive}
         additionalTransfrom={0}
         arrows
-        autoPlaySpeed={3000}
+        autoPlaySpeed={1000}
         centerMode={false}
         className=""
+        containerClass="container"
         dotListClass=""
         draggable
-        focusOnSelect={false}
+        focusOnSelect
+        infinite={false}
         itemClass=""
         keyBoardControl
         minimumTouchDrag={80}
@@ -43,23 +48,16 @@ function Carousels() {
         renderArrowsWhenDisabled={false}
         renderButtonGroupOutside={false}
         renderDotsOutside={false}
-        rewind={false}
-        rewindWithAnimation={false}
-        rtl={false}
-        shouldResetAutoplay
-        showDots={false}
-        sliderClass=""
-        slidesToSlide={1}
-        swipeable
       >
-        {categories &&
-          categories.length > 0 &&
-          categories.map(
+        {categoriesHaveImg &&
+          categoriesHaveImg.length > 0 &&
+          categoriesHaveImg.map(
             (category, index) =>
               category.img && (
                 <NavLink
                   key={index}
-                  to={`/category/${createSlug(category.title)}`}
+                  categoriesHaveImg
+                  to={`/products/${createSlug(category.title)}`}
                 >
                   <div className="px-2 cursor-pointer">
                     <img src={category.img} alt={`Slide ${index + 1}`} />
