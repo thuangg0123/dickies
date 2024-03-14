@@ -13,8 +13,10 @@ import Input from "@mui/material/Input";
 import SearchIcon from "@mui/icons-material/Search";
 import Person2OutlinedIcon from "@mui/icons-material/Person2Outlined";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
+import TuneIcon from '@mui/icons-material/Tune';
 
 const icons = {
+    TuneIcon,
     StarIcon,
     StarOutlineIcon,
     BookmarkBorderOutlinedIcon,

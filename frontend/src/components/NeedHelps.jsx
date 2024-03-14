@@ -2,13 +2,13 @@ import React from "react";
 
 import { Link } from "react-router-dom";
 
-import icons from "../../ultils/icons";
+import icons from "../ultils/icons";
 
 const NeedHelps = () => {
   const { ChatBubbleOutlineIcon } = icons;
   return (
     <>
-      <section className="mb-20 bg-[#F5F5F5] p-10 tracking-tighter">
+      <section className="bg-[#F5F5F5] p-10 tracking-tighter">
         <h2 className="text-[80px] font-semibold py-4">Need Help?</h2>
         <div className="grid grid-cols-4 gap-4 font-medium">
           <div className="col-span-1">

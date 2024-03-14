@@ -6,8 +6,7 @@ export const getProductByGender = createAsyncThunk(
     async ({ gender }, { rejectWithValue }) => {
         try {
             const response = await apis.apiGetProductByGender(gender);
-            console.log("response: ", response.dataProduct);
-            return response.dataProduct;
+            return response
         } catch (error) {
             return rejectWithValue(error.response.data);
         }

@@ -1,9 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import icons from "../../ultils/icons";
+import { useEffect } from "react";
 
-function ProductCard({ product, index }) {
+function ProductCard({ product, isHoverEnabled }) {
   const { StarIcon, StarOutlineIcon, BookmarkBorderOutlinedIcon } = icons;
+  const [hoveredImage, setHoveredImage] = useState(product.thumb);
+
+  useEffect(() => {
+    setHoveredImage(product.thumb);
+  }, [product]);
 
   const renderStarFromNumber = (number) => {
     if (!Number(number)) {
@@ -24,23 +30,27 @@ function ProductCard({ product, index }) {
       <Link
         to={`/products/${product.gender[0]}s-clothing/${product.category}/${product.slug}/${product?._id}`}
       >
-        <div className="px-2 cursor-pointer relative">
-          <img src={product.thumb} alt={product.title} />
+        <div
+          className="px-2 cursor-pointer relative"
+          onMouseEnter={() =>
+            isHoverEnabled && setHoveredImage(product.images[0])
+          }
+          onMouseLeave={() => isHoverEnabled && setHoveredImage(product.thumb)}
+        >
+          <img src={hoveredImage} alt={product.title} />
           <div className="flex flex-col justify-between gap-2">
             <div>
               <ul className="flex mt-4 gap-3">
-                <li className="cursor-pointer w-8 h-8 border-2 border-gray-400 rounded-full flex items-center justify-center overflow-hidden hover:border-black">
-                  <div className="w-6 h-6 rounded-full bg-[#506070]"></div>
-                </li>
-                <li className="cursor-pointer w-8 h-8 border-2 border-gray-400 rounded-full flex items-center justify-center overflow-hidden hover:border-black">
-                  <div className="w-6 h-6 rounded-full bg-black"></div>
-                </li>
-                <li className="cursor-pointer w-8 h-8 border-2 border-gray-400 rounded-full flex items-center justify-center overflow-hidden hover:border-black">
-                  <div className="w-6 h-6 rounded-full bg-[#626262]"></div>
-                </li>
+                {product.color.map((color, index) => (
+                  <li
+                    key={index}
+                    className="cursor-pointer w-8 h-8 border-2 border-gray-400 rounded-full flex items-center justify-center overflow-hidden hover:border-black"
+                    style={{ backgroundColor: color }}
+                  ></li>
+                ))}
               </ul>
             </div>
-            <h3 className="font-medium text-base overflow-hidden whitespace-nowrap overflow-ellipsis">
+            <h3 className="font-medium text-[15px] overflow-hidden whitespace-nowrap overflow-ellipsis">
               <Link
                 to={`/${product.gender[0]}-clothing/${product.category}/${product.slug}`}
               >
@@ -48,7 +58,7 @@ function ProductCard({ product, index }) {
               </Link>
             </h3>
             <div>
-              <span>{product.price}$</span>
+              <span className="text-sm">${product.price}</span>
             </div>
             <span>{renderStarFromNumber(product.totalRatings)}</span>
           </div>

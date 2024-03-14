@@ -6,14 +6,12 @@ export const getCategories = createAsyncThunk(
     async (_, { rejectWithValue }) => {
         try {
             const response = await apis.apiGetCategories()
-            console.log(response)
             return response.data
         } catch (error) {
             return rejectWithValue(error.response.data)
         }
     },
 )
-
 
 export const getProductByCategory = createAsyncThunk(
     'app/productsByCategory',

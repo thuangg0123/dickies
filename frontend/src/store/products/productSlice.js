@@ -6,7 +6,8 @@ export const productSlice = createSlice({
     initialState: {
         listProducts: [],
         isLoading: false,
-        isError: ''
+        isError: '',
+        counts: 0
     },
     reducers: {
 
@@ -17,7 +18,8 @@ export const productSlice = createSlice({
         })
         builder.addCase(actions.getProductByGender.fulfilled, (state, action) => {
             state.isLoading = false
-            state.listProducts = action.payload
+            state.listProducts = action.payload.dataProduct
+            state.counts = action.payload.counts
         })
         builder.addCase(actions.getProductByGender.rejected, (state, action) => {
             state.isLoading = false

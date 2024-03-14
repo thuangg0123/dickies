@@ -36,7 +36,9 @@ function App() {
             <Route
               key={gender}
               path={`${gender.path}`}
-              element={<ContainerProduct gender={gender.gender} />}
+              element={
+                <ContainerProduct gender={gender.gender} path={gender.path} />
+              }
             />
           ))}
           <Route
