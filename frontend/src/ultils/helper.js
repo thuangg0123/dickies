@@ -9,19 +9,3 @@ export const createSlug = (str) => {
         .replace(/-+/g, '-'); // Loại bỏ các dấu gạch ngang liên tiếp
     return str;
 }
-
-// export const formatMoney = (number) => Number(number.toFixed(1).toLocaleString())
-
-// export const renderStarFromNumber = (number) => {
-//     if (!Number(number)) {
-//         return
-//     }
-//     const stars = []
-//     for (let i = 0; i < +number; i++) {
-//         stars.push(<StarIcon />)
-//     }
-//     for (let i = 5; i > +number; i--) {
-//         stars.push(<StarOutlineIcon />)
-//     }
-//     return stars
-// }

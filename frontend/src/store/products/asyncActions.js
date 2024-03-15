@@ -12,3 +12,15 @@ export const getProductByGender = createAsyncThunk(
         }
     },
 )
+
+export const getDetailProduct = createAsyncThunk(
+    'product/getDetailProduct',
+    async ({ productId }, { rejectWithValue }) => {
+        try {
+            const response = await apis.apiGetDetailProduct(productId);
+            return response
+        } catch (error) {
+            return rejectWithValue(error.response.data);
+        }
+    },
+)

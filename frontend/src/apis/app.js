@@ -14,3 +14,8 @@ export const apiGetProductByGender = (gender) => axios({
     url: `/product?gender=${gender}`,
     method: 'get'
 })
+
+export const apiGetDetailProduct = (productId) => axios({
+    url: `/product/${productId}`,
+    method: 'get'
+})

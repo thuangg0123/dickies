@@ -3,7 +3,11 @@ import { Link } from "react-router-dom";
 import icons from "../../ultils/icons";
 import { useEffect } from "react";
 
+import { useDispatch } from "react-redux";
+import { getDetailProduct } from "../../store/products/asyncActions";
+
 function ProductCard({ product, isHoverEnabled }) {
+  const dispatch = useDispatch();
   const { StarIcon, StarOutlineIcon, BookmarkBorderOutlinedIcon } = icons;
   const [hoveredImage, setHoveredImage] = useState(product.thumb);
 
@@ -25,10 +29,15 @@ function ProductCard({ product, isHoverEnabled }) {
     return stars;
   };
 
+  const handleClick = (productId) => {
+    dispatch(getDetailProduct({ productId }));
+  };
+
   return (
     <>
       <Link
         to={`/products/${product.gender[0]}s-clothing/${product.category}/${product.slug}/${product?._id}`}
+        onClick={() => handleClick(product._id)}
       >
         <div
           className="px-2 cursor-pointer relative"

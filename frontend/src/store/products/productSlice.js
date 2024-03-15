@@ -7,7 +7,8 @@ export const productSlice = createSlice({
         listProducts: [],
         isLoading: false,
         isError: '',
-        counts: 0
+        counts: 0,
+        detailProduct: {}, // Add detailProduct to store the detail of a single product
     },
     reducers: {
 
@@ -22,6 +23,18 @@ export const productSlice = createSlice({
             state.counts = action.payload.counts
         })
         builder.addCase(actions.getProductByGender.rejected, (state, action) => {
+            state.isLoading = false
+            state.isError = true
+        })
+
+        builder.addCase(actions.getDetailProduct.pending, (state, action) => {
+            state.isLoading = true
+        })
+        builder.addCase(actions.getDetailProduct.fulfilled, (state, action) => {
+            state.isLoading = false
+            state.detailProduct = action.payload.dataProduct
+        })
+        builder.addCase(actions.getDetailProduct.rejected, (state, action) => {
             state.isLoading = false
             state.isError = true
         })
