@@ -8,7 +8,7 @@ export const productSlice = createSlice({
         isLoading: false,
         isError: '',
         counts: 0,
-        detailProduct: {}, // Add detailProduct to store the detail of a single product
+        detailProduct: {},
     },
     reducers: {
 

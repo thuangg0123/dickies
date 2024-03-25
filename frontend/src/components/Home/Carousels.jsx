@@ -10,7 +10,7 @@ function Carousels() {
     return state.app.categories;
   });
 
-  const categoriesHaveImg = categories.filter((category) => category.img);
+  const categorieshaveimg = categories.filter((category) => category.img);
 
   const responsive = {
     desktop: {
@@ -49,14 +49,14 @@ function Carousels() {
         renderButtonGroupOutside={false}
         renderDotsOutside={false}
       >
-        {categoriesHaveImg &&
-          categoriesHaveImg.length > 0 &&
-          categoriesHaveImg.map(
+        {categorieshaveimg &&
+          categorieshaveimg.length > 0 &&
+          categorieshaveimg.map(
             (category, index) =>
               category.img && (
                 <NavLink
                   key={index}
-                  categoriesHaveImg
+                  categorieshaveimg
                   to={`/products/${createSlug(category.title)}`}
                 >
                   <div className="px-2 cursor-pointer">
