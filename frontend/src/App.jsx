@@ -2,7 +2,16 @@ import "./App.css";
 import { useDispatch } from "react-redux";
 
 import { Route, Routes } from "react-router-dom";
-import { Login, Home, Public, FAQ, DetailProduct, Blog } from "./pages/public";
+import {
+  Login,
+  Home,
+  Public,
+  FAQ,
+  DetailProduct,
+  Blog,
+  FinalRegister,
+  ResetPassword,
+} from "./pages/public";
 import path from "./ultils/path";
 
 import "react-multi-carousel/lib/styles.css";
@@ -10,6 +19,9 @@ import { getCategories } from "./store/app/asyncActions";
 
 import { useEffect } from "react";
 import ContainerProduct from "./components/ContainerProduct/ContainerProduct";
+
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function App() {
   const genders = [
@@ -26,12 +38,27 @@ function App() {
 
   return (
     <div className="min-h-screen font-main">
+      <ToastContainer
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="dark"
+        transition:Bounce
+      />
       <Routes>
         <Route path={path.PUBLIC} element={<Public />}>
           <Route path={path.HOME} element={<Home />}></Route>
           <Route path={path.LOGIN} element={<Login />}></Route>
           <Route path={path.FAQ} element={<FAQ />}></Route>
           <Route path={path.BLOG} element={<Blog />}></Route>
+          <Route path={path.FINAL_REGISTER} element={<FinalRegister />}></Route>
+          <Route path={path.RESET_PASSWORD} element={<ResetPassword />}></Route>
           {genders.map((gender) => (
             <Route
               key={gender}

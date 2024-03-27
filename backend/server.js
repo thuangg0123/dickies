@@ -8,8 +8,9 @@ const { initRoutes } = require('./routes/index')
 
 const app = express()
 app.use(cors({
-    origin: process.env.CLIENT_URL,
-    methods: ['PUT', 'POST', 'GET', 'DELETE', 'OPTIONS']
+    origin: process.env.URL_CLIENT,
+    methods: ['PUT', 'POST', 'GET', 'DELETE', 'OPTIONS'],
+    credentials: true
 }))
 app.use(cookieParser())
 

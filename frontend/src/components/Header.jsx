@@ -70,7 +70,9 @@ function Header() {
             </span>
           </div>
           <div className="cursor-pointer hover:text-[#ccc] transition-colors duration-300">
-            <Person2OutlinedIcon />
+            <Link to="/login">
+              <Person2OutlinedIcon />
+            </Link>
           </div>
           <div className="cursor-pointer hover:text-[#ccc] transition-colors duration-300">
             <BookmarkBorderOutlinedIcon />

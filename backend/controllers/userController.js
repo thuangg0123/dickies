@@ -4,18 +4,47 @@ const { generateAccessToken, generateRefreshToken, } = require('../middleware/jw
 const jwt = require('jsonwebtoken')
 const { sendMail } = require('../ultils/sendMail')
 var crypto = require("crypto")
+const makeToken = require('uniqid')
+
+// const register = asyncHandler(async (req, res) => {
+//     const { email, password, firstName, lastName, mobile } = req.body
+
+//     if (!email || !password || !firstName || !lastName || !mobile) {
+//         return res.status(500).json({
+//             success: false,
+//             message: "Missing inputs",
+//             errorCode: -1
+//         })
+//     }
+
+//     const user = await User.findOne({
+//         email: email
+//     })
+
+//     if (user) {
+//         throw new Error("User has existed !")
+//     }
+//     else {
+//         const newUser = await User.create(req.body)
+//         return res.status(200).json({
+//             success: newUser ? true : false,
+//             message: newUser ? "Register is successfully, please go to login" : " Something went wrong, please try again ... ",
+//             data: newUser,
+//             errorCode: 0
+//         })
+//     }
+// })
 
 const register = asyncHandler(async (req, res) => {
-    const { email, password, firstName, lastName } = req.body
+    const { email, password, firstName, lastName, mobile } = req.body
 
-    if (!email || !password || !firstName || !lastName) {
+    if (!email || !password || !firstName || !lastName || !mobile) {
         return res.status(500).json({
-            sucess: false,
+            success: false,
             message: "Missing inputs",
             errorCode: -1
         })
     }
-
     const user = await User.findOne({
         email: email
     })
@@ -24,13 +53,40 @@ const register = asyncHandler(async (req, res) => {
         throw new Error("User has existed !")
     }
     else {
-        const newUser = await User.create(req.body)
-        return res.status(200).json({
-            sucess: newUser ? true : false,
-            message: newUser ? "Register is successfully, please go to login" : " Something went wrong, please try again ... ",
-            data: newUser,
-            errorCode: 0
+        const token = makeToken()
+        res.cookie('dataRegister', { ...req.body, token }, { httpOnly: true, maxAge: 15 * 60 * 1000 })
+        const html = `
+        Please click on the link below to complete the registration process. This link will be expired after 15 minutes
+        <a href="${process.env.URL_CLIENT}/api/user/final-register/${token}">Click here.</a>
+    `
+        await sendMail({ email, html, subject: "Completed register !!!" })
+        return res.json({
+            success: true,
+            message: "Please check your email to active account"
         })
+    }
+})
+
+const finalRegister = asyncHandler(async (req, res) => {
+    const cookie = req.cookies
+    const { token } = req.params
+    if (!cookie || cookie?.dataRegister?.token !== token) {
+        res.clearCookie('dataRegister')
+        return res.redirect(`${process.env.URL_CLIENT}/final-register/failed`)
+    }
+    const newUser = await User.create({
+        email: cookie?.dataRegister?.email,
+        password: cookie?.dataRegister?.password,
+        firstName: cookie?.dataRegister?.firstName,
+        lastName: cookie?.dataRegister?.lastName,
+        mobile: cookie?.dataRegister?.mobile,
+    })
+    res.clearCookie('dataRegister')
+    if (newUser) {
+        return res.redirect(`${process.env.URL_CLIENT}/final-register/success`)
+    }
+    else {
+        return res.redirect(`${process.env.URL_CLIENT}/final-register/failed`)
     }
 })
 
@@ -42,7 +98,7 @@ const login = asyncHandler(async (req, res) => {
 
     if (!email || !password) {
         return res.status(500).json({
-            sucess: false,
+            success: false,
             message: "Missing inputs",
             errorCode: -1
         })
@@ -63,7 +119,7 @@ const login = asyncHandler(async (req, res) => {
         // lưu refresh token vào cookie
         res.cookie("refreshToken", newRefreshToken, { httpOnly: true, maxAge: 24 * 60 * 60 * 1000 })
         return res.status(200).json({
-            sucess: true,
+            success: true,
             message: "Login successfully !",
             accessToken: accessToken,
             userData: userData,
@@ -82,7 +138,7 @@ const getCurrent = asyncHandler(async (req, res) => {
     }).select('-refreshToken -password -role')
 
     return res.status(200).json({
-        sucess: user ? true : false,
+        success: user ? true : false,
         message: user ? "Register is successfully, please go to login" : " Something went wrong, please try again ... ",
         data: user ? user : "User is not found",
         errorCode: user ? 0 : -1
@@ -104,7 +160,7 @@ const refreshAccesstoken = asyncHandler(async (req, res) => {
     })
 
     return res.status(200).json({
-        sucess: response ? true : false,
+        success: response ? true : false,
         newAccessToken: response ? generateAccessToken({
             _id: response._id,
             role: response.role
@@ -124,7 +180,7 @@ const logout = asyncHandler(async (req, res) => {
     }, { refreshToken: '' }, { new: true })
     res.clearCookie("refreshToken", { httpOnly: true, secure: true })
     return res.status(200).json({
-        sucess: true,
+        success: true,
         message: "Logout is successfully !",
         errorCode: 0
     })
@@ -138,7 +194,7 @@ const logout = asyncHandler(async (req, res) => {
 //change pass
 
 const forgotPassword = asyncHandler(async (req, res) => {
-    const { email } = req.query
+    const { email } = req.body
     if (!email) {
         throw new Error("Missing email")
     }
@@ -153,15 +209,16 @@ const forgotPassword = asyncHandler(async (req, res) => {
 
     const html = `
         Please click this link let change your password. This link will be expired after 15 minutes
-        <a href="${process.env.URL_CLIENT}/api/user/reset-password/${resetToken}">Click here.</a>
+        <a href="${process.env.URL_CLIENT}/reset-password/${resetToken}">Click here.</a>
     `
     const data = {
         email,
-        html
+        html,
+        subject: "Forgot password?"
     }
     const rsData = await sendMail(data)
     return res.status(200).json({
-        sucess: true,
+        success: true,
         data: rsData
     })
 })
@@ -183,7 +240,7 @@ const resetPassword = asyncHandler(async (req, res) => {
     await user.save()
 
     return res.status(200).json({
-        sucess: user ? true : false,
+        success: user ? true : false,
         message: user ? "Updated password" : "Something wrong, please try again ....",
         data: user ? user : '',
         errorcode: user ? 1 : 0
@@ -193,7 +250,7 @@ const resetPassword = asyncHandler(async (req, res) => {
 const getUsers = asyncHandler(async (req, res) => {
     const response = await User.find().select('-refreshToken -password -role')
     return res.status(200).json({
-        sucess: response ? true : false,
+        success: response ? true : false,
         message: response ? "Get all users" : "Something wrong, please try again ....",
         data: response ? response : [],
         errorcode: response ? 1 : 0
@@ -207,7 +264,7 @@ const deleteUser = asyncHandler(async (req, res) => {
     }
     const response = await User.findByIdAndDelete(_id)
     return res.status(200).json({
-        sucess: response ? true : false,
+        success: response ? true : false,
         message: response ? `Delete user with email ${response.email} is susccessfully` : "Something wrong, please try again ....",
         errorcode: response ? 1 : 0
     })
@@ -220,7 +277,7 @@ const updateUser = asyncHandler(async (req, res) => {
     }
     const response = await User.findByIdAndUpdate(_id, req.body, { new: true }).select('-password -role')
     return res.status(200).json({
-        sucess: response ? true : false,
+        success: response ? true : false,
         message: response ? `Update user is susccessfully` : "Something wrong, please try again ....",
         data: response ? response : [],
         errorcode: response ? 1 : 0
@@ -234,7 +291,7 @@ const updateUserByAdmin = asyncHandler(async (req, res) => {
     }
     const response = await User.findByIdAndUpdate(userId, req.body, { new: true }).select('-password -role')
     return res.status(200).json({
-        sucess: response ? true : false,
+        success: response ? true : false,
         message: response ? `Update user is susccessfully` : "Something wrong, please try again ....",
         data: response ? response : [],
         errorcode: response ? 1 : 0
@@ -248,7 +305,7 @@ const updateAddressUser = asyncHandler(async (req, res) => {
     }
     const response = await User.findByIdAndUpdate(_id, { $addToSet: { address: req.body.address } }, { new: true }).select('-password -role -refreshToken -createdAt -updatedAt -__v -passwordChangedAt')
     return res.status(200).json({
-        sucess: response ? true : false,
+        success: response ? true : false,
         message: response ? `Update address is susccessfully` : "Something wrong, please try again ....",
         data: response ? response : [],
         errorcode: response ? 1 : 0
@@ -267,7 +324,7 @@ const updateCart = asyncHandler(async (req, res) => {
         if (isExistProduct.color === color) {
             const response = await User.updateOne({ cart: { $elemMatch: isExistProduct } }, { $set: { "cart.$.quantity": quantity } }, { new: true })
             return res.status(200).json({
-                sucess: response ? true : false,
+                success: response ? true : false,
                 message: response ? `Update color is susccessfully` : "Something wrong, please try again ....",
                 data: response ? response : [],
                 errorcode: response ? 1 : 0
@@ -276,7 +333,7 @@ const updateCart = asyncHandler(async (req, res) => {
         else {
             const response = await User.findByIdAndUpdate(_id, { $push: { cart: { product: productId, quantity, color } } }, { new: true })
             return res.status(200).json({
-                sucess: response ? true : false,
+                success: response ? true : false,
                 message: response ? `Add new color is susccessfully` : "Something wrong, please try again ....",
                 data: response ? response : [],
                 errorcode: response ? 1 : 0
@@ -286,7 +343,7 @@ const updateCart = asyncHandler(async (req, res) => {
     else {
         const response = await User.findByIdAndUpdate(_id, { $push: { cart: { product: productId, quantity, color } } }, { new: true })
         return res.status(200).json({
-            sucess: response ? true : false,
+            success: response ? true : false,
             message: response ? `Update cart is susccessfully` : "Something wrong, please try again ....",
             data: response ? response : [],
             errorcode: response ? 1 : 0
@@ -296,5 +353,5 @@ const updateCart = asyncHandler(async (req, res) => {
 
 module.exports = {
     register, login, getCurrent, refreshAccesstoken, logout, forgotPassword, resetPassword,
-    getUsers, deleteUser, updateUser, updateUserByAdmin, updateAddressUser, updateCart
+    getUsers, deleteUser, updateUser, updateUserByAdmin, updateAddressUser, updateCart, finalRegister
 }

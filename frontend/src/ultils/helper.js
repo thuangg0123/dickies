@@ -9,3 +9,35 @@ export const createSlug = (str) => {
         .replace(/-+/g, '-'); // Loại bỏ các dấu gạch ngang liên tiếp
     return str;
 }
+
+export const validate = (payload, setInvalidFields) => {
+    let invalids = 0
+    const formatPayload = Object.entries(payload)
+    formatPayload.forEach(element => {
+        if (element[1].trim() === '') {
+            invalids++
+            setInvalidFields(prev => [...prev, { name: element[0], message: 'Require this field.' }])
+        }
+    });
+    formatPayload.forEach(element => {
+        switch (element[0]) {
+            case 'email':
+                const regex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
+                if (!element[1].match(regex)) {
+                    invalids++
+                    setInvalidFields(prev => [...prev, { name: element[0], message: 'Email invalid' }])
+                }
+                break;
+            case 'password':
+                if (element[1].length < 6) {
+                    invalids++
+                    setInvalidFields(prev => [...prev, { name: element[0], message: 'Password must be at least 6 characters or more' }])
+                }
+                break;
+
+            default:
+                break;
+        }
+    });
+    return invalids
+}

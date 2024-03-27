@@ -129,7 +129,7 @@ const deleteBlog = asyncHandler(async (req, res) => {
 
     return res.status(200).json({
         success: blog ? true : false,
-        data: blog ? 'delete blog sucess' : 'cannot delete blog'
+        data: blog ? 'delete blog success' : 'cannot delete blog'
     })
 })
 

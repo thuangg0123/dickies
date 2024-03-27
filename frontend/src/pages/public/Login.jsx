@@ -1,23 +1,140 @@
-import React, { useCallback, useState } from "react";
-import { Link } from "react-router-dom";
-
+import React, { useCallback, useEffect, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
 import { InputFields, Button } from "../../components";
+import { apiRegister, apiLogin, apiForgotPassword } from "../../apis/user";
+import { login } from "../../store/user/userSlice";
+import path from "../../ultils/path";
+import Swal from "sweetalert2";
+import { toast } from "react-toastify";
+
+import { validate } from "../../ultils/helper";
 
 const Login = () => {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
   const [payload, setPayload] = useState({
     email: "",
     password: "",
-    name: "",
+    firstName: "",
+    lastName: "",
+    mobile: "",
   });
+
+  const [invalidFields, setInvalidFields] = useState([]);
+
+  const [isForgotPassword, setIsForgotPassword] = useState(false);
+  const [email, setEmail] = useState("");
+  const [modalThanks, setModalThanks] = useState(false);
 
   const [isRegister, setIsRegister] = useState(false);
 
-  const handleSubmit = useCallback(() => {
-    console.log(payload);
-  }, [payload]);
+  const resetPayload = () => {
+    setPayload({
+      email: "",
+      password: "",
+      firstName: "",
+      lastName: "",
+      mobile: "",
+    });
+  };
+
+  //submit
+  const handleSubmit = useCallback(async () => {
+    const { firstName, lastName, mobile, ...data } = payload;
+    const invalids = isRegister
+      ? validate(payload, setInvalidFields)
+      : validate(data, setInvalidFields);
+
+    if (invalids === 0) {
+      if (isRegister) {
+        const response = await apiRegister(payload);
+        if (response.success) {
+          Swal.fire("Congratulation", response.message, "success").then(() => {
+            setIsRegister(false);
+            resetPayload();
+          });
+        } else {
+          Swal.fire("Oops !", response.message, "error");
+        }
+      } else {
+        const result = await apiLogin(data);
+        if (result.success) {
+          dispatch(
+            login({
+              isLoggedIn: true,
+              token: result.accessToken,
+              userData: result.userData,
+            })
+          );
+          navigate(`/${path.HOME}`);
+        } else {
+          Swal.fire("Oops !", result.message, "error");
+        }
+      }
+    }
+  }, [payload, isRegister, dispatch, navigate]);
+
+  useEffect(() => {
+    resetPayload();
+  }, [isRegister]);
+
+  const handleForgotPassword = async () => {
+    const response = await apiForgotPassword({ email });
+    if (response.success !== false) {
+      setModalThanks(true);
+    } else {
+      toast.error(response.message);
+    }
+  };
+
+  const handleCloseModal = () => {
+    setIsForgotPassword(false);
+    setModalThanks(false);
+    setEmail("");
+  };
+
   return (
     <>
-      <div className="top-0 left-0 relative h-full flex justify-center items-center font-second w-full">
+      {isForgotPassword && (
+        <div className="absolute top-0 left-0 bottom-0 right-0 bg-overlay flex justify-center items-center z-50">
+          <div className="bg-white w-[400px] p-8">
+            <div className="flex justify-between mb-10">
+              <h2 className="text-2xl font-semibold">
+                {modalThanks ? "Thanks" : "Forgot password?"}
+              </h2>
+              <button className="cursor-pointer" onClick={handleCloseModal}>
+                X
+              </button>
+            </div>
+            <div>
+              <p className="font-second mb-3">
+                {modalThanks
+                  ? `We've just sent you an email with instructions on how to reset your password. It might take a couple of minutes to reach you, but please check your junk folder just in case.`
+                  : "Don't worry - it's easily done! Just enter your email address below and we'll send you a link to reset your password."}
+              </p>
+              {!modalThanks && (
+                <div className="mt-3 mb-10">
+                  <label htmlFor="email"></label>
+                  <input
+                    type="text"
+                    id="email"
+                    placeholder="Email*"
+                    className="w-full p-4 outline-none border border-gray-300"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                  />
+                </div>
+              )}
+              <Button
+                name={modalThanks ? "Got it, close" : "Reset password"}
+                handleOnClick={handleForgotPassword}
+              />
+            </div>
+          </div>
+        </div>
+      )}
+      <div className="top-0 left-0 relative h-full flex justify-center items-center font-second w-full m-5">
         <div className="min-w-[664px] relative">
           <h2 className="text-5xl mb-5 font-semibold">
             {isRegister ? "Register" : "Log In"}
@@ -51,22 +168,44 @@ const Login = () => {
 
             <div>
               {isRegister && (
-                <InputFields
-                  value={payload.name}
-                  setValue={setPayload}
-                  nameKey="name"
-                />
+                <>
+                  <InputFields
+                    value={payload.firstName}
+                    setValue={setPayload}
+                    nameKey="firstName"
+                    invalidFields={invalidFields}
+                    setInValidFields={setInvalidFields}
+                  />
+                  <InputFields
+                    value={payload.lastName}
+                    setValue={setPayload}
+                    nameKey="lastName"
+                    invalidFields={invalidFields}
+                    setInValidFields={setInvalidFields}
+                  />
+                  <InputFields
+                    value={payload.mobile}
+                    setValue={setPayload}
+                    nameKey="mobile"
+                    invalidFields={invalidFields}
+                    setInValidFields={setInvalidFields}
+                  />
+                </>
               )}
               <InputFields
                 value={payload.email}
                 setValue={setPayload}
                 nameKey="email"
+                invalidFields={invalidFields}
+                setInValidFields={setInvalidFields}
               />
               <InputFields
                 value={payload.password}
                 setValue={setPayload}
                 nameKey="password"
                 type="password"
+                invalidFields={invalidFields}
+                setInValidFields={setInvalidFields}
               />
             </div>
           </div>
@@ -82,7 +221,11 @@ const Login = () => {
                 />
                 <label htmlFor="remember-info-login"> Remember Me</label>
               </div>
-              <Link className="underline transition duration-300 ease-in-out hover:text-[#8D8D8D] cursor-pointer">
+              <Link
+                to="#"
+                className="underline transition duration-300 ease-in-out hover:text-[#8D8D8D] cursor-pointer"
+                onClick={() => setIsForgotPassword(true)}
+              >
                 Forgot your password?
               </Link>
             </div>

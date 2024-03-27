@@ -8,6 +8,8 @@ function InputFields({
   invalidFields,
   setInValidFields,
 }) {
+  const error = invalidFields?.find((el) => el.name === nameKey);
+
   return (
     <div className="my-5">
       <label className="text-[13px] absolute" htmlFor={nameKey}>
@@ -21,7 +23,11 @@ function InputFields({
         onChange={(e) =>
           setValue((prev) => ({ ...prev, [nameKey]: e.target.value }))
         }
+        onFocus={() => setInValidFields([])}
       />
+      {error && (
+        <small className="text-[#ff0000] text-xs italic">{error.message}</small>
+      )}
     </div>
   );
 }
