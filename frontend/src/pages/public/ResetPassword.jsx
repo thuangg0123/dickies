@@ -9,7 +9,6 @@ import path from "../../ultils/path";
 function ResetPassword() {
   const { token } = useParams();
   const navigate = useNavigate();
-  console.log("token", token);
   const [dataPassword, setDataPassword] = useState({
     password: "",
     confirmPassword: "",

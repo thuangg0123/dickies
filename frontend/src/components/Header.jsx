@@ -1,12 +1,24 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Navigations from "./Navigations";
 
 import icons from "../ultils/icons";
 
 import { Link } from "react-router-dom";
 import path from "../ultils/path";
+import { getCurrent } from "../store/user/asyncActions";
+import { useSelector, useDispatch } from "react-redux";
+
+import { logout } from "../store/user/userSlice";
 
 function Header() {
+  const dispatch = useDispatch();
+  const [isHover, setIsHover] = useState(false);
+  const { isLoggedIn } = useSelector((state) => state.user);
+  useEffect(() => {
+    if (isLoggedIn) {
+      dispatch(getCurrent());
+    }
+  }, [dispatch]);
   const {
     Input,
     SearchIcon,
@@ -70,9 +82,51 @@ function Header() {
             </span>
           </div>
           <div className="cursor-pointer hover:text-[#ccc] transition-colors duration-300">
-            <Link to="/login">
-              <Person2OutlinedIcon />
-            </Link>
+            {isLoggedIn ? (
+              <>
+                <div onClick={() => setIsHover(true)}>
+                  <span className="font-second text-sm font-bold">
+                    My account
+                  </span>
+                </div>
+                {isHover && (
+                  <div
+                    className="absolute right-[8%] z-10 mt-2 origin-top-right divide-y divide-gray-100 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
+                    role="menu"
+                    aria-orientation="vertical"
+                    aria-labelledby="menu-button"
+                    tabIndex="-1"
+                  >
+                    <div className="py-1" role="none">
+                      <Link
+                        to="/account"
+                        href="#"
+                        className="text-gray-700 block px-4 py-2 text-sm"
+                        role="menuitem"
+                        tabindex="-1"
+                        id="menu-item-0"
+                      >
+                        Information
+                      </Link>
+                      <button
+                        href="#"
+                        className="text-gray-700 block px-4 py-2 text-sm"
+                        role="menuitem"
+                        tabindex="-1"
+                        id="menu-item-1"
+                        onClick={() => dispatch(logout())}
+                      >
+                        Logout
+                      </button>
+                    </div>
+                  </div>
+                )}
+              </>
+            ) : (
+              <Link to="/login">
+                <Person2OutlinedIcon />
+              </Link>
+            )}
           </div>
           <div className="cursor-pointer hover:text-[#ccc] transition-colors duration-300">
             <BookmarkBorderOutlinedIcon />

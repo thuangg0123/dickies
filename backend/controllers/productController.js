@@ -11,7 +11,7 @@ const createProduct = asyncHandler(async (req, res) => {
     }
     const newProduct = await Product.create(req.body)
     return res.status(200).json({
-        susccess: newProduct ? true : false,
+        success: newProduct ? true : false,
         dataProduct: newProduct ? newProduct : 'cannot create a product'
     })
 })
@@ -23,7 +23,7 @@ const getProduct = asyncHandler(async (req, res) => {
     }
     const product = await Product.findById(productId)
     return res.status(200).json({
-        susccess: product ? true : false,
+        success: product ? true : false,
         dataProduct: product ? product : 'cannot get product'
     })
 })
@@ -72,7 +72,7 @@ const getAllProducts = asyncHandler(async (req, res) => {
         const counts = await Product.find(formattedQueries).countDocuments()
         return res.status(200).json({
             counts: counts,
-            susccess: counts > 0 ? true : false,
+            success: counts > 0 ? true : false,
             dataProduct: counts > 0 ? response : 'cannot get products',
             errorCode: counts > 0 ? 1 : 0,
         })
@@ -91,7 +91,7 @@ const updateProduct = asyncHandler(async (req, res) => {
     }
     const updatedProduct = await Product.findByIdAndUpdate(productId, req.body, { new: true })
     return res.status(200).json({
-        susccess: updatedProduct ? true : false,
+        success: updatedProduct ? true : false,
         dataProduct: updatedProduct ? updatedProduct : 'cannot update product',
         errorCode: updatedProduct ? 1 : 0
     })
@@ -104,7 +104,7 @@ const deleteProduct = asyncHandler(async (req, res) => {
     }
     const deleteProduct = await Product.findByIdAndDelete(productId)
     return res.status(200).json({
-        susccess: deleteProduct ? true : false,
+        success: deleteProduct ? true : false,
         dataProduct: deleteProduct ? `${deleteProduct.title} is deleted successful` : 'cannot delete product',
         errorCode: deleteProduct ? 1 : 0
     })
@@ -146,7 +146,7 @@ const ratings = asyncHandler(async (req, res) => {
 
     await updateProduct.save()
     return res.status(200).json({
-        susccess: true,
+        success: true,
         data: updateProduct
     })
 })

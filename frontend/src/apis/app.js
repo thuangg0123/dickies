@@ -10,12 +10,17 @@ export const apiGetProductByCategory = (category, limit = 6) => axios({
     method: 'get'
 })
 
-export const apiGetProductByGender = (gender) => axios({
+export const apiGetProductByGender = ({ gender }) => axios({
     url: `/product?gender=${gender}`,
     method: 'get'
 })
 
 export const apiGetDetailProduct = (productId) => axios({
-    url: `/product/${productId}`,
+    url: `/product/` + productId,
+    method: 'get'
+})
+
+export const apiGetProductByGenderAndCategory = (gender, category) => axios({
+    url: `/product?gender=${gender}&category=${category}`,
     method: 'get'
 })

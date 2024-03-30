@@ -25,7 +25,8 @@
     "react-spinners": "^0.13.8",
     "react-toastify": "^10.0.4",
     "redux-persist": "^6.0.0",
-    "sweetalert2": "^11.10.7"
+    "sweetalert2": "^11.10.7",
+    "use-react-router-breadcrumbs": "^4.0.1"
   },
   "devDependencies": {
     "@types/react": "^18.2.56",

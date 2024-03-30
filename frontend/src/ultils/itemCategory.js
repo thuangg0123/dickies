@@ -11,7 +11,7 @@ export const mensCategories = [
             "Work Pants",
             "Shop All"
         ],
-        path: "mens-clothing/pants"
+        path: "products/mens-clothing/pants"
     },
     {
         category: "PANT SHORTS",
@@ -22,7 +22,7 @@ export const mensCategories = [
             "Jean Shorts",
             "Shop All"
         ],
-        path: "mens-clothing/pant-shorts"
+        path: "products/mens-clothing/pant-shorts"
     },
     {
         category: "SHIRTS",
@@ -35,7 +35,7 @@ export const mensCategories = [
             "Cropped Tops",
             "Shop All"
         ],
-        path: "mens-clothing/shirts"
+        path: "products/mens-clothing/shirts"
     },
     {
         category: "OUTERWEAR",
@@ -46,7 +46,7 @@ export const mensCategories = [
             "Vests",
             "Shop All"
         ],
-        path: "mens-clothing/outerwear"
+        path: "products/mens-clothing/outerwear"
     },
     {
         category: "SKATE SHORTS",
@@ -56,7 +56,7 @@ export const mensCategories = [
             "Vests",
             "Shop All"
         ],
-        path: "mens-clothing/skate-shorts"
+        path: "products/mens-clothing/skate-shorts"
     },
     {
         category: "COATS & JACKETS",
@@ -64,12 +64,12 @@ export const mensCategories = [
             "Coats & Jackets",
             "Shop All"
         ],
-        path: "mens-clothing/coats-jackets"
+        path: "products/mens-clothing/coats-jackets"
     },
     {
         category: "JEAN PANTS",
         subcategories: [],
-        path: "mens-clothing/jean-pants"
+        path: "products/mens-clothing/jean-pants"
     },
     {
         category: "ACCESSORIES",
@@ -82,7 +82,7 @@ export const mensCategories = [
             "Knee Pads",
             "Shop All"
         ],
-        path: "mens-clothing/accessories"
+        path: "products/mens-clothing/accessories"
     }
 ]
 export const womenCategories = [
@@ -98,7 +98,7 @@ export const womenCategories = [
             "Work Pants",
             "Shop All"
         ],
-        path: "womens-clothing/pants"
+        path: "/products/womens-clothing/pants"
     },
     {
         category: "PANT SHORTS",
@@ -109,7 +109,7 @@ export const womenCategories = [
             "Jean Shorts",
             "Shop All"
         ],
-        path: "womens-clothing/pant-shorts"
+        path: "/products/womens-clothing/pant-shorts"
     },
     {
         category: "SHIRTS",
@@ -122,7 +122,7 @@ export const womenCategories = [
             "Cropped Tops",
             "Shop All"
         ],
-        path: "womens-clothing/shirts"
+        path: "/products/womens-clothing/shirts"
     },
     {
         category: "COVERALLS & OVERALLS",
@@ -132,12 +132,12 @@ export const womenCategories = [
             "Overalls",
             "Shop All"
         ],
-        path: "womens-clothing/overalls"
+        path: "/products/womens-clothing/overalls"
     },
     {
         category: "SKIRTS & DRESSES",
         subcategories: [],
-        path: "womens-clothing/skirts-dresses"
+        path: "/products/womens-clothing/skirts-dresses"
     },
     {
         category: "OUTERWEAR",
@@ -148,7 +148,7 @@ export const womenCategories = [
             "Vests",
             "Shop All"
         ],
-        path: "womens-clothing/outerwear"
+        path: "/products/womens-clothing/outerwear"
     },
     {
         category: "ACCESSORIES",
@@ -161,7 +161,7 @@ export const womenCategories = [
             "Knee Pads",
             "Shop All"
         ],
-        path: "womens-clothing/accessories"
+        path: "/products/womens-clothing/accessories"
     }
 ]
 export const kidCategories = [
@@ -177,7 +177,7 @@ export const kidCategories = [
             "Work Pants",
             "Shop All"
         ],
-        path: "kids-clothing/pants"
+        path: "products/kids-clothing/pants"
     },
     {
         category: "PANT SHORTS",
@@ -188,7 +188,7 @@ export const kidCategories = [
             "Jean Shorts",
             "Shop All"
         ],
-        path: "kids-clothing/pant-shorts"
+        path: "products/kids-clothing/pant-shorts"
     },
     {
         category: "SHIRTS",
@@ -201,7 +201,7 @@ export const kidCategories = [
             "Cropped Tops",
             "Shop All"
         ],
-        path: "kids-clothing/shirts"
+        path: "products/kids-clothing/shirts"
     },
     {
         category: "COATS JACKETS",
@@ -212,7 +212,7 @@ export const kidCategories = [
             "Overalls",
             "Shop All"
         ],
-        path: "kids-clothing/coats-jackets"
+        path: "products/kids-clothing/coats-jackets"
     },
     {
         category: "OVERALLS",
@@ -222,7 +222,7 @@ export const kidCategories = [
             "Vests",
             "Shop All"
         ],
-        path: "kids-clothing/overalls"
+        path: "products/kids-clothing/overalls"
     },
     {
         category: "ACCESSORIES",
@@ -235,6 +235,6 @@ export const kidCategories = [
             "Knee Pads",
             "Shop All"
         ],
-        path: "kids-clothing/accessories"
+        path: "products/kids-clothing/accessories"
     }
 ]

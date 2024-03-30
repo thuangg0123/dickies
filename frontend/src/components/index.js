@@ -6,6 +6,7 @@ export { default as DropDrownMenu } from './DropDrownMenu'
 export { default as NeedHelps } from './NeedHelps'
 export { default as InputFields } from './InputFields'
 export { default as Button } from './Button'
+export { default as Breadcrum } from './Breadcrum'
 
 export { default as Banner } from './Home/Banner'
 export { default as BoxSubBanner } from './Home/BoxSubBanner'

@@ -38,7 +38,7 @@ function Navigations() {
                 }}
               >
                 <NavLink
-                  to={item.path}
+                  to={`products${item.path}`}
                   className={({ isActive }) =>
                     isActive
                       ? "color-[#F4BB3E] font-bold p-5 hover:text-[#ccc] transition-colors duration-300"

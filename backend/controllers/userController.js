@@ -6,35 +6,6 @@ const { sendMail } = require('../ultils/sendMail')
 var crypto = require("crypto")
 const makeToken = require('uniqid')
 
-// const register = asyncHandler(async (req, res) => {
-//     const { email, password, firstName, lastName, mobile } = req.body
-
-//     if (!email || !password || !firstName || !lastName || !mobile) {
-//         return res.status(500).json({
-//             success: false,
-//             message: "Missing inputs",
-//             errorCode: -1
-//         })
-//     }
-
-//     const user = await User.findOne({
-//         email: email
-//     })
-
-//     if (user) {
-//         throw new Error("User has existed !")
-//     }
-//     else {
-//         const newUser = await User.create(req.body)
-//         return res.status(200).json({
-//             success: newUser ? true : false,
-//             message: newUser ? "Register is successfully, please go to login" : " Something went wrong, please try again ... ",
-//             data: newUser,
-//             errorCode: 0
-//         })
-//     }
-// })
-
 const register = asyncHandler(async (req, res) => {
     const { email, password, firstName, lastName, mobile } = req.body
 
@@ -54,40 +25,36 @@ const register = asyncHandler(async (req, res) => {
     }
     else {
         const token = makeToken()
-        res.cookie('dataRegister', { ...req.body, token }, { httpOnly: true, maxAge: 15 * 60 * 1000 })
-        const html = `
-        Please click on the link below to complete the registration process. This link will be expired after 15 minutes
-        <a href="${process.env.URL_CLIENT}/api/user/final-register/${token}">Click here.</a>
-    `
-        await sendMail({ email, html, subject: "Completed register !!!" })
+        const emailEdited = btoa(email) + '@' + token
+        const newUser = await User.create({
+            email: emailEdited, password, firstName, lastName, mobile
+        })
+        if (newUser) {
+            const html = `<h2>Register code </h2> <br /><blockquote>${token}</blockquote>`
+            await sendMail({ email, html, subject: "Confirm register account in E-MERN !!!" })
+        }
+        setTimeout(async () => {
+            await User.deleteOne({ email: emailEdited })
+        }, [300000]);
+
         return res.json({
-            success: true,
-            message: "Please check your email to active account"
+            success: newUser ? true : false,
+            message: newUser ? "Please check your email to active account" : "Something wrong, please try again"
         })
     }
 })
 
 const finalRegister = asyncHandler(async (req, res) => {
-    const cookie = req.cookies
     const { token } = req.params
-    if (!cookie || cookie?.dataRegister?.token !== token) {
-        res.clearCookie('dataRegister')
-        return res.redirect(`${process.env.URL_CLIENT}/final-register/failed`)
+    const notActivedEmail = await User.findOne({ email: new RegExp(`${token}$`) })
+    if (notActivedEmail) {
+        notActivedEmail.email = atob(notActivedEmail?.email?.split("@")[0])
+        notActivedEmail.save()
     }
-    const newUser = await User.create({
-        email: cookie?.dataRegister?.email,
-        password: cookie?.dataRegister?.password,
-        firstName: cookie?.dataRegister?.firstName,
-        lastName: cookie?.dataRegister?.lastName,
-        mobile: cookie?.dataRegister?.mobile,
+    return res.json({
+        success: notActivedEmail ? true : false,
+        data: notActivedEmail ? 'Register is successfully, please go to login' : "Something wrong, please try again"
     })
-    res.clearCookie('dataRegister')
-    if (newUser) {
-        return res.redirect(`${process.env.URL_CLIENT}/final-register/success`)
-    }
-    else {
-        return res.redirect(`${process.env.URL_CLIENT}/final-register/failed`)
-    }
 })
 
 // refreshToken dùng để cấp mới lại token
@@ -265,7 +232,7 @@ const deleteUser = asyncHandler(async (req, res) => {
     const response = await User.findByIdAndDelete(_id)
     return res.status(200).json({
         success: response ? true : false,
-        message: response ? `Delete user with email ${response.email} is susccessfully` : "Something wrong, please try again ....",
+        message: response ? `Delete user with email ${response.email} is successfully` : "Something wrong, please try again ....",
         errorcode: response ? 1 : 0
     })
 })
@@ -278,7 +245,7 @@ const updateUser = asyncHandler(async (req, res) => {
     const response = await User.findByIdAndUpdate(_id, req.body, { new: true }).select('-password -role')
     return res.status(200).json({
         success: response ? true : false,
-        message: response ? `Update user is susccessfully` : "Something wrong, please try again ....",
+        message: response ? `Update user is successfully` : "Something wrong, please try again ....",
         data: response ? response : [],
         errorcode: response ? 1 : 0
     })
@@ -292,7 +259,7 @@ const updateUserByAdmin = asyncHandler(async (req, res) => {
     const response = await User.findByIdAndUpdate(userId, req.body, { new: true }).select('-password -role')
     return res.status(200).json({
         success: response ? true : false,
-        message: response ? `Update user is susccessfully` : "Something wrong, please try again ....",
+        message: response ? `Update user is successfully` : "Something wrong, please try again ....",
         data: response ? response : [],
         errorcode: response ? 1 : 0
     })
@@ -306,7 +273,7 @@ const updateAddressUser = asyncHandler(async (req, res) => {
     const response = await User.findByIdAndUpdate(_id, { $addToSet: { address: req.body.address } }, { new: true }).select('-password -role -refreshToken -createdAt -updatedAt -__v -passwordChangedAt')
     return res.status(200).json({
         success: response ? true : false,
-        message: response ? `Update address is susccessfully` : "Something wrong, please try again ....",
+        message: response ? `Update address is successfully` : "Something wrong, please try again ....",
         data: response ? response : [],
         errorcode: response ? 1 : 0
     })
@@ -325,7 +292,7 @@ const updateCart = asyncHandler(async (req, res) => {
             const response = await User.updateOne({ cart: { $elemMatch: isExistProduct } }, { $set: { "cart.$.quantity": quantity } }, { new: true })
             return res.status(200).json({
                 success: response ? true : false,
-                message: response ? `Update color is susccessfully` : "Something wrong, please try again ....",
+                message: response ? `Update color is successfully` : "Something wrong, please try again ....",
                 data: response ? response : [],
                 errorcode: response ? 1 : 0
             })
@@ -334,7 +301,7 @@ const updateCart = asyncHandler(async (req, res) => {
             const response = await User.findByIdAndUpdate(_id, { $push: { cart: { product: productId, quantity, color } } }, { new: true })
             return res.status(200).json({
                 success: response ? true : false,
-                message: response ? `Add new color is susccessfully` : "Something wrong, please try again ....",
+                message: response ? `Add new color is successfully` : "Something wrong, please try again ....",
                 data: response ? response : [],
                 errorcode: response ? 1 : 0
             })
@@ -344,7 +311,7 @@ const updateCart = asyncHandler(async (req, res) => {
         const response = await User.findByIdAndUpdate(_id, { $push: { cart: { product: productId, quantity, color } } }, { new: true })
         return res.status(200).json({
             success: response ? true : false,
-            message: response ? `Update cart is susccessfully` : "Something wrong, please try again ....",
+            message: response ? `Update cart is successfully` : "Something wrong, please try again ....",
             data: response ? response : [],
             errorcode: response ? 1 : 0
         })

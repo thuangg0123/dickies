@@ -2,7 +2,10 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { ClipLoader } from "react-spinners";
-import { getProductByGender } from "../../store/products/asyncActions";
+import {
+  getProductByGender,
+  getProductByGenderAndCategory,
+} from "../../store/products/asyncActions";
 import ProductCard from "../ProductCard/ProductCard";
 import {
   NeedHelps,
@@ -11,8 +14,9 @@ import {
   CountProduct,
 } from "../../components";
 import icons from "../../ultils/icons";
+import FilterProduct from "./FilterProduct";
 
-function ContainerProduct({ gender, path }) {
+function ContainerProduct({ gender, path, category }) {
   const [isShow, setIsShow] = useState(false);
   const [visibleProducts, setVisibleProducts] = useState(8);
   const [loading, setLoading] = useState(false);
@@ -26,10 +30,16 @@ function ContainerProduct({ gender, path }) {
   };
 
   useEffect(() => {
-    dispatch(getProductByGender({ gender }));
-    setVisibleProducts(8);
-    window.scrollTo(0, 0);
-  }, [dispatch, gender]);
+    if (gender) {
+      if (category) {
+        dispatch(getProductByGenderAndCategory({ category, gender }));
+      } else {
+        dispatch(getProductByGender({ gender }));
+        setVisibleProducts(8);
+        window.scrollTo(0, 0);
+      }
+    }
+  }, [dispatch, gender, category]);
 
   const handleOpenFilter = () => {
     setIsShow(!isShow);
@@ -45,16 +55,25 @@ function ContainerProduct({ gender, path }) {
 
   return (
     <>
+      {isShow && <FilterProduct setIsShow={setIsShow} />}
       <div className="px-10 py-5">
         <div className="font-second text-sm font-semibold">
           <Link to="/">Home</Link> /&nbsp;
-          <Link to={`/${path}`}>
-            All {capitalizeFirstLetter(gender)}'s Clothing
+          <Link to="/products">Products / </Link>
+          <Link to={gender !== "all" ? `/products/${gender}s-clothing` : ""}>
+            All
+            {gender !== "all"
+              ? ` ${capitalizeFirstLetter(gender)}'s Clothing`
+              : ""}
+          </Link>
+          <Link to={`/products/${gender}s-clothing/${category}`}>
+            {category ? ` / ${capitalizeFirstLetter(category)}` : ""}
           </Link>
         </div>
         <section className="text-[56px] font-semibold py-4">
           <h2 className="tracking-[-2px]">
-            All Product For {capitalizeFirstLetter(gender)}
+            All {category ? capitalizeFirstLetter(category) : ""} Products
+            {gender !== "all" ? ` For ${capitalizeFirstLetter(gender)}` : ""}
           </h2>
         </section>
         <div className="font-second flex justify-between text-sm">
@@ -70,7 +89,7 @@ function ContainerProduct({ gender, path }) {
           </button>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mt-8">
-          {products.slice(0, visibleProducts).map((product, index) => (
+          {products?.slice(0, visibleProducts).map((product, index) => (
             <ProductCard
               key={index}
               product={product}

@@ -2,7 +2,12 @@ import React, { useCallback, useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { InputFields, Button } from "../../components";
-import { apiRegister, apiLogin, apiForgotPassword } from "../../apis/user";
+import {
+  apiRegister,
+  apiLogin,
+  apiForgotPassword,
+  apiFinalRegister,
+} from "../../apis/user";
 import { login } from "../../store/user/userSlice";
 import path from "../../ultils/path";
 import Swal from "sweetalert2";
@@ -22,11 +27,12 @@ const Login = () => {
   });
 
   const [invalidFields, setInvalidFields] = useState([]);
+  const [isVerifiedEmail, setIsVerifiedEmail] = useState(false);
 
   const [isForgotPassword, setIsForgotPassword] = useState(false);
   const [email, setEmail] = useState("");
   const [modalThanks, setModalThanks] = useState(false);
-
+  const [token, setToken] = useState("");
   const [isRegister, setIsRegister] = useState(false);
 
   const resetPayload = () => {
@@ -50,10 +56,7 @@ const Login = () => {
       if (isRegister) {
         const response = await apiRegister(payload);
         if (response.success) {
-          Swal.fire("Congratulation", response.message, "success").then(() => {
-            setIsRegister(false);
-            resetPayload();
-          });
+          setIsVerifiedEmail(true);
         } else {
           Swal.fire("Oops !", response.message, "error");
         }
@@ -94,8 +97,41 @@ const Login = () => {
     setEmail("");
   };
 
+  const finalRegister = async () => {
+    const response = await apiFinalRegister(token);
+    if (response.success) {
+      Swal.fire("Congratulation", response.data, "success").then(() => {
+        setIsRegister(false);
+        resetPayload();
+      });
+    } else {
+      Swal.fire("Oops !", response.data, "error");
+    }
+    setIsVerifiedEmail(false);
+    setToken("");
+  };
+
   return (
     <>
+      {isVerifiedEmail && (
+        <div className="absolute top-0 left-0 bottom-0 right-0 bg-overlay flex justify-center items-center z-50">
+          <div className="bg-white w-[500px] p-8">
+            <h4 className="font-second mb-3">
+              We sent a code to your mail. Please check your mail and enter your
+              code:{" "}
+            </h4>
+            <input
+              type="text"
+              name=""
+              value={token}
+              onChange={(e) => setToken(e.target.value)}
+              className="w-full p-4 outline-none border border-gray-300 mb-3"
+              placeholder="Enter your code"
+            />
+            <Button name="Send Code" handleOnClick={finalRegister} />
+          </div>
+        </div>
+      )}
       {isForgotPassword && (
         <div className="absolute top-0 left-0 bottom-0 right-0 bg-overlay flex justify-center items-center z-50">
           <div className="bg-white w-[400px] p-8">
@@ -128,7 +164,9 @@ const Login = () => {
               )}
               <Button
                 name={modalThanks ? "Got it, close" : "Reset password"}
-                handleOnClick={handleForgotPassword}
+                handleOnClick={
+                  modalThanks ? handleCloseModal : handleForgotPassword
+                }
               />
             </div>
           </div>

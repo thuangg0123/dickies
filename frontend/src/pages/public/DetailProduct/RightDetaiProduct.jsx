@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useCallback } from "react";
 import { useSelector } from "react-redux";
 
 import icons from "../../../ultils/icons";
@@ -26,15 +26,15 @@ const RightDetaiProduct = () => {
     setSelectedSize(size);
   };
 
-  const handleIProduct = () => {
-    setCountProduct(countProduct + 1);
-  };
+  const handleIProduct = useCallback(() => {
+    setCountProduct((prevCount) => prevCount + 1);
+  }, []);
 
-  const handleDProduct = () => {
+  const handleDProduct = useCallback(() => {
     if (countProduct > 1) {
-      setCountProduct(countProduct - 1);
+      setCountProduct((prevCount) => prevCount - 1);
     }
-  };
+  }, [countProduct]);
 
   const renderStarFromNumber = (number) => {
     if (!Number(number)) {
