@@ -36,17 +36,24 @@ const getAllProducts = asyncHandler(async (req, res) => {
     // format lại các operators cho đúng cú pháp của mongoose
     let queryString = JSON.stringify(queries)
     queryString = queryString.replace(/\b(gte|gt|lt|lte)\b/g, matchedElement => `$${matchedElement}`)
-    const formattedQueries = JSON.parse(queryString)
+    let formattedQueries = JSON.parse(queryString)
+    let genderQueryObj = {}
     //filtering
-    if (queries.title) {
+    if (queries?.title) {
         formattedQueries.title = { $regex: queries.title, $options: 'i' }
     }
-
-    if (req.query.category) {
-        formattedQueries.category = req.query.category; // Sử dụng giá trị từ query parameters
+    if (queries?.category) {
+        formattedQueries.category = { $regex: queries.category, $options: 'i' } // Sử dụng giá trị từ query parameters
     }
+    if (queries?.gender) {
+        delete formattedQueries.gender
+        const genderArray = queries.gender?.split(',')
+        const genderQuery = genderArray.map(element => ({ gender: { $regex: element, $options: 'i' } }))
+        genderQueryObj = { $or: genderQuery }
+    }
+    const q = { ...genderQueryObj, ...formattedQueries }
 
-    let queryCommand = Product.find(formattedQueries)
+    let queryCommand = Product.find(q)
     //excute query
 
     //sorting
@@ -69,7 +76,7 @@ const getAllProducts = asyncHandler(async (req, res) => {
 
     queryCommand.skip(skip).limit(limit)
     queryCommand.then(async (response) => {
-        const counts = await Product.find(formattedQueries).countDocuments()
+        const counts = await Product.find(q).countDocuments()
         return res.status(200).json({
             counts: counts,
             success: counts > 0 ? true : false,

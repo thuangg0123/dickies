@@ -17,7 +17,7 @@ import path from "./ultils/path";
 import "react-multi-carousel/lib/styles.css";
 import { getCategories } from "./store/app/asyncActions";
 
-import { useEffect } from "react";
+import React, { useEffect } from "react";
 import ContainerProduct from "./components/ContainerProduct/ContainerProduct";
 
 import { ToastContainer, toast } from "react-toastify";
@@ -70,7 +70,7 @@ function App() {
           ></Route>
           {category.map((categoryItem, index) => {
             return (
-              <>
+              <React.Fragment key={index}>
                 <Route
                   key={`category-${index}`}
                   path={`/products/mens-clothing/${categoryItem}`}
@@ -99,7 +99,7 @@ function App() {
                     <ContainerProduct gender="all" category={categoryItem} />
                   }
                 /> */}
-              </>
+              </React.Fragment>
             );
           })}
           {genders.map((gender) => (

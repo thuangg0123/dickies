@@ -36,3 +36,16 @@ export const getProductByGenderAndCategory = createAsyncThunk(
         }
     },
 )
+
+export const getProductParams = createAsyncThunk(
+    'product/getProductParams',
+    async (param, { rejectWithValue }) => {
+        try {
+            const response = await apis.apiGetProductByQuery(param);
+            console.log(response)
+            return response
+        } catch (error) {
+            rejectWithValue(error)
+        }
+    },
+)

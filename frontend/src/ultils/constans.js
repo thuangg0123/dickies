@@ -27,3 +27,42 @@ export const nav = [
         path: `/${path.FAQ}`
     }
 ]
+
+export const sortPrice = [
+    {
+        id: 1,
+        text: "Top Sellers",
+        value: 'sold'
+    },
+    {
+        id: 2,
+        text: "Price Low To High",
+        value: 'price'
+    },
+    {
+        id: 3,
+        text: "Price High To Low",
+        value: '-price'
+    },
+    {
+        id: 4,
+        text: "Top Ratings",
+        value: "totalRatings",
+    },
+    {
+        id: 5,
+        text: "Date New To Old",
+        value: 'createdAt'
+    },
+    {
+        id: 6,
+        text: "Date Old To New",
+        value: "-createdAt",
+    },
+]
+
+export const gender = [
+    "men",
+    "women",
+    "kid"
+]

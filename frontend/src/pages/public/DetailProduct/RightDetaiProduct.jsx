@@ -55,15 +55,17 @@ const RightDetaiProduct = () => {
       <div className="col-span-1">
         <div className="flex flex-col gap-4">
           <h2 className="font-semibold text-2xl">{detailProduct.title}</h2>
-          <div className="flex items-center justify-between text-xs cursor-pointer">
-            <span>{renderStarFromNumber(detailProduct.totalRatings)}</span>
-            <span>
-              {floatRatingStars ? `${floatRatingStars}(20472)` : "0(0)"}
-            </span>
-            <span className="underline cursor-pointer transition duration-300 ease-in-out hover:text-[#8D8D8D]">
-              Write a review
-            </span>
-          </div>
+          {detailProduct.totalRatings > 0 && (
+            <div className="flex items-center justify-between text-xs cursor-pointer">
+              <span>{renderStarFromNumber(detailProduct.totalRatings)}</span>
+              <span>
+                {floatRatingStars ? `${floatRatingStars}(20472)` : "0(0)"}
+              </span>
+              <span className="underline cursor-pointer transition duration-300 ease-in-out hover:text-[#8D8D8D]">
+                Write a review
+              </span>
+            </div>
+          )}
           <div>
             <span className="font-medium">${detailProduct.price}</span>
           </div>

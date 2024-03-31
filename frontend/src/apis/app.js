@@ -24,3 +24,9 @@ export const apiGetProductByGenderAndCategory = (gender, category) => axios({
     url: `/product?gender=${gender}&category=${category}`,
     method: 'get'
 })
+
+export const apiGetProductByQuery = (params) => axios({
+    url: `/product/`,
+    method: 'get',
+    params,
+})

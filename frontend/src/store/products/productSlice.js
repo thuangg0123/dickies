@@ -51,8 +51,22 @@ export const productSlice = createSlice({
             state.isLoading = false
             state.isError = true
         })
+
+        builder.addCase(actions.getProductParams.pending, (state, action) => {
+            state.isLoading = true
+        })
+        builder.addCase(actions.getProductParams.fulfilled, (state, action) => {
+            state.isLoading = false
+            state.listProducts = action.payload.dataProduct
+            state.counts = action.payload.counts
+        })
+        builder.addCase(actions.getProductParams.rejected, (state, action) => {
+            state.isLoading = false
+            state.isError = true
+        })
     }
 })
+
 
 export const { } = productSlice.actions
 
