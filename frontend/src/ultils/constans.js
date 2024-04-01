@@ -66,3 +66,23 @@ export const gender = [
     "women",
     "kid"
 ]
+
+export const voteOptions = [
+    {
+        id: 5,
+        text: "Perfect"
+    },
+    {
+        id: 4,
+        text: "Good"
+    }, {
+        id: 5,
+        text: "Neutral"
+    }, {
+        id: 5,
+        text: "Bad"
+    }, {
+        id: 5,
+        text: "Terrible"
+    },
+]

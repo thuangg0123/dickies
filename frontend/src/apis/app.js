@@ -30,3 +30,9 @@ export const apiGetProductByQuery = (params) => axios({
     method: 'get',
     params,
 })
+
+export const apiRatings = (data) => axios({
+    url: `/product/ratings`,
+    method: 'put',
+    data,
+})

@@ -12,6 +12,8 @@ import {
   FinalRegister,
   ResetPassword,
 } from "./pages/public";
+
+import { Modal } from "./components/index";
 import path from "./ultils/path";
 
 import "react-multi-carousel/lib/styles.css";
@@ -29,11 +31,12 @@ function App() {
     { gender: "men", path: path.MEN },
     { gender: "women", path: path.WOMEN },
     { gender: "kids", path: path.KIDS },
-    // { gender: "all", path: path.ALL },
   ];
 
   const categories = useSelector((state) => state.app.categories);
   const category = categories.map((element) => createSlug(element.title));
+
+  const { isShowModal, modalChildren } = useSelector((state) => state.app);
 
   const dispatch = useDispatch();
 
@@ -42,7 +45,7 @@ function App() {
   }, [dispatch]);
 
   return (
-    <div className="min-h-screen font-main">
+    <div className="relative font-main">
       <ToastContainer
         position="top-right"
         autoClose={5000}
@@ -56,6 +59,7 @@ function App() {
         theme="dark"
         transition:Bounce
       />
+      {isShowModal && <Modal>{modalChildren}</Modal>}
       <Routes>
         <Route path={path.PUBLIC} element={<Public />}>
           <Route path={path.HOME} element={<Home />}></Route>
@@ -92,13 +96,6 @@ function App() {
                     <ContainerProduct gender="kids" category={categoryItem} />
                   }
                 />
-                {/* <Route
-                  key={`category-${index}`}
-                  path={`/products/alls-clothing/${categoryItem}`}
-                  element={
-                    <ContainerProduct gender="all" category={categoryItem} />
-                  }
-                /> */}
               </React.Fragment>
             );
           })}
@@ -113,15 +110,15 @@ function App() {
           ))}
           <Route
             path={`${path.PRODUCTS}/:${path.MEN}/:category/:slug/:productId`}
-            element={<DetailProduct gender="men" />}
+            element={<DetailProduct totalCount={18} gender="men" />}
           />
           <Route
             path={`${path.PRODUCTS}/:${path.WOMEN}/:category/:slug/:productId`}
-            element={<DetailProduct gender="women" />}
+            element={<DetailProduct totalCount={18} gender="women" />}
           />
           <Route
             path={`${path.PRODUCTS}/:${path.KIDS}/:category/:slug/:productId`}
-            element={<DetailProduct gender="kids" />}
+            element={<DetailProduct totalCount={18} gender="kids" />}
           />
         </Route>
       </Routes>
