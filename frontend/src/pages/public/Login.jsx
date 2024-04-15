@@ -23,7 +23,7 @@ const Login = () => {
     password: "",
     firstName: "",
     lastName: "",
-    mobile: "",
+    phone: "",
   });
 
   const [invalidFields, setInvalidFields] = useState([]);
@@ -41,13 +41,13 @@ const Login = () => {
       password: "",
       firstName: "",
       lastName: "",
-      mobile: "",
+      phone: "",
     });
   };
 
   //submit
   const handleSubmit = useCallback(async () => {
-    const { firstName, lastName, mobile, ...data } = payload;
+    const { firstName, lastName, phone, ...data } = payload;
     const invalids = isRegister
       ? validate(payload, setInvalidFields)
       : validate(data, setInvalidFields);
@@ -222,9 +222,9 @@ const Login = () => {
                     setInValidFields={setInvalidFields}
                   />
                   <InputFields
-                    value={payload.mobile}
+                    value={payload.phone}
                     setValue={setPayload}
-                    nameKey="mobile"
+                    nameKey="phone"
                     invalidFields={invalidFields}
                     setInValidFields={setInvalidFields}
                   />

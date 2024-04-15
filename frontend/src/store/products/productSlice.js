@@ -45,7 +45,7 @@ export const productSlice = createSlice({
         })
         builder.addCase(actions.getDetailProduct.fulfilled, (state, action) => {
             state.isLoading = false
-            state.detailProduct = action.payload.dataProduct
+            state.detailProduct = action.payload.dataProduct // Cập nhật detailProduct với dữ liệu mới từ response
         })
         builder.addCase(actions.getDetailProduct.rejected, (state, action) => {
             state.isLoading = false
@@ -64,9 +64,20 @@ export const productSlice = createSlice({
             state.isLoading = false
             state.isError = true
         })
+
+        builder.addCase(actions.submitRating.pending, (state, action) => {
+            state.isLoading = true
+        })
+        builder.addCase(actions.submitRating.fulfilled, (state, action) => {
+            state.isLoading = false
+            state.detailProduct = action.payload
+        })
+        builder.addCase(actions.submitRating.rejected, (state, action) => {
+            state.isLoading = false
+            state.isError = true
+        })
     }
 })
-
 
 export const { } = productSlice.actions
 

@@ -42,10 +42,21 @@ export const getProductParams = createAsyncThunk(
     async (param, { rejectWithValue }) => {
         try {
             const response = await apis.apiGetProductByQuery(param);
-            console.log(response)
             return response
         } catch (error) {
             rejectWithValue(error)
+        }
+    },
+)
+
+export const submitRating = createAsyncThunk(
+    'product/submitRating ',
+    async (data, { rejectWithValue }) => {
+        try {
+            const response = await apis.apiRatings(data);
+            return response.data
+        } catch (error) {
+            return rejectWithValue(error.response.data);
         }
     },
 )

@@ -34,8 +34,8 @@ const Detail = () => {
         isOpen={accordionState.description}
         toggleAccordion={() => toggleAccordion("description")}
       >
-        <p className="py-6">{detailProduct.description}</p>
-        <p className="font-semibold">Item ID: {detailProduct._id}</p>
+        <p className="py-6">{detailProduct?.description}</p>
+        <p className="font-semibold">Item ID: {detailProduct?._id}</p>
       </AccordionSection>
       <AccordionSection
         title="Product Detail"

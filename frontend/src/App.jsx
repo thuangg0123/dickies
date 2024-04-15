@@ -35,6 +35,7 @@ function App() {
 
   const categories = useSelector((state) => state.app.categories);
   const category = categories.map((element) => createSlug(element.title));
+  const detailProduct = useSelector((state) => state.product.detailProduct);
 
   const { isShowModal, modalChildren } = useSelector((state) => state.app);
 
@@ -110,15 +111,21 @@ function App() {
           ))}
           <Route
             path={`${path.PRODUCTS}/:${path.MEN}/:category/:slug/:productId`}
-            element={<DetailProduct totalCount={18} gender="men" />}
+            element={
+              <DetailProduct ratings={detailProduct?.ratings} gender="men" />
+            }
           />
           <Route
             path={`${path.PRODUCTS}/:${path.WOMEN}/:category/:slug/:productId`}
-            element={<DetailProduct totalCount={18} gender="women" />}
+            element={
+              <DetailProduct ratings={detailProduct?.ratings} gender="women" />
+            }
           />
           <Route
             path={`${path.PRODUCTS}/:${path.KIDS}/:category/:slug/:productId`}
-            element={<DetailProduct totalCount={18} gender="kids" />}
+            element={
+              <DetailProduct ratings={detailProduct?.ratings} gender="kids" />
+            }
           />
         </Route>
       </Routes>

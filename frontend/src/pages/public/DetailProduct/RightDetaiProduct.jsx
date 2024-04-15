@@ -14,8 +14,8 @@ const RightDetaiProduct = () => {
     return state.product.detailProduct;
   });
 
-  const floatRatingStars = detailProduct.totalRatings
-    ? detailProduct.totalRatings.toFixed(1)
+  const floatRatingStars = detailProduct?.totalRatings
+    ? detailProduct?.totalRatings.toFixed(1)
     : null;
 
   const handleColorClick = (color) => {
@@ -54,10 +54,10 @@ const RightDetaiProduct = () => {
     <>
       <div className="col-span-1">
         <div className="flex flex-col gap-4">
-          <h2 className="font-semibold text-2xl">{detailProduct.title}</h2>
-          {detailProduct.totalRatings > 0 && (
+          <h2 className="font-semibold text-2xl">{detailProduct?.title}</h2>
+          {detailProduct?.totalRatings > 0 && (
             <div className="flex items-center justify-between text-xs cursor-pointer">
-              <span>{renderStarFromNumber(detailProduct.totalRatings)}</span>
+              <span>{renderStarFromNumber(detailProduct?.totalRatings)}</span>
               <span>
                 {floatRatingStars ? `${floatRatingStars}(20472)` : "0(0)"}
               </span>
@@ -67,7 +67,7 @@ const RightDetaiProduct = () => {
             </div>
           )}
           <div>
-            <span className="font-medium">${detailProduct.price}</span>
+            <span className="font-medium">${detailProduct?.price}</span>
           </div>
           <div>
             <span className="text-sm">
@@ -76,8 +76,8 @@ const RightDetaiProduct = () => {
             </span>
             <div>
               <ul className="flex mt-2 gap-3">
-                {detailProduct.color &&
-                  detailProduct.color.map((color, index) => (
+                {detailProduct?.color &&
+                  detailProduct?.color.map((color, index) => (
                     <li
                       key={index}
                       className="cursor-pointer w-8 h-8 border-2 rounded-full flex items-center justify-center overflow-hidden hover:border-black"
@@ -106,8 +106,8 @@ const RightDetaiProduct = () => {
             </div>
             <div>
               <ul className="flex mt-2 gap-3">
-                {detailProduct.sizes &&
-                  detailProduct.sizes.map((size, index) => (
+                {detailProduct?.sizes &&
+                  detailProduct?.sizes.map((size, index) => (
                     <li
                       key={index}
                       className={`cursor-pointer w-9 h-9 border flex items-center justify-center overflow-hidden hover:border-black text-xs ${

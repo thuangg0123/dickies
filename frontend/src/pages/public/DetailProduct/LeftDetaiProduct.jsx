@@ -14,14 +14,14 @@ const LeftDetaiProduct = () => {
           <div>
             <img
               className="w-full"
-              src={detailProduct.thumb}
-              alt={detailProduct.title}
+              src={detailProduct?.thumb}
+              alt={detailProduct?.title}
             />
           </div>
           <div className="grid grid-cols-2 gap-5">
             {detailProduct &&
-              detailProduct.images &&
-              detailProduct.images.map((image, index) => {
+              detailProduct?.images &&
+              detailProduct?.images.map((image, index) => {
                 return (
                   <div key={index}>
                     <picture>

@@ -7,9 +7,9 @@ var crypto = require("crypto")
 const makeToken = require('uniqid')
 
 const register = asyncHandler(async (req, res) => {
-    const { email, password, firstName, lastName, mobile } = req.body
+    const { email, password, firstName, lastName, phone } = req.body
 
-    if (!email || !password || !firstName || !lastName || !mobile) {
+    if (!email || !password || !firstName || !lastName || !phone) {
         return res.status(500).json({
             success: false,
             message: "Missing inputs",
@@ -27,7 +27,7 @@ const register = asyncHandler(async (req, res) => {
         const token = makeToken()
         const emailEdited = btoa(email) + '@' + token
         const newUser = await User.create({
-            email: emailEdited, password, firstName, lastName, mobile
+            email: emailEdited, password, firstName, lastName, phone
         })
         if (newUser) {
             const html = `<h2>Register code </h2> <br /><blockquote>${token}</blockquote>`
