@@ -11,6 +11,7 @@ export { default as InputSelect } from './InputSelect'
 export { default as VoteBar } from './VoteBar'
 export { default as Ratings } from './Ratings'
 export { default as Modal } from './Modal'
+export { default as Comment } from './Comment'
 
 export { default as Banner } from './Home/Banner'
 export { default as BoxSubBanner } from './Home/BoxSubBanner'

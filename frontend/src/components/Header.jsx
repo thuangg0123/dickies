@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { memo, useEffect, useState } from "react";
 import Navigations from "./Navigations";
 
 import icons from "../ultils/icons";
@@ -140,4 +140,4 @@ function Header() {
   );
 }
 
-export default Header;
+export default memo(Header);

@@ -1,15 +1,12 @@
-import React, { memo, useCallback, useEffect, useState } from "react";
-import { Link, useParams, useNavigate } from "react-router-dom";
+import React, { memo, useEffect } from "react";
+import { useParams, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 
 import { Breadcrum } from "../../../components/index";
 
 import { LeftDetaiProduct, RightDetaiProduct, VoteOptions } from "../index";
 import { apiGetDetailProduct } from "../../../apis";
-import {
-  getDetailProduct,
-  submitRating,
-} from "../../../store/products/asyncActions";
+import { submitRating } from "../../../store/products/asyncActions";
 import { showModal } from "../../../store/app/appSlice";
 
 import {
@@ -17,8 +14,8 @@ import {
   Footer,
   BtnScrollTop,
   VoteBar,
-  Ratings,
   Button,
+  Comment,
 } from "../../../components/index";
 
 import icons from "../../../ultils/icons";
@@ -64,7 +61,14 @@ function DetailProduct({ ratings }) {
       alert("Please vote when click submit");
       return;
     }
-    await dispatch(submitRating({ star: score, comment: comment, productId }));
+    await dispatch(
+      submitRating({
+        star: score,
+        comment: comment,
+        productId,
+        updatedAt: Date.now(),
+      })
+    );
     dispatch(showModal({ isShowModal: false, modalChildren: null }));
   };
 
@@ -168,6 +172,17 @@ function DetailProduct({ ratings }) {
                 />
               </div>
             </div>
+          </div>
+          <div className="flex flex-col gap-4">
+            {product?.ratings?.map((element) => (
+              <Comment
+                key={element.id}
+                star={element.star}
+                updatedAt={element.updatedAt}
+                comment={element.comment}
+                name={`${element.postedBy?.lastName} ${element.postedBy?.firstName}`}
+              />
+            ))}
           </div>
         </div>
         <NeedHelps />

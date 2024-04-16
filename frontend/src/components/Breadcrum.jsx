@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import useBreadcrumbs from "use-react-router-breadcrumbs";
 import { Link } from "react-router-dom";
 
@@ -46,4 +46,4 @@ function Breadcrum({ gender, category, title, product }) {
   );
 }
 
-export default Breadcrum;
+export default memo(Breadcrum);

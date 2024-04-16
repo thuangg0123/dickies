@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import { Link } from "react-router-dom";
 import {
   mensCategories,
@@ -42,4 +42,4 @@ function DropDrownMenu({ category }) {
   );
 }
 
-export default DropDrownMenu;
+export default memo(DropDrownMenu);

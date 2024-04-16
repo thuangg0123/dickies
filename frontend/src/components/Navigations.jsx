@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { memo, useState } from "react";
 import { NavLink } from "react-router-dom";
 import DropDrownMenu from "./DropDrownMenu";
 
@@ -61,4 +61,4 @@ function Navigations() {
   );
 }
 
-export default Navigations;
+export default memo(Navigations);

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, memo } from "react";
 import icons from "../ultils/icons";
 
 const BtnScrollTop = () => {
@@ -40,4 +40,4 @@ const BtnScrollTop = () => {
   );
 };
 
-export default BtnScrollTop;
+export default memo(BtnScrollTop);
