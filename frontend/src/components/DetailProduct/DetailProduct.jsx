@@ -105,7 +105,7 @@ function DetailProduct({ ratings }) {
               product="Products"
             />
           </div>
-          <div className="grid grid-cols-3 gap-10 my-5">
+          <div className="grid lg:grid-cols-3 gap-10 my-5 md:grid-cols-2">
             <LeftDetaiProduct />
             <RightDetaiProduct />
           </div>
@@ -113,7 +113,7 @@ function DetailProduct({ ratings }) {
             <div className="border-b-2 border-black">
               <h2 className="text-[56px] font-second font-semibold">Reviews</h2>
             </div>
-            <div className="grid grid-cols-3 py-5 items-center font-second">
+            <div className="grid lg:grid-cols-3 py-5 items-center font-second md:grid-cols-1 md:gap-[10px]">
               <div>
                 <div className="flex flex-col gap-1">
                   {Array.from(Array(5).keys())
@@ -131,7 +131,7 @@ function DetailProduct({ ratings }) {
                     ))}
                 </div>
               </div>
-              <div className="flex justify-center">
+              <div className="flex lg:justify-center md:justify-normal">
                 <div>
                   <h3 className="font-bold pb-3">OVERALL RATING</h3>
                   <div className="flex items-center gap-3">

@@ -8,7 +8,7 @@ const LeftDetaiProduct = () => {
 
   return (
     <>
-      <div className="col-span-2">
+      <div className="lg:col-span-2 md:col-span-1">
         <div className="grid col-span-1 gap-5">
           <div>
             <img
@@ -17,7 +17,7 @@ const LeftDetaiProduct = () => {
               alt={detailProduct?.title}
             />
           </div>
-          <div className="grid grid-cols-2 gap-5">
+          <div className="grid lg:grid-cols-2 gap-5 md:grid-cols-1">
             {detailProduct &&
               detailProduct?.images &&
               detailProduct?.images.map((image, index) => {

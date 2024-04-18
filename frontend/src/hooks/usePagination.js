@@ -12,7 +12,7 @@ const usePagination = (totalProductCount, currentPage, siblingCount = 1) => {
         }
 
         const isShowLeft = currentPage - siblingCount > 2
-        const isShowRight = currentPage + siblingCount < paginationCount - 2
+        const isShowRight = currentPage + siblingCount < paginationCount - 1
 
         if (isShowLeft && !isShowRight) {
             const rightStart = paginationCount - 4
@@ -23,9 +23,8 @@ const usePagination = (totalProductCount, currentPage, siblingCount = 1) => {
 
         if (!isShowLeft && isShowRight) {
             const leftRange = generateRange(1, 5)
-            console.log(leftRange)
 
-            return [leftRange, "...", paginationCount]
+            return [...leftRange, "...", paginationCount]
         }
 
         const siblingLeft = Math.max(currentPage - siblingCount, 1)

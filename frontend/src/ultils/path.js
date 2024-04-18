@@ -1,7 +1,6 @@
 const path = {
     PUBLIC: '/',
     HOME: '',
-    // ALL: '*',
     LOGIN: 'login',
     MEN: "mens-clothing",
     WOMEN: "womens-clothing",

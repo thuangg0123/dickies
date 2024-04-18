@@ -5,15 +5,15 @@ function BoxSubBanner({ img, title, path }) {
   return (
     <>
       <div className="relative">
-        <img src={img} alt="" />
-        <div className="absolute bottom-0 p-10 font-semibold">
+        <img src={img} alt={title} />
+        <div className="absolute bottom-0 lg:p-10 md:p-5 font-semibold">
           <div className="mb-5">
             <h3>
-              <span className="text-white text-4xl ">{title}</span>
+              <span className="text-white lg:text-4xl md:text-xl">{title}</span>
             </h3>
           </div>
           <div>
-            <button className="text-black bg-white p-4 hover:text-white hover:bg-black duration-300">
+            <button className="text-black bg-white lg:p-4 md:p-3 hover:text-white hover:bg-black duration-300">
               <Link to={`/products/${path}`}>Shop Now</Link>
             </button>
           </div>

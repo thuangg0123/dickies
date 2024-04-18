@@ -36,7 +36,6 @@ function ContainerProduct({ gender, path, category }) {
   const dispatch = useDispatch();
   const products = useSelector((state) => state.product.listProducts);
   const counts = useSelector((state) => state.product.counts);
-  const categories = useSelector((state) => state.product.categories);
 
   const capitalizeFirstLetter = (string) => {
     return string.charAt(0).toUpperCase() + string.slice(1);
@@ -50,6 +49,8 @@ function ContainerProduct({ gender, path, category }) {
     }
 
     dispatch(getProductParams(queryParams));
+
+    window.scrollTo(0, 0);
   }, [dispatch, params]);
 
   useEffect(() => {
@@ -64,10 +65,22 @@ function ContainerProduct({ gender, path, category }) {
   }, [dispatch, gender, category]);
 
   useEffect(() => {
-    navigate({
-      pathname: `/products`,
-      search: createSearchParams({ sort }).toString(),
-    });
+    if (sort) {
+      let param = [];
+      for (let i of params.entries()) {
+        param.push(i);
+      }
+      const queries = {};
+      for (let i of param) {
+        queries[i[0]] = i[1];
+      }
+      queries.sort = sort;
+      queries.page = 1;
+      navigate({
+        pathname: `/products`,
+        search: createSearchParams(queries).toString(),
+      });
+    }
   }, [sort]);
 
   const handleOpenFilter = () => {
@@ -94,11 +107,19 @@ function ContainerProduct({ gender, path, category }) {
 
   return (
     <>
-      <div className="px-10 py-5">
-        <div className="font-second text-sm font-semibold">
-          <Link to="/">Home</Link> /&nbsp;
-          <Link to="/products">Products / </Link>
-          <Link to={gender !== "all" ? `/products/${gender}s-clothing` : ""}>
+      <div className="px-4 py-2 md:px-10 md:py-5">
+        <div className="font-second text-xs md:text-sm font-semibold">
+          <Link to="/" class="hover:text-blue-500">
+            Home
+          </Link>
+          /&nbsp;
+          <Link to="/products" class="hover:text-blue-500">
+            Products /
+          </Link>
+          <Link
+            to={gender !== "all" ? `/products/${gender}s-clothing` : ""}
+            class="hover:text-blue-500"
+          >
             All
             {gender !== "all"
               ? ` ${capitalizeFirstLetter(gender)}'s Clothing`
@@ -145,7 +166,7 @@ function ContainerProduct({ gender, path, category }) {
             </button>
           </div>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mt-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mt-4 md:mt-8">
           {Array.isArray(products) &&
             products.map((product, index) => (
               <ProductCard
@@ -155,9 +176,11 @@ function ContainerProduct({ gender, path, category }) {
               />
             ))}
         </div>
-        <div className="bg-red-500 w-full m-auto my-4 flex justify-center">
-          <Pagination />
-        </div>
+        {products?.length > 0 && (
+          <div className="w-full m-auto my-4 flex justify-center">
+            <Pagination totalCount={counts} />
+          </div>
+        )}
       </div>
       <NeedHelps />
       <Footer />

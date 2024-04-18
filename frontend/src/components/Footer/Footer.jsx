@@ -15,7 +15,7 @@ function Footer() {
   return (
     <>
       <div className="bg-[#1A1A1A] px-10 py-20 text-white">
-        <div className="grid grid-cols-2 gap-10">
+        <div className="grid lg:grid-cols-2 gap-10 md:grid-cols-1">
           <div className="w-full">
             <svg
               width="130"
@@ -28,7 +28,7 @@ function Footer() {
             </svg>
           </div>
           <div className="w-full flex justify-start">
-            <h2 className="text-6xl font-bold leading-normal">
+            <h2 className="lg:text-6xl md:text-3xl font-bold">
               Quality Workwear Since 1922
             </h2>
           </div>

@@ -57,7 +57,7 @@ function ProductCard({ product, isHoverEnabled }) {
                 ))}
               </ul>
             </div>
-            <h3 className="font-medium text-[15px] overflow-hidden whitespace-nowrap overflow-ellipsis">
+            <h3 className="font-medium lg:text-[15px] md:text-xs overflow-hidden whitespace-nowrap overflow-ellipsis">
               <Link
                 to={`/${product.gender[0]}-clothing/${product.category}/${product.slug}`}
               >

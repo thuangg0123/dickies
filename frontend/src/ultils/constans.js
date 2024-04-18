@@ -91,3 +91,20 @@ export const voteOptions = [
         text: "Perfect"
     },
 ]
+
+export const category = [
+    "PANTS",
+    "PANT SHORTS",
+    "SKATE SHORTS",
+    "SHIRTS",
+    "OUTERWEAR",
+    "COASTS JACKETS",
+    "BACKPACK",
+    "SOCKS",
+    "HATS",
+    "SKIRTS DRESSES",
+    "OVERALLS",
+    "PATCHES",
+    "CARPENTER PANTS",
+    "JEAN PANTS",
+]

@@ -7,14 +7,16 @@ const NeedHelps = () => {
   return (
     <>
       <section className="bg-[#F5F5F5] p-10 tracking-tighter">
-        <h2 className="text-[80px] font-semibold py-4">Need Help?</h2>
-        <div className="grid grid-cols-4 gap-4 font-medium">
-          <div className="col-span-1">
+        <h2 className="lg:text-7xl font-semibold py-4 md:text-4xl">
+          Need Help?
+        </h2>
+        <div className="grid lg:grid-cols-4 md:grid-cols-2 gap-4 font-medium">
+          <div className="lg:col-span-1 md:col-span-2">
             Monday to Friday
             <br />
             8am - 6pm CT
           </div>
-          <div className="col-span-1">
+          <div className="lg:col-span-1 md:col-span-2">
             <a href="#">1-800-Dickies (342-5437)</a>
             <br />
             <a href="#">us_customer_care@dickies.com</a>
@@ -26,7 +28,7 @@ const NeedHelps = () => {
           </div>
           <div className="col-span-1 hidden"></div>
           <div className="col-span-1 hidden"></div>
-          <div className="col-span-4 flex justify-between items-center gap-4 mt-10 text-[30px] ">
+          <div className="col-span-4 flex justify-between items-center gap-4 mt-10 lg:text-3xl md:text-lg">
             <Link
               to="/contact-us"
               className="inline-block hover:text-[#dadada] duration-300"

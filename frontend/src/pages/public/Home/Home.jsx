@@ -36,7 +36,7 @@ function Home() {
       <div>
         <Banner />
         <div className="px-10 py-2 mb-10">
-          <h2 className="mb-10 font-bold text-[54px] tracking-tighter">
+          <h2 className="mb-10 font-bold text-[54px] tracking-tighter md:text-4xl md:my-5">
             Best Sellers
           </h2>
           <Carousels />
