@@ -23,7 +23,6 @@ export { default as Carousels } from './Home/Carousels'
 export { default as SubBanner } from './Home/SubBanner'
 
 export { default as ContainerProduct } from './ContainerProduct/ContainerProduct'
-export { default as CountProduct } from './ContainerProduct/CountProduct'
 
 export { default as DetailProduct } from './DetailProduct/DetailProduct'
 export { default as LeftDetaiProduct } from './DetailProduct/LeftDetaiProduct'

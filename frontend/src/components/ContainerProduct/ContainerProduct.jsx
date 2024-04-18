@@ -6,7 +6,6 @@ import {
   useNavigate,
   createSearchParams,
 } from "react-router-dom";
-import { ClipLoader } from "react-spinners";
 import {
   getProductByGender,
   getProductByGenderAndCategory,
@@ -17,8 +16,8 @@ import {
   NeedHelps,
   Footer,
   BtnScrollTop,
-  CountProduct,
   InputSelect,
+  Pagination,
 } from "../../components";
 import icons from "../../ultils/icons";
 import FilterProduct from "./FilterProduct";
@@ -28,8 +27,6 @@ function ContainerProduct({ gender, path, category }) {
   const navigate = useNavigate();
 
   const [isShow, setIsShow] = useState(true);
-  const [visibleProducts, setVisibleProducts] = useState(8);
-  const [loading, setLoading] = useState(false);
   const [activeClick, setActiveClick] = useState(null);
   const [params] = useSearchParams();
   const [sort, setSort] = useState("");
@@ -61,22 +58,20 @@ function ContainerProduct({ gender, path, category }) {
         dispatch(getProductByGenderAndCategory({ category, gender }));
       } else {
         dispatch(getProductByGender({ gender }));
-        setVisibleProducts(8);
         window.scrollTo(0, 0);
       }
     }
   }, [dispatch, gender, category]);
 
+  useEffect(() => {
+    navigate({
+      pathname: `/products`,
+      search: createSearchParams({ sort }).toString(),
+    });
+  }, [sort]);
+
   const handleOpenFilter = () => {
     setIsShow(!isShow);
-  };
-
-  const handleLoadMore = () => {
-    setLoading(true);
-    setTimeout(() => {
-      setVisibleProducts(visibleProducts + 8);
-      setLoading(false);
-    }, 1000);
   };
 
   const handleChangeActiveFilter = useCallback(
@@ -96,13 +91,6 @@ function ContainerProduct({ gender, path, category }) {
     },
     [sort]
   );
-
-  useEffect(() => {
-    navigate({
-      pathname: `/products`,
-      search: createSearchParams({ sort }).toString(),
-    });
-  }, [sort]);
 
   return (
     <>
@@ -159,27 +147,17 @@ function ContainerProduct({ gender, path, category }) {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mt-8">
           {Array.isArray(products) &&
-            products
-              .slice(0, visibleProducts)
-              .map((product, index) => (
-                <ProductCard
-                  key={index}
-                  product={product}
-                  isHoverEnabled={path !== "/"}
-                />
-              ))}
+            products.map((product, index) => (
+              <ProductCard
+                key={index}
+                product={product}
+                isHoverEnabled={path !== "/"}
+              />
+            ))}
         </div>
-
-        {loading ? (
-          <div className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 flex justify-center items-center z-50">
-            <ClipLoader color={"#fff"} loading={loading} size={50} />
-          </div>
-        ) : (
-          <CountProduct
-            visibleProducts={visibleProducts}
-            handleLoadMore={handleLoadMore}
-          />
-        )}
+        <div className="bg-red-500 w-full m-auto my-4 flex justify-center">
+          <Pagination />
+        </div>
       </div>
       <NeedHelps />
       <Footer />

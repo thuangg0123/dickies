@@ -1,5 +1,6 @@
 import React, { useState, useCallback } from "react";
 import { useSelector } from "react-redux";
+
 import icons from "../../ultils/icons";
 import Detail from "./Detail";
 
