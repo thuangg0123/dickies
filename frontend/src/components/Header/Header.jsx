@@ -1,14 +1,11 @@
 import React, { memo, useEffect, useState } from "react";
-import Navigations from "./Navigations";
-
-import icons from "../ultils/icons";
-
 import { Link } from "react-router-dom";
-import path from "../ultils/path";
-import { getCurrent } from "../store/user/asyncActions";
+import icons from "../../ultils/icons";
+import path from "../../ultils/path";
+import { getCurrent } from "../../store/user/asyncActions";
 import { useSelector, useDispatch } from "react-redux";
-
-import { logout } from "../store/user/userSlice";
+import { logout } from "../../store/user/userSlice";
+import Navigations from "./Navigations";
 
 function Header() {
   const dispatch = useDispatch();

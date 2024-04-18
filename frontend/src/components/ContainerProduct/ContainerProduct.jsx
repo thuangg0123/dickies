@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useCallback } from "react";
+import React, { useEffect, useState, useCallback, memo } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
   Link,
@@ -188,4 +188,4 @@ function ContainerProduct({ gender, path, category }) {
   );
 }
 
-export default ContainerProduct;
+export default memo(ContainerProduct);

@@ -1,11 +1,9 @@
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
-import icons from "../../../ultils/icons";
-
-import BigAndTall from "../../../img/big-and-tall.svg";
-import ResistWrinkles from "../../../img/resist-wrinkles.svg";
-import StainRelease from "../../../img/stain-release.svg";
-
+import icons from "../../ultils/icons";
+import BigAndTall from "../../img/big-and-tall.svg";
+import ResistWrinkles from "../../img/resist-wrinkles.svg";
+import StainRelease from "../../img/stain-release.svg";
 import AccordionSection from "./AccordionSection";
 
 const Detail = () => {

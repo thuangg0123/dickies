@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
-import { useParams, Navigate, useNavigate } from "react-router-dom";
-import path from "../../ultils/path";
-
+import { useParams, useNavigate } from "react-router-dom";
+import path from "../../../ultils/path";
 import Swal from "sweetalert2";
 
 function FinalRegister() {

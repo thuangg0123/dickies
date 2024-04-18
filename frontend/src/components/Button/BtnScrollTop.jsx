@@ -1,5 +1,5 @@
 import React, { useState, useEffect, memo } from "react";
-import icons from "../ultils/icons";
+import icons from "../../ultils/icons";
 
 const BtnScrollTop = () => {
   const { ArrowUpwardIcon } = icons;

@@ -1,14 +1,11 @@
 import React, { memo, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-
-import { Breadcrum } from "../../../components/index";
-
+import { Breadcrum } from "../../components/index";
 import { LeftDetaiProduct, RightDetaiProduct, VoteOptions } from "../index";
-import { apiGetDetailProduct } from "../../../apis";
-import { submitRating } from "../../../store/products/asyncActions";
-import { showModal } from "../../../store/app/appSlice";
-
+import { apiGetDetailProduct } from "../../apis";
+import { submitRating } from "../../store/products/asyncActions";
+import { showModal } from "../../store/app/appSlice";
 import {
   NeedHelps,
   Footer,
@@ -16,11 +13,10 @@ import {
   VoteBar,
   Button,
   Comment,
-} from "../../../components/index";
-
-import icons from "../../../ultils/icons";
+} from "../../components/index";
+import icons from "../../ultils/icons";
 import Swal from "sweetalert2";
-import path from "../../../ultils/path";
+import path from "../../ultils/path";
 
 function DetailProduct({ ratings }) {
   const navigate = useNavigate();
@@ -180,7 +176,11 @@ function DetailProduct({ ratings }) {
                 star={element.star}
                 updatedAt={element.updatedAt}
                 comment={element.comment}
-                name={`${element.postedBy?.lastName} ${element.postedBy?.firstName}`}
+                name={
+                  element.postedBy
+                    ? `${element.postedBy.lastName} ${element.postedBy.firstName}`
+                    : "Anonymous"
+                }
               />
             ))}
           </div>

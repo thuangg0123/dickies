@@ -150,7 +150,13 @@ const ratings = asyncHandler(async (req, res) => {
     }
 
     //total ratings
-    const updateProduct = await Product.findById(productId)
+    const updateProduct = await Product.findById(productId).populate({
+        path: "ratings",
+        populate: {
+            path: "postedBy",
+            select: "firstName lastName avatar"
+        }
+    })
     const ratingCount = updateProduct.ratings.length
     const totalRatings = updateProduct.ratings.reduce((total, element) => {
         return total + element.star
@@ -163,6 +169,7 @@ const ratings = asyncHandler(async (req, res) => {
         data: updateProduct
     })
 })
+
 
 const uploadImageProduct = asyncHandler(async (req, res) => {
     const { productId } = req.params

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 
 function SubBanner({ subBanner, title, subtitle }) {
   return (
@@ -18,4 +18,4 @@ function SubBanner({ subBanner, title, subtitle }) {
   );
 }
 
-export default SubBanner;
+export default memo(SubBanner);

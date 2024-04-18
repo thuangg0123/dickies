@@ -1,8 +1,6 @@
 import React, { memo } from "react";
-
 import { Link } from "react-router-dom";
-
-import icons from "../ultils/icons";
+import icons from "../../ultils/icons";
 
 const NeedHelps = () => {
   const { ChatBubbleOutlineIcon } = icons;

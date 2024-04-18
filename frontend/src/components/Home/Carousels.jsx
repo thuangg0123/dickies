@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import Carousel from "react-multi-carousel";
 import { useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
@@ -63,4 +63,4 @@ function Carousels() {
   );
 }
 
-export default Carousels;
+export default memo(Carousels);

@@ -1,7 +1,5 @@
-import React from "react";
-
+import React, { memo } from "react";
 import { Link } from "react-router-dom";
-
 import banner from "../../img/banner-home.jpg";
 
 function Banner() {
@@ -27,4 +25,4 @@ function Banner() {
   );
 }
 
-export default Banner;
+export default memo(Banner);

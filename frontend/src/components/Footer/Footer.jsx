@@ -1,8 +1,6 @@
 import React, { memo } from "react";
-
-import icons from "../ultils/icons";
-
-import { menuItems } from "../ultils/itemFooter";
+import icons from "../../ultils/icons";
+import { menuItems } from "../../ultils/itemFooter";
 
 function Footer() {
   const {

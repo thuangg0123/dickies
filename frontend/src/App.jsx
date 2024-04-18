@@ -1,30 +1,23 @@
-import "./App.css";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-
 import { Route, Routes } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import "react-multi-carousel/lib/styles.css";
+import path from "./ultils/path";
+import { getCategories } from "./store/app/asyncActions";
+import { createSlug } from "./ultils/helper";
+
 import {
   Login,
   Home,
   Public,
   FAQ,
-  DetailProduct,
   Blog,
   FinalRegister,
   ResetPassword,
-} from "./pages/public";
-
-import { Modal } from "./components/index";
-import path from "./ultils/path";
-
-import "react-multi-carousel/lib/styles.css";
-import { getCategories } from "./store/app/asyncActions";
-
-import React, { useEffect } from "react";
-import ContainerProduct from "./components/ContainerProduct/ContainerProduct";
-
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
-import { createSlug } from "./ultils/helper";
+} from "./pages/public/index";
+import { DetailProduct, ContainerProduct, Modal } from "./components/index";
 
 function App() {
   const genders = [

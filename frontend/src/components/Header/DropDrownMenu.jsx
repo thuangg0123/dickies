@@ -4,7 +4,7 @@ import {
   mensCategories,
   womenCategories,
   kidCategories,
-} from "../ultils/itemCategory";
+} from "../../ultils/itemCategory";
 
 const categoryToSubcategories = {
   Men: mensCategories,

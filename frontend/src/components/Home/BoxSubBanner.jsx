@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import { Link } from "react-router-dom";
 
 function BoxSubBanner({ img, title, path }) {
@@ -23,4 +23,4 @@ function BoxSubBanner({ img, title, path }) {
   );
 }
 
-export default BoxSubBanner;
+export default memo(BoxSubBanner);

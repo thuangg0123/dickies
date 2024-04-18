@@ -1,10 +1,8 @@
 import React, { memo, useRef, useEffect, useState } from "react";
-
 import { useSelector } from "react-redux";
-
-import icons from "../../../ultils/icons";
-import { voteOptions } from "../../../ultils/constans";
-import { Button } from "../../../components/index";
+import icons from "../../ultils/icons";
+import { voteOptions } from "../../ultils/constans";
+import { Button } from "../index";
 
 function VoteOptions({ handleSubmitVoteOptions }) {
   const { StarOutlineIcon, StarIcon } = icons;

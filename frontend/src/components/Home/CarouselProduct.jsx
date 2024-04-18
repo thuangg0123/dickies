@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import Carousel from "react-multi-carousel";
 import { useSelector } from "react-redux";
 import ProductCard from "../ProductCard/ProductCard";
@@ -54,4 +54,4 @@ function CarouselProduct({ category }) {
   );
 }
 
-export default CarouselProduct;
+export default memo(CarouselProduct);

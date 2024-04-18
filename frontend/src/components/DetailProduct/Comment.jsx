@@ -1,15 +1,9 @@
 import React, { memo } from "react";
-import anonymousAvatar from "../img/anonymous.png";
+import anonymousAvatar from "../../img/anonymous.png";
 import moment from "moment";
-import icons from "./../ultils/icons";
+import icons from "../../ultils/icons";
 
-function Comment({
-  image = anonymousAvatar,
-  name = "Anonymous",
-  updatedAt,
-  comment,
-  star,
-}) {
+function Comment({ image = anonymousAvatar, name, updatedAt, comment, star }) {
   const { StarIcon, StarOutlineIcon } = icons;
 
   const renderStarFromNumber = (number) => {

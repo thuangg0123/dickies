@@ -1,8 +1,7 @@
 import React, { memo, useState } from "react";
 import { NavLink } from "react-router-dom";
+import { nav } from "../../ultils/constans";
 import DropDrownMenu from "./DropDrownMenu";
-
-import { nav } from "../ultils/constans";
 
 function Navigations() {
   const [showSubMenu, setShowSubMenu] = useState(false);

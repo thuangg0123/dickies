@@ -1,10 +1,9 @@
 import React, { useState } from "react";
-import { Button } from "../../components";
+import { Button } from "../../../components/index";
 import { useParams, useNavigate } from "react-router-dom";
-import { apiResetPassword } from "../../apis/user";
-
+import { apiResetPassword } from "../../../apis/user";
 import { toast } from "react-toastify";
-import path from "../../ultils/path";
+import path from "../../../ultils/path";
 
 function ResetPassword() {
   const { token } = useParams();

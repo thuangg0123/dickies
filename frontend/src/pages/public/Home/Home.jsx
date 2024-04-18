@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
-import path from "../../ultils/path.js";
+import path from "../../../ultils/path.js";
 
 import {
   Banner,
@@ -11,15 +11,15 @@ import {
   NeedHelps,
   Footer,
   BtnScrollTop,
-} from "../../components";
+} from "../../../components/index.js";
 
-import subbanner1 from "../../img/banner-sub1.jpg";
-import subbanner2 from "../../img/banner-sub2.jpg";
-import subbanner3 from "../../img/banner-sub3.jpg";
-import boxbanner1 from "../../img/box-banner1.jpg";
-import boxbanner2 from "../../img/box-banner2.jpg";
+import subbanner1 from "../../../img/banner-sub1.jpg";
+import subbanner2 from "../../../img/banner-sub2.jpg";
+import subbanner3 from "../../../img/banner-sub3.jpg";
+import boxbanner1 from "../../../img/box-banner1.jpg";
+import boxbanner2 from "../../../img/box-banner2.jpg";
 
-import { getProductByCategory } from "../../store/app/asyncActions";
+import { getProductByCategory } from "../../../store/app/asyncActions.js";
 
 function Home() {
   const dispatch = useDispatch();
