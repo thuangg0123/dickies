@@ -1,16 +1,18 @@
 import React, { memo, useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import icons from "../../ultils/icons";
 import path from "../../ultils/path";
 import { getCurrent } from "../../store/user/asyncActions";
 import { useSelector, useDispatch } from "react-redux";
-import { logout } from "../../store/user/userSlice";
+import { logout, clearMessage } from "../../store/user/userSlice";
 import Navigations from "./Navigations";
+import Swal from "sweetalert2";
 
 function Header() {
+  const nagivate = useNavigate();
   const dispatch = useDispatch();
   const [isHover, setIsHover] = useState(false);
-  const { isLoggedIn } = useSelector((state) => state.user);
+  const { isLoggedIn, message } = useSelector((state) => state.user);
   useEffect(() => {
     if (isLoggedIn) {
       dispatch(getCurrent());
@@ -23,6 +25,14 @@ function Header() {
     BookmarkBorderOutlinedIcon,
     ShoppingCartOutlinedIcon,
   } = icons;
+
+  useEffect(() => {
+    if (message) {
+      Swal.fire("Oops!", message, "info").then(() => {});
+      dispatch(clearMessage());
+      nagivate(`/${path.LOGIN}`);
+    }
+  }, [message]);
 
   return (
     <>
