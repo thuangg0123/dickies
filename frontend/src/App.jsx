@@ -20,12 +20,6 @@ import {
 import { DetailProduct, ContainerProduct, Modal } from "./components/index";
 
 function App() {
-  const genders = [
-    { gender: "men", path: path.MEN },
-    { gender: "women", path: path.WOMEN },
-    { gender: "kids", path: path.KIDS },
-  ];
-
   const categories = useSelector((state) => state.app.categories);
   const category = categories.map((element) => createSlug(element.title));
   const detailProduct = useSelector((state) => state.product.detailProduct);
@@ -93,15 +87,6 @@ function App() {
               </React.Fragment>
             );
           })}
-          {genders.map((gender) => (
-            <Route
-              key={gender}
-              path={`products/${gender.path}`}
-              element={
-                <ContainerProduct gender={gender.gender} path={gender.path} />
-              }
-            />
-          ))}
           <Route
             path={`${path.PRODUCTS}/:${path.MEN}/:category/:slug/:productId`}
             element={

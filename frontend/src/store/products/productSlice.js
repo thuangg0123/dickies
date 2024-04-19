@@ -14,38 +14,12 @@ export const productSlice = createSlice({
 
     },
     extraReducers: (builder) => {
-        builder.addCase(actions.getProductByGender.pending, (state, action) => {
-            state.isLoading = true
-        })
-        builder.addCase(actions.getProductByGender.fulfilled, (state, action) => {
-            state.isLoading = false
-            state.listProducts = action.payload.dataProduct
-            state.counts = action.payload.counts
-        })
-        builder.addCase(actions.getProductByGender.rejected, (state, action) => {
-            state.isLoading = false
-            state.isError = true
-        })
-
-        builder.addCase(actions.getProductByGenderAndCategory.pending, (state, action) => {
-            state.isLoading = true
-        })
-        builder.addCase(actions.getProductByGenderAndCategory.fulfilled, (state, action) => {
-            state.isLoading = false
-            state.listProducts = action.payload.dataProduct
-            state.counts = action.payload.counts
-        })
-        builder.addCase(actions.getProductByGenderAndCategory.rejected, (state, action) => {
-            state.isLoading = false
-            state.isError = true
-        })
-
         builder.addCase(actions.getDetailProduct.pending, (state, action) => {
             state.isLoading = true
         })
         builder.addCase(actions.getDetailProduct.fulfilled, (state, action) => {
             state.isLoading = false
-            state.detailProduct = action.payload.dataProduct // Cập nhật detailProduct với dữ liệu mới từ response
+            state.detailProduct = action.payload.dataProduct
         })
         builder.addCase(actions.getDetailProduct.rejected, (state, action) => {
             state.isLoading = false

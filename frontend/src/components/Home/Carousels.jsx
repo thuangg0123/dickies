@@ -50,7 +50,10 @@ function Carousels() {
       {categoriesHaveImg &&
         categoriesHaveImg.length > 0 &&
         categoriesHaveImg.map((category, index) => (
-          <NavLink key={index} to={`/products/${createSlug(category.title)}`}>
+          <NavLink
+            key={index}
+            to={`/products?category=${createSlug(category.title)}`}
+          >
             <div className="px-2 cursor-pointer">
               <img src={category.img} alt={`Slide ${index + 1}`} />
               {category.title && (

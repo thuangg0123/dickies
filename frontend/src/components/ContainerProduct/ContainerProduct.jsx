@@ -6,11 +6,7 @@ import {
   useNavigate,
   createSearchParams,
 } from "react-router-dom";
-import {
-  getProductByGender,
-  getProductByGenderAndCategory,
-  getProductParams,
-} from "../../store/products/asyncActions";
+import { getProductParams } from "../../store/products/asyncActions";
 import ProductCard from "../ProductCard/ProductCard";
 import {
   NeedHelps,
@@ -52,17 +48,6 @@ function ContainerProduct({ gender, path, category }) {
 
     window.scrollTo(0, 0);
   }, [dispatch, params]);
-
-  useEffect(() => {
-    if (gender) {
-      if (category) {
-        dispatch(getProductByGenderAndCategory({ category, gender }));
-      } else {
-        dispatch(getProductByGender({ gender }));
-        window.scrollTo(0, 0);
-      }
-    }
-  }, [dispatch, gender, category]);
 
   useEffect(() => {
     if (sort) {

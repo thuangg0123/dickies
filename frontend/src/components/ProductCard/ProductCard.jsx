@@ -27,15 +27,11 @@ function ProductCard({ product, isHoverEnabled }) {
     return stars;
   };
 
-  const handleClick = (productId) => {
-    dispatch(getDetailProduct({ productId }));
-  };
-
   return (
     <>
       <Link
         to={`/products/${product.gender[0]}s-clothing/${product.category}/${product.slug}/${product?._id}`}
-        onClick={() => handleClick(product._id)}
+        onClick={() => dispatch(getDetailProduct({ productId: product._id }))}
       >
         <div
           className="px-2 cursor-pointer relative"

@@ -20,7 +20,7 @@ function Breadcrum({ gender, category, title, product }) {
     { path: "/", breadcrumb: "Home" },
     { path: "/products", breadcrumb: product },
     {
-      path: "/products/:gender",
+      path: `/products/:gender`,
       breadcrumb: `${capitalizeFirstLetter(gender)}'clothing`,
     },
     {
