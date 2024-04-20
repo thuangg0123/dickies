@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { InputFields, Button } from "../../../components";
+import { InputFields, Button, Loading } from "../../../components";
 import {
   apiRegister,
   apiLogin,
@@ -9,6 +9,8 @@ import {
   apiFinalRegister,
 } from "../../../apis/user";
 import { login } from "../../../store/user/userSlice";
+import { getCurrent } from "../../../store/user/asyncActions";
+import { showModal } from "../../../store/app/appSlice";
 import path from "../../../ultils/path";
 import { validate } from "../../../ultils/helper";
 import Swal from "sweetalert2";
@@ -53,13 +55,16 @@ const Login = () => {
 
     if (invalids === 0) {
       if (isRegister) {
+        dispatch(showModal({ isShowModal: true, modalChildren: <Loading /> }));
         const response = await apiRegister(payload);
+        dispatch(showModal({ isShowModal: false, modalChildren: null }));
         if (response.success) {
           setIsVerifiedEmail(true);
         } else {
           Swal.fire("Oops !", response.message, "error");
         }
       } else {
+        dispatch(showModal({ isShowModal: true, modalChildren: <Loading /> }));
         const result = await apiLogin(data);
         if (result.success) {
           dispatch(
@@ -69,6 +74,8 @@ const Login = () => {
               userData: result.userData,
             })
           );
+          await dispatch(getCurrent());
+          dispatch(showModal({ isShowModal: false, modalChildren: null }));
           navigate(`/${path.HOME}`);
         } else {
           Swal.fire("Oops !", result.message, "error");

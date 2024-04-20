@@ -14,7 +14,9 @@ function BoxSubBanner({ img, title, path }) {
           </div>
           <div>
             <button className="text-black bg-white lg:p-4 md:p-3 hover:text-white hover:bg-black duration-300">
-              <Link to={`/products/${path}`}>Shop Now</Link>
+              <Link to={path ? `/products/${path}` : "/products"}>
+                Shop Now
+              </Link>
             </button>
           </div>
         </div>

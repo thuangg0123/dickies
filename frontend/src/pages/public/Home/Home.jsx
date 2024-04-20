@@ -72,15 +72,11 @@ function Home() {
           </div>
         </div>
         <div className="flex px-10 py-2 mb-10 justify-between gap-10">
-          <BoxSubBanner
-            img={boxbanner1}
-            title="Premium Collection"
-            path={path.ALL}
-          />
+          <BoxSubBanner img={boxbanner1} title="Premium Collection" />
           <BoxSubBanner
             img={boxbanner2}
             title="Coveralls & Overalls"
-            path={path.OVERALLS}
+            path={"?category=overalls"}
           />
         </div>
         <NeedHelps />

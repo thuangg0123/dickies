@@ -34,6 +34,8 @@ function Header() {
     }
   }, [message]);
 
+  const { current } = useSelector((state) => state.user);
+
   return (
     <>
       <div className="flex justify-between items-center border h-[80px] w-main px-10 py-2 fixed top-0 left-0 z-50 bg-white">
@@ -106,14 +108,18 @@ function Header() {
                   >
                     <div className="py-1" role="none">
                       <Link
-                        to="/account"
+                        to={
+                          +current?.role === 0
+                            ? `/${path.ADMIN}/${path.DASHBOARD}`
+                            : `/${path.MEMBER}/${path.PERSONAL}`
+                        }
                         href="#"
                         className="text-gray-700 block px-4 py-2 text-sm"
                         role="menuitem"
                         tabindex="-1"
                         id="menu-item-0"
                       >
-                        Information
+                        {+current.role === 0 ? "Manage" : "Information"}
                       </Link>
                       <button
                         href="#"

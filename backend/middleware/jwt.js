@@ -4,14 +4,14 @@ const generateAccessToken = (userId, role) => {
     return jwt.sign({
         _id: userId,
         role: role
-    }, process.env.JWT_SECRET, { expiresIn: '1d' })
+    }, process.env.JWT_SECRET, { expiresIn: '7d' })
 }
 
 const generateRefreshToken = (userId, role) => {
     return jwt.sign({
         _id: userId,
         role: role
-    }, process.env.JWT_SECRET, { expiresIn: '3d' })
+    }, process.env.JWT_SECRET, { expiresIn: '7d' })
 }
 
 module.exports = {

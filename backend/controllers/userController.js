@@ -102,7 +102,7 @@ const getCurrent = asyncHandler(async (req, res) => {
     const { _id } = req.user
     const user = await User.findById({
         _id: _id
-    }).select('-refreshToken -password -role')
+    }).select('-refreshToken -password')
 
     return res.status(200).json({
         success: user ? true : false,
