@@ -1,4 +1,6 @@
 import path from "./path"
+import React from 'react';
+import icons from './icons'
 
 export const nav = [
     {
@@ -107,4 +109,46 @@ export const category = [
     "PATCHES",
     "CARPENTER PANTS",
     "JEAN PANTS",
+]
+
+const { DashboardIcon, GroupsIcon, InventoryIcon, CategoryIcon } = icons
+
+export const adminSidebar = [
+    {
+        id: 1,
+        type: "SINGLE",
+        text: "Dashboard",
+        path: `${path.DASHBOARD}`,
+        icon: React.createElement(DashboardIcon, null)
+    },
+    {
+        id: 2,
+        type: "SINGLE",
+        text: "Manage users",
+        path: `${path.MANAGE_USER}`,
+        icon: React.createElement(GroupsIcon, null)
+    },
+    {
+        id: 3,
+        type: "PARENT",
+        text: "Manage products",
+        icon: React.createElement(InventoryIcon, null),
+        submenu: [
+            {
+                text: 'Create products',
+                path: `${path.CREATE_PRODUCTS}`
+            },
+            {
+                text: "Manage products",
+                path: `${path.MANAGE_ORDER}`
+            }
+        ]
+    },
+    {
+        id: 4,
+        type: "SINGLE",
+        text: "Manage orders",
+        path: `${path.MANAGE_ORDER}`,
+        icon: React.createElement(CategoryIcon, null)
+    }
 ]

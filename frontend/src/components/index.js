@@ -25,4 +25,5 @@ export { default as Pagination } from './Pagination/Pagination'
 export { default as PagiItem } from './Pagination/PagiItem'
 export { default as ContainerProduct } from './ContainerProduct/ContainerProduct'
 export { default as Loading } from './Loading/Loading'
+export { default as AdminSidebar } from './Sidebar/AdminSidebar'
 
