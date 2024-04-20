@@ -1,27 +1,54 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { apiGetUsers } from "../../apis/user";
 import { roles } from "../../ultils/constans";
 import moment from "moment";
+import { InputFields, Pagination } from "../../components";
+import { useDebounce } from "../../hooks/useDebounce";
+import { useSearchParams } from "react-router-dom";
 
 function ManageUser() {
   const [users, setUsers] = useState();
+  const [queries, setQueries] = useState({
+    q: "",
+  });
+  const [params] = useSearchParams();
   const fetchUsers = async (params) => {
-    const response = await apiGetUsers(params);
+    const response = await apiGetUsers({
+      ...params,
+      limit: +import.meta.env.VITE_APP_LIMIT,
+    });
     if (response.success) {
       setUsers(response);
     }
     console.log(response);
   };
 
+  const queriesDebounce = useDebounce(queries.q, 800);
+
   useEffect(() => {
-    fetchUsers();
-  }, []);
+    const queries = Object.fromEntries([...params]);
+    if (queriesDebounce) {
+      queries.q = queriesDebounce;
+    }
+    fetchUsers(queries);
+  }, [queriesDebounce, params]);
   return (
     <div className="w-full">
       <h1 className="h-[75px] px-4 flex justify-between items-center text-3xl font-bold border-b">
         <span>Manage users</span>
       </h1>
       <div className="w-full p-2">
+        <div className="flex justify-end py-4">
+          <InputFields
+            nameKey={"q"}
+            value={queries.q}
+            setValue={setQueries}
+            style
+            fullWidth
+            isHideLabel
+            placeholder={"Search name or mail user ..."}
+          />
+        </div>
         <table className="table-auto mb-6 text-left text-sm w-full">
           <thead className="font-bold bg-black text-white text-center">
             <tr className="border boder-gray-500">
@@ -63,6 +90,9 @@ function ManageUser() {
             ))}
           </tbody>
         </table>
+        <div className="w-full text-right">
+          <Pagination totalCount={users?.counts} />
+        </div>
       </div>
     </div>
   );

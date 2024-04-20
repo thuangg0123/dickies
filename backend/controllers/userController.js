@@ -226,6 +226,16 @@ const getUsers = asyncHandler(async (req, res) => {
         formattedQueries.name = { $regex: queries.name, $options: 'i' }
     }
 
+    if (req.query.q) {
+        delete formattedQueries.q
+        formattedQueries['$or'] = [
+            { firstName: { $regex: req.query.q, $options: 'i' } },
+            { lastName: { $regex: req.query.q, $options: 'i' } },
+            { email: { $regex: req.query.q, $options: 'i' } },
+            { phone: { $regex: req.query.q, $options: 'i' } },
+        ]
+    }
+
     let queryCommand = User.find(formattedQueries)
 
     if (req.query.sort) {

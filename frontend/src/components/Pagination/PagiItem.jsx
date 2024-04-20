@@ -4,26 +4,21 @@ import {
   useSearchParams,
   useNavigate,
   createSearchParams,
+  useLocation,
 } from "react-router-dom";
 
 const PagiItem = ({ children }) => {
   const navigate = useNavigate();
+  const location = useLocation();
   const [params] = useSearchParams();
 
   const handlePagination = () => {
-    let param = [];
-    for (let i of params.entries()) {
-      param.push(i);
-    }
-    const queries = {};
-    for (let i of param) {
-      queries[i[0]] = i[1];
-    }
+    const queries = Object.fromEntries([...params]);
     if (Number(children)) {
       queries.page = children;
     }
     navigate({
-      pathname: "/products",
+      pathname: location.pathname,
       search: createSearchParams(queries).toString(),
     });
   };
