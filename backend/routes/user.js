@@ -3,6 +3,7 @@ const userController = require('../controllers/userController')
 const { verifyAccessToken, isAdmin } = require('../middleware/verifyToken')
 
 router.post("/register", userController.register)
+router.post("/mock", userController.createUsers)
 router.put("/final-register/:token", userController.finalRegister)
 router.post("/login", userController.login)
 router.get("/current", verifyAccessToken, userController.getCurrent)

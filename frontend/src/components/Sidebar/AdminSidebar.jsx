@@ -21,7 +21,6 @@ function AdminSidebar() {
       setActived((prev) => [...prev, tabID]);
     }
   };
-  console.log(actived);
   return (
     <div className="bg-black h-full py-4">
       <div className="flex justify-center gap-2 items-center flex-col py-4">

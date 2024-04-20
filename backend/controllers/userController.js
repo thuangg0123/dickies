@@ -5,6 +5,7 @@ const jwt = require('jsonwebtoken')
 const { sendMail } = require('../ultils/sendMail')
 var crypto = require("crypto")
 const makeToken = require('uniqid')
+const { users } = require('../ultils/constant')
 
 const register = asyncHandler(async (req, res) => {
     const { email, password, firstName, lastName, phone } = req.body
@@ -215,13 +216,44 @@ const resetPassword = asyncHandler(async (req, res) => {
 })
 
 const getUsers = asyncHandler(async (req, res) => {
-    const response = await User.find().select('-refreshToken -password -role')
-    return res.status(200).json({
-        success: response ? true : false,
-        message: response ? "Get all users" : "Something wrong, please try again ....",
-        data: response ? response : [],
-        errorcode: response ? 1 : 0
-    })
+    const queries = { ...req.query }
+    const excludeField = ['limit', 'sort', 'page', 'fields']
+    excludeField.forEach(element => delete queries[element])
+    let queryString = JSON.stringify(queries)
+    queryString = queryString.replace(/\b(gte|gt|lt|lte)\b/g, matchedElement => `$${matchedElement}`)
+    let formattedQueries = JSON.parse(queryString)
+    if (queries?.name) {
+        formattedQueries.name = { $regex: queries.name, $options: 'i' }
+    }
+
+    let queryCommand = User.find(formattedQueries)
+
+    if (req.query.sort) {
+        const sortBy = req.query.sort.split(',').join(' ')
+        queryCommand = queryCommand.sort(sortBy)
+    }
+
+    if (req.query.fields) {
+        const fields = req.query.fields.split(',').join(' ')
+        queryCommand = queryCommand.select(fields)
+    }
+
+    const page = +req.query.page || 1
+    const limit = +req.query.limit || process.env.LIMIT_PRODUCT
+    const skip = (page - 1) * limit
+
+    queryCommand.skip(skip).limit(limit)
+    queryCommand.then(async (response) => {
+        const counts = await User.find(formattedQueries).countDocuments()
+        return res.status(200).json({
+            counts: counts,
+            success: counts > 0 ? true : false,
+            data: counts > 0 ? response : 'cannot get users',
+            errorCode: counts > 0 ? 1 : 0,
+        })
+    }).catch((err) => {
+        console.log("Error: ", err)
+    });
 })
 
 const deleteUser = asyncHandler(async (req, res) => {
@@ -318,7 +350,16 @@ const updateCart = asyncHandler(async (req, res) => {
     }
 })
 
+const createUsers = asyncHandler(async (req, res) => {
+    const response = await User.create(users)
+    return res.status(200).json({
+        success: response ? true : false,
+        users: response ? response : "something went wrong ..."
+    })
+})
+
 module.exports = {
     register, login, getCurrent, refreshAccesstoken, logout, forgotPassword, resetPassword,
-    getUsers, deleteUser, updateUser, updateUserByAdmin, updateAddressUser, updateCart, finalRegister
+    getUsers, deleteUser, updateUser, updateUserByAdmin, updateAddressUser, updateCart, finalRegister,
+    createUsers
 }

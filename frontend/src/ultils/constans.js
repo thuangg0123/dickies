@@ -152,3 +152,14 @@ export const adminSidebar = [
         icon: React.createElement(CategoryIcon, null)
     }
 ]
+
+export const roles = [
+    {
+        code: 0,
+        value: "Admin"
+    },
+    {
+        code: 111,
+        value: "User"
+    }
+]
