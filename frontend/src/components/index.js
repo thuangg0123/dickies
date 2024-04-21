@@ -28,4 +28,5 @@ export { default as Loading } from './Loading/Loading'
 export { default as AdminSidebar } from './Sidebar/AdminSidebar'
 export { default as InputForm } from './Input/InputForm'
 export { default as Select } from './Input/Select'
+export { default as Textarea } from './Input/Textarea'
 

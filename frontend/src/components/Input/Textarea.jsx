@@ -1,33 +1,27 @@
 import clsx from "clsx";
 import React, { memo } from "react";
 
-function InputForm({
+function Textarea({
   label,
   disabled,
   register,
   errors,
   id,
   validate,
-  type = "text",
   placeholder,
   fullWidth,
   defaultValue,
   style,
 }) {
   return (
-    <div className={clsx(`flex flex-col h-[78px] gap-2`, style)}>
+    <div className="flex flex-col gap-2">
       {label && <label htmlFor={id}>{label}</label>}
-      <input
-        type={type}
+      <textarea
         id={id}
         {...register(id, validate)}
         disabled={disabled}
         placeholder={placeholder}
-        className={clsx(
-          "form-input text-sm my-auto",
-          fullWidth && "w-full",
-          style
-        )}
+        className={clsx("form-textarea text-sm", fullWidth && "w-full", style)}
         defaultValue={defaultValue}
       />
       {errors && errors[id] && (
@@ -39,4 +33,4 @@ function InputForm({
   );
 }
 
-export default memo(InputForm);
+export default memo(Textarea);
