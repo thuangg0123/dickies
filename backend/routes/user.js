@@ -13,7 +13,7 @@ router.post("/forgot-password", userController.forgotPassword)
 router.put("/reset-password", userController.resetPassword)
 
 router.get("/", verifyAccessToken, isAdmin, userController.getUsers)
-router.delete("/", verifyAccessToken, isAdmin, userController.deleteUser)
+router.delete("/:userId", verifyAccessToken, isAdmin, userController.deleteUser)
 router.put("/update", verifyAccessToken, userController.updateUser)
 router.put("/update-address", verifyAccessToken, isAdmin, userController.updateAddressUser)
 router.put("/update-cart", verifyAccessToken, isAdmin, userController.updateCart)

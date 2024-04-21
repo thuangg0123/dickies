@@ -16,7 +16,7 @@ function InputFields({
   const error = invalidFields?.find((el) => el.name === nameKey);
 
   return (
-    <div className={clsx("my-5", fullWidth && "w-full")}>
+    <div className={clsx("my-5", fullWidth && "w-full my-0")}>
       <label className="text-[13px] absolute" htmlFor={nameKey}>
         {!isHideLabel &&
           nameKey?.slice(0, 1).toUpperCase() + nameKey?.slice(1) + "*"}

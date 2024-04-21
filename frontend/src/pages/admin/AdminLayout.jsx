@@ -10,7 +10,7 @@ function AdminLayout() {
     return <Navigate to={`/${path.LOGIN}`} replace={true} />;
   }
   return (
-    <div className="flex w-full bg-[#F5F5F5] min-h-screen relative text-black">
+    <div className="flex w-full bg-[#F5F5F5] min-h-screen relative text-black font-second">
       <div className="w-[280px] top-0 bottom-0 flex-none fixed text-white">
         <AdminSidebar />
       </div>

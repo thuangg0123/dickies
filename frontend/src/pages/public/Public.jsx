@@ -7,7 +7,7 @@ function Public() {
     <>
       <div className="w-full flex flex-col items-center justify-center overflow-hidden">
         <Header />
-        <div className="md:w-full lg:w-main pt-[80px]">
+        <div className="md:w-full lg:w-full pt-[80px]">
           <Outlet />
         </div>
       </div>

@@ -26,4 +26,6 @@ export { default as PagiItem } from './Pagination/PagiItem'
 export { default as ContainerProduct } from './ContainerProduct/ContainerProduct'
 export { default as Loading } from './Loading/Loading'
 export { default as AdminSidebar } from './Sidebar/AdminSidebar'
+export { default as InputForm } from './Input/InputForm'
+export { default as Select } from './Input/Select'
 
