@@ -6,10 +6,9 @@ import { useSelector } from "react-redux";
 import { gender } from "../../ultils/constans";
 import { getBase64, validate } from "../../ultils/helper";
 import { toast } from "react-toastify";
-import icons from "../../ultils/icons";
+import { apiCreateProduct } from "../../apis";
 
 function CreateProducts() {
-  const { DeleteForeverIcon } = icons;
   const [payload, setPayload] = useState({
     description: "",
   });
@@ -37,19 +36,42 @@ function CreateProducts() {
     [payload]
   );
 
-  const handleCreateNewProduct = (data) => {
+  const handleCreateNewProduct = async (data) => {
     const invalid = validate(payload, setInvalidFields);
     if (invalid === 0) {
-      if (data.category) {
-        data.category = categories?.find(
-          (element) => element._id === data.category
-        )?.title;
-        const finalPayload = { ...data, ...payload };
-        const formData = new FormData();
-        for (let i of Object.entries(finalPayload)) {
-          formData.append(i[0], i[1]);
+      if (data.brand === "1") {
+        data.brand = "Dickies";
+      }
+      switch (data.gender) {
+        case "0":
+          data.gender = "men";
+          break;
+        case "1":
+          data.gender = "women";
+          break;
+        case "2":
+          data.gender = "kids";
+          break;
+        default:
+          break;
+      }
+      data.color = [data.color];
+      const finalPayload = { ...data, ...payload };
+      console.log(finalPayload);
+      const formData = new FormData();
+      for (let i of Object.entries(finalPayload)) {
+        formData.append(i[0], i[1]);
+      }
+      if (finalPayload.thumb) {
+        formData.append("thumb", finalPayload.thumb[0]);
+      }
+      if (finalPayload.images) {
+        for (let image of finalPayload.images) {
+          formData.append("images", image);
         }
       }
+      const response = await apiCreateProduct(formData);
+      console.log(response);
     }
   };
 
@@ -83,19 +105,6 @@ function CreateProducts() {
   useEffect(() => {
     handlePreviewImage(watch("images"));
   }, [watch("images")]);
-
-  const handleRemoveImage = (name) => {
-    const files = [...watch("images")];
-    reset({
-      images: files?.filter((element) => element.name !== name),
-    });
-    if (preview.images.some((element) => element.name === name)) {
-      setPreview((prev) => ({
-        ...prev,
-        images: prev.images.filter((element) => element.name !== name),
-      }));
-    }
-  };
 
   return (
     <div className="w-full">
@@ -255,20 +264,6 @@ function CreateProducts() {
                     alt="product"
                     className="w-[200px] object-contain"
                   />
-                  {/* {hoverElement === image.name && (
-                    <div
-                      className="absolute inset-0 bg-overlay animate-scale-up-ver-center flex items-center justify-center"
-                      onClick={() => handleRemoveImage(image.name)}
-                    >
-                      <DeleteForeverIcon
-                        style={{
-                          color: "#B22714",
-                          fontSize: "60px",
-                          cursor: "pointer",
-                        }}
-                      />
-                    </div>
-                  )} */}
                 </div>
               ))}
             </div>

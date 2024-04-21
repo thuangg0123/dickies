@@ -5,10 +5,12 @@ import BigAndTall from "../../img/big-and-tall.svg";
 import ResistWrinkles from "../../img/resist-wrinkles.svg";
 import StainRelease from "../../img/stain-release.svg";
 import AccordionSection from "./AccordionSection";
+import DOMPurify from "dompurify";
 
 const Detail = () => {
   const { RemoveIcon, AddIcon } = icons;
   const detailProduct = useSelector((state) => state.product.detailProduct);
+  console.log(detailProduct);
 
   const [accordionState, setAccordionState] = useState({
     description: true,
@@ -32,7 +34,22 @@ const Detail = () => {
         isOpen={accordionState.description}
         toggleAccordion={() => toggleAccordion("description")}
       >
-        <p className="py-6">{detailProduct?.description}</p>
+        {detailProduct?.description &&
+        Array.isArray(detailProduct?.description) &&
+        detailProduct?.description.length > 1 ? (
+          detailProduct?.description.map((element, index) => (
+            <p key={index} className="py-6">
+              {element}
+            </p>
+          ))
+        ) : (
+          <p
+            className="py-6"
+            dangerouslySetInnerHTML={{
+              __html: DOMPurify.sanitize(detailProduct?.description),
+            }}
+          ></p>
+        )}
         <p className="font-semibold">Item ID: {detailProduct?._id}</p>
       </AccordionSection>
       <AccordionSection
