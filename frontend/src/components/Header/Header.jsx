@@ -116,7 +116,7 @@ function Header() {
                         href="#"
                         className="text-gray-700 block px-4 py-2 text-sm"
                         role="menuitem"
-                        tabindex="-1"
+                        tabIndex="-1"
                         id="menu-item-0"
                       >
                         {+current.role === 0 ? "Manage" : "Information"}
@@ -125,7 +125,7 @@ function Header() {
                         href="#"
                         className="text-gray-700 block px-4 py-2 text-sm"
                         role="menuitem"
-                        tabindex="-1"
+                        tabIndex="-1"
                         id="menu-item-1"
                         onClick={() => dispatch(logout())}
                       >

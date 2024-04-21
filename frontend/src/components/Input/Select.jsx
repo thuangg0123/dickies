@@ -29,9 +29,12 @@ function Select({
           <option value="">Choose</option>
           {options &&
             options?.map((element) => (
-              <option value={element.code}>{element.value}</option>
+              <option key={element.code} value={element.code}>
+                {element.value}
+              </option>
             ))}
         </select>
+
         {errors && errors[id] && (
           <small className="text-xs text-red-500 whitespace-nowrap">
             {errors[id]?.message}
