@@ -22,11 +22,13 @@ function InputForm({
         {...register(id, validate)}
         disabled={disabled}
         placeholder={placeholder}
-        className={clsx("form-input", fullWidth && "w-full")}
+        className={clsx("form-input text-sm my-auto", fullWidth && "w-full")}
         defaultValue={defaultValue}
       />
       {errors && errors[id] && (
-        <small className="text-xs text-red-500">{errors[id]?.message}</small>
+        <small className="text-xs text-red-500 whitespace-nowrap">
+          {errors[id]?.message}
+        </small>
       )}
     </div>
   );

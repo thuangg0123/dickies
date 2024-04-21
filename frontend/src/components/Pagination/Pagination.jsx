@@ -4,7 +4,6 @@ import PagiItem from "../Pagination/PagiItem";
 import { useSearchParams } from "react-router-dom";
 
 const Pagination = ({ totalCount }) => {
-  const [] = useState();
   const [params] = useSearchParams();
   const pagination = usePagination(totalCount, params.get("page") || 1);
 
@@ -19,13 +18,17 @@ const Pagination = ({ totalCount }) => {
   return (
     <>
       <div className="flex w-full items-center justify-between">
-        {!+params.get("page") && (
+        {!+params.get("page") ? (
           <span className="text-sm font-semibold">{`Show products 1 - ${
             Math.min(+import.meta.env.VITE_APP_LIMIT, totalCount) || 10
           } of ${totalCount}`}</span>
+        ) : (
+          ""
         )}
-        {+params.get("page") && (
+        {+params.get("page") ? (
           <span className="text-sm font-semibold">{`Show products ${range()} of ${totalCount}`}</span>
+        ) : (
+          ""
         )}
         <div className="flex items-center gap-4">
           {pagination?.map((element) => (

@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useState } from "react";
 import { apiGetUsers, apiUpdateUsers, apiDeleteUser } from "../../apis/user";
-import { roles } from "../../ultils/constans";
+import { roles, blockStatus } from "../../ultils/constans";
 import moment from "moment";
 import {
   InputFields,
@@ -88,7 +88,7 @@ function ManageUser() {
     });
   };
   return (
-    <div className={editElement ? "w-full pl-12" : "w-full"}>
+    <div className={editElement ? "w-full pl-[4rem]" : "w-full"}>
       <h1 className="h-[75px] px-4 flex justify-between items-center text-3xl font-bold border-b">
         <span>Manage users</span>
       </h1>
@@ -117,15 +117,15 @@ function ManageUser() {
           <table className="table-auto mb-6 text-left text-sm w-full">
             <thead className="font-bold bg-black text-white text-center">
               <tr className="border boder-gray-500">
-                <th className="px-2 py-1">#</th>
-                <th className="px-2 py-1">Email</th>
-                <th className="px-2 py-1">Firstname</th>
-                <th className="px-2 py-1">Lastname</th>
-                <th className="px-2 py-1">Role</th>
-                <th className="px-2 py-1">Phone</th>
-                <th className="px-2 py-1">Status</th>
-                <th className="px-2 py-1">Created At</th>
-                <th className="px-2 py-1">Actions</th>
+                <th className="px-4 py-2">#</th>
+                <th className="px-4 py-2">Email</th>
+                <th className="px-4 py-2">Firstname</th>
+                <th className="px-4 py-2">Lastname</th>
+                <th className="px-4 py-2">Role</th>
+                <th className="px-4 py-2">Phone</th>
+                <th className="px-4 py-2">Status</th>
+                <th className="px-4 py-2">Created At</th>
+                <th className="px-4 py-2">Actions</th>
               </tr>
             </thead>
             <tbody>
@@ -183,7 +183,15 @@ function ManageUser() {
                   </td>
                   <td className="py-2 px-4">
                     {editElement?._id === user?._id ? (
-                      <Select />
+                      <Select
+                        register={register}
+                        fullWidth
+                        errors={errors}
+                        defaultValue={user.role}
+                        id={"role"}
+                        validate={{ required: `Require fill lastName` }}
+                        options={roles}
+                      />
                     ) : (
                       <span>
                         {roles.find((role) => +role.code === +user.role)?.value}
@@ -212,7 +220,15 @@ function ManageUser() {
                   </td>
                   <td className="py-2 px-4">
                     {editElement?._id === user?._id ? (
-                      <Select />
+                      <Select
+                        register={register}
+                        fullWidth
+                        errors={errors}
+                        defaultValue={user.isBlocked}
+                        id={"isBlocked"}
+                        validate={{ required: `Require fill lastName` }}
+                        options={blockStatus}
+                      />
                     ) : (
                       <span>{user.isBlocked ? "Blocked" : "Active"}</span>
                     )}

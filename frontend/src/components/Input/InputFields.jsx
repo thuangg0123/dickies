@@ -23,11 +23,7 @@ function InputFields({
       </label>
       <input
         type={type || "text"}
-        className={clsx(
-          "w-full border border-gray-400 mt-5",
-          !style && "px-4 py-4",
-          style && "px-2 py-2"
-        )}
+        className={clsx(!style && "px-4 py-4", style && "px-2 py-2")}
         placeholder={
           placeholder ||
           nameKey.slice(0, 1).toUpperCase() + nameKey.slice(1) + "*"
