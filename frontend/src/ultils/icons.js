@@ -18,12 +18,14 @@ import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 
+import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 import DashboardIcon from '@mui/icons-material/Dashboard';
 import GroupsIcon from '@mui/icons-material/Groups';
 import InventoryIcon from '@mui/icons-material/Inventory';
 import CategoryIcon from '@mui/icons-material/Category';
 
 const icons = {
+    DeleteForeverIcon,
     CategoryIcon,
     InventoryIcon,
     GroupsIcon,

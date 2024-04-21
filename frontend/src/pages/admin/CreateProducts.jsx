@@ -1,16 +1,24 @@
-import React, { useCallback, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import clsx from "clsx";
 import { InputForm, Select, Button, MarkDownEditor } from "../../components";
-import { useForm } from "react-hook-form";
+import { set, useForm } from "react-hook-form";
 import { useSelector } from "react-redux";
 import { gender } from "../../ultils/constans";
-import { validate } from "../../ultils/helper";
+import { getBase64, validate } from "../../ultils/helper";
+import { toast } from "react-toastify";
+import icons from "../../ultils/icons";
 
 function CreateProducts() {
+  const { DeleteForeverIcon } = icons;
   const [payload, setPayload] = useState({
     description: "",
   });
   const [invalidFields, setInvalidFields] = useState([]);
+  const [hoverElement, setHoverElement] = useState(null);
+  const [preview, setPreview] = useState({
+    thumb: null,
+    images: [],
+  });
   const { categories } = useSelector((state) => state.app);
   const {
     register,
@@ -18,6 +26,7 @@ function CreateProducts() {
     reset,
     handleSubmit,
     formState,
+    watch,
   } = useForm();
 
   const { isSubmitted } = formState;
@@ -41,6 +50,50 @@ function CreateProducts() {
           formData.append(i[0], i[1]);
         }
       }
+    }
+  };
+
+  const handlePreviewImage = async (files) => {
+    const imagesPreview = [];
+    for (let file of files) {
+      if (file.type !== "image/png" && file.type !== "image/jpeg") {
+        toast.warning("File not supported!");
+        return;
+      }
+      const base64 = await getBase64(file);
+      imagesPreview.push({
+        name: file.name,
+        path: base64,
+      });
+    }
+    if (imagesPreview.length > 0) {
+      setPreview((prev) => ({ ...prev, images: imagesPreview }));
+    }
+  };
+
+  const handlePreviewThumb = async (file) => {
+    const base64Thumb = await getBase64(file);
+    setPreview((prev) => ({ ...prev, thumb: base64Thumb }));
+  };
+
+  useEffect(() => {
+    handlePreviewThumb(watch("thumb")[0]);
+  }, [watch("thumb")]);
+
+  useEffect(() => {
+    handlePreviewImage(watch("images"));
+  }, [watch("images")]);
+
+  const handleRemoveImage = (name) => {
+    const files = [...watch("images")];
+    reset({
+      images: files?.filter((element) => element.name !== name),
+    });
+    if (preview.images.some((element) => element.name === name)) {
+      setPreview((prev) => ({
+        ...prev,
+        images: prev.images.filter((element) => element.name !== name),
+      }));
     }
   };
 
@@ -163,6 +216,15 @@ function CreateProducts() {
               </small>
             )}
           </div>
+          {preview.thumb && (
+            <div>
+              <img
+                src={preview.thumb}
+                alt="thumbnail"
+                className="w-[200px] object-contain"
+              />
+            </div>
+          )}
           <div className="flex flex-col gap-2 my-8">
             <label htmlFor="products" className="font-semibold">
               Upload images of product
@@ -179,6 +241,38 @@ function CreateProducts() {
               </small>
             )}
           </div>
+          {preview.images && preview.images.length > 0 && (
+            <div className="flex w-full gap-3 flex-wrap mb-3">
+              {preview.images.map((image, index) => (
+                <div
+                  onMouseEnter={() => setHoverElement(image.name)}
+                  onMouseLeave={() => setHoverElement(null)}
+                  className="w-fit relative"
+                  key={index}
+                >
+                  <img
+                    src={image.path}
+                    alt="product"
+                    className="w-[200px] object-contain"
+                  />
+                  {/* {hoverElement === image.name && (
+                    <div
+                      className="absolute inset-0 bg-overlay animate-scale-up-ver-center flex items-center justify-center"
+                      onClick={() => handleRemoveImage(image.name)}
+                    >
+                      <DeleteForeverIcon
+                        style={{
+                          color: "#B22714",
+                          fontSize: "60px",
+                          cursor: "pointer",
+                        }}
+                      />
+                    </div>
+                  )} */}
+                </div>
+              ))}
+            </div>
+          )}
           {isSubmitted && !errors && (
             <small className="text-xs text-red-500 whitespace-nowrap">
               Please fill out all required fields.

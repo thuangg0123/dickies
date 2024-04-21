@@ -20,6 +20,19 @@ export default {
       colors: {
         main: '#1A1A1A'
       },
+      keyframes: {
+        "scale-up-ver-center": {
+          "0%": {
+            transform: "scale(0.4)"
+          },
+          "100%": {
+            transform: "scale(1)"
+          }
+        }
+      },
+      animation: {
+        "scale-up-ver-center": "scale-up-ver-center 0.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both"
+      }
     },
   },
   plugins: [
