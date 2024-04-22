@@ -66,7 +66,8 @@ export const sortPrice = [
 export const gender = [
     "men",
     "women",
-    "kid"
+    "kid",
+    "all"
 ]
 
 export const voteOptions = [
@@ -140,7 +141,7 @@ export const adminSidebar = [
             },
             {
                 text: "Manage products",
-                path: `${path.MANAGE_ORDER}`
+                path: `${path.MANAGE_PRODUCTS}`
             }
         ]
     },
@@ -172,5 +173,20 @@ export const blockStatus = [
     {
         code: false,
         value: "Active"
+    }
+]
+
+export const size = [
+    {
+        code: 1,
+        value: ["28", "30", "32", "34", "36", "38", "40", "42"],
+    },
+    {
+        code: 2,
+        value: ["M", "L", "XL", "XXL"],
+    },
+    {
+        code: 3,
+        value: ["One Size"],
     }
 ]

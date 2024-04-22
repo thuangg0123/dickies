@@ -1,24 +1,43 @@
 import React, { useCallback, useEffect, useState } from "react";
-import clsx from "clsx";
-import { InputForm, Select, Button, MarkDownEditor } from "../../components";
+import {
+  InputForm,
+  Select,
+  Button,
+  MarkDownEditor,
+  Loading,
+} from "../../components";
 import { set, useForm } from "react-hook-form";
-import { useSelector } from "react-redux";
-import { gender } from "../../ultils/constans";
+import { useSelector, useDispatch } from "react-redux";
+import { gender, size } from "../../ultils/constans";
 import { getBase64, validate } from "../../ultils/helper";
 import { toast } from "react-toastify";
 import { apiCreateProduct } from "../../apis";
+import { showModal } from "../../store/app/appSlice";
 
 function CreateProducts() {
+  const dispatch = useDispatch();
   const [payload, setPayload] = useState({
     description: "",
   });
   const [invalidFields, setInvalidFields] = useState([]);
-  const [hoverElement, setHoverElement] = useState(null);
   const [preview, setPreview] = useState({
     thumb: null,
     images: [],
   });
   const { categories } = useSelector((state) => state.app);
+  const genderMap = {
+    0: "men",
+    1: "women",
+    2: "kid",
+    3: "all",
+  };
+
+  const sizeMap = {
+    1: ["28", "30", "32", "34", "36", "38", "40", "42"],
+    2: ["M", "L", "XL", "XXL"],
+    3: ["One Size"],
+  };
+
   const {
     register,
     formState: { errors },
@@ -42,19 +61,11 @@ function CreateProducts() {
       if (data.brand === "1") {
         data.brand = "Dickies";
       }
-      switch (data.gender) {
-        case "0":
-          data.gender = "men";
-          break;
-        case "1":
-          data.gender = "women";
-          break;
-        case "2":
-          data.gender = "kids";
-          break;
-        default:
-          break;
-      }
+
+      data.gender = genderMap[data.gender] || data.gender;
+      const sizeString = sizeMap[data.size] || data.size;
+      data.sizes = sizeString;
+
       data.color = [data.color];
       const finalPayload = { ...data, ...payload };
       console.log(finalPayload);
@@ -70,8 +81,20 @@ function CreateProducts() {
           formData.append("images", image);
         }
       }
+      dispatch(showModal({ isShowModal: true, modalChildren: <Loading /> }));
       const response = await apiCreateProduct(formData);
-      console.log(response);
+      dispatch(showModal({ isShowModal: false, modalChildren: null }));
+
+      if (response.success) {
+        reset();
+        toast.success(response.message);
+        setPreview({
+          thumb: "",
+          images: [],
+        });
+      } else {
+        toast.error(response.message);
+      }
     }
   };
 
@@ -175,6 +198,18 @@ function CreateProducts() {
               style="flex-auto"
               errors={errors}
             />
+            <Select
+              label="Size"
+              options={size.map((element) => ({
+                code: element.code,
+                value: element.value.join(", "),
+              }))}
+              register={register}
+              id="size"
+              validate={{ required: "Need fill this fields" }}
+              style="flex-auto"
+              errors={errors}
+            />
           </div>
           <div className="w-full my-3 flex gap-4">
             <Select
@@ -253,12 +288,7 @@ function CreateProducts() {
           {preview.images && preview.images.length > 0 && (
             <div className="flex w-full gap-3 flex-wrap mb-3">
               {preview.images.map((image, index) => (
-                <div
-                  onMouseEnter={() => setHoverElement(image.name)}
-                  onMouseLeave={() => setHoverElement(null)}
-                  className="w-fit relative"
-                  key={index}
-                >
+                <div className="w-fit relative" key={index}>
                   <img
                     src={image.path}
                     alt="product"

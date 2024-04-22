@@ -18,11 +18,10 @@ function Navigations() {
 
   return (
     <>
-      <div className="flex">
+      <div className="lg:flex md:hidden">
         {nav &&
           nav.map((item) => {
             let hoveredCategory = null;
-
             return (
               <div
                 key={item.id}

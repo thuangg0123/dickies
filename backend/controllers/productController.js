@@ -3,18 +3,29 @@ const asyncHandler = require('express-async-handler')
 var slugify = require('slugify')
 
 const createProduct = asyncHandler(async (req, res) => {
-    if (Object.keys(req.body).length === 0) {
-        throw new Error("Missing inputs")
+    const { title, price, description, brand, gender, color, category, quantity, sizes } = req.body;
+    const thumb = req?.files?.thumb[0]?.path;
+    const images = req?.files?.images.map(element => element.path);
+    if (!(title && price && description && brand && gender && color && category && quantity)) {
+        throw new Error("Missing inputs");
     }
-    if (req.body && req.body.title) {
-        req.body.slug = slugify(req.body.title)
+    req.body.slug = slugify(title);
+    const sizesArray = Array.isArray(sizes) ? sizes : sizes.split(",").map(size => size.trim());
+    req.body.sizes = sizesArray;
+
+    if (thumb) {
+        req.body.thumb = thumb;
     }
-    const newProduct = await Product.create(req.body)
+    if (images) {
+        req.body.images = images;
+    }
+    const newProduct = await Product.create(req.body);
     return res.status(200).json({
         success: newProduct ? true : false,
-        dataProduct: newProduct ? newProduct : 'cannot create a product'
-    })
-})
+        dataProduct: newProduct ? newProduct : 'cannot create a product',
+        message: newProduct ? `Create product ${title} is successful` : 'Cannot create a product',
+    });
+});
 
 const getProduct = asyncHandler(async (req, res) => {
     const { productId } = req.params
@@ -42,7 +53,7 @@ const getAllProducts = asyncHandler(async (req, res) => {
     // format lại các operators cho đúng cú pháp của mongoose
     let queryString = JSON.stringify(queries)
     queryString = queryString.replace(/\b(gte|gt|lt|lte)\b/g, matchedElement => `$${matchedElement}`)
-    let formattedQueries = JSON.parse(queryString)
+    const formattedQueries = JSON.parse(queryString)
     let genderQueryObj = {}
     //filtering
     if (queries?.title) {
@@ -57,9 +68,22 @@ const getAllProducts = asyncHandler(async (req, res) => {
         const genderQuery = genderArray.map(element => ({ gender: { $regex: element, $options: 'i' } }))
         genderQueryObj = { $or: genderQuery }
     }
-    const q = { ...genderQueryObj, ...formattedQueries }
 
-    let queryCommand = Product.find(q)
+    let queryObject = {}
+    if (queries?.q) {
+        delete formattedQueries.q
+        queryObject = {
+            $or: [
+                { gender: { $regex: queries.q, $options: 'i' } },
+                { title: { $regex: queries.q, $options: 'i' } },
+                { category: { $regex: queries.q, $options: 'i' } },
+                { brand: { $regex: queries.q, $options: 'i' } }
+            ]
+        }
+    }
+    const qr = { ...genderQueryObj, ...formattedQueries, ...queryObject }
+
+    let queryCommand = Product.find(qr)
     //excute query
 
     //sorting
@@ -82,7 +106,7 @@ const getAllProducts = asyncHandler(async (req, res) => {
 
     queryCommand.skip(skip).limit(limit)
     queryCommand.then(async (response) => {
-        const counts = await Product.find(q).countDocuments()
+        const counts = await Product.find(qr).countDocuments()
         return res.status(200).json({
             counts: counts,
             success: counts > 0 ? true : false,
@@ -169,7 +193,6 @@ const ratings = asyncHandler(async (req, res) => {
         data: updateProduct
     })
 })
-
 
 const uploadImageProduct = asyncHandler(async (req, res) => {
     const { productId } = req.params

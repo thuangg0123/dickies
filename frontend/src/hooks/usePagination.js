@@ -3,9 +3,9 @@ import { generateRange } from '../ultils/helper'
 
 const usePagination = (totalProductCount, currentPage, siblingCount = 1) => {
     const paginationArray = useMemo(() => {
-        const pageSize = import.meta.env.VITE_APP_LIMIT || 10;
+        const pageSize = +import.meta.env.VITE_APP_LIMIT || 10;
         const paginationCount = Math.ceil(totalProductCount / pageSize)
-        const totalPaginationItem = siblingCount + 5
+        const totalPaginationItem = +siblingCount + 5
 
         if (paginationCount <= totalPaginationItem) {
             return generateRange(1, paginationCount)
