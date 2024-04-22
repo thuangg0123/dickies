@@ -14,8 +14,9 @@ import { toast } from "react-toastify";
 import { apiCreateProduct } from "../../apis";
 import { showModal } from "../../store/app/appSlice";
 
-function CreateProducts() {
+function UpdateProduct({ editProduct, render }) {
   const dispatch = useDispatch();
+  const { categories } = useSelector((state) => state.app);
   const [payload, setPayload] = useState({
     description: "",
   });
@@ -24,20 +25,6 @@ function CreateProducts() {
     thumb: null,
     images: [],
   });
-  const { categories } = useSelector((state) => state.app);
-  const genderMap = {
-    0: "men",
-    1: "women",
-    2: "kid",
-    3: "all",
-  };
-
-  const sizeMap = {
-    1: ["28", "30", "32", "34", "36", "38", "40", "42"],
-    2: ["M", "L", "XL", "XXL"],
-    3: ["One Size"],
-  };
-
   const {
     register,
     formState: { errors },
@@ -46,57 +33,14 @@ function CreateProducts() {
     formState,
     watch,
   } = useForm();
-
   const { isSubmitted } = formState;
+
   const changeValue = useCallback(
     (e) => {
       setPayload(e);
     },
     [payload]
   );
-
-  const handleCreateNewProduct = async (data) => {
-    const invalid = validate(payload, setInvalidFields);
-    if (invalid === 0) {
-      if (data.brand === "1") {
-        data.brand = "Dickies";
-      }
-
-      data.gender = genderMap[data.gender] || data.gender;
-      const sizeString = sizeMap[data.size] || data.size;
-      data.sizes = sizeString;
-
-      data.color = [data.color];
-      const finalPayload = { ...data, ...payload };
-      console.log(finalPayload);
-      const formData = new FormData();
-      for (let i of Object.entries(finalPayload)) {
-        formData.append(i[0], i[1]);
-      }
-      if (finalPayload.thumb) {
-        formData.append("thumb", finalPayload.thumb[0]);
-      }
-      if (finalPayload.images) {
-        for (let image of finalPayload.images) {
-          formData.append("images", image);
-        }
-      }
-      dispatch(showModal({ isShowModal: true, modalChildren: <Loading /> }));
-      const response = await apiCreateProduct(formData);
-      dispatch(showModal({ isShowModal: false, modalChildren: null }));
-
-      if (response.success) {
-        reset();
-        toast.success(response.message);
-        setPreview({
-          thumb: "",
-          images: [],
-        });
-      } else {
-        toast.error(response.message);
-      }
-    }
-  };
 
   const handlePreviewImage = async (files) => {
     const imagesPreview = [];
@@ -111,9 +55,7 @@ function CreateProducts() {
         path: base64,
       });
     }
-    if (imagesPreview.length > 0) {
-      setPreview((prev) => ({ ...prev, images: imagesPreview }));
-    }
+    setPreview((prev) => ({ ...prev, images: imagesPreview }));
   };
 
   const handlePreviewThumb = async (file) => {
@@ -122,20 +64,57 @@ function CreateProducts() {
   };
 
   useEffect(() => {
-    handlePreviewThumb(watch("thumb")[0]);
+    if (editProduct) {
+      reset({
+        title: editProduct?.title || "",
+        price: editProduct?.price || "",
+        quantity: editProduct?.quantity || "",
+        color: editProduct?.color || "",
+        gender: editProduct?.gender[0] || "",
+        sizes: editProduct?.sizes?.join(",") || "",
+        category: editProduct?.category.toUpperCase() || "",
+        brand: editProduct?.brand || "",
+      });
+
+      setPayload({
+        description:
+          typeof editProduct?.description === "object"
+            ? editProduct?.description.join(", ")
+            : editProduct?.description,
+      });
+
+      setPreview({
+        thumb: editProduct?.thumb || "",
+        images: editProduct?.images || [],
+      });
+    }
+  }, [editProduct]);
+
+  console.log("editProduct", editProduct.category);
+  console.log("categories", categories);
+
+  useEffect(() => {
+    if (watch("thumb")) {
+      handlePreviewThumb(watch("thumb")[0]);
+    }
   }, [watch("thumb")]);
 
   useEffect(() => {
-    handlePreviewImage(watch("images"));
+    if (watch("images")) {
+      handlePreviewImage(watch("images"));
+    }
   }, [watch("images")]);
 
+  const handleUpdateProduct = (data) => {
+    console.log(data);
+  };
   return (
-    <div className="w-full">
-      <h1 className="h-[75px] px-4 flex justify-between items-center text-3xl font-bold border-b">
-        <span>Create New Product</span>
-      </h1>
-      <div className="p-4">
-        <form onSubmit={handleSubmit(handleCreateNewProduct)}>
+    <div className="w-full pl-4 flex flex-col gap-4 relative bg-[#F5F5F5]">
+      <div className="py-4 border-b w-full flex justify-between items-center">
+        <h1 className="text-3xl font-bold tracking-tight">Update Products</h1>
+      </div>
+      <div className="">
+        <form onSubmit={handleSubmit(handleUpdateProduct)}>
           <InputForm
             label="Name product"
             register={register}
@@ -189,7 +168,7 @@ function CreateProducts() {
             <Select
               label="Gender"
               options={gender.map((element, index) => ({
-                code: index,
+                code: element,
                 value: element,
               }))}
               register={register}
@@ -199,13 +178,13 @@ function CreateProducts() {
               errors={errors}
             />
             <Select
-              label="Size"
+              label="Sizes"
               options={size.map((element) => ({
-                code: element.code,
+                code: element.value,
                 value: element.value.join(", "),
               }))}
               register={register}
-              id="size"
+              id="sizes"
               validate={{ required: "Need fill this fields" }}
               style="flex-auto"
               errors={errors}
@@ -215,7 +194,7 @@ function CreateProducts() {
             <Select
               label="Category"
               options={categories?.map((category) => ({
-                code: category._id,
+                code: category.title,
                 value: category.title,
               }))}
               register={register}
@@ -227,7 +206,7 @@ function CreateProducts() {
             />
             <Select
               label="Brand"
-              options={[{ code: 1, value: "Dickies" }]}
+              options={[{ code: "Dickies", value: "Dickies" }]}
               register={register}
               id="brand"
               validate={{ required: "Need fill this fields" }}
@@ -243,6 +222,7 @@ function CreateProducts() {
               label="Description"
               invalidFields={invalidFields}
               setInvalidFields={setInvalidFields}
+              value={payload.description}
             />
           </div>
           <div className="flex flex-col gap-2 my-8">
@@ -290,7 +270,7 @@ function CreateProducts() {
               {preview.images.map((image, index) => (
                 <div className="w-fit relative" key={index}>
                   <img
-                    src={image.path}
+                    src={image}
                     alt="product"
                     className="w-[200px] object-contain"
                   />
@@ -310,4 +290,4 @@ function CreateProducts() {
   );
 }
 
-export default CreateProducts;
+export default UpdateProduct;

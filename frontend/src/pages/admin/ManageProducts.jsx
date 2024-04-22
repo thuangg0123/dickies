@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { InputForm, Pagination } from "../../components";
 import { useForm } from "react-hook-form";
 import { apiGetProductByQuery } from "../../apis/app";
@@ -10,6 +10,7 @@ import {
   useLocation,
 } from "react-router-dom";
 import { useDebounce } from "../../hooks/useDebounce";
+import { UpdateProduct } from "./index";
 
 function ManageProducts() {
   const location = useLocation();
@@ -17,13 +18,18 @@ function ManageProducts() {
   const [params] = useSearchParams();
   const [products, setProducts] = useState(null);
   const [counts, setCounts] = useState(0);
+  const [editProduct, setEditProduct] = useState(null);
+  const [update, setUpdate] = useState(false);
   const {
     register,
     formState: { errors },
     handleSubmit,
-    reset,
     watch,
   } = useForm();
+
+  const render = useCallback(() => {
+    setUpdate(!update);
+  }, []);
 
   const handleSearchProduct = (data) => {
     console.log(data);
@@ -58,10 +64,15 @@ function ManageProducts() {
   useEffect(() => {
     const searchParams = Object.fromEntries([...params]);
     fetchProducts(searchParams);
-  }, [params, queryDebounce]);
+  }, [params, update]);
 
   return (
     <div className="w-full pl-4 flex flex-col gap-4 relative">
+      {editProduct && (
+        <div className="absolute inset-0 min-h-screen bg-white z-50">
+          <UpdateProduct editProduct={editProduct} render={render} />
+        </div>
+      )}
       <div className="h-[69px] w-full bg-[#F5F5F5]"></div>
       <div className="py-4 border-b w-full flex justify-between items-center fixed top-0">
         <h1 className="text-3xl font-bold tracking-tight">Manage Products</h1>
@@ -96,6 +107,7 @@ function ManageProducts() {
             <th className="text-center px-2 py-2">Quantity</th>
             <th className="text-center px-2 py-2">Ratings</th>
             <th className="text-center px-2 py-2">Date Created</th>
+            <th className="text-center px-2 py-2">Actions</th>
           </tr>
         </thead>
         <tbody className="text-center">
@@ -127,6 +139,17 @@ function ManageProducts() {
                 <td className="py-2">{product.totalRatings}</td>
                 <td className="py-2">
                   {moment(product.createdAt).format("DD/MM/YYYY")}
+                </td>
+                <td>
+                  <span
+                    className="px-2 hover:underline cursor-pointer text-[#F4BB3E]"
+                    onClick={() => setEditProduct(product)}
+                  >
+                    Edit
+                  </span>
+                  <span className="px-2 hover:underline cursor-pointer text-[#B22714]">
+                    Delete
+                  </span>
                 </td>
               </tr>
             ))}
