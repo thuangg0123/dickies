@@ -11,13 +11,9 @@ import Swal from "sweetalert2";
 function Header() {
   const nagivate = useNavigate();
   const dispatch = useDispatch();
-  const [isHover, setIsHover] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
   const { isLoggedIn, message } = useSelector((state) => state.user);
-  useEffect(() => {
-    if (isLoggedIn) {
-      dispatch(getCurrent());
-    }
-  }, [dispatch]);
+
   const {
     Input,
     SearchIcon,
@@ -27,12 +23,33 @@ function Header() {
   } = icons;
 
   useEffect(() => {
+    if (isLoggedIn) {
+      dispatch(getCurrent());
+    }
+  }, [dispatch]);
+
+  useEffect(() => {
     if (message) {
       Swal.fire("Oops!", message, "info").then(() => {});
       dispatch(clearMessage());
       nagivate(`/${path.LOGIN}`);
     }
   }, [message]);
+
+  useEffect(() => {
+    const handleClickOutOption = (e) => {
+      const profile = document.getElementById("profile");
+      if (!profile.contains(e.target)) {
+        setIsOpen(false);
+      }
+    };
+
+    document.addEventListener("click", handleClickOutOption);
+
+    return () => {
+      document.removeEventListener("click", handleClickOutOption);
+    };
+  }, []);
 
   const { current } = useSelector((state) => state.user);
 
@@ -90,40 +107,55 @@ function Header() {
               <SearchIcon />
             </span>
           </div>
-          <div className="cursor-pointer hover:text-[#ccc] transition-colors duration-300">
+          <div
+            className={
+              isOpen
+                ? "cursor-pointer text-[#ccc] transition-colors duration-300"
+                : "cursor-pointer hover:text-[#ccc] transition-colors duration-300"
+            }
+          >
             {isLoggedIn ? (
-              <>
-                <div onClick={() => setIsHover(true)}>
-                  <span className="font-second text-sm font-bold">
-                    My account
-                  </span>
+              <div className="font-second">
+                <div onClick={() => setIsOpen(!isOpen)} id="profile">
+                  <span className="text-sm font-bold">My account</span>
                 </div>
-                {isHover && (
+                {isOpen && (
                   <div
-                    className="absolute right-[8%] z-10 mt-2 origin-top-right divide-y divide-gray-100 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
+                    className="absolute text-center right-[6%] z-10 mt-2 origin-top-right divide-y divide-gray-100 rounded-md border border-black bg-[#F5F5F5] shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
                     role="menu"
                     aria-orientation="vertical"
                     aria-labelledby="menu-button"
                     tabIndex="-1"
                   >
-                    <div className="py-1" role="none">
+                    <div role="none">
                       <Link
-                        to={
-                          +current?.role === 0
-                            ? `/${path.ADMIN}/${path.DASHBOARD}`
-                            : `/${path.MEMBER}/${path.PERSONAL}`
-                        }
+                        to={`/${path.MEMBER}/${path.PERSONAL}`}
                         href="#"
-                        className="text-gray-700 block px-4 py-2 text-sm"
+                        className="text-gray-700 block px-4 py-2 text-sm hover:bg-[#cef0ff] w-full font-bold"
                         role="menuitem"
                         tabIndex="-1"
                         id="menu-item-0"
                       >
-                        {+current.role === 0 ? "Manage" : "Information"}
+                        Information
                       </Link>
+                      {+current?.role === 0 && (
+                        <Link
+                          to={`/${path.ADMIN}/${path.DASHBOARD}`}
+                          href="#"
+                          className="text-gray-700 block px-4 py-2 text-sm hover:bg-[#cef0ff] w-full font-bold"
+                          role="menuitem"
+                          tabIndex="-1"
+                          id="menu-item-0"
+                        >
+                          {+current.role === 0
+                            ? "Admin workspace"
+                            : "Information"}
+                        </Link>
+                      )}
+
                       <button
                         href="#"
-                        className="text-gray-700 block px-4 py-2 text-sm"
+                        className="text-gray-700 block px-4 py-2 text-sm hover:bg-[#cef0ff] w-full font-bold"
                         role="menuitem"
                         tabIndex="-1"
                         id="menu-item-1"
@@ -134,7 +166,7 @@ function Header() {
                     </div>
                   </div>
                 )}
-              </>
+              </div>
             ) : (
               <Link to="/login">
                 <Person2OutlinedIcon />

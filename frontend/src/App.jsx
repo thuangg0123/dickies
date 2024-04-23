@@ -13,7 +13,13 @@ import {
   ManageUser,
   CreateProducts,
 } from "./pages/admin";
-import { MemberLayout, Personal } from "./pages/member";
+import {
+  MemberLayout,
+  Personal,
+  HistoryOrder,
+  MyCart,
+  WishList,
+} from "./pages/member";
 import { getCategories } from "./store/app/asyncActions";
 
 import {
@@ -90,6 +96,12 @@ function App() {
           <Route path={path.MANAGE_PRODUCTS} element={<ManageProducts />} />
           <Route path={path.MANAGE_USER} element={<ManageUser />} />
           <Route path={path.CREATE_PRODUCTS} element={<CreateProducts />} />
+        </Route>
+        <Route path={path.MEMBER} element={<MemberLayout />}>
+          <Route path={path.PERSONAL} element={<Personal />} />
+          <Route path={path.WISH_LIST} element={<WishList />} />
+          <Route path={path.HISOTRY_ORDER} element={<HistoryOrder />} />
+          <Route path={path.MY_CART} element={<MyCart />} />
         </Route>
         <Route path={path.MEMBER} element={<MemberLayout />}>
           <Route path={path.PERSONAL} element={<Personal />} />

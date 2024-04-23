@@ -190,3 +190,34 @@ export const size = [
         value: ["One Size"],
     }
 ]
+
+export const memberSidebar = [
+    {
+        id: 1,
+        type: "SINGLE",
+        text: "Personal",
+        path: `${path.PERSONAL}`,
+        icon: React.createElement(DashboardIcon, null)
+    },
+    {
+        id: 2,
+        type: "SINGLE",
+        text: "My cart",
+        path: `${path.MY_CART}`,
+        icon: React.createElement(GroupsIcon, null)
+    },
+    {
+        id: 3,
+        type: "SINGLE",
+        text: "Wish lists",
+        path: `${path.WISH_LIST}`,
+        icon: React.createElement(CategoryIcon, null)
+    },
+    {
+        id: 4,
+        type: "SINGLE",
+        text: "History order",
+        path: `${path.HISOTRY_ORDER}`,
+        icon: React.createElement(CategoryIcon, null)
+    }
+]
