@@ -140,6 +140,7 @@ function ManageProducts() {
             <th className="text-center px-2 py-2">Sold</th>
             <th className="text-center px-2 py-2">Quantity</th>
             <th className="text-center px-2 py-2">Ratings</th>
+            <th className="text-center px-2 py-2">Variant counts</th>
             <th className="text-center px-2 py-2">Date Created</th>
             <th className="text-center px-2 py-2">Actions</th>
           </tr>
@@ -188,6 +189,9 @@ function ManageProducts() {
                 </td>
                 <td className="py-2 max-w-[150px] overflow-hidden truncate">
                   {product.totalRatings}
+                </td>
+                <td className="py-2 max-w-[150px] overflow-hidden truncate">
+                  {product?.variants?.length || 0}
                 </td>
                 <td className="py-2 max-w-[150px] overflow-hidden truncate">
                   {moment(product.createdAt).format("DD/MM/YYYY")}

@@ -1,4 +1,4 @@
-import React, { memo, useEffect } from "react";
+import React, { memo, useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { Breadcrum } from "../../components/index";
@@ -19,6 +19,13 @@ import Swal from "sweetalert2";
 import path from "../../ultils/path";
 
 function DetailProduct({ ratings }) {
+  const [variant, setVariant] = useState(null);
+  const [currentVariant, setCurrentVariant] = useState({
+    title: "",
+    thumb: "",
+    images: [],
+    price: "",
+  });
   const navigate = useNavigate();
   const { StarIcon, StarOutlineIcon } = icons;
   const dispatch = useDispatch();
@@ -93,6 +100,32 @@ function DetailProduct({ ratings }) {
     }
   };
 
+  useEffect(() => {
+    if (variant) {
+      setCurrentVariant({
+        title: detailProduct?.variants?.find(
+          (element) => element.sku === variant
+        )?.title,
+        price: detailProduct?.variants?.find(
+          (element) => element.sku === variant
+        )?.price,
+        images: detailProduct?.variants?.find(
+          (element) => element.sku === variant
+        )?.images,
+        thumb: detailProduct?.variants?.find(
+          (element) => element.sku === variant
+        )?.thumb,
+      });
+    } else {
+      setCurrentVariant({
+        title: "",
+        thumb: "",
+        images: [],
+        price: "",
+      });
+    }
+  }, [variant, detailProduct]);
+
   return (
     <>
       <div>
@@ -103,11 +136,20 @@ function DetailProduct({ ratings }) {
               category={product?.category}
               gender={product?.gender?.[0]}
               product="Products"
+              currentVariant={currentVariant}
             />
           </div>
           <div className="grid lg:grid-cols-3 gap-10 my-5 md:grid-cols-2">
-            <LeftDetaiProduct />
-            <RightDetaiProduct />
+            <LeftDetaiProduct
+              currentVariant={currentVariant}
+              setVariant={setVariant}
+              detailProduct={detailProduct}
+            />
+            <RightDetaiProduct
+              currentVariant={currentVariant}
+              setVariant={setVariant}
+              detailProduct={detailProduct}
+            />
           </div>
           <div className="my-10">
             <div className="border-b-2 border-black">

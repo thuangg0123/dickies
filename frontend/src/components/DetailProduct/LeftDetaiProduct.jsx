@@ -1,11 +1,6 @@
 import React from "react";
-import { useSelector } from "react-redux";
 
-const LeftDetaiProduct = () => {
-  const detailProduct = useSelector((state) => {
-    return state.product.detailProduct;
-  });
-
+const LeftDetaiProduct = ({ detailProduct, currentVariant, setVariant }) => {
   return (
     <>
       <div className="lg:col-span-2 md:col-span-1">
@@ -13,14 +8,24 @@ const LeftDetaiProduct = () => {
           <div>
             <img
               className="w-full"
-              src={detailProduct?.thumb}
+              src={currentVariant?.thumb || detailProduct?.thumb}
               alt={detailProduct?.title}
             />
           </div>
           <div className="grid lg:grid-cols-2 gap-5 md:grid-cols-1">
-            {detailProduct &&
+            {currentVariant?.images.length === 0 &&
               detailProduct?.images &&
               detailProduct?.images.map((image, index) => {
+                return (
+                  <div key={index}>
+                    <picture>
+                      <img src={image} alt="" />
+                    </picture>
+                  </div>
+                );
+              })}
+            {currentVariant?.images.length > 0 &&
+              currentVariant?.images.map((image, index) => {
                 return (
                   <div key={index}>
                     <picture>

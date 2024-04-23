@@ -15,7 +15,7 @@ const formatCategory = (category) => {
     : "";
 };
 
-function Breadcrum({ gender, category, title, product }) {
+function Breadcrum({ gender, category, title, product, currentVariant }) {
   const routes = [
     { path: "/", breadcrumb: "Home" },
     { path: "/products", breadcrumb: product },
@@ -27,7 +27,10 @@ function Breadcrum({ gender, category, title, product }) {
       path: "/products/:gender/:category",
       breadcrumb: formatCategory(category),
     },
-    { path: "/products/:gender/:category/:title", breadcrumb: title },
+    {
+      path: "/products/:gender/:category/:title",
+      breadcrumb: currentVariant.title || title,
+    },
   ];
   const breadcrumbs = useBreadcrumbs(routes);
 

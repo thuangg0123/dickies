@@ -86,7 +86,17 @@ function CustomizeVariant({ customizeVariant, setCustomizeVariant, render }) {
       dispatch(showModal({ isShowModal: true, modalChildren: <Loading /> }));
       const response = await apiAddVariant(formData, customizeVariant._id);
       dispatch(showModal({ isShowModal: false, modalChildren: null }));
-      console.log("response", response);
+
+      if (response.success) {
+        reset();
+        toast.success(response.message);
+        setPreview({
+          thumb: "",
+          images: [],
+        });
+      } else {
+        toast.error(response.message);
+      }
     }
   };
   return (
@@ -97,7 +107,7 @@ function CustomizeVariant({ customizeVariant, setCustomizeVariant, render }) {
           className="p-2 rounded-sm hover:bg-[rgb(180,91,81)] cursor-pointer text-white bg-[#B22714]"
           onClick={() => setCustomizeVariant(null)}
         >
-          Cancel
+          Back
         </span>
       </div>
       <div>

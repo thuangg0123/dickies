@@ -1,18 +1,13 @@
 import React, { useState, useCallback } from "react";
-import { useSelector } from "react-redux";
 
 import icons from "../../ultils/icons";
 import Detail from "./Detail";
 
-const RightDetaiProduct = () => {
+const RightDetaiProduct = ({ detailProduct, currentVariant, setVariant }) => {
   const { StarIcon, StarOutlineIcon, RemoveIcon, AddIcon } = icons;
   const [selectedSize, setSelectedSize] = useState(null);
   const [selectedColor, setSelectedColor] = useState(null);
   const [countProduct, setCountProduct] = useState(1);
-
-  const detailProduct = useSelector((state) => {
-    return state.product.detailProduct;
-  });
 
   const floatRatingStars = detailProduct?.totalRatings
     ? detailProduct?.totalRatings.toFixed(1)
@@ -20,6 +15,7 @@ const RightDetaiProduct = () => {
 
   const handleColorClick = (color) => {
     setSelectedColor(color);
+    setVariant(null);
   };
 
   const handleSizeClick = (size) => {
@@ -54,7 +50,12 @@ const RightDetaiProduct = () => {
     <>
       <div className="col-span-1">
         <div className="flex flex-col gap-4">
-          <h2 className="font-semibold text-2xl">{detailProduct?.title}</h2>
+          <h2 className="font-semibold text-2xl">
+            {currentVariant.title || detailProduct?.title}
+          </h2>
+          <span className="font-second font-medium">
+            Sold: {+detailProduct?.sold || 0}
+          </span>
           {detailProduct?.totalRatings > 0 && (
             <div className="flex items-center justify-between text-xs cursor-pointer">
               <span>{renderStarFromNumber(detailProduct?.totalRatings)}</span>
@@ -67,7 +68,9 @@ const RightDetaiProduct = () => {
             </div>
           )}
           <div>
-            <span className="font-medium">${detailProduct?.price}</span>
+            <span className="font-medium">
+              ${currentVariant.price || detailProduct?.price}
+            </span>
           </div>
           <div>
             <span className="text-sm">
@@ -79,6 +82,9 @@ const RightDetaiProduct = () => {
                 {detailProduct?.color &&
                   detailProduct?.color.map((color, index) => (
                     <li
+                      onClick={() => {
+                        handleColorClick(color);
+                      }}
                       key={index}
                       className="cursor-pointer w-8 h-8 border-2 rounded-full flex items-center justify-center overflow-hidden hover:border-black"
                       style={{
@@ -88,7 +94,24 @@ const RightDetaiProduct = () => {
                             ? "2px solid black"
                             : "2px solid #ccc",
                       }}
-                      onClick={() => handleColorClick(color)}
+                    ></li>
+                  ))}
+                {detailProduct?.variants &&
+                  detailProduct?.variants.map((variant, index) => (
+                    <li
+                      key={index}
+                      className="cursor-pointer w-8 h-8 border-2 rounded-full flex items-center justify-center overflow-hidden hover:border-black"
+                      style={{
+                        backgroundColor: variant?.color,
+                        border:
+                          variant?.color === selectedColor
+                            ? "2px solid black"
+                            : "2px solid #ccc",
+                      }}
+                      onClick={() => {
+                        handleColorClick(variant?.color);
+                        setVariant(variant?.sku);
+                      }}
                     ></li>
                   ))}
               </ul>

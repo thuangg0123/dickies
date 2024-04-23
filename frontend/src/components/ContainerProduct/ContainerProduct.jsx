@@ -94,16 +94,16 @@ function ContainerProduct({ gender, path, category }) {
     <>
       <div className="px-4 py-2 md:px-10 md:py-5">
         <div className="font-second text-xs md:text-sm font-semibold">
-          <Link to="/" class="hover:text-blue-500">
+          <Link to="/" className="hover:text-blue-500">
             Home
           </Link>
           /&nbsp;
-          <Link to="/products" class="hover:text-blue-500">
+          <Link to="/products" className="hover:text-blue-500">
             Products /
           </Link>
           <Link
             to={gender !== "all" ? `/products/${gender}s-clothing` : ""}
-            class="hover:text-blue-500"
+            className="hover:text-blue-500"
           >
             All
             {gender !== "all"
