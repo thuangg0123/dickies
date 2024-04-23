@@ -1,17 +1,23 @@
 import React, { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { Button, InputForm } from "../../components";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import moment from "moment";
+import avatarDefault from "../../img/anonymous.png";
+import { apiUpdateCurrent } from "../../apis";
+import { getCurrent } from "../../store/user/asyncActions";
+import { toast } from "react-toastify";
 
 function Personal() {
+  const dispatch = useDispatch();
   const {
     register,
-    formState: { errors },
+    formState: { errors, isDirty, isSubmitted },
     handleSubmit,
     reset,
     watch,
   } = useForm();
+
   const { current } = useSelector((state) => state.user);
 
   useEffect(() => {
@@ -24,14 +30,32 @@ function Personal() {
     });
   }, [current]);
 
-  const handleUpdateInfo = (data) => {
-    console.log(data);
+  const handleUpdateInfo = async (data) => {
+    const formData = new FormData();
+    if (data.avatar.length > 0) {
+      formData.append("avatar", data.avatar[0]);
+    }
+    delete data.avatar;
+    for (let i of Object.entries(data)) {
+      formData.append(i[0], i[1]);
+    }
+    console.log([...formData]);
+    const response = await apiUpdateCurrent(formData);
+    if (response.success) {
+      dispatch(getCurrent());
+      toast.success(response.message);
+    } else {
+      toast.error(response.message);
+    }
   };
   return (
     <div className="w-full relative p-4 font-second font-medium">
       <header className="text-3xl font-semibold py-4 border-b">Personal</header>
       <div className="w-3/5 mx-auto py-8 flex flex-col gap-4">
-        <form onSubmit={handleSubmit(handleUpdateInfo)}>
+        <form
+          onSubmit={handleSubmit(handleUpdateInfo)}
+          className="flex flex-col gap-4"
+        >
           <InputForm
             label="Firstname"
             register={register}
@@ -51,53 +75,80 @@ function Personal() {
             }}
           />
           <InputForm
-            label="Email adress"
+            label="Email address"
             register={register}
             errors={errors}
             id="email"
             validate={{
+              pattern: {
+                value:
+                  /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
+                message: "Please enter a valid email",
+              },
               required: `Require fill this fields`,
             }}
           />
           <InputForm
-            label="phone"
+            label="Phone"
             register={register}
             errors={errors}
             id="phone"
             validate={{
+              pattern: {
+                value: /^(0|\+84)\d{9}$/,
+                message: "Invalid phone number",
+              },
               required: `Require fill this fields`,
             }}
           />
-          <Button
-            type="submit"
-            name="Update information"
-            style="mt-5 p-4 text-white bg-black font-main font-semibold w-full transition duration-300 ease-in-out hover:bg-[#8D8D8D]"
-          />
+          {isSubmitted && !errors && (
+            <small className="text-xs text-red-500 whitespace-nowrap">
+              Please fill out all required fields.
+            </small>
+          )}
+          <div className="flex items-center gap-2">
+            <span className="font-bold">Account status: </span>
+            <span
+              className={
+                current?.isBlocked
+                  ? "text-[#B22714] font-semibold"
+                  : "text-[#204387] font-semibold"
+              }
+            >
+              {current?.isBlocked ? "Blocked" : "Active"}
+            </span>
+          </div>
+          <div className="flex items-center gap-2">
+            <span className="font-bold">Role: </span>
+            <span className="font-semibold">
+              {+current?.role === 0 ? "Admin" : "User"}
+            </span>
+          </div>
+          <div className="flex items-center gap-2">
+            <span className="font-bold">Created at: </span>
+            <span className="font-semibold">
+              {moment(current?.createdAt).format("DD/MM/YYYY")}
+            </span>
+          </div>
+          <div className="flex gap-2 flex-col">
+            <span className="font-bold">Profile image: </span>
+            <label htmlFor="file">
+              <img
+                src={current?.avatar || avatarDefault}
+                alt="avatar"
+                className="w-20 h-20 object-cover rounded-full"
+              />
+            </label>
+            <input type="file" id="file" hidden {...register("avatar")} />
+          </div>
+          {isDirty && (
+            <Button
+              type="submit"
+              name="Update information"
+              style="mt-5 p-4 text-white bg-black font-main font-semibold w-full transition duration-300 ease-in-out hover:bg-[#8D8D8D]"
+            />
+          )}
         </form>
-        <div className="flex items-center gap-2">
-          <span className="font-bold">Account status: </span>
-          <span
-            className={
-              current?.isBlocked
-                ? "text-[#B22714] font-semibold"
-                : "text-[#204387] font-semibold"
-            }
-          >
-            {current?.isBlocked ? "Blocked" : "Active"}
-          </span>
-        </div>
-        <div className="flex items-center gap-2">
-          <span className="font-bold">Role: </span>
-          <span className="font-semibold">
-            {+current?.role === 0 ? "Admin" : "User"}
-          </span>
-        </div>
-        <div className="flex items-center gap-2">
-          <span className="font-bold">Created at: </span>
-          <span className="font-semibold">
-            {moment(current?.createdAt).format("DD/MM/YYYY")}
-          </span>
-        </div>
       </div>
     </div>
   );

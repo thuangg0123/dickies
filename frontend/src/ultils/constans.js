@@ -2,6 +2,9 @@ import path from "./path"
 import React from 'react';
 import icons from './icons'
 
+const { DashboardIcon, GroupsIcon, InventoryIcon, CategoryIcon, Person2OutlinedIcon,
+    ShoppingCartOutlinedIcon, BookmarkBorderOutlinedIcon } = icons
+
 export const nav = [
     {
         id: 1,
@@ -112,8 +115,6 @@ export const category = [
     "JEAN PANTS",
 ]
 
-const { DashboardIcon, GroupsIcon, InventoryIcon, CategoryIcon } = icons
-
 export const adminSidebar = [
     {
         id: 1,
@@ -197,27 +198,27 @@ export const memberSidebar = [
         type: "SINGLE",
         text: "Personal",
         path: `${path.PERSONAL}`,
-        icon: React.createElement(DashboardIcon, null)
+        icon: React.createElement(Person2OutlinedIcon, null)
     },
     {
         id: 2,
         type: "SINGLE",
         text: "My cart",
         path: `${path.MY_CART}`,
-        icon: React.createElement(GroupsIcon, null)
+        icon: React.createElement(ShoppingCartOutlinedIcon, null)
     },
     {
         id: 3,
         type: "SINGLE",
         text: "Wish lists",
         path: `${path.WISH_LIST}`,
-        icon: React.createElement(CategoryIcon, null)
+        icon: React.createElement(BookmarkBorderOutlinedIcon, null)
     },
     {
         id: 4,
         type: "SINGLE",
         text: "History order",
         path: `${path.HISOTRY_ORDER}`,
-        icon: React.createElement(CategoryIcon, null)
+        icon: React.createElement(InventoryIcon, null)
     }
 ]

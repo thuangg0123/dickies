@@ -30,7 +30,7 @@ export const apiResetPassword = (data) => axios({
     data
 })
 
-export const apiGetCurrent = (data) => axios({
+export const apiGetCurrent = () => axios({
     url: '/user/current',
     method: 'get',
 })
@@ -50,4 +50,10 @@ export const apiUpdateUsers = (data, userId) => axios({
 export const apiDeleteUser = (userId) => axios({
     url: '/user/' + userId,
     method: 'delete',
+})
+
+export const apiUpdateCurrent = (data) => axios({
+    url: '/user/current',
+    method: 'put',
+    data
 })

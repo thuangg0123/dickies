@@ -79,6 +79,7 @@ const Login = () => {
           navigate(`/${path.HOME}`);
         } else {
           Swal.fire("Oops !", result.message, "error");
+          dispatch(showModal({ isShowModal: false, modalChildren: null }));
         }
       }
     }
@@ -242,6 +243,8 @@ const Login = () => {
                 nameKey="email"
                 invalidFields={invalidFields}
                 setInValidFields={setInvalidFields}
+                fullWidth
+                style="px-4 py-4"
               />
               <InputFields
                 value={payload.password}
@@ -250,6 +253,8 @@ const Login = () => {
                 type="password"
                 invalidFields={invalidFields}
                 setInValidFields={setInvalidFields}
+                fullWidth
+                style="px-4 py-4"
               />
             </div>
           </div>

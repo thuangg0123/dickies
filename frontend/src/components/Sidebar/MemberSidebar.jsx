@@ -14,7 +14,6 @@ const notActiveStyle =
 function MemberSidebar() {
   const { KeyboardArrowDownIcon, RemoveIcon } = icons;
   const { current } = useSelector((state) => state.user);
-  console.log(current);
 
   const [actived, setActived] = useState([]);
 

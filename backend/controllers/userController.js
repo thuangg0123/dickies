@@ -278,15 +278,19 @@ const deleteUser = asyncHandler(async (req, res) => {
 
 const updateUser = asyncHandler(async (req, res) => {
     const { _id } = req.user
+    const { firstName, lastName, email, phone } = req.body
+    const data = { firstName, lastName, email, phone }
+    if (req.file) {
+        data.avatar = req.file.path
+    }
     if (!_id || Object.keys(req.body).length === 0) {
         throw new Error("Missing inputs")
     }
-    const response = await User.findByIdAndUpdate(_id, req.body, { new: true }).select('-password -role')
+    const response = await User.findByIdAndUpdate(_id, data, { new: true }).select('-password -role -refreshToken')
     return res.status(200).json({
         success: response ? true : false,
-        message: response ? `Update user is successfully` : "Something wrong, please try again ....",
-        data: response ? response : [],
-        errorcode: response ? 1 : 0
+        message: response ? `Update information is successfully` : "Something wrong, please try again ....",
+        data: response ? response : []
     })
 })
 
