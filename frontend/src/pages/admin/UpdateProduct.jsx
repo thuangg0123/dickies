@@ -11,10 +11,10 @@ import { useSelector, useDispatch } from "react-redux";
 import { gender, size } from "../../ultils/constans";
 import { getBase64, validate } from "../../ultils/helper";
 import { toast } from "react-toastify";
-import { apiCreateProduct } from "../../apis";
+import { apiUpdateProduct } from "../../apis";
 import { showModal } from "../../store/app/appSlice";
 
-function UpdateProduct({ editProduct, render }) {
+function UpdateProduct({ editProduct, render, setEditProduct }) {
   const dispatch = useDispatch();
   const { categories } = useSelector((state) => state.app);
   const [payload, setPayload] = useState({
@@ -25,6 +25,20 @@ function UpdateProduct({ editProduct, render }) {
     thumb: null,
     images: [],
   });
+
+  const genderMap = {
+    0: "men",
+    1: "women",
+    2: "kid",
+    3: "all",
+  };
+
+  // const sizeMap = {
+  //   1: ["28", "30", "32", "34", "36", "38", "40", "42"],
+  //   2: ["M", "L", "XL", "XXL"],
+  //   3: ["One Size"],
+  // };
+
   const {
     register,
     formState: { errors },
@@ -42,6 +56,11 @@ function UpdateProduct({ editProduct, render }) {
     [payload]
   );
 
+  const handlePreviewThumb = async (file) => {
+    const base64Thumb = await getBase64(file);
+    setPreview((prev) => ({ ...prev, thumb: base64Thumb }));
+  };
+
   const handlePreviewImage = async (files) => {
     const imagesPreview = [];
     for (let file of files) {
@@ -50,21 +69,20 @@ function UpdateProduct({ editProduct, render }) {
         return;
       }
       const base64 = await getBase64(file);
-      imagesPreview.push({
-        name: file.name,
-        path: base64,
-      });
+      imagesPreview.push(base64);
     }
     setPreview((prev) => ({ ...prev, images: imagesPreview }));
   };
 
-  const handlePreviewThumb = async (file) => {
-    const base64Thumb = await getBase64(file);
-    setPreview((prev) => ({ ...prev, thumb: base64Thumb }));
-  };
-
   useEffect(() => {
     if (editProduct) {
+      const formatCategory = (category) => {
+        return category
+          .split("-")
+          .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+          .join(" ");
+      };
+
       reset({
         title: editProduct?.title || "",
         price: editProduct?.price || "",
@@ -72,7 +90,7 @@ function UpdateProduct({ editProduct, render }) {
         color: editProduct?.color || "",
         gender: editProduct?.gender[0] || "",
         sizes: editProduct?.sizes?.join(",") || "",
-        category: editProduct?.category.toUpperCase() || "",
+        category: formatCategory(editProduct?.category).toUpperCase() || "",
         brand: editProduct?.brand || "",
       });
 
@@ -90,28 +108,69 @@ function UpdateProduct({ editProduct, render }) {
     }
   }, [editProduct]);
 
-  console.log("editProduct", editProduct.category);
-  console.log("categories", categories);
-
   useEffect(() => {
-    if (watch("thumb")) {
+    if (watch("thumb") instanceof FileList && watch("thumb").length > 0) {
       handlePreviewThumb(watch("thumb")[0]);
     }
   }, [watch("thumb")]);
 
   useEffect(() => {
-    if (watch("images")) {
+    if (watch("images") instanceof FileList && watch("images").length > 0) {
       handlePreviewImage(watch("images"));
     }
   }, [watch("images")]);
 
-  const handleUpdateProduct = (data) => {
-    console.log(data);
+  const handleUpdateProduct = async (data) => {
+    const invalid = validate(payload, setInvalidFields);
+    if (invalid === 0) {
+      if (data.brand === "1") {
+        data.brand = "Dickies";
+      }
+      data.gender = genderMap[data.gender] || data.gender;
+      data.sizes = data.sizes.split(",").map((size) => size.trim());
+      data.color = [data.color];
+
+      const finalPayload = { ...data, ...payload };
+      finalPayload.thumb =
+        data?.thumb?.length === 0 ? preview.thumb : data.thumb[0];
+      const formData = new FormData();
+      console.log(finalPayload);
+
+      for (let i of Object.entries(finalPayload)) {
+        formData.append(i[0], i[1]);
+      }
+      finalPayload.images =
+        data?.images?.length === 0 ? preview?.images : data.images;
+      for (let image of finalPayload.images) {
+        formData.append("images", image);
+      }
+
+      console.log("finalPayload", finalPayload);
+
+      dispatch(showModal({ isShowModal: true, modalChildren: <Loading /> }));
+      const response = await apiUpdateProduct(formData, editProduct._id);
+      dispatch(showModal({ isShowModal: false, modalChildren: null }));
+      console.log(response);
+      if (response.success) {
+        toast.success(response.message);
+        render();
+        setEditProduct();
+      } else {
+        toast.error(response.message);
+      }
+    }
   };
+
   return (
     <div className="w-full pl-4 flex flex-col gap-4 relative bg-[#F5F5F5]">
       <div className="py-4 border-b w-full flex justify-between items-center">
         <h1 className="text-3xl font-bold tracking-tight">Update Products</h1>
+        <span
+          className="p-2 rounded-sm hover:bg-[rgb(180,91,81)] cursor-pointer text-white bg-[#B22714]"
+          onClick={() => setEditProduct(null)}
+        >
+          Cancel
+        </span>
       </div>
       <div className="">
         <form onSubmit={handleSubmit(handleUpdateProduct)}>
@@ -229,11 +288,7 @@ function UpdateProduct({ editProduct, render }) {
             <label htmlFor="thumb" className="font-semibold">
               Upload thumb
             </label>
-            <input
-              type="file"
-              id="thumb"
-              {...register("thumb", { required: "Need fill" })}
-            />
+            <input type="file" id="thumb" {...register("thumb")} />
             {errors && errors["thumb"] && (
               <small className="text-xs text-red-500 whitespace-nowrap">
                 {errors["thumb"]?.message}
@@ -253,12 +308,7 @@ function UpdateProduct({ editProduct, render }) {
             <label htmlFor="products" className="font-semibold">
               Upload images of product
             </label>
-            <input
-              type="file"
-              id="products"
-              multiple
-              {...register("images", { required: "Need fill" })}
-            />
+            <input type="file" id="products" multiple {...register("images")} />
             {errors && errors["images"] && (
               <small className="text-xs text-red-500 whitespace-nowrap">
                 {errors["images"]?.message}
@@ -283,7 +333,7 @@ function UpdateProduct({ editProduct, render }) {
               Please fill out all required fields.
             </small>
           )}
-          <Button type="submit" name="Create new product" />
+          <Button type="submit" name="Update product" />
         </form>
       </div>
     </div>

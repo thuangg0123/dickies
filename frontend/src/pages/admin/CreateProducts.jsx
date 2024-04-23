@@ -68,7 +68,6 @@ function CreateProducts() {
 
       data.color = [data.color];
       const finalPayload = { ...data, ...payload };
-      console.log(finalPayload);
       const formData = new FormData();
       for (let i of Object.entries(finalPayload)) {
         formData.append(i[0], i[1]);

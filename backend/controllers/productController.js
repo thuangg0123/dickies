@@ -120,16 +120,24 @@ const getAllProducts = asyncHandler(async (req, res) => {
 
 const updateProduct = asyncHandler(async (req, res) => {
     const { productId } = req.params
-    if (!productId) {
-        throw new Error("not found product")
+    const { sizes } = req.body
+    const files = req?.files
+    if (files?.thumb) {
+        req.body.thumb = files?.thumb[0]?.path;
+    }
+    if (files?.images) {
+        req.body.images = files?.images?.map(element => element.path)
     }
     if (req.body && req.body.title) {
         req.body.slug = slugify(req.body.title)
     }
+    const sizesArray = Array.isArray(sizes) ? sizes : sizes.split(",").map(size => size.trim());
+    req.body.sizes = sizesArray;
     const updatedProduct = await Product.findByIdAndUpdate(productId, req.body, { new: true })
     return res.status(200).json({
         success: updatedProduct ? true : false,
-        dataProduct: updatedProduct ? updatedProduct : 'cannot update product',
+        dataProduct: updatedProduct ? updatedProduct : 'Cannot update product',
+        message: updatedProduct ? "Updated" : 'Cannot update product',
         errorCode: updatedProduct ? 1 : 0
     })
 })

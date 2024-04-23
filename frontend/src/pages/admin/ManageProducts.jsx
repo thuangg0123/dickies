@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect, useState } from "react";
 import { InputForm, Pagination } from "../../components";
 import { useForm } from "react-hook-form";
-import { apiGetProductByQuery } from "../../apis/app";
+import { apiGetProductByQuery, apiDeleteProduct } from "../../apis/app";
 import moment from "moment";
 import {
   useSearchParams,
@@ -11,6 +11,8 @@ import {
 } from "react-router-dom";
 import { useDebounce } from "../../hooks/useDebounce";
 import { UpdateProduct } from "./index";
+import { toast } from "react-toastify";
+import Swal from "sweetalert2";
 
 function ManageProducts() {
   const location = useLocation();
@@ -31,16 +33,11 @@ function ManageProducts() {
     setUpdate(!update);
   }, []);
 
-  const handleSearchProduct = (data) => {
-    console.log(data);
-  };
-
   const fetchProducts = async (params) => {
     const response = await apiGetProductByQuery({
       ...params,
       limit: +import.meta.env.VITE_APP_LIMIT,
     });
-    console.log(response);
     if (response.success) {
       setCounts(response.counts);
       setProducts(response.dataProduct);
@@ -66,11 +63,36 @@ function ManageProducts() {
     fetchProducts(searchParams);
   }, [params, update]);
 
+  const handleSearchProduct = (data) => {};
+
+  const handleDeleteProduct = async (productId) => {
+    Swal.fire({
+      title: "Delete product",
+      text: "Are you sure delete this product ?",
+      icon: "warning",
+      showCancelButton: true,
+    }).then(async (result) => {
+      if (result.isConfirmed) {
+        const response = await apiDeleteProduct(productId);
+        if (response.success) {
+          toast.success(response.message);
+        } else {
+          toast.error(response.message);
+        }
+        render();
+      }
+    });
+  };
+
   return (
     <div className="w-full pl-4 flex flex-col gap-4 relative">
       {editProduct && (
         <div className="absolute inset-0 min-h-screen bg-white z-50">
-          <UpdateProduct editProduct={editProduct} render={render} />
+          <UpdateProduct
+            editProduct={editProduct}
+            render={render}
+            setEditProduct={setEditProduct}
+          />
         </div>
       )}
       <div className="h-[69px] w-full bg-[#F5F5F5]"></div>
@@ -147,7 +169,10 @@ function ManageProducts() {
                   >
                     Edit
                   </span>
-                  <span className="px-2 hover:underline cursor-pointer text-[#B22714]">
+                  <span
+                    className="px-2 hover:underline cursor-pointer text-[#B22714]"
+                    onClick={() => handleDeleteProduct(product._id)}
+                  >
                     Delete
                   </span>
                 </td>
