@@ -23,8 +23,14 @@ import DashboardIcon from '@mui/icons-material/Dashboard';
 import GroupsIcon from '@mui/icons-material/Groups';
 import InventoryIcon from '@mui/icons-material/Inventory';
 import CategoryIcon from '@mui/icons-material/Category';
+import EditIcon from '@mui/icons-material/Edit';
+import DeleteIcon from '@mui/icons-material/Delete';
+import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome';
 
 const icons = {
+    EditIcon,
+    DeleteIcon,
+    AutoAwesomeIcon,
     DeleteForeverIcon,
     CategoryIcon,
     InventoryIcon,

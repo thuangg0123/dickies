@@ -10,11 +10,13 @@ import {
   useLocation,
 } from "react-router-dom";
 import { useDebounce } from "../../hooks/useDebounce";
-import { UpdateProduct } from "./index";
+import { CustomizeVariant, UpdateProduct } from "./index";
 import { toast } from "react-toastify";
 import Swal from "sweetalert2";
+import icons from "../../ultils/icons";
 
 function ManageProducts() {
+  const { EditIcon, DeleteIcon, AutoAwesomeIcon } = icons;
   const location = useLocation();
   const navigate = useNavigate();
   const [params] = useSearchParams();
@@ -22,6 +24,7 @@ function ManageProducts() {
   const [counts, setCounts] = useState(0);
   const [editProduct, setEditProduct] = useState(null);
   const [update, setUpdate] = useState(false);
+  const [customizeVariant, setCustomizeVariant] = useState(null);
   const {
     register,
     formState: { errors },
@@ -95,6 +98,15 @@ function ManageProducts() {
           />
         </div>
       )}
+      {customizeVariant && (
+        <div className="absolute inset-0 min-h-screen bg-white z-50">
+          <CustomizeVariant
+            customizeVariant={customizeVariant}
+            render={render}
+            setCustomizeVariant={setCustomizeVariant}
+          />
+        </div>
+      )}
       <div className="h-[69px] w-full bg-[#F5F5F5]"></div>
       <div className="py-4 border-b w-full flex justify-between items-center fixed top-0">
         <h1 className="text-3xl font-bold tracking-tight">Manage Products</h1>
@@ -150,30 +162,57 @@ function ManageProducts() {
                     className="w-12 h-12 object-cover"
                   />
                 </td>
-                <td className="py-2">{product.title}</td>
-                <td className="py-2">{product.gender[0]}</td>
-                <td className="py-2">{product.brand}</td>
-                <td className="py-2">{product.category}</td>
-                <td className="py-2">{product.price}</td>
-                <td className="py-2">{product.color[0]}</td>
-                <td className="py-2">{product.sold}</td>
-                <td className="py-2">{product.quantity}</td>
-                <td className="py-2">{product.totalRatings}</td>
-                <td className="py-2">
+                <td className="py-2 max-w-[150px] overflow-hidden truncate">
+                  {product.title}
+                </td>
+                <td className="py-2 max-w-[150px] overflow-hidden truncate">
+                  {product.gender[0]}
+                </td>
+                <td className="py-2 max-w-[150px] overflow-hidden truncate">
+                  {product.brand}
+                </td>
+                <td className="py-2 max-w-[150px] overflow-hidden truncate">
+                  {product.category}
+                </td>
+                <td className="py-2 max-w-[150px] overflow-hidden truncate">
+                  {product.price}
+                </td>
+                <td className="py-2 max-w-[150px] overflow-hidden truncate">
+                  {product.color[0]}
+                </td>
+                <td className="py-2 max-w-[150px] overflow-hidden truncate">
+                  {product.sold}
+                </td>
+                <td className="py-2 max-w-[150px] overflow-hidden truncate">
+                  {product.quantity}
+                </td>
+                <td className="py-2 max-w-[150px] overflow-hidden truncate">
+                  {product.totalRatings}
+                </td>
+                <td className="py-2 max-w-[150px] overflow-hidden truncate">
                   {moment(product.createdAt).format("DD/MM/YYYY")}
                 </td>
                 <td>
                   <span
                     className="px-2 hover:underline cursor-pointer text-[#F4BB3E]"
                     onClick={() => setEditProduct(product)}
+                    title="edit"
                   >
-                    Edit
+                    <EditIcon style={{ fontSize: "16px" }} />
                   </span>
                   <span
                     className="px-2 hover:underline cursor-pointer text-[#B22714]"
                     onClick={() => handleDeleteProduct(product._id)}
+                    title="delete"
                   >
-                    Delete
+                    <DeleteIcon style={{ fontSize: "16px" }} />
+                  </span>
+                  <span
+                    className="px-2 hover:underline cursor-pointer text-[#204387]"
+                    onClick={() => setCustomizeVariant(product)}
+                    title="variant"
+                  >
+                    <AutoAwesomeIcon style={{ fontSize: "16px" }} />
                   </span>
                 </td>
               </tr>

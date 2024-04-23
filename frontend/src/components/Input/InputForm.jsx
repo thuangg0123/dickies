@@ -13,6 +13,7 @@ function InputForm({
   fullWidth,
   defaultValue,
   style,
+  readOnly,
 }) {
   return (
     <div className={clsx(`flex flex-col h-[78px] gap-2`, style)}>
@@ -29,6 +30,7 @@ function InputForm({
           style
         )}
         defaultValue={defaultValue}
+        readOnly={readOnly}
       />
       {errors && errors[id] && (
         <small className="text-xs text-red-500 whitespace-nowrap">

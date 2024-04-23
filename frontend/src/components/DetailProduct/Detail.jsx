@@ -10,7 +10,6 @@ import DOMPurify from "dompurify";
 const Detail = () => {
   const { RemoveIcon, AddIcon } = icons;
   const detailProduct = useSelector((state) => state.product.detailProduct);
-  console.log(detailProduct);
 
   const [accordionState, setAccordionState] = useState({
     description: true,

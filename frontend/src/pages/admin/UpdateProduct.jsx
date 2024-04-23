@@ -33,12 +33,6 @@ function UpdateProduct({ editProduct, render, setEditProduct }) {
     3: "all",
   };
 
-  // const sizeMap = {
-  //   1: ["28", "30", "32", "34", "36", "38", "40", "42"],
-  //   2: ["M", "L", "XL", "XXL"],
-  //   3: ["One Size"],
-  // };
-
   const {
     register,
     formState: { errors },
@@ -134,7 +128,6 @@ function UpdateProduct({ editProduct, render, setEditProduct }) {
       finalPayload.thumb =
         data?.thumb?.length === 0 ? preview.thumb : data.thumb[0];
       const formData = new FormData();
-      console.log(finalPayload);
 
       for (let i of Object.entries(finalPayload)) {
         formData.append(i[0], i[1]);
@@ -145,12 +138,10 @@ function UpdateProduct({ editProduct, render, setEditProduct }) {
         formData.append("images", image);
       }
 
-      console.log("finalPayload", finalPayload);
-
       dispatch(showModal({ isShowModal: true, modalChildren: <Loading /> }));
       const response = await apiUpdateProduct(formData, editProduct._id);
       dispatch(showModal({ isShowModal: false, modalChildren: null }));
-      console.log(response);
+
       if (response.success) {
         toast.success(response.message);
         render();
@@ -159,10 +150,11 @@ function UpdateProduct({ editProduct, render, setEditProduct }) {
         toast.error(response.message);
       }
     }
+    render();
   };
 
   return (
-    <div className="w-full pl-4 flex flex-col gap-4 relative bg-[#F5F5F5]">
+    <div className="w-full flex pl-4 flex-col gap-4 relative bg-[#F5F5F5]">
       <div className="py-4 border-b w-full flex justify-between items-center">
         <h1 className="text-3xl font-bold tracking-tight">Update Products</h1>
         <span

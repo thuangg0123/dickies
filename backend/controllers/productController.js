@@ -1,6 +1,7 @@
 const Product = require('../models/product')
 const asyncHandler = require('express-async-handler')
 var slugify = require('slugify')
+const makeSKU = require("uniqid")
 
 const createProduct = asyncHandler(async (req, res) => {
     const { title, price, description, brand, gender, color, category, quantity, sizes } = req.body;
@@ -214,6 +215,29 @@ const uploadImageProduct = asyncHandler(async (req, res) => {
     })
 })
 
+const addVariant = asyncHandler(async (req, res) => {
+    const { productId } = req.params
+    const { title, price, color } = req.body;
+    const thumb = req?.files?.thumb[0]?.path;
+    const images = req?.files?.images.map(element => element.path);
+    if (!(title && price && color)) {
+        throw new Error("Missing inputs");
+    }
+
+    if (thumb) {
+        req.body.thumb = thumb;
+    }
+    if (images) {
+        req.body.images = images;
+    }
+    const newProduct = await Product.findByIdAndUpdate(productId, { $push: { variants: { color, price, title, thumb, images, sku: makeSKU().toUpperCase() } } })
+    return res.status(200).json({
+        success: newProduct ? true : false,
+        dataProduct: newProduct ? newProduct : [],
+        message: newProduct ? `Add variant for ${title} is successful` : 'Cannot add variant a product',
+    });
+})
+
 module.exports = {
     createProduct,
     getProduct,
@@ -221,5 +245,6 @@ module.exports = {
     updateProduct,
     deleteProduct,
     ratings,
-    uploadImageProduct
+    uploadImageProduct,
+    addVariant
 }
