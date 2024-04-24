@@ -26,8 +26,14 @@ import CategoryIcon from '@mui/icons-material/Category';
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
 import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome';
+import LogoutIcon from '@mui/icons-material/Logout';
+import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
+import Inventory2OutlinedIcon from '@mui/icons-material/Inventory2Outlined';
 
 const icons = {
+    Inventory2OutlinedIcon,
+    HomeOutlinedIcon,
+    LogoutIcon,
     EditIcon,
     DeleteIcon,
     AutoAwesomeIcon,

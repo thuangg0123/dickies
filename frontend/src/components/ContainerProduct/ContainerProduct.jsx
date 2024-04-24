@@ -120,7 +120,7 @@ function ContainerProduct({ gender, path, category }) {
             {gender !== "all" ? ` For ${capitalizeFirstLetter(gender)}` : ""}
           </h2>
         </section>
-        <div className="font-second flex justify-between text-sm">
+        <div className="font-second flex justify-between text-sm items-center">
           <span>{counts} Results</span>
           <div className="flex gap-10">
             <div className="flex flex-auto items-center gap-4">
@@ -151,7 +151,7 @@ function ContainerProduct({ gender, path, category }) {
             </button>
           </div>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mt-4 md:mt-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-4 md:mt-8">
           {Array.isArray(products) &&
             products.map((product, index) => (
               <ProductCard
@@ -162,7 +162,7 @@ function ContainerProduct({ gender, path, category }) {
             ))}
         </div>
         {products?.length > 0 && (
-          <div className="w-full m-auto my-4 flex justify-center">
+          <div className="w-full m-auto my-8 flex justify-center">
             <Pagination totalCount={counts} />
           </div>
         )}

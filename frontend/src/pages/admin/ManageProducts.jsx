@@ -107,8 +107,7 @@ function ManageProducts() {
           />
         </div>
       )}
-      <div className="h-[69px] w-full bg-[#F5F5F5]"></div>
-      <div className="py-4 border-b w-full flex justify-between items-center fixed top-0">
+      <div className="py-4 border-b w-full flex justify-between items-center">
         <h1 className="text-3xl font-bold tracking-tight">Manage Products</h1>
       </div>
       <div>

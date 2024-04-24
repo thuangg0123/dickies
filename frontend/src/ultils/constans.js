@@ -3,7 +3,7 @@ import React from 'react';
 import icons from './icons'
 
 const { DashboardIcon, GroupsIcon, InventoryIcon, CategoryIcon, Person2OutlinedIcon,
-    ShoppingCartOutlinedIcon, BookmarkBorderOutlinedIcon } = icons
+    ShoppingCartOutlinedIcon, BookmarkBorderOutlinedIcon, LogoutIcon, HomeOutlinedIcon, Inventory2OutlinedIcon } = icons
 
 export const nav = [
     {
@@ -196,29 +196,42 @@ export const memberSidebar = [
     {
         id: 1,
         type: "SINGLE",
+        text: "Home",
+        path: '/',
+        icon: React.createElement(HomeOutlinedIcon, null)
+    },
+    {
+        id: 2,
+        type: "SINGLE",
         text: "Personal",
         path: `${path.PERSONAL}`,
         icon: React.createElement(Person2OutlinedIcon, null)
     },
     {
-        id: 2,
+        id: 3,
         type: "SINGLE",
         text: "My cart",
         path: `${path.MY_CART}`,
         icon: React.createElement(ShoppingCartOutlinedIcon, null)
     },
     {
-        id: 3,
+        id: 4,
         type: "SINGLE",
         text: "Wish lists",
         path: `${path.WISH_LIST}`,
         icon: React.createElement(BookmarkBorderOutlinedIcon, null)
     },
     {
-        id: 4,
+        id: 5,
         type: "SINGLE",
         text: "History order",
         path: `${path.HISOTRY_ORDER}`,
-        icon: React.createElement(InventoryIcon, null)
+        icon: React.createElement(Inventory2OutlinedIcon, null)
+    },
+    {
+        id: 6,
+        type: "SINGLE",
+        text: "Logout",
+        icon: React.createElement(LogoutIcon, null)
     }
 ]

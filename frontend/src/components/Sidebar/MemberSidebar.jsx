@@ -1,29 +1,20 @@
 import React, { memo, Fragment, useState } from "react";
 import { memberSidebar } from "../../ultils/constans";
 import { NavLink } from "react-router-dom";
-import icons from "../../ultils/icons";
 import clsx from "clsx";
+import { logout } from "../../store/user/userSlice";
 import { useSelector } from "react-redux";
 import avatarDefault from "../../img/anonymous.png";
+import withBaseComponent from "../../hocs/withBaseComponent";
 
 const activedStyle =
   "px-4 py-2 flex items-center gap-2 font-semibold font-second bg-[#B22714]";
 const notActiveStyle =
   "px-4 py-2 flex items-center gap-2 font-semibold font-second hover:bg-[#B22714]";
 
-function MemberSidebar() {
-  const { KeyboardArrowDownIcon, RemoveIcon } = icons;
+function MemberSidebar(props) {
   const { current } = useSelector((state) => state.user);
 
-  const [actived, setActived] = useState([]);
-
-  const handleShowTabs = (tabID) => {
-    if (actived.some((element) => element === tabID)) {
-      setActived((prev) => prev.filter((element) => element !== tabID));
-    } else {
-      setActived((prev) => [...prev, tabID]);
-    }
-  };
   return (
     <div className="bg-black py-4 h-full text-white">
       <div className="flex justify-center gap-2 items-center flex-col py-4">
@@ -40,7 +31,16 @@ function MemberSidebar() {
         {memberSidebar.map((element) => {
           return (
             <Fragment key={element.id}>
-              {element.type === "SINGLE" && (
+              {element.type === "SINGLE" && element.text === "Logout" ? (
+                <button
+                  onClick={() => props.dispatch(logout())}
+                  to={element.path}
+                  className="px-4 py-2 w-full flex items-center gap-2 font-semibold font-second hover:bg-[#B22714]"
+                >
+                  <span>{element.icon}</span>
+                  <span>{element.text}</span>
+                </button>
+              ) : (
                 <NavLink
                   to={element.path}
                   className={({ isActive }) =>
@@ -51,44 +51,6 @@ function MemberSidebar() {
                   <span>{element.text}</span>
                 </NavLink>
               )}
-              {element.type === "PARENT" && (
-                <div
-                  className="flex flex-col font-semibold font-second"
-                  onClick={() => handleShowTabs(+element.id)}
-                >
-                  <div className="flex items-center justify-between gap-2 px-4 py-2 hover:bg-[#B22714] cursor-pointer">
-                    <div className="gap-2 flex">
-                      <span>{element.icon}</span>
-                      <span>{element.text}</span>
-                    </div>
-                    {actived.some((id) => id === element.id) ? (
-                      <RemoveIcon />
-                    ) : (
-                      <KeyboardArrowDownIcon />
-                    )}
-                  </div>
-                  {actived.some((id) => +id === +element.id) && (
-                    <div className="flex flex-col">
-                      {element.submenu.map((item) => (
-                        <NavLink
-                          key={element.text}
-                          to={item.path}
-                          onClick={(e) => e.stopPropagation()}
-                          className={({ isActive }) =>
-                            clsx(
-                              isActive && activedStyle,
-                              !isActive && notActiveStyle,
-                              "pl-12"
-                            )
-                          }
-                        >
-                          {item.text}
-                        </NavLink>
-                      ))}
-                    </div>
-                  )}
-                </div>
-              )}
             </Fragment>
           );
         })}
@@ -97,4 +59,4 @@ function MemberSidebar() {
   );
 }
 
-export default memo(MemberSidebar);
+export default withBaseComponent(memo(MemberSidebar));
