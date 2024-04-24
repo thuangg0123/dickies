@@ -28,10 +28,12 @@ function FilterProduct({
           : [...prev, value]
       );
     } else if (filterType === "category") {
+      // Thay thế các dấu cách bằng dấu '-'
+      const formattedValue = value.replace(/\s+/g, "-");
       setSelectedCategory((prev) =>
-        prev.includes(value)
-          ? prev.filter((item) => item !== value)
-          : [...prev, value]
+        prev.includes(formattedValue)
+          ? prev.filter((item) => item !== formattedValue)
+          : [...prev, formattedValue]
       );
     }
     handleChangeActiveFilter(name);

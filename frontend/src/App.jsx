@@ -31,7 +31,12 @@ import {
   FinalRegister,
   ResetPassword,
 } from "./pages/public/index";
-import { DetailProduct, ContainerProduct, Modal } from "./components/index";
+import {
+  DetailProduct,
+  ContainerProduct,
+  Modal,
+  NotFound,
+} from "./components/index";
 
 function App() {
   const detailProduct = useSelector((state) => state.product.detailProduct);

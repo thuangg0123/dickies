@@ -19,12 +19,16 @@ import icons from "../../ultils/icons";
 import FilterProduct from "./FilterProduct";
 import { sortPrice } from "../../ultils/constans";
 
-function ContainerProduct({ gender, path, category }) {
+function ContainerProduct({ path }) {
   const navigate = useNavigate();
 
   const [isShow, setIsShow] = useState(true);
   const [activeClick, setActiveClick] = useState(null);
   const [params] = useSearchParams();
+  useEffect(() => {
+    console.log("Current gender:", params.get("gender"));
+    console.log("Current category:", params.get("category"));
+  }, [params]);
   const [sort, setSort] = useState("");
 
   const { TuneIcon } = icons;
@@ -34,7 +38,7 @@ function ContainerProduct({ gender, path, category }) {
   const counts = useSelector((state) => state.product.counts);
 
   const capitalizeFirstLetter = (string) => {
-    return string.charAt(0).toUpperCase() + string.slice(1);
+    return string?.charAt(0)?.toUpperCase() + string?.slice(1);
   };
 
   useEffect(() => {
@@ -90,34 +94,60 @@ function ContainerProduct({ gender, path, category }) {
     [sort]
   );
 
+  // Xử lý hiển thị giới tính
+  const renderGender = () => {
+    const genderList = params.get("gender")?.split(",");
+    if (genderList?.length > 1) {
+      return genderList.join(", ").replace(/,([^,]*)$/, " and$1");
+    } else {
+      return capitalizeFirstLetter(params.get("gender"));
+    }
+  };
+
   return (
     <>
       <div className="px-4 py-2 md:px-10 md:py-5">
         <div className="font-second text-xs md:text-sm font-semibold">
-          <Link to="/" className="hover:text-blue-500">
-            Home
-          </Link>
-          /&nbsp;
-          <Link to="/products" className="hover:text-blue-500">
-            Products /
+          <Link
+            to="/"
+            className="transition duration-300 ease-in-out hover:text-[#8D8D8D] font-semibold"
+          >
+            Home /&nbsp;
           </Link>
           <Link
-            to={gender !== "all" ? `/products/${gender}s-clothing` : ""}
-            className="hover:text-blue-500"
+            to="/products"
+            className="transition duration-300 ease-in-out hover:text-[#8D8D8D] font-semibold"
           >
-            All
-            {gender !== "all"
-              ? ` ${capitalizeFirstLetter(gender)}'s Clothing`
-              : ""}
+            Products
           </Link>
-          <Link to={`/products/${gender}s-clothing/${category}`}>
-            {category ? ` / ${capitalizeFirstLetter(category)}` : ""}
+          <Link
+            to={`/products?gender=${params.get("gender")}`}
+            className="transition duration-300 ease-in-out hover:text-[#8D8D8D] font-semibold"
+          >
+            {` / ${capitalizeFirstLetter(renderGender())}`}
+          </Link>
+          <Link
+            to={
+              params.get("category") && params.get("gender")
+                ? `?gender=${params.get("gender")}&&category=${params.get(
+                    "category"
+                  )}`
+                : `?category=${params.get("category")}`
+            }
+          >
+            {params.get("category")
+              ? ` / ${capitalizeFirstLetter(params.get("category"))}`
+              : ""}
           </Link>
         </div>
         <section className="text-[56px] font-semibold py-4">
           <h2 className="tracking-[-2px]">
-            All {category ? capitalizeFirstLetter(category) : ""} Products
-            {gender !== "all" ? ` For ${capitalizeFirstLetter(gender)}` : ""}
+            ALL
+            {params.get("category")
+              ? ` ${capitalizeFirstLetter(params.get("category"))}`
+              : ""}
+            &nbsp;PRODUCTS
+            {params.get("gender") ? ` FOR ${renderGender().toUpperCase()}` : ""}
           </h2>
         </section>
         <div className="font-second flex justify-between text-sm items-center">

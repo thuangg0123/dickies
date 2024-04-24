@@ -12,6 +12,7 @@ function InputFields({
   fullWidth,
   placeholder,
   isHideLabel,
+  styleLogin,
 }) {
   const error = invalidFields?.find((el) => el.name === nameKey);
 
@@ -23,7 +24,11 @@ function InputFields({
       </label>
       <input
         type={type || "text"}
-        className={clsx(!style && "px-4 py-4", style && "px-2 py-2 w-full")}
+        className={clsx(
+          !style && "px-4 py-4",
+          style && "px-2 py-2 w-full",
+          styleLogin
+        )}
         placeholder={
           placeholder ||
           nameKey.slice(0, 1).toUpperCase() + nameKey.slice(1) + "*"

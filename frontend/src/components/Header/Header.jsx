@@ -7,10 +7,9 @@ import { useSelector, useDispatch } from "react-redux";
 import { logout, clearMessage } from "../../store/user/userSlice";
 import Navigations from "./Navigations";
 import Swal from "sweetalert2";
+import withBaseComponent from "../../hocs/withBaseComponent";
 
-function Header() {
-  const nagivate = useNavigate();
-  const dispatch = useDispatch();
+function Header(props) {
   const [isOpen, setIsOpen] = useState(false);
   const { isLoggedIn, message } = useSelector((state) => state.user);
 
@@ -24,22 +23,22 @@ function Header() {
 
   useEffect(() => {
     if (isLoggedIn) {
-      dispatch(getCurrent());
+      props.dispatch(getCurrent());
     }
-  }, [dispatch]);
+  }, [props.dispatch]);
 
   useEffect(() => {
     if (message) {
       Swal.fire("Oops!", message, "info").then(() => {});
-      dispatch(clearMessage());
-      nagivate(`/${path.LOGIN}`);
+      props.dispatch(clearMessage());
+      props.nagivate(`/${path.LOGIN}`);
     }
   }, [message]);
 
   useEffect(() => {
     const handleClickOutOption = (e) => {
       const profile = document.getElementById("profile");
-      if (!profile.contains(e.target)) {
+      if (!profile?.contains(e.target)) {
         setIsOpen(false);
       }
     };
@@ -159,7 +158,7 @@ function Header() {
                         role="menuitem"
                         tabIndex="-1"
                         id="menu-item-1"
-                        onClick={() => dispatch(logout())}
+                        onClick={() => props.dispatch(logout())}
                       >
                         Logout
                       </button>
@@ -168,13 +167,15 @@ function Header() {
                 )}
               </div>
             ) : (
-              <Link to="/login">
+              <Link to={`/${path.LOGIN}`}>
                 <Person2OutlinedIcon />
               </Link>
             )}
           </div>
           <div className="cursor-pointer hover:text-[#ccc] transition-colors duration-300">
-            <BookmarkBorderOutlinedIcon />
+            <Link to={`/member/${path.WISH_LIST}`}>
+              <BookmarkBorderOutlinedIcon />
+            </Link>
           </div>
           <div className="cursor-pointer hover:text-[#ccc] transition-colors duration-300">
             <ShoppingCartOutlinedIcon />
@@ -185,4 +186,4 @@ function Header() {
   );
 }
 
-export default memo(Header);
+export default withBaseComponent(memo(Header));

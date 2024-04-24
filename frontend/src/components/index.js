@@ -30,4 +30,5 @@ export { default as MemberSidebar } from './Sidebar/MemberSidebar'
 export { default as InputForm } from './Input/InputForm'
 export { default as Select } from './Input/Select'
 export { default as MarkDownEditor } from './Input/MarkDownEditor'
+export { default as NotFound } from './404/NotFound'
 
