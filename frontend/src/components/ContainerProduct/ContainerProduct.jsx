@@ -25,10 +25,6 @@ function ContainerProduct({ path }) {
   const [isShow, setIsShow] = useState(true);
   const [activeClick, setActiveClick] = useState(null);
   const [params] = useSearchParams();
-  useEffect(() => {
-    console.log("Current gender:", params.get("gender"));
-    console.log("Current category:", params.get("category"));
-  }, [params]);
   const [sort, setSort] = useState("");
 
   const { TuneIcon } = icons;
@@ -94,7 +90,6 @@ function ContainerProduct({ path }) {
     [sort]
   );
 
-  // Xử lý hiển thị giới tính
   const renderGender = () => {
     const genderList = params.get("gender")?.split(",");
     if (genderList?.length > 1) {

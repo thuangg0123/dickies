@@ -29,8 +29,16 @@ import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome';
 import LogoutIcon from '@mui/icons-material/Logout';
 import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
 import Inventory2OutlinedIcon from '@mui/icons-material/Inventory2Outlined';
+import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
+import PaymentsIcon from '@mui/icons-material/Payments';
+import CheckBoxRoundedIcon from '@mui/icons-material/CheckCircleRounded';
+import ShoppingCartCheckoutIcon from '@mui/icons-material/ShoppingCartCheckout';
 
 const icons = {
+    ShoppingCartCheckoutIcon,
+    CheckBoxRoundedIcon,
+    PaymentsIcon,
+    AddShoppingCartIcon,
     Inventory2OutlinedIcon,
     HomeOutlinedIcon,
     LogoutIcon,

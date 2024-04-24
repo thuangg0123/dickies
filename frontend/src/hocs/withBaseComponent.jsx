@@ -2,10 +2,6 @@ import React from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { useDispatch } from "react-redux";
 
-// const function = (callback) = (props) => {
-//   return callback(props)
-// }
-
 const withBaseComponent = (Component) => (props) => {
   const navigate = useNavigate();
   const dispatch = useDispatch();

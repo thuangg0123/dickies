@@ -11,7 +11,7 @@ import withBaseComponent from "../../hocs/withBaseComponent";
 
 function Header(props) {
   const [isOpen, setIsOpen] = useState(false);
-  const { isLoggedIn, message } = useSelector((state) => state.user);
+  const { isLoggedIn, message, current } = useSelector((state) => state.user);
 
   const {
     Input,
@@ -49,8 +49,6 @@ function Header(props) {
       document.removeEventListener("click", handleClickOutOption);
     };
   }, []);
-
-  const { current } = useSelector((state) => state.user);
 
   return (
     <>
@@ -115,7 +113,11 @@ function Header(props) {
           >
             {isLoggedIn ? (
               <div className="font-second">
-                <div onClick={() => setIsOpen(!isOpen)} id="profile">
+                <div
+                  onClick={() => setIsOpen(!isOpen)}
+                  id="profile"
+                  title="View account"
+                >
                   <span className="text-sm font-bold">My account</span>
                 </div>
                 {isOpen && (
@@ -167,18 +169,25 @@ function Header(props) {
                 )}
               </div>
             ) : (
-              <Link to={`/${path.LOGIN}`}>
+              <Link to={`/${path.LOGIN}`} title="Login">
                 <Person2OutlinedIcon />
               </Link>
             )}
           </div>
           <div className="cursor-pointer hover:text-[#ccc] transition-colors duration-300">
-            <Link to={`/member/${path.WISH_LIST}`}>
+            <Link to={`/member/${path.WISH_LIST}`} title="Wish list">
               <BookmarkBorderOutlinedIcon />
             </Link>
           </div>
-          <div className="cursor-pointer hover:text-[#ccc] transition-colors duration-300">
-            <ShoppingCartOutlinedIcon />
+          <div className="cursor-pointer hover:text-[#ccc] transition-colors duration-300 relative">
+            <Link title="my-cart">
+              <ShoppingCartOutlinedIcon />
+            </Link>
+            <div className="absolute bottom-[13px] left-[18px]">
+              <span className="text-[#B22714] font-semibold text-sm">
+                {`(${current?.cart?.length || 0})`}
+              </span>
+            </div>
           </div>
         </div>
       </div>
