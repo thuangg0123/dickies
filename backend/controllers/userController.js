@@ -101,9 +101,13 @@ const login = asyncHandler(async (req, res) => {
 
 const getCurrent = asyncHandler(async (req, res) => {
     const { _id } = req.user
-    const user = await User.findById({
-        _id: _id
-    }).select('-refreshToken -password')
+    const user = await User.findById(_id).select('-refreshToken -password').populate({
+        path: "cart",
+        populate: {
+            path: "product",
+            select: 'title thumb color price sizes'
+        }
+    })
 
     return res.status(200).json({
         success: user ? true : false,

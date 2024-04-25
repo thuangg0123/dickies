@@ -20,6 +20,10 @@ export default {
       colors: {
         main: '#1A1A1A'
       },
+      gridTemplateColumns: {
+        '10': "repeat(10, minmax(0, 1fr))",
+        "layout": "200px minmax(900px, 1fr) 100px"
+      },
       keyframes: {
         "scale-up-ver-center": {
           "0%": {

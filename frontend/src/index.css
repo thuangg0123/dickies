@@ -3,3 +3,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.custom-text-hover{
+    @apply transition duration-300 ease-in-out hover:text-[#8D8D8D] font-semibold
+}

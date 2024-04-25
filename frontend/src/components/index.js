@@ -31,4 +31,6 @@ export { default as InputForm } from './Input/InputForm'
 export { default as Select } from './Input/Select'
 export { default as MarkDownEditor } from './Input/MarkDownEditor'
 export { default as NotFound } from './404/NotFound'
+export { default as Cart } from './Cart/Cart'
+export { default as DetailCart } from './Cart/DetailCart'
 

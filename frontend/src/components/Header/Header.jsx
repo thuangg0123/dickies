@@ -1,15 +1,16 @@
 import React, { memo, useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import icons from "../../ultils/icons";
 import path from "../../ultils/path";
 import { getCurrent } from "../../store/user/asyncActions";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 import { logout, clearMessage } from "../../store/user/userSlice";
+import { showCart } from "../../store/app/appSlice";
 import Navigations from "./Navigations";
 import Swal from "sweetalert2";
 import withBaseComponent from "../../hocs/withBaseComponent";
 
-function Header(props) {
+function Header({ dispatch, navigate }) {
   const [isOpen, setIsOpen] = useState(false);
   const { isLoggedIn, message, current } = useSelector((state) => state.user);
 
@@ -23,15 +24,15 @@ function Header(props) {
 
   useEffect(() => {
     if (isLoggedIn) {
-      props.dispatch(getCurrent());
+      dispatch(getCurrent());
     }
-  }, [props.dispatch]);
+  }, [dispatch]);
 
   useEffect(() => {
     if (message) {
       Swal.fire("Oops!", message, "info").then(() => {});
-      props.dispatch(clearMessage());
-      props.nagivate(`/${path.LOGIN}`);
+      dispatch(clearMessage());
+      nagivate(`/${path.LOGIN}`);
     }
   }, [message]);
 
@@ -180,9 +181,12 @@ function Header(props) {
             </Link>
           </div>
           <div className="cursor-pointer hover:text-[#ccc] transition-colors duration-300 relative">
-            <Link title="my-cart">
+            <div
+              title="my-cart"
+              onClick={() => dispatch(showCart({ signal: true }))}
+            >
               <ShoppingCartOutlinedIcon />
-            </Link>
+            </div>
             <div className="absolute bottom-[13px] left-[18px]">
               <span className="text-[#B22714] font-semibold text-sm">
                 {`(${current?.cart?.length || 0})`}

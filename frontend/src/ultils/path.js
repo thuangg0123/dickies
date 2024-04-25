@@ -9,7 +9,8 @@ const path = {
     DETAIL_PRODUCT_G_C_T_P: 'products/:gender/:category/:slug/:productId',
     FINAL_REGISTER: 'final-register/:status',
     RESET_PASSWORD: 'reset-password/:token',
-    NOT_FOUND: '/not-found',
+    NOT_FOUND: 'not-found',
+    DETAIL_CART: 'my-cart',
 
     // Admin
     ADMIN: "admin",

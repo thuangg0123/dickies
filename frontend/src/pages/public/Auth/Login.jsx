@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { InputFields, Button, Loading } from "../../../components";
 import {
   apiRegister,
@@ -29,12 +29,12 @@ const Login = () => {
 
   const [invalidFields, setInvalidFields] = useState([]);
   const [isVerifiedEmail, setIsVerifiedEmail] = useState(false);
-
   const [isForgotPassword, setIsForgotPassword] = useState(false);
   const [email, setEmail] = useState("");
   const [modalThanks, setModalThanks] = useState(false);
   const [token, setToken] = useState("");
   const [isRegister, setIsRegister] = useState(false);
+  const { isLoggedIn } = useSelector((state) => state.user);
 
   const resetPayload = () => {
     setPayload({
@@ -74,9 +74,9 @@ const Login = () => {
               userData: result.userData,
             })
           );
-          await dispatch(getCurrent());
           dispatch(showModal({ isShowModal: false, modalChildren: null }));
           navigate(`/${path.HOME}`);
+          dispatch(getCurrent());
         } else {
           Swal.fire("Oops !", result.message, "error");
           dispatch(showModal({ isShowModal: false, modalChildren: null }));
@@ -117,6 +117,12 @@ const Login = () => {
     setIsVerifiedEmail(false);
     setToken("");
   };
+
+  useEffect(() => {
+    if (isLoggedIn) {
+      navigate("/");
+    }
+  }, [isLoggedIn]);
 
   return (
     <>

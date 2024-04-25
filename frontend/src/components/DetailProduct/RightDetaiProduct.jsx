@@ -69,7 +69,10 @@ const RightDetaiProduct = ({ detailProduct, currentVariant, setVariant }) => {
           )}
           <div>
             <span className="font-medium">
-              ${currentVariant.price || detailProduct?.price}
+              $
+              {parseFloat(currentVariant.price || detailProduct?.price).toFixed(
+                2
+              )}
             </span>
           </div>
           <div>

@@ -39,7 +39,6 @@ function Personal() {
     for (let i of Object.entries(data)) {
       formData.append(i[0], i[1]);
     }
-    console.log([...formData]);
     const response = await apiUpdateCurrent(formData);
     if (response.success) {
       dispatch(getCurrent());

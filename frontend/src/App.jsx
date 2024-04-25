@@ -5,6 +5,7 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "react-multi-carousel/lib/styles.css";
 import path from "./ultils/path";
+import { getCategories } from "./store/app/asyncActions";
 import {
   Dashboard,
   AdminLayout,
@@ -20,8 +21,6 @@ import {
   MyCart,
   WishList,
 } from "./pages/member";
-import { getCategories } from "./store/app/asyncActions";
-
 import {
   Login,
   Home,
@@ -36,11 +35,15 @@ import {
   ContainerProduct,
   Modal,
   NotFound,
+  Cart,
+  DetailCart,
 } from "./components/index";
 
 function App() {
   const detailProduct = useSelector((state) => state.product.detailProduct);
-  const { isShowModal, modalChildren } = useSelector((state) => state.app);
+  const { isShowModal, modalChildren, isShowCart } = useSelector(
+    (state) => state.app
+  );
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -49,6 +52,11 @@ function App() {
 
   return (
     <div className="relative font-main">
+      {isShowCart && (
+        <div className="absolute inset-0 bg-overlay z-[51] flex justify-end">
+          <Cart />
+        </div>
+      )}
       <ToastContainer
         position="top-right"
         autoClose={5000}
@@ -68,6 +76,7 @@ function App() {
           <Route path={path.HOME} element={<Home />}></Route>
           <Route path={path.FAQ} element={<FAQ />}></Route>
           <Route path={path.BLOG} element={<Blog />}></Route>
+          <Route path={path.DETAIL_CART} element={<DetailCart />}></Route>
           <Route path={path.RESET_PASSWORD} element={<ResetPassword />}></Route>
           <Route
             path={path.PRODUCTS}

@@ -3,7 +3,8 @@ import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import icons from "../../ultils/icons";
 import { getDetailProduct } from "../../store/products/asyncActions";
-import { apiGetCurrent } from "../../apis/user";
+// import { apiGetCurrent } from "../../apis/user";
+import { getCurrent } from "../../store/user/asyncActions";
 import { apiUpdateCart } from "../../apis";
 import { toast } from "react-toastify";
 import withBaseComponent from "../../hocs/withBaseComponent";
@@ -54,14 +55,13 @@ function ProductCard({ product, isHoverEnabled, navigate, dispatch }) {
         }
       });
     }
-    console.log(data);
     const response = await apiUpdateCart({
       productId: data._id,
       color: data.color[0],
     });
     if (response.success) {
       toast.success(response.message);
-      dispatch(apiGetCurrent());
+      dispatch(getCurrent());
     } else {
       toast.error(response.message);
     }
@@ -99,7 +99,9 @@ function ProductCard({ product, isHoverEnabled, navigate, dispatch }) {
             </Link>
           </h3>
           <div>
-            <span className="text-sm">${product.price}</span>
+            <span className="text-sm">
+              ${parseFloat(product.price).toFixed(2)}
+            </span>
           </div>
           <span>{renderStarFromNumber(product.totalRatings)}</span>
         </div>

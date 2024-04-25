@@ -18,6 +18,7 @@ import {
 import icons from "../../ultils/icons";
 import FilterProduct from "./FilterProduct";
 import { sortPrice } from "../../ultils/constans";
+import "../../index.css";
 
 function ContainerProduct({ path }) {
   const navigate = useNavigate();
@@ -103,21 +104,15 @@ function ContainerProduct({ path }) {
     <>
       <div className="px-4 py-2 md:px-10 md:py-5">
         <div className="font-second text-xs md:text-sm font-semibold">
-          <Link
-            to="/"
-            className="transition duration-300 ease-in-out hover:text-[#8D8D8D] font-semibold"
-          >
+          <Link to="/" className="custom-text-hover">
             Home /&nbsp;
           </Link>
-          <Link
-            to="/products"
-            className="transition duration-300 ease-in-out hover:text-[#8D8D8D] font-semibold"
-          >
+          <Link to="/products" className="custom-text-hover">
             Products
           </Link>
           <Link
             to={`/products?gender=${params.get("gender")}`}
-            className="transition duration-300 ease-in-out hover:text-[#8D8D8D] font-semibold"
+            className="custom-text-hover"
           >
             {` / ${capitalizeFirstLetter(renderGender())}`}
           </Link>
@@ -165,10 +160,7 @@ function ContainerProduct({ path }) {
                 handleChangeActiveFilter={handleChangeActiveFilter}
               />
             </div>
-            <button
-              className="transition duration-300 ease-in-out hover:text-[#8D8D8D] font-semibold"
-              onClick={handleOpenFilter}
-            >
+            <button className="custom-text-hover" onClick={handleOpenFilter}>
               Filter & Sort
               <span className="ml-2 ">
                 <TuneIcon />

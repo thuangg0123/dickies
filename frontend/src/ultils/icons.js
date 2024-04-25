@@ -33,8 +33,10 @@ import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 import PaymentsIcon from '@mui/icons-material/Payments';
 import CheckBoxRoundedIcon from '@mui/icons-material/CheckCircleRounded';
 import ShoppingCartCheckoutIcon from '@mui/icons-material/ShoppingCartCheckout';
+import CloseIcon from '@mui/icons-material/Close';
 
 const icons = {
+    CloseIcon,
     ShoppingCartCheckoutIcon,
     CheckBoxRoundedIcon,
     PaymentsIcon,
