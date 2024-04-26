@@ -40,6 +40,9 @@ var userSchema = new mongoose.Schema({
             },
             quantity: Number,
             color: String,
+            price: Number,
+            thumb: String,
+            size: String,
         }
     ],
     address: String,

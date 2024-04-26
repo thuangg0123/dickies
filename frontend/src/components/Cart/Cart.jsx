@@ -14,11 +14,12 @@ function Cart({ dispatch, navigate }) {
   const { CloseIcon } = icons;
   const { current } = useSelector((state) => state.user);
   const subtotalCart = current?.cart?.reduce(
-    (currentValue, element) => currentValue + +element.product.price,
+    (currentValue, element) =>
+      currentValue + +element?.price * +element?.quantity,
     0
   );
-  const updateCart = async (productId) => {
-    const response = await apiRemoveCart(productId);
+  const handleRemoveItem = async (productId, color) => {
+    const response = await apiRemoveCart(productId, color);
     if (response.success) {
       dispatch(getCurrent());
     } else {
@@ -27,7 +28,7 @@ function Cart({ dispatch, navigate }) {
   };
   return (
     <div className="w-[500px] h-full bg-white grid grid-rows-10 text-black py-10 top-0 right-0 fixed">
-      <header className="font-second font-semibold flex justify-between row-span-1 h-full items-center px-10">
+      <header className="font-second font-semibold flex justify-between row-span-1 h-full items-center px-8">
         <span>Added to Cart</span>
         <button
           className="custom-text-hover"
@@ -43,7 +44,7 @@ function Cart({ dispatch, navigate }) {
             : "row-span-6 h-full max-h-full overflow-y-auto flex justify-center items-center px-8"
         }
       >
-        {current?.cart.length === 0 && (
+        {current?.cart?.length === 0 && (
           <span className="text-5xl font-semibold text-center font-second">
             Your Shopping Cart is Empty
           </span>
@@ -52,10 +53,10 @@ function Cart({ dispatch, navigate }) {
           current?.cart?.map((element) => (
             <div
               className="flex gap-2 mb-2 pb-6 border-b border-black"
-              key={element._id}
+              key={element?._id}
             >
               <img
-                src={element.product.thumb}
+                src={element?.thumb}
                 alt=""
                 className="w-[200px] h-[200px] object-cover"
               />
@@ -65,17 +66,23 @@ function Cart({ dispatch, navigate }) {
                     {element?.product?.title}
                   </span>
                   <span className="font-medium">
-                    Price: ${parseFloat(element?.product?.price).toFixed(2)}
+                    Price: ${parseFloat(element?.price).toFixed(2)}
                   </span>
-                  <span>Color: {element?.product?.color[0]}</span>
-                  <span>Size: {element?.product?.sizes[0]}</span>
+                  <span>Color: {element?.color}</span>
+                  <span>Size: {element?.size}</span>
+                  <span>Quantity: {element?.quantity}</span>
                   <span className="font-medium">
-                    Subtotal: ${parseFloat(element?.product?.price).toFixed(2)}
+                    Subtotal: $
+                    {(parseFloat(element?.price) * element?.quantity).toFixed(
+                      2
+                    )}
                   </span>
                 </div>
                 <button
                   className="text-sm custom-text-hover underline"
-                  onClick={() => updateCart(element.product?._id)}
+                  onClick={() =>
+                    handleRemoveItem(element.product?._id, element?.color)
+                  }
                 >
                   Remove
                 </button>

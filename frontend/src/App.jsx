@@ -37,6 +37,7 @@ import {
   NotFound,
   Cart,
   DetailCart,
+  Checkout,
 } from "./components/index";
 
 function App() {
@@ -77,6 +78,7 @@ function App() {
           <Route path={path.FAQ} element={<FAQ />}></Route>
           <Route path={path.BLOG} element={<Blog />}></Route>
           <Route path={path.DETAIL_CART} element={<DetailCart />}></Route>
+          <Route path={path.CHECKOUT} element={<Checkout />}></Route>
           <Route path={path.RESET_PASSWORD} element={<ResetPassword />}></Route>
           <Route
             path={path.PRODUCTS}

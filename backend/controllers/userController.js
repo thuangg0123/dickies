@@ -328,14 +328,14 @@ const updateAddressUser = asyncHandler(async (req, res) => {
 
 const updateCart = asyncHandler(async (req, res) => {
     const { _id } = req.user
-    const { productId, quantity = 1, color } = req.body
+    const { productId, quantity = 1, color, price, thumb, size } = req.body
     if (!productId || !color) {
         throw new Error("Missing inputs")
     }
     const user = await User.findById(_id).select("cart")
     const isExistProduct = user?.cart?.find(element => element.product.toString() === productId)
-    if (isExistProduct) {
-        const response = await User.updateOne({ cart: { $elemMatch: isExistProduct } }, { $set: { "cart.$.quantity": quantity, "cart.$.color": color } }, { new: true })
+    if (isExistProduct && isExistProduct.color === color) {
+        const response = await User.updateOne({ cart: { $elemMatch: isExistProduct } }, { $set: { "cart.$.quantity": quantity, "cart.$.price": price, "cart.$.thumb": thumb, "cart.$.size": size } }, { new: true })
         return res.status(200).json({
             success: response ? true : false,
             message: response ? `Update color is successfully` : "Something wrong, please try again ....",
@@ -344,7 +344,7 @@ const updateCart = asyncHandler(async (req, res) => {
         })
     }
     else {
-        const response = await User.findByIdAndUpdate(_id, { $push: { cart: { product: productId, quantity, color } } }, { new: true })
+        const response = await User.findByIdAndUpdate(_id, { $push: { cart: { product: productId, size, quantity, color, price, thumb } } }, { new: true })
         return res.status(200).json({
             success: response ? true : false,
             message: response ? `Update your cart is successfully` : "Something wrong, please try again ....",
@@ -356,16 +356,16 @@ const updateCart = asyncHandler(async (req, res) => {
 
 const removeProductInCart = asyncHandler(async (req, res) => {
     const { _id } = req.user
-    const { productId } = req.params
+    const { productId, color } = req.params
     const user = await User.findById(_id).select("cart")
-    const isExistProduct = user?.cart?.find(element => element.product.toString() === productId)
+    const isExistProduct = user?.cart?.find(element => element.product.toString() === productId && element.color === color)
     if (!isExistProduct) {
         return res.status(200).json({
             success: response ? true : false,
             message: response && `Update cart is successfully`,
         })
     }
-    const response = await User.findByIdAndUpdate(_id, { $pull: { cart: { product: productId } } }, { new: true })
+    const response = await User.findByIdAndUpdate(_id, { $pull: { cart: { product: productId, color } } }, { new: true })
     return res.status(200).json({
         success: response ? true : false,
         message: response ? `Update your cart is successfully` : "Something wrong, please try again ....",

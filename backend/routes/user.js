@@ -18,7 +18,7 @@ router.put("/current", verifyAccessToken, uploader.single('avatar'), userControl
 router.delete("/:userId", verifyAccessToken, isAdmin, userController.deleteUser)
 router.put("/update-address", verifyAccessToken, isAdmin, userController.updateAddressUser)
 router.put("/cart", verifyAccessToken, userController.updateCart)
-router.delete("/remove-cart/:productId", verifyAccessToken, userController.removeProductInCart)
+router.delete("/remove-cart/:productId/:color", verifyAccessToken, userController.removeProductInCart)
 
 router.put("/update-user-by-admin/:userId", verifyAccessToken, isAdmin, userController.updateUserByAdmin)
 

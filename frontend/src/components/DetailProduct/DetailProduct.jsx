@@ -1,9 +1,14 @@
 import React, { memo, useEffect, useState } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import {
+  useParams,
+  useNavigate,
+  createSearchParams,
+  useLocation,
+} from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { Breadcrum } from "../../components/index";
 import { LeftDetaiProduct, RightDetaiProduct, VoteOptions } from "../index";
-import { apiGetDetailProduct } from "../../apis";
+import { apiGetDetailProduct, apiUpdateCart } from "../../apis";
 import { submitRating } from "../../store/products/asyncActions";
 import { showModal } from "../../store/app/appSlice";
 import {
@@ -17,18 +22,22 @@ import {
 import icons from "../../ultils/icons";
 import Swal from "sweetalert2";
 import path from "../../ultils/path";
+import withBaseComponent from "../../hocs/withBaseComponent";
+import { getCurrent } from "../../store/user/asyncActions";
+import { toast } from "react-toastify";
 
-function DetailProduct({ ratings }) {
+function DetailProduct({ ratings, dispatch, navigate }) {
+  const [countProduct, setCountProduct] = useState(1);
   const [variant, setVariant] = useState(null);
+  const [selectedSize, setSelectedSize] = useState(null);
   const [currentVariant, setCurrentVariant] = useState({
     title: "",
     thumb: "",
     images: [],
     price: "",
   });
-  const navigate = useNavigate();
   const { StarIcon, StarOutlineIcon } = icons;
-  const dispatch = useDispatch();
+  const { current } = useSelector((state) => state.user);
   const { productId } = useParams();
   const product = useSelector((state) => state.product.detailProduct);
   const isLoggedIn = useSelector((state) => state.user.isLoggedIn);
@@ -103,9 +112,6 @@ function DetailProduct({ ratings }) {
   useEffect(() => {
     if (variant) {
       setCurrentVariant({
-        title: detailProduct?.variants?.find(
-          (element) => element.sku === variant
-        )?.title,
         price: detailProduct?.variants?.find(
           (element) => element.sku === variant
         )?.price,
@@ -115,16 +121,57 @@ function DetailProduct({ ratings }) {
         thumb: detailProduct?.variants?.find(
           (element) => element.sku === variant
         )?.thumb,
+        color: detailProduct?.variants?.find(
+          (element) => element.sku === variant
+        )?.color,
+        quantity: countProduct,
+        size: selectedSize,
       });
     } else {
       setCurrentVariant({
-        title: "",
-        thumb: "",
-        images: [],
-        price: "",
+        thumb: detailProduct.thumb,
+        images: detailProduct.images,
+        price: detailProduct.price,
+        quantity: countProduct,
+        color: detailProduct.color[0],
       });
     }
   }, [variant, detailProduct]);
+
+  const handleAddToCart = async () => {
+    if (!current) {
+      return Swal.fire({
+        title: "Almost ...",
+        text: "Please login logged in to perform this action",
+        icons: "info",
+        showCancelButton: true,
+        confirmButtonText: "Go to login page",
+      }).then(async (results) => {
+        if (results.isConfirmed) {
+          navigate({
+            pathname: `/${path.LOGIN}`,
+            search: createSearchParams({
+              redirect: location.pathname,
+            }).toString(),
+          });
+        }
+      });
+    }
+    const response = await apiUpdateCart({
+      productId: detailProduct?._id,
+      thumb: currentVariant?.thumb || detailProduct?.thumb,
+      color: currentVariant?.color || detailProduct?.color[0],
+      quantity: countProduct,
+      size: selectedSize || detailProduct?.sizes[0],
+      price: currentVariant?.price || detailProduct?.price,
+    });
+    if (response.success) {
+      toast.success(response.message);
+      dispatch(getCurrent());
+    } else {
+      toast.error(response.message);
+    }
+  };
 
   return (
     <>
@@ -146,6 +193,11 @@ function DetailProduct({ ratings }) {
               detailProduct={detailProduct}
             />
             <RightDetaiProduct
+              setSelectedSize={setSelectedSize}
+              selectedSize={selectedSize}
+              countProduct={countProduct}
+              setCountProduct={setCountProduct}
+              handleAddToCart={handleAddToCart}
               currentVariant={currentVariant}
               setVariant={setVariant}
               detailProduct={detailProduct}
@@ -214,7 +266,7 @@ function DetailProduct({ ratings }) {
           <div className="flex flex-col gap-4">
             {product?.ratings?.map((element) => (
               <Comment
-                key={element.id}
+                key={element._id}
                 star={element.star}
                 updatedAt={element.updatedAt}
                 comment={element.comment}
@@ -235,4 +287,4 @@ function DetailProduct({ ratings }) {
   );
 }
 
-export default memo(DetailProduct);
+export default withBaseComponent(memo(DetailProduct));

@@ -161,7 +161,7 @@ function Header({ dispatch, navigate }) {
                         role="menuitem"
                         tabIndex="-1"
                         id="menu-item-1"
-                        onClick={() => props.dispatch(logout())}
+                        onClick={() => dispatch(logout())}
                       >
                         Logout
                       </button>

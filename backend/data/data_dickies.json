@@ -14,7 +14,7 @@
     "price": "35.00",
     "sizes": ["28", "30", "32", "34", "36", "38", "40", "42"],
     "description": "Iconic since 1967. Enhanced with our FLEX fabrication, these 874® Work Pants are designed for all-day comfort that keeps you moving without restrictions. They have a high rise, slightly tapered leg, moisture-wicking properties to keep you cool and dry, and our Active Waistband that stretches with you as you bend and move.",
-    "color": ["Black", "Blue", "White"]
+    "color": ["Black"]
   },
   {
     "gender": ["men", "all"],
@@ -48,7 +48,7 @@
     "price": "40.00",
     "sizes": ["28", "30", "32", "34", "36", "38", "0", "0"],
     "description": "Double down on comfort, style, and utility. Our Double Knee Work Pants feature reinforced knees for added durability, a high rise, relaxed fit for room to move comfortably, and a classic straight leg. These versatile work pants are crafted from our signature workwear twill fabric for an authentic style you can trust on and off the job.",
-    "color": ["Black", "Blue", "Dark Brown"]
+    "color": ["Black"]
   },
   {
     "gender": ["men", "all"],
@@ -64,7 +64,7 @@
     "price": "40.00",
     "sizes": ["28", "30", "32", "34", "36", "38", "40", "42"],
     "description": "These cargo pants combine ease of movement with a professional style. Flex fabric stretches and moves with you to keep you comfortable in the office or on site. An expandable cargo pocket offers handy storage for all your gear.",
-    "color": ["Black", "Blue", "White"]
+    "color": ["Black"]
   },
   {
     "gender": ["men", "all"],
@@ -81,7 +81,7 @@
     "price": "40.00",
     "sizes": ["28", "30", "32", "34", "36", "38", "40", "42"],
     "description": "These skinny-fit work pants are super durable—and super comfortable. Wear and tear isn’t a problem thanks to a double layer of material around the knees, and a stretch fabric gives you plenty of room to move. Plus, they’re stain- and wrinkle-resistant for easy care.",
-    "color": ["Black", "Blue", "White"]
+    "color": ["Black"]
   },
   {
     "gender": ["men", "all"],
@@ -98,7 +98,7 @@
     "price": "40.00",
     "sizes": ["28", "30", "32", "34", "36", "38"],
     "description": "With a durable duck canvas construction and triple needle reinforced stitching, the Renegade work pants are built to handle any job. The double knee pants feature knee pad pockets, a slim fit, classic straight leg style, and just enough stretch to keep you moving comfortably through the jobsite. The pants have a Durable Water Repellent finish to keep you dry.",
-    "color": ["Black", "Blue", "White"]
+    "color": ["Black"]
   },
   {
     "gender": ["men", "all"],
@@ -115,7 +115,7 @@
     "price": "99.00",
     "sizes": ["28", "30", "32", "34", "36", "38", "40", "42"],
     "description": "Built with Temp-iQ® 365 and our durable duck canvas fabric, these double knee work pants are made for long-lasting comfort. Temp-iQ® 365 responds to your body temperature by cooling when you’re warm and warming when you’re cold. The pants are also equipped with cargo pockets, utility side pockets, and Cordura® reinforced double knees with a knee pad opening.",
-    "color": ["Black", "Blue", "White"]
+    "color": ["Black"]
   },
   {
     "gender": ["men", "all"],
@@ -132,7 +132,7 @@
     "price": "179.00",
     "sizes": ["28", "30", "32", "34", "36", "38", "40", "42"],
     "description": "These work pants are built for the jobsite with detachable holsters that keep all your tools within reach. They have Cordura® double knee reinforcements with a knee pad opening, multi-use pockets throughout, a hammer loop, and a crotch gusset for extra mobility where it matters most. The pants feature a Durable Water Repellent finish and Flex fabric that allows enough stretch for comfort.",
-    "color": ["Black", "Blue", "White"]
+    "color": ["Black"]
   },
   {
     "gender": ["men", "all"],
@@ -149,7 +149,7 @@
     "price": "149.00",
     "sizes": ["28", "30", "32", "34", "36", "38", "40", "42"],
     "description": "These skinny-fit work pants are super durable—and super comfortable. Wear and tear isn’t a problem thanks to a double layer of material around the knees, and a stretch fabric gives you plenty of room to move. Plus, they’re stain- and wrinkle-resistant for easy care.",
-    "color": ["Black", "Moss/Black", "White"]
+    "color": ["White"]
   },
   {
     "gender": ["men", "all"],
@@ -166,7 +166,7 @@
     "price": "40.00",
     "sizes": ["28", "30", "32", "34", "36", "38", "40", "42"],
     "description": "Flexible. Durable. Dependable. That's the Dickies FLEX Slim Fit Work Pants. Made with stretchy fabric that offers full mobility with a moisture-wicking finish to help keep you cool, dry and comfortable all workday long, they're a pair you can always rely on.",
-    "color": ["Black", "Blue", "White"]
+    "color": ["Black"]
   },
   {
     "gender": ["men", "all"],
@@ -181,7 +181,7 @@
     "price": "40.00",
     "sizes": ["28", "36", "30", "32", "34", "38", "40", "42"],
     "description": "Work shorts, perfected. These Dickies FLEX Relaxed Fit Work Shorts were made with total comfort and mobility in mind, with an ultra-durable, twill construction that moves effortlessly with your body. Sweat-wicking technology keeps you dry under pressure so you’re ready to tackle the day ahead.",
-    "color": ["Black", "Blue", "White"]
+    "color": ["Black"]
   },
   {
     "gender": ["men", "all"],
@@ -198,7 +198,7 @@
     "price": "40.00",
     "sizes": ["28", "36", "32", "34", "38", "40", "42"],
     "description": "Let the legend live on with Dickies' 13 Loose Fit Multi-Use Pocket Work Shorts that are best sellers for a reason. The longer 13 inseam, extra room in the seat and thigh, and the easy-care fabric, gives you a comfortable solution for the hardest jobs. Plenty of pockets store must-have tools, but the signature heavy-duty belt loops provide enough strength to carry anything else you need in a heavy-load tool belt. The wrinkle-resistant fabric features a stain-release finish with easy care, while the flat front permanent crease keeps you looking professional—at a great value.",
-    "color": ["Black", "Blue", "White"]
+    "color": ["Black"]
   },
   {
     "gender": ["men", "all"],
@@ -215,7 +215,7 @@
     "price": "40.00",
     "sizes": ["28", "30", "32", "34", "36", "38", "40", "42"],
     "description": "Be covered and comfortable in Dickies' Loose Fit Multi-Use Pocket Work Short featuring a 15 inseam—hemmed to hit below the knees. The length isn't the only feature worth raving over. Dickies' polyester/cotton blend is both wrinkle and stain resistant, so you'll stay looking professional. The signature tunnel loops that hold extra-heavy belts, as well as the extra side pocket, will serve as an extra pair of hands on jobs when you need your accessories by your side.",
-    "color": ["Black", "Blue", "White"]
+    "color": ["Black"]
   },
   {
     "gender": ["men", "all"],
@@ -230,7 +230,7 @@
     "price": "40.00",
     "sizes": ["28", "30", "32", "34", "36", "38", "40", "42"],
     "description": "Relaxed Fit Multi-Pocket Work Shorts are even more heavy duty than they look. The polyester/cotton fabrication makes them extremely durable and long-lasting, while the sharp center crease and wrinkle-resistant finish keeps you looking crisp from start to finish. Must-have features include a non-rolling waistband, wide tunnel belt loops and a multi-use pocket positioned for you to keep all your accessories within reach—all at an incredible value.",
-    "color": ["Black", "Blue", "White"]
+    "color": ["Black"]
   },
   {
     "gender": ["men", "all"],
@@ -247,7 +247,7 @@
     "price": "40.00",
     "sizes": ["28", "30", "32", "34", "36", "38", "40", "42"],
     "description": "Our Pelican Rapids shorts for men have a relaxed fit for an easygoing, summertime vibe. The casual shorts feature two deep front pockets, back patch pockets, and a drawstring waist",
-    "color": ["Black", "Blue", "White"]
+    "color": ["Blue"]
   },
   {
     "gender": ["men", "all"],
@@ -264,7 +264,7 @@
     "price": "40.00",
     "sizes": ["M", "L", "XL", "XXL"],
     "description": "Iconic for almost a century. A staple in every wardrobe, our original Work Shirt is crafted from our classic twill fabric and features secure chest pockets with a pencil slot. The shirt offers a spacious fit and moisture-wicking fabric to keep you cool. Pair it with our Original 874® Work Pants to complete your daily uniform.",
-    "color": ["Black", "Blue", "White"]
+    "color": ["Black"]
   },
   {
     "gender": ["men", "all"],
@@ -281,7 +281,7 @@
     "price": "40.00",
     "sizes": ["M", "L", "XL"],
     "description": "Iconic for almost a century. A staple in every wardrobe, our original Work Shirt is crafted from our classic twill fabric and features secure chest pockets with a pencil slot. The shirt offers a spacious fit and moisture-wicking fabric to keep you cool. Pair it with our Original 874® Work Pants to complete your daily uniform.",
-    "color": ["Black", "Blue", "White"]
+    "color": ["Black"]
   },
   {
     "gender": ["men", "all"],
@@ -298,7 +298,7 @@
     "price": "40.00",
     "sizes": ["M", "L", "XL"],
     "description": "Few t-shirts work as hard as this one. The Heavyweight T-Shirt features a relaxed fit and functional chest pocket with a pencil division. Its heavyweight, 100% cotton fabric is crafted to last while getting softer with age",
-    "color": ["Black", "Blue", "White"]
+    "color": ["Black"]
   },
   {
     "gender": ["men", "all"],
@@ -315,7 +315,7 @@
     "price": "40.00",
     "sizes": ["M", "L", "XL"],
     "description": "Effortless in style and trusted for over 90 years by the originators who work to shape our world, Dickies 574 Long Sleeve Work Shirt is a longstanding staple in the creative community. This dependable work shirt has withstood the test of time due to its durable cotton/poly twill fabrication and functional build; an endlessly reliable partnership that enables makers to keep working their hardest. The iconic 574 design features a generous cut through the shoulders and chest, offering freedom of movement no matter how you climb, reach, swing or even skate. The advanced moisture wicking technology ensures that this work shirt is perfect to pack for any job, outdoor adventure or temperate climate. Plus, the durable twill stain release construction will endure no matter what you throw its way. Define your individuality when pairing the 574 with the Original 874 Work Pants and Eisenhower Jacket, creating the ultimate Dickies uniform style.",
-    "color": ["Black", "Blue", "White"]
+    "color": ["Black"]
   },
   {
     "gender": ["men", "all"],
@@ -332,7 +332,7 @@
     "price": "40.00",
     "sizes": ["M", "L", "XL"],
     "description": "Whether you're wearing it as a shirt or an undershirt, the roomy design and cotton jersey construction of Dickies' Long Sleeve Heavyweight Crew Neck Tee is a best seller that will keep you comfortable all day. The long tail keeps you covered in the back for anything—so you can wear on or off the job—while the chest pocket with pencil divider lets you store your must-have accessories.",
-    "color": ["Black", "Blue", "White"]
+    "color": ["Black"]
   },
   {
     "gender": ["men", "all"],
@@ -349,7 +349,7 @@
     "price": "40.00",
     "sizes": ["M", "L", "XL"],
     "description": "When the temps are on the rise, reach for Dickies Cooling Temp-iQ® Short Sleeve Tee-Shirt. This tee comes standard with solutions to keep you comfortable from sunrise to sunset. The ultra-soft jersey fabrication and raglan sleeve design offer all day wearability with increased range of motion, proving that this smart shirt can be worn on or off the jobsite. Plus, the advanced Temp-iQ technology has your back when things heat up by responding to skin temperature, providing active cooling when you need it the most. This moisture wicking tee also offers a stain release finish so you can trust that it will go the distance no matter how dirty things get. A front chest pocket adds purpose to this performance tee, with Dickies logo label proudly displayed at front to show off your appreciation for authentic workwear.",
-    "color": ["Black", "Blue", "White"]
+    "color": ["Black"]
   },
   {
     "gender": ["men", "all"],
@@ -366,7 +366,7 @@
     "price": "40.00",
     "sizes": ["M", "L", "XL"],
     "description": "When you need a tough, roomy shirt that’s ready to work, this shirt delivers. This Flex technology performs under intense conditions: it stretches, wicks away moisture, and resists all kinds of stains. Get lightweight mobility in a breathable twill for the best comfort on the jobsite.",
-    "color": ["Black", "Blue", "White"]
+    "color": ["Black"]
   },
   {
     "gender": ["men", "all"],
@@ -383,7 +383,7 @@
     "price": "40.00",
     "sizes": ["M", "L", "XL"],
     "description": "Retro style meets modern construction. The versatile Dickies Two-Tone Twill Short Sleeve Work Shirt is built to last year after year and ready to tackle a wide range of jobs. This button-front shirt is made with moisture-wicking fabric to keep you cool, dry and comfortable when the going gets tough. You don't even have to roll your sleeves up to get to work.",
-    "color": ["Black Dark/Gray", "Black/Blue", "Black/White"]
+    "color": ["Black"]
   },
   {
     "gender": ["men", "all"],
@@ -400,7 +400,7 @@
     "price": "40.00",
     "sizes": ["M", "L", "XL"],
     "description": "Level up with the Dickies Twill Work Shirt, now in FLEX fabric. This technology performs under intense conditions: it stretches, wicks away moisture, and resists all kinds of stains. Get lightweight mobility in a breathable twill for the best comfort on the jobsite.",
-    "color": ["Black", "Blue", "White"]
+    "color": ["Black"]
   },
   {
     "gender": ["men", "all"],
@@ -417,7 +417,7 @@
     "price": "40.00",
     "sizes": ["M", "L", "XL"],
     "description": "Keep your cool with this performance Dickies Temp-iQ® Cooling Long Sleeve Tee. Activated when your skin temperature rises, the cooling technology wicks away moisture to help you stay cool and dry. Made for everything life throws your way, the easy-care stain-release finish means this T-shirt can keep moving with you every day.",
-    "color": ["Black", "Blue", "White"]
+    "color": ["Black"]
   },
   {
     "gender": ["men", "all"],
@@ -434,7 +434,7 @@
     "price": "40.00",
     "sizes": ["M", "L", "XL"],
     "description": "This staple piece is crafted for a casual look you can count on for any occasion. The long sleeve button-up shirt features two chest pockets, a casual striped pattern, and an easy-wearing oversized fit.",
-    "color": ["Black", "Blue", "White"]
+    "color": ["Black"]
   },
   {
     "gender": ["men", "all"],
@@ -451,7 +451,7 @@
     "price": "40.00",
     "sizes": ["S", "M", "L", "XL", "XXL"],
     "description": "With a fit that’s based on our original work shirt, this style combines our workwear heritage with a subtle acid wash finish. The Newington shirt features a relaxed fit, chest pockets, and a pencil division.",
-    "color": ["Black", "Blue", "White"]
+    "color": ["Black"]
   },
   {
     "gender": ["men", "all"],
@@ -468,7 +468,7 @@
     "price": "40.00",
     "sizes": ["S", "M", "L", "XL", "XXL"],
     "description": "The Newington t-shirt is a casual men’s tee that pairs an easy-wearing relaxed fit with a comfortable, 100% cotton fabric. The understated t-shirt is finished with our seasonal wash.",
-    "color": ["Black", "Blue", "White"]
+    "color": ["Black"]
   },
   {
     "gender": ["men", "all"],
@@ -485,7 +485,7 @@
     "price": "40.00",
     "sizes": ["M", "L", "XL", "XXL"],
     "description": "No workwear wardrobe is complete without the Eisenhower jacket. The jacket has a generous fit, quilted taffeta lining for lightweight warmth, an interior pocket, and pencil pocket on the sleeve. It's made from our workwear twill for an understated look rooted in tradition. Wear it with our 874® Work Pants to complete your daily uniform.",
-    "color": ["Black", "Blue", "White"]
+    "color": ["Black"]
   },
   {
     "gender": ["men", "all"],
@@ -502,7 +502,7 @@
     "price": "40.00",
     "sizes": ["M", "L", "XL", "XXL"],
     "description": "Discover decades of dedication from workwear enthusiasts worldwide in Dickies Unlined Eisenhower Jacket. Originally developed by General Dwight D. Eisenhower during WW2 for its uncomplicated and straightforward design, the iconic Ike has continued to evolve from its military roots to become a mainstay in authentic workwear styling. The generous fit across the shoulders and chest makes Unlined Eisenhower Jacket a universal fit for all. Featuring a sturdy cotton/poly twill construction, this go-to layering piece for work or the weekend will become an anchor in your workwear collection. Design highlights include a durable brass zipper, slash front welt pockets, as well as a hidden interior pocket, enabling high performance and functionality that has withstood the test of time. Celebrate decades of iconic workwear styling with the Ike jacket paired over the Original 1574 Work Shirt to create your forever faithful Dickies uniform.",
-    "color": ["Black", "Blue", "White"]
+    "color": ["Black"]
   },
   {
     "gender": ["men", "all"],
@@ -519,7 +519,7 @@
     "price": "40.00",
     "sizes": ["M", "L", "XL", "XXL"],
     "description": "Stay warm, stay protected. This Diamond Quilted jacket is well-equipped with water-resistant material that fends off the elements so you can focus on work, not the weather. Plus, the handwarmer pockets and ribbed construction help lock the heat in with a relaxed fit.",
-    "color": ["Black", "Blue", "White"]
+    "color": ["Black"]
   },
   {
     "gender": ["men", "all"],
@@ -535,7 +535,7 @@
     "price": "40.00",
     "sizes": ["M", "L", "XL", "XXL"],
     "description": "Dickies Skateboarding Slim Shorts are made with our durable brushed twill fabric and equipped with Dickies® FLEX to ensure ultimate mobility when you skate. Plus, the shorter 11-inch inseam gives you a modern fit for even more agility. The durable metal button front closure guarantees maximum wear and tear that won’t give out when you bail.",
-    "color": ["Black", "Blue", "White"]
+    "color": ["Black"]
   },
   {
     "gender": ["men", "all"],
@@ -552,7 +552,7 @@
     "price": "500.000",
     "sizes": ["M", "L", "XL", "XXL"],
     "description": "The Jake Hayes corduroy shorts are styled for a classic look and built for durability with their double needle stitching. The shorts have a 13” inseam and relaxed fit that lets you skate with ease. They're finished with Jake's embroidered signature.",
-    "color": ["Black", "Blue", "White"]
+    "color": ["Black"]
   },
   {
     "gender": ["men", "all"],
@@ -569,7 +569,7 @@
     "price": "40.00",
     "sizes": ["S", "M", "L", "XL", "XXL"],
     "description": "Dickies Skateboarding Cargo Shorts were built knowing your need for durable skate gear. The stretch ripstop fabrication allows for added movement in a durable construction that won’t rip or tear over time. An inseam gusset provides reinforced construction to avoid blow-outs while giving you a wider range of motion. The dual cargo pockets have been sewn down at the flap to keep your contents safe and secure while skating. Plus, a stay stitch at the rear pockets helps avoid bunching when you are active. Complete with Dickies Skateboarding interior red detailing and black herringbone pocket bags for comfort, these shorts also feature a strong",
-    "color": ["Black", "Blue", "White"]
+    "color": ["Black"]
   },
   {
     "gender": ["men", "all"],
@@ -586,7 +586,7 @@
     "price": "40.00",
     "sizes": ["M", "L", "XL", "XXL"],
     "description": "East Los Angeles native Vincent Alvarez joined the skate team ten years ago and has continued to influence and embody the same attributes that the brand intended to celebrate a century ago. Now, with his signature color and detailing including goldline bartacks and a uniquely raw cut hem, VA's Sereno Short represents the grit and resilience of its keeper.",
-    "color": ["Brown", "Blue", "White"]
+    "color": ["Brown"]
   },
   {
     "gender": ["men", "all"],
@@ -603,7 +603,7 @@
     "price": "40.00",
     "sizes": ["M", "L", "XL", "XXL"],
     "description": "The Grants Pass Short is a summer performance piece with authentic Dickies styling. The relaxed fit, pull-on shorts are equipped with mesh pockets at the side and a drawstring waistband for a comfortable fit.",
-    "color": ["Black", "Blue", "White"]
+    "color": ["Black"]
   },
   {
     "gender": ["men", "all"],
@@ -620,7 +620,7 @@
     "price": "40.00",
     "sizes": ["M", "L", "XL", "XXL"],
     "description": "The Wingville denim shorts feature a super loose fit and our durable, heavyweight denim. This skate staple features classic 5-pocket styling and a design that’s built for comfort and ease of movement.",
-    "color": ["Black", "Blue", "White"]
+    "color": ["Black"]
   },
   {
     "gender": ["men", "all"],
@@ -637,7 +637,7 @@
     "price": "154.00",
     "sizes": ["M", "L", "XL", "XXL"],
     "description": "The Eisenhower puffer is an authentic cut winter jacket, with classic collar and two side welt pockets, made of lightweight, padded water-resistant fabric. A warm and comfortable shower-proof jacket made for the cooler months.",
-    "color": ["Black", "Blue", "White"]
+    "color": ["Black"]
   },
   {
     "gender": ["men", "all"],
@@ -654,7 +654,7 @@
     "price": "140.00",
     "sizes": ["M", "L", "XL", "XXL"],
     "description": "Inspired by our archival workwear, the Lucas Waxed Puffer Jacket is crafted from heritage duck canvas with a water-resistant waxed coating. Its relaxed fit and brushed flannel lining provide comfort in cold weather without sacrificing style. Wear your puffer on outdoor adventures and watch it develop an authentic, worn-in look.",
-    "color": ["Black", "Blue", "White"]
+    "color": ["Black"]
   },
   {
     "gender": ["men", "all"],
@@ -669,7 +669,7 @@
     "price": "159.00",
     "sizes": ["M", "L", "XL"],
     "description": "Our Overbrook jacket reimagines our iconic Eisenhower as a puffer jacket perfect for winter weather. The style features a corduroy collar, water resistant exterior, and pencil pocket on the sleeve. It’s crafted from a lightweight fabric to keep you comfortable without sacrificing style.",
-    "color": ["Black", "Blue", "White"]
+    "color": ["Black"]
   },
   {
     "gender": ["men", "all"],
@@ -686,7 +686,7 @@
     "price": "340.00",
     "sizes": ["M", "L", "XL"],
     "description": "When the jobsite reaches its lowest temperatures, our insulated men’s parka ensures cold weather won’t keep you from finishing the job. The parka is fully insulated and fully seam sealed for a waterproof style designed to keep you warm without weighing you down. The coat also has a zippered closure with secure storm flap, an adjustable hood, storm cuffs with thumbholes, and secure front pockets.",
-    "color": ["Black", "Blue", "White"]
+    "color": ["Black"]
   },
   {
     "gender": ["men", "all"],
@@ -703,7 +703,7 @@
     "price": "540.00",
     "sizes": ["M", "L", "XL"],
     "description": "Perform at your best in extreme working conditions with Dickies Performance Workwear Insulated Jacket. Designed to protect and function through the toughest tasks, you'll achieve long-lasting wearability through the Cordura® nylon advanced abrasion-resistant construction that features a zippered Toolbox Pocket™ for reliable storage. Completely seam-sealed and waterproof, you'll gain even more protection from the integrated Hood Shield™ that supplies added warmth while protecting you from dust and debris",
-    "color": ["Black", "Blue", "White"]
+    "color": ["Black"]
   },
   {
     "gender": ["men", "all"],
@@ -720,7 +720,7 @@
     "price": "240.00",
     "sizes": ["M", "L", "XL"],
     "description": "Re-released from the archives, the waxcloth chore coat is crafted with authentic details made to work. Antique brass hardware, heritage workwear labels, functional pockets, and corduroy at the collar, interior cuffs, and hem are a testament to our quality craftsmanship. The jacket is updated with a modern fit, brushed flannel blanket lining, and rugged utility features. Its durable duck canvas is finished with a waxed coating that repels water to provide protection from the elements. The waxed coating develops a unique patina as it ages and breaks in for comfort you can count on as you head outdoors for work—or adventure.",
-    "color": ["Black", "Blue", "White"]
+    "color": ["Black"]
   },
   {
     "gender": ["men", "all"],
@@ -737,7 +737,7 @@
     "price": "140.00",
     "sizes": ["M", "L", "XL", "XXL"],
     "description": "The Grants Pass Jacket is a lightweight performance piece equipped with our utilitarian Dickies styling. The year-round staple features two mesh welt pockets, zippered closure, and elasticated cuffs and waistband.",
-    "color": ["Black", "Blue", "White"]
+    "color": ["Black"]
   },
   {
     "gender": ["men", "all"],
@@ -754,7 +754,7 @@
     "price": "84.00",
     "sizes": ["M", "L", "XL", "XXL"],
     "description": "It's like a jean jacket, just better. With a truly classic silhouette, Dickies Denim Chore Coat epitomizes laid back, casual style in a non-rigid denim with a soft hand feel. The styling opportunities are endless and effortless with this chore coat. Featuring a double needle stitched durable denim construction and perfectly placed chest and waist pockets, you'll be reaching for this jacket for years to come.",
-    "color": ["Black", "Blue", "White"]
+    "color": ["Black"]
   },
   {
     "gender": "all",
@@ -790,7 +790,7 @@
     "price": "15.00",
     "sizes": ["One Size"],
     "description": "The Dickies Dri-Tech Crew Sock has moisture control fibers that keep the feet dry when you need it at work. This sock is breathable as it features ventilation channels engineered for air circulation and moisture control. Help keep the moisture wicked away with these quarter socks.",
-    "color": ["White/Gray"]
+    "color": ["White"]
   },
   {
     "gender": "all",
@@ -802,7 +802,7 @@
     "price": "15.00",
     "sizes": ["One Size"],
     "description": "#1 Selling Dickies® Dri-Tech expands with the new Max Cushion. Engineered with added cushion throughout the leg and foot to deliver added comfort in boots and shoes. Heel-lock technology securely keeps sock in place, for best fit and comfort.",
-    "color": ["Black", "Blue", "White"]
+    "color": ["Black"]
   },
   {
     "gender": "all",
@@ -814,7 +814,7 @@
     "price": "15.00",
     "sizes": ["One Size"],
     "description": "Get men’s crew socks that keep up for any workday. The Dickies Stain Resister crew socks offer a stain-resistant foot bottom, full cushioned foot, and durable reinforced heel and toe.",
-    "color": ["Black", "Blue", "White"]
+    "color": ["Black"]
   },
   {
     "gender": "all",
@@ -838,7 +838,7 @@
     "price": "14.00",
     "sizes": ["One Size"],
     "description": "Made from a charcoal fiber blend, these Dickies men’s crew socks insulate and provide maximum warmth. Their moisture-control fibers ensure your feet stay dry while a soft brushing and interior cushion offer superior comfort.",
-    "color": ["Black/Yellow"]
+    "color": ["Yellow"]
   },
   {
     "gender": "all",
@@ -862,7 +862,7 @@
     "price": "14.00",
     "sizes": ["One Size"],
     "description": "With our best-fit arch compression and moisture-control fibers, the Dickies men's crew socks are made to keep you comfortable through long days spent on your feet. They're built for durability with reinforcement at the heel and toe.",
-    "color": ["Gray/Orange"]
+    "color": ["Orange"]
   },
   {
     "gender": "all",
@@ -877,7 +877,7 @@
     "price": "24.99",
     "sizes": ["One Size"],
     "description": "Fisherman beanies are a staple in every wardrobe. This cuffed style features a chunky rib knit to block out the cold and our woven Work Wear label.",
-    "color": ["Black", "Blue", "White"]
+    "color": ["Black"]
   },
   {
     "gender": "all",
@@ -889,7 +889,7 @@
     "price": "29.00",
     "sizes": ["One Size"],
     "description": "Built for the coldest winter days. The rib knit balaclava offers lightweight warmth and has our woven Work Wear label as well as Dickies embroidery at the front.",
-    "color": ["Orange", "Blue", "White"]
+    "color": ["Orange"]
   },
   {
     "gender": "all",
@@ -901,7 +901,7 @@
     "price": "34.99",
     "sizes": ["One Size"],
     "description": "With its 100% cotton corduroy fabric, this cap is perfect for adding a vintage style to your look. It’s unstructured for an easy-wearing fit and features an adjustable snapback closure.",
-    "color": ["Blue", "Green", "White"]
+    "color": ["Green"]
   },
   {
     "gender": "all",
@@ -913,7 +913,7 @@
     "price": "40.00",
     "sizes": ["One Size"],
     "description": "Your go-to hat just got an upgrade. Crafted from 100% cotton waxed canvas, this style is elevated with a leather front patch and adjustable leather strapback closure. It has a roomy fit, casual flat brim, and a pencil slot at the side. A pencil is included with the hat.",
-    "color": ["Brown", "Red"]
+    "color": ["Red"]
   },
   {
     "gender": "all",
@@ -928,7 +928,7 @@
     "price": "40.00",
     "sizes": ["One Size"],
     "description": "Classic Dad hat styling meets all-day comfort in this easy-wearing hat. The hat is unstructured and has a low profile, curved brim, adjustable strapback closure, and logo embroidery at the front.",
-    "color": ["Green", "Egret", "Moss Green"]
+    "color": ["Green"]
   },
   {
     "gender": "all",
@@ -943,7 +943,7 @@
     "price": "25.00",
     "sizes": ["One Size"],
     "description": "Keep on trucking with the protection of Dickies Canvas Trucker Hat that delivers for your dynamic workday. The durable brushed canvas fabric is washed for a worn in feel that you will be reaching for time and time again. Plus, the moisture wicking headband and precurved bill ensure that both sweat and sun rays stay out of your eyes, keeping you protected when you're working your hardest.",
-    "color": ["Black", "Blue", "White"]
+    "color": ["Black"]
   },
   {
     "gender": "all",
@@ -958,7 +958,7 @@
     "price": "25.00",
     "sizes": ["One Size"],
     "description": "Make your summer workdays a little cooler with this breathable, all-mesh trucker hat. The hat has an adjustable snapback closure, Work Worthy graphic label on the front, and stripes at each side.",
-    "color": ["Black", "Blue", "White"]
+    "color": ["Black"]
   },
   {
     "gender": "all",
@@ -970,7 +970,7 @@
     "price": "25.000",
     "sizes": ["One Size"],
     "description": "Stay warm on the job with this classic beanie. It has a tall fit and a woven logo label that’s dyed to match the color of the beanie for a casual look.",
-    "color": ["Neon Yellow", "Neon Orange"]
+    "color": ["Yellow"]
   },
   {
     "gender": "all",
@@ -985,7 +985,7 @@
     "price": "35.00",
     "sizes": ["One Size"],
     "description": "This easy-wearing bucket is crafted from 100% cotton canvas for a classic look and is finished with a woven label on the front.",
-    "color": ["Black", "Khaki"]
+    "color": ["Black"]
   },
   {
     "gender": "all",
@@ -1000,7 +1000,7 @@
     "price": "40.00",
     "sizes": ["One Size"],
     "description": "This trucker hat combines back mesh panels for breathability with a structured, low profile for a classic look. It has an adjustable snapback closure and embroidered logo patch on the front.",
-    "color": ["Black", "Dark Navy", "Khaki"]
+    "color": ["Black"]
   },
   {
     "gender": "all",
@@ -1078,7 +1078,7 @@
     "price": "35.000",
     "sizes": ["One Size"],
     "description": "Carry all your books and school essentials with our Essential backpack. The bag features a large main compartment with internal laptop sleeve and a front zip pocket. Its fully padded back panel ensures all-day comfort.",
-    "color": ["Brown", "Blue", "White"]
+    "color": ["Brown"]
   },
   {
     "gender": "all",
@@ -1094,7 +1094,7 @@
     "price": "50.000",
     "sizes": ["One Size"],
     "description": "Our double pocket backpack is designed to keep your essentials secure and organized. The backpack features a large main compartment with padded internal laptop sleeve, two front zip pockets, a fully padded back panel, and two water bottle pockets. It has several pocket slots in various sizes on the interior for your pencils, phone, wallet, and other essentials.",
-    "color": ["Black", "Blue", "White"]
+    "color": ["Black"]
   },
   {
     "gender": "all",
@@ -1110,7 +1110,7 @@
     "price": "80.000",
     "sizes": ["One Size"],
     "description": "Our logo backpack features a large main compartment with internal laptop sleeve and a smaller zip pocket to keep your phone, keys, and wallet secure. The bag has a padded back panel for comfort, a side water bottle pocket, and a bold logo on the front as well as our signature wordmark across the top.",
-    "color": ["Black", "Blue", "White"]
+    "color": ["Black"]
   },
   {
     "gender": "all",
@@ -1140,7 +1140,7 @@
     "price": "44.00",
     "sizes": ["One Size"],
     "description": "Whether you're headed to campus or going out to a concert, festival, or sporting event, our clear backpack is the perfect accessory. The backpack has adjustable padded shoulder straps you can count on for all-day comfort, a spacious main compartment, side water bottle pocket, and a small zippered pocket to keep your phone, keys, and wallet secure.",
-    "color": ["Black", "Blue", "White"]
+    "color": ["Black"]
   },
   {
     "gender": "all",
@@ -1231,7 +1231,7 @@
     "price": "35.00",
     "sizes": ["28", "30", "32", "34", "36", "38", "40", "42"],
     "description": "Borrowing your work pants from the boys? Not anymore. Dickies Women’s Original 874® Work Pants are made by women, for women. We took the original Dickies 874 silhouette and tweaked it slightly to create this women’s style. It’s made with a high rise that sits at the natural waist with a sturdy waistband to give you the unmistakable fit that only the 874 can provide. The women’s 874 is constructed from an ultradurable, stain- and wrinkle-resistant twill fabric that only gets better with time. Thanks to their versatile look and their status as a workwear icon, Dickies Women’s Original 874® Work Pants are ready to be styled for work and the weekend.",
-    "color": ["Black", "Blue", "White"]
+    "color": ["Black"]
   },
   {
     "gender": ["women", "all"],
@@ -1248,7 +1248,7 @@
     "price": "35.00",
     "sizes": ["28", "30", "32", "34", "36", "38", "40", "42"],
     "description": "Borrowing your work pants from the boys? Not anymore. Dickies Women’s Original 874® Work Pants are made by women, for women. We took the original Dickies 874 silhouette and tweaked it slightly to create this women’s style. It’s made with a high rise that sits at the natural waist with a sturdy waistband to give you the unmistakable fit that only the 874 can provide. The women’s 874 is constructed from an ultradurable, stain- and wrinkle-resistant twill fabric that only gets better with time. Thanks to their versatile look and their status as a workwear icon, Dickies Women’s Original 874® Work Pants are ready to be styled for work and the weekend.",
-    "color": ["Black", "Blue", "White"]
+    "color": ["Black"]
   },
   {
     "gender": ["women", "all"],
@@ -1265,7 +1265,7 @@
     "price": "35.00",
     "sizes": ["28", "30", "32", "34", "36", "38", "40", "42"],
     "description": "Borrowing your work pants from the boys? Not anymore. Dickies Women’s Original 874® Work Pants are made by women, for women. We took the original Dickies 874 silhouette and tweaked it slightly to create this women’s style. It’s made with a high rise that sits at the natural waist with a sturdy waistband to give you the unmistakable fit that only the 874 can provide. The women’s 874 is constructed from an ultradurable, stain- and wrinkle-resistant twill fabric that only gets better with time. Thanks to their versatile look and their status as a workwear icon, Dickies Women’s Original 874® Work Pants are ready to be styled for work and the weekend.",
-    "color": ["Black", "Blue", "White"]
+    "color": ["Black"]
   },
   {
     "gender": ["women", "all"],
@@ -1282,7 +1282,7 @@
     "price": "35.00",
     "sizes": ["28", "30", "32", "34", "36", "38", "40", "42"],
     "description": "Borrowing your work pants from the boys? Not anymore. Dickies Women’s Original 874® Work Pants are made by women, for women. We took the original Dickies 874 silhouette and tweaked it slightly to create this women’s style. It’s made with a high rise that sits at the natural waist with a sturdy waistband to give you the unmistakable fit that only the 874 can provide. The women’s 874 is constructed from an ultradurable, stain- and wrinkle-resistant twill fabric that only gets better with time. Thanks to their versatile look and their status as a workwear icon, Dickies Women’s Original 874® Work Pants are ready to be styled for work and the weekend.",
-    "color": ["Black", "Blue", "White"]
+    "color": ["Black"]
   },
   {
     "gender": ["women", "all"],
@@ -1299,7 +1299,7 @@
     "price": "35.00",
     "sizes": ["28", "30", "32", "34", "36", "38", "40", "42"],
     "description": "With the same iconic styling as our cult favorite men's version, Dickies Women's 874® Original Work Pant offers superior function and durability while also delivering unbeatable value. Made out of an ultra-durable twill that only gets better with age, you'll be able to count on these work pants year in and year out. Wrinkle resistant with stain release technology, they're easy going and easy wearing. Basically, they're made to make your life better and to serve the best version of you, so slip them on and get out there and make your mark.",
-    "color": ["Black", "Blue", "White"]
+    "color": ["Black"]
   },
   {
     "gender": ["women", "all"],
@@ -1315,7 +1315,7 @@
     "price": "35.00",
     "sizes": ["28", "30", "32", "34", "36", "38", "40", "42"],
     "description": "Lounging around the house, working in the yard or going to a casual event will be perfect for Dickies Women's 11 Stretch Cargo Relaxed Fit Shorts. Sitting slightly below the waist, this relaxed fit will keep you comfortable, while the straight leg will uphold a nice silhouette. Stretch twill fabric works to keep enough stretch for movement. These shorts are brushed for a soft fit and feel. Bellowed cargo pockets, multi-use side pockets and back flap pockets make this high on utility—perfect for storing anything you need for the day.",
-    "color": ["Black", "Blue", "White"]
+    "color": ["Black"]
   },
   {
     "gender": ["women", "all"],
@@ -1332,7 +1332,7 @@
     "price": "35.00",
     "sizes": ["28", "30", "32", "34", "36", "38", "40", "42"],
     "description": "When things heat up at work, trust Dickies Women's DuraTech Renegade Shorts to provide the rugged utility you depend on to get the job done right. Built from a durable stretch duck fabric, the straight fit and 9 inseam give you room to move and added coverage to carry your tools comfortably. They're equipped with a Durable Water Repellent finish so you can work through your day with the confidence that you're protected from your environment. Dickies® FLEX fabrication ensures superior mobility no matter how you move. Plus, the extra wide center back belt loop is designed to carry your heaviest tool bag with no gapping or sagging. There's no shortage of functional utility in these sturdy shorts, with traditional carpenter details throughout, including a key and hammer loop to easily access all that you carry. An added zipper pocket at the front right leg will store your small gear, while the discrete back utility pocket is perfect to securely stow your cell phone or wallet.",
-    "color": ["Black", "Blue", "White"]
+    "color": ["Black"]
   },
   {
     "gender": ["women", "all"],
@@ -1349,7 +1349,7 @@
     "price": "35.00",
     "sizes": ["28", "30", "32", "34", "36", "38", "40", "42"],
     "description": "Embrace the forecast and work smart in Dickies Women’s Cooling Temp-iQ® Cargo Shorts. Whether things heat up or rain is heading your way, your ultimate protection is accounted for in these resourceful cargo shorts. Featuring a slim fit and bi-stretch fabric for added mobility, you’ll be able to move through your workday with ease. Solutions come standard in these cargos with ample storage for all your gear provided in multiple utility pockets throughout the design. Plus, the Durable Water Repellant (DWR) pockets resist abrasion for extra protection from inclement weather. The advanced Temp-iQ™ intelligent cooling technology detects when your core body temperature rises and releases an instant cooling sensation. Engineered with a moisture wicking finish, you’ll stay cool and dry no matter how hot it gets both on and off the work site. Added visibility comes standard with Dickies’ reflective logo label at your front left pocket to keep you safe when you need it the most.",
-    "color": ["Black", "Blue", "White"]
+    "color": ["Black"]
   },
   {
     "gender": ["women", "all"],
@@ -1366,7 +1366,7 @@
     "price": "35.00",
     "sizes": ["28", "30", "32", "34", "36", "38", "40", "42"],
     "description": "Raise the bar on heightened protection for warm working conditions in Dickies Women's Temp-iQ® 365 Shorts. Constructed with ultimate performance in mind, the straight fit, high rise and mobility gusset give you added room to move, with a 9 inseam built to hit above the knee. Plus, the innovative Temp-iQ® 365 technology is designed to maintain the ideal microclimate between you and your workwear all year round. Advanced body temperature control traps heat when you're cold and releases heat when you are warm, ensuring your comfort and protection no matter the conditions. We've got you covered in the sun as well with UPF 40+ defense, anti-odor and moisture wicking finish that keeps you fresh through the longest shifts. Superior utility is found through the large dual cargo pockets complete with a zipper security feature on the left leg to safeguard your valuables. Dual rear flap pockets and front side entry pockets round out the practicality of the design, where function and purpose collide for all your warm weather working needs.",
-    "color": ["Black", "Blue", "White"]
+    "color": ["Black"]
   },
   {
     "gender": ["women", "all"],
@@ -1382,7 +1382,7 @@
     "price": "35.00",
     "sizes": ["28", "30", "32", "34", "36", "38", "40", "42"],
     "description": "Lounging around the house, working in the yard or going to a casual event will be perfect for Dickies Women's 11 Stretch Cargo Relaxed Fit Shorts. Sitting slightly below the waist, this relaxed fit will keep you comfortable, while the straight leg will uphold a nice silhouette. Stretch twill fabric works to keep enough stretch for movement. These shorts are brushed for a soft fit and feel. Bellowed cargo pockets, multi-use side pockets and back flap pockets make this high on utility—perfect for storing anything you need for the day.",
-    "color": ["Black", "Blue", "White"]
+    "color": ["Black"]
   },
   {
     "gender": ["women", "all"],
@@ -1398,7 +1398,7 @@
     "price": "35.00",
     "sizes": ["28", "30", "32", "34", "36", "38", "40", "42"],
     "description": "Lounging around the house, working in the yard or going to a casual event will be perfect for Dickies Women's 11 Stretch Cargo Relaxed Fit Shorts. Sitting slightly below the waist, this relaxed fit will keep you comfortable, while the straight leg will uphold a nice silhouette. Stretch twill fabric works to keep enough stretch for movement. These shorts are brushed for a soft fit and feel. Bellowed cargo pockets, multi-use side pockets and back flap pockets make this high on utility—perfect for storing anything you need for the day.",
-    "color": ["Black", "Blue", "White"]
+    "color": ["Black"]
   },
   {
     "gender": ["women", "all"],
@@ -1414,7 +1414,7 @@
     "price": "35.00",
     "sizes": ["28", "30", "32", "34", "36", "38", "40", "42"],
     "description": "Keep up with your craft even when the heat is on. These Dickies Women's FLEX Carpenter Shorts are a classic style enhanced with extra comfort and mobility in mind. Made with stretch denim fabric so you can bend, twist and move any way you need to, they feature a contoured waistband that hugs your curves effortlessly for a flattering fit. Plenty of catchall pockets and utility loops are endlessly useful when you need to keep your hammer and other tools handy.",
-    "color": ["Black", "Blue", "White"]
+    "color": ["Black"]
   },
   {
     "gender": ["women", "all"],
@@ -1430,7 +1430,7 @@
     "price": "35.00",
     "sizes": ["28", "30", "32", "34", "36", "38", "40", "42"],
     "description": "Keep up with your craft even when the heat is on. These Dickies Women's FLEX Carpenter Shorts are a classic style enhanced with extra comfort and mobility in mind. Made with stretch denim fabric so you can bend, twist and move any way you need to, they feature a contoured waistband that hugs your curves effortlessly for a flattering fit. Plenty of catchall pockets and utility loops are endlessly useful when you need to keep your hammer and other tools handy.",
-    "color": ["Black", "Blue", "White"]
+    "color": ["Black"]
   },
   {
     "gender": ["women", "all"],
@@ -1446,7 +1446,7 @@
     "price": "35.00",
     "sizes": ["XXS", "XS", "S", "M", "L", "XL"],
     "description": "Inspired by our iconic twill workwear styles, this pleated skirt blends our durable workwear fabric with a stylish silhouette. The skirt features contrast stitching, a moisture-wicking fabric for comfort, and wrinkle resistance so you always look your best. It has a hidden side zipper closure",
-    "color": ["Black", "Blue", "White"]
+    "color": ["Black"]
   },
   {
     "gender": ["women", "all"],
@@ -1463,7 +1463,7 @@
     "sizes": ["XXS", "XS", "S", "M", "L", "XL"],
 
     "description": "The Chain Lake Dress is our slim cut dress with spaghetti straps perfect for the summer. A vintage inspired staple made of organic stretch cotton, with iconic Dickies logo on the front. A versatile feminine dress made for the warmer days.",
-    "color": ["Black", "Blue", "White"]
+    "color": ["Black"]
   },
   {
     "gender": ["women", "all"],
@@ -1479,7 +1479,7 @@
     "price": "35.00",
     "sizes": ["XXS", "XS", "S", "M", "L", "XL"],
     "description": "With its oversized utility pockets and carpenter details, this carpenter skirt is styled for authenticity. The high-waisted skirt is perfect for wearing with crop tops and tucked-in tees for a casual look. It’s made from our Flex fabric to ensure all-day comfort.",
-    "color": ["Black", "Blue", "White"]
+    "color": ["Black"]
   },
   {
     "gender": ["women", "all"],
@@ -1495,7 +1495,7 @@
     "price": "35.00",
     "sizes": ["XXS", "XS", "S", "M", "L", "XL"],
     "description": "From its hickory stripes and bib overall dress silhouette to its durable double needle stitching, this style stays true to our workwear roots. This overall dress also has adjustable straps and a functional bib pocket at the chest for an authentic look.",
-    "color": ["Black", "Blue", "White"]
+    "color": ["Black"]
   },
   {
     "gender": ["women", "all"],
@@ -1511,7 +1511,7 @@
     "price": "35.00",
     "sizes": ["XXS", "XS", "S", "M", "L", "XL"],
     "description": "The Elizaville Skirt is a fitted vintage sports attire inspired piece. A short skirt that sits high on the waist featuring knife pleats, belt loop waist and iconic woven Dickies label. A timeless and flattering tailored skirt with a pep squad vibe.",
-    "color": ["Black", "Blue", "White"]
+    "color": ["Black"]
   },
   {
     "gender": ["women", "all"],
@@ -1527,7 +1527,7 @@
     "price": "35.00",
     "sizes": ["XXS", "XS", "S", "M", "L", "XL"],
     "description": "With its twill workwear fabric, this women’s overall dress is styled for authenticity. The dress features durable double needle stitching, adjustable straps, and a functional bib style chest pocket.",
-    "color": ["Black", "Blue", "White"]
+    "color": ["Black"]
   },
   {
     "gender": ["women", "all"],
@@ -1543,7 +1543,7 @@
     "price": "35.00",
     "sizes": ["XXS", "XS", "S", "M", "L", "XL"],
     "description": "Utility styling meets a retro-inspired fabrication in our Madison skirt. The denim skirt features oversized utility pockets, a button-up closure, and a sleek A-line silhouette. Crafted from 100% cotton denim, it’s made for long-lasting style you can wear through the seasons.",
-    "color": ["Black", "Blue", "White"]
+    "color": ["Black"]
   },
   {
     "gender": ["women", "all"],
@@ -1558,7 +1558,7 @@
     "price": "35.00",
     "sizes": ["XXS", "XS", "S", "M", "L", "XL"],
     "description": "The Mapleton is a relaxed fit t-shirt dress made of a comfortable jersey fabrication. It features our iconic Dickies logo on the front and flat locked seam detailing. The casual silhouette is made for daily wearing.",
-    "color": ["Black", "Blue", "White"]
+    "color": ["Black"]
   },
   {
     "gender": ["women", "all"],
@@ -1575,7 +1575,7 @@
     "price": "35.00",
     "sizes": ["XXS", "XS", "S", "M", "L", "XL"],
     "description": "This casual tee is perfect for wearing on its own or layering under your favorite hoodies and jackets. The women’s V-neck t-shirt features cuffed sleeves, a relaxed fit, 100% cotton jersey fabric for all-day comfort, and moisture-wicking properties to keep you dry and cool.",
-    "color": ["Black", "Blue", "White"]
+    "color": ["Black"]
   },
   {
     "gender": ["women", "all"],
@@ -1592,7 +1592,7 @@
     "price": "35.00",
     "sizes": ["XXS", "XS", "S", "M", "L", "XL"],
     "description": "The Altoona tee is a slim fit, cropped t-shirt. This casual tee features a striped pattern and a comfortable, 100% cotton jersey fabric.",
-    "color": ["Black", "Blue", "White"]
+    "color": ["Black"]
   },
   {
     "gender": ["women", "all"],
@@ -1608,7 +1608,7 @@
     "price": "35.00",
     "sizes": ["XXS", "XS", "S", "M", "L", "XL"],
     "description": "With a casual boxy fit and 100% cotton jersey fabric, this go-to tee is perfect for daily wearing. The t-shirt has moisture-wicking properties to keep you dry and cool and features a floral logo graphic on the chest.",
-    "color": ["Black", "Blue", "White"]
+    "color": ["Black"]
   },
   {
     "gender": ["women", "all"],
@@ -1624,7 +1624,7 @@
     "price": "35.00",
     "sizes": ["XXS", "XS", "S", "M", "L", "XL"],
     "description": "This easy-wearing women’s t-shirt is crafted from 100% cotton jersey fabric with moisture-wicking properties to keep you dry and comfortable. It has a casual boxy fit and is finished with a subtle logo on the chest.",
-    "color": ["Black", "Blue", "White"]
+    "color": ["Black"]
   },
   {
     "gender": ["women", "all"],
@@ -1640,7 +1640,7 @@
     "price": "35.00",
     "sizes": ["XXS", "XS", "S", "M", "L", "XL"],
     "description": "Crafted from 100% cotton, the Altoona t-shirt is perfect for daily wearing. The graphic tee is finished with our seasonal “finest products” graphic on the chest.",
-    "color": ["Black", "Blue", "White"]
+    "color": ["Black"]
   },
   {
     "gender": ["women", "all"],
@@ -1656,7 +1656,7 @@
     "price": "35.00",
     "sizes": ["XXS", "XS", "S", "M", "L", "XL"],
     "description": "The women’s Newington style is a slim fit, cropped t-shirt. The flattering long sleeve tee is crafted from 100% cotton and features our seasonal wash for a vintage-inspired look.",
-    "color": ["Black", "Blue", "White"]
+    "color": ["Black"]
   },
   {
     "gender": ["women", "all"],
@@ -1672,7 +1672,7 @@
     "price": "35.00",
     "sizes": ["XXS", "XS", "S", "M", "L", "XL"],
     "description": "Keep your look laidback and effortless with the Dickies Women’s Relaxed Cropped Logo T-Shirt. With its cropped silhouette, the tee is easy to pair with your favorite Dickies high-waisted pants. A boxy fit and logo graphic give the crop top a casual, timeless style that’s rooted in workwear.",
-    "color": ["Black", "Blue", "White"]
+    "color": ["Black"]
   },
   {
     "gender": ["women", "all"],
@@ -1688,7 +1688,7 @@
     "price": "35.00",
     "sizes": ["XXS", "XS", "S", "M", "L", "XL"],
     "description": "In support of Breast Cancer Awareness Month, we’ve redesigned our most iconic styles with graphics that promote empowerment. Our classic heavyweight t-shirt is updated with a pink ribbon on the chest pocket and our “Respect Respect” logo across the back in a nod to those living with breast cancer and the friends and family affected by their loved one’s diagnosis. The shirt has a relaxed fit and 100% heavyweight cotton jersey fabric. To further promote awareness, we’ll be donating to CoppaFeel! in support of their mission to encourage early detection of breast cancer among young people.",
-    "color": ["Pink", "Blue", "White"]
+    "color": ["Pink"]
   },
   {
     "gender": ["women", "all"],
@@ -1704,7 +1704,7 @@
     "price": "35.00",
     "sizes": ["XXS", "XS", "S", "M", "L", "XL"],
     "description": "Discover the most versatile outer layer that delivers on the promise of warmth, durability and protection in Dickies Women’s Plus Hooded Duck Shirt Jacket. Combining the lived-in feel of a hoodie, the strength of a duck canvas work shirt and the security of a jacket, this workday essential will check the box for function and style. Featuring a sturdy brushed Duck canvas fabrication and equipped with a cozy jersey lining and hood, you’ll embrace the cold climate with ease in this shirt jacket. You’re covered in wet weather too, as the DWR finish ensures water repellency to keep you dry. Durable metal snap closures at front and a drop tail hem at rear offer even more protection when your work climate calls for it. Maximum utility comes standard with two large chest pockets and two side welt pockets to store all that you carry.",
-    "color": ["Pink", "Blue", "White"]
+    "color": ["Pink"]
   },
   {
     "gender": ["women", "all"],
@@ -1720,7 +1720,7 @@
     "price": "35.00",
     "sizes": ["XXS", "XS", "S", "M", "L", "XL"],
     "description": "Recreate a classic look at work or on the weekend with Dickies Women's Bomber Jacket. A great lightweight layering piece, this bomber features a nylon taffeta construction with a polyester fill and jersey lining for comfort and warmth. You're covered in wet conditions as well with a durable water repellent coating and a rib knit collar, cuff and waist to keep the elements out. Front welt pockets offer easy access to warm your hands or grab your keys. With the Dickies logo located under the left pocket, flaunting your signature style has never been easier.",
-    "color": ["Pink", "Blue", "White"]
+    "color": ["Pink"]
   },
   {
     "gender": ["women", "all"],
@@ -1736,7 +1736,7 @@
     "price": "35.00",
     "sizes": ["XXS", "XS", "S", "M", "L", "XL"],
     "description": "Dickies Women's Plus Heavyweight Wordmark Fleece Pullover is constructed from a soft fleece for a comfortable hand feel. Double needle stitching provides added strength, while the Durable Water Repellent finish enables this hoodie to be put to work in wet conditions. Equipped with a crossover neckline, three-piece adjustable hood and rib knit waist and cuffs, you'll be sure to keep the elements out while you perform in ultimate comfort. There is no shortage of layering potential with this hoodie, a true wardrobe staple that outlasts every season. The kangaroo pocket at front provides added utility to store small gear, or to quickly warm your hands while on the go. Complete with a left sleeve Dickies graphic, there's no denying your devotion to protective and performance driven workwear.",
-    "color": ["Pink", "Blue", "White"]
+    "color": ["Pink"]
   },
   {
     "gender": ["women", "all"],
@@ -1752,7 +1752,7 @@
     "price": "35.00",
     "sizes": ["XXS", "XS", "S", "M", "L", "XL"],
     "description": "Ruggedness and style combine in the Dickies Women's Quilted Vest. This vest sheds moisture with a Durable Water Repellent coating, and its fill will help keep your core warm during the colder days. The rib knit collar, hem and waist also help to keep the weather at bay.",
-    "color": ["Black", "Blue", "White"]
+    "color": ["Black"]
   },
   {
     "gender": ["women", "all"],
@@ -1784,7 +1784,7 @@
     "price": "35.00",
     "sizes": ["XXS", "XS", "S", "M", "L", "XL"],
     "description": "Persist in precipitation and stay productive with Dickies Women’s Performance Hooded Jacket. This lightweight jacket features a full metal zipper closure that keeps the elements out, maintaining a dry interior with an abrasion resistant Durable Water Repellent (DWR) finish throughout the design. Plus, the 3-piece hood and adjustable toggle drawstring ensure a great protective fit whether you’re wearing a hat, helmet or high ponytail. Deep dual front entry pockets safeguard your gear from inclement conditions with a snap button closure on each opening. Protective in the truest sense, Dickies’ reflective logo is affixed at the hem to enhance your visibility and keep you safe",
-    "color": ["Black", "Blue", "White"]
+    "color": ["Black"]
   },
   {
     "gender": ["women", "all"],
@@ -1800,7 +1800,7 @@
     "price": "135.00",
     "sizes": ["XXS", "XS", "S", "M", "L", "XL"],
     "description": "Stay warm and dry with this women’s insulated jacket. The waterproof jacket fully seam sealed and insulated to keep you protected from snow, wind, and rain. It’s equipped with an adjustable hood and built-up neckline, a storm flap over the zipper, and storm cuffs with thumbholes for maximum coverage. It also features secure zippered pockets, an interior pocket, and articulated sleeves for enhanced mobility.",
-    "color": ["Black", "Blue", "White"]
+    "color": ["Black"]
   },
   {
     "gender": ["women", "all"],
@@ -1816,7 +1816,7 @@
     "price": "135.00",
     "sizes": ["XXS", "XS", "S", "M", "L", "XL"],
     "description": "Wet and cold don't stop you when there's a job to be done, and the Dickies Sherpa Lined Duck Chore Coat is made to work. The signature fit has all the features that keep you warm, dry, and working. Pockets on the inside and outside mean your tools are always close at hand, while the durable Duck fabric repels water and wind.",
-    "color": ["Black", "Blue", "White"]
+    "color": ["Black"]
   },
   {
     "gender": ["women", "all"],
@@ -1832,7 +1832,7 @@
     "price": "135.00",
     "sizes": ["XXS", "XS", "S", "M", "L", "XL"],
     "description": "With a classic workwear exterior and cozy high pile fleece lining, our women’s duck canvas fleece jacket is the perfect winter staple. The hooded style features an easy-wearing relaxed fit and a stylish heritage-inspired aesthetic you can count on to get you through every outdoor adventure this season and beyond.",
-    "color": ["Black", "Blue", "White"]
+    "color": ["Black"]
   },
   {
     "gender": ["women", "all"],
@@ -1848,7 +1848,7 @@
     "price": "135.00",
     "sizes": ["XXS", "XS", "S", "M", "L", "XL"],
     "description": "Our Madison denim jacket is the staple piece your wardrobe needs. The jacket is crafted from 100% cotton denim for a classic, long-lasting style. Its full zip closure makes it a versatile silhouette you can style with all your favorite pieces. Wear it with your Dickies jeans for a retro, denim-on-denim look.",
-    "color": ["Black", "Blue", "White"]
+    "color": ["Black"]
   },
   {
     "gender": ["women", "all"],
@@ -1864,7 +1864,7 @@
     "price": "135.00",
     "sizes": ["XXS", "XS", "S", "M", "L", "XL"],
     "description": "The Dickies Duck Canvas Chore Coat is a classic heritage style for women with original fabrication and authentic detailing. Our regular cut jacket features a classic collar, three patch pockets on the front and button-up closure. Available in our authentic 100% cotton 12 oz brushed duck canvas, a durable fabric that we’ve stonewashed resulting in a garment that’s comfortable and hardwearing with a pre-worn look. A timeless piece made for the modern day.",
-    "color": ["Black", "Blue", "White"]
+    "color": ["Black"]
   },
   {
     "gender": ["women", "all"],
@@ -1880,7 +1880,7 @@
     "price": "135.00",
     "sizes": ["XXS", "XS", "S", "M", "L", "XL"],
     "description": "With its Durable Water Repellent coating, our Oakport women’s coach jacket is made to withstand light rain so you can stay outdoors as the weather turns. The jacket features a snap button closure as well as elasticated cuffs and a drawcord hem for a closer fit on cool, rainy days. Its cropped length gives this sporty style a modern look.",
-    "color": ["Black", "Blue", "White"]
+    "color": ["Black"]
   },
   {
     "gender": ["women", "all"],
@@ -1896,7 +1896,7 @@
     "price": "135.00",
     "sizes": ["XXS", "XS", "S", "M", "L", "XL"],
     "description": "Buffalo plaid always means business, just like you do. The Dickies High Pile Fleece Lined Flannel Chore Coat is a classic for women. Shrug off rain with a Durable Water Repellent finish, while the warm flannel and fleece lining chase away chills. Every tool is secure in snap-closure pockets and hidden interior spots for your gear.",
-    "color": ["Black", "Blue", "White"]
+    "color": ["Black"]
   },
   {
     "gender": ["women", "all"],
@@ -1912,7 +1912,7 @@
     "price": "135.00",
     "sizes": ["XXS", "XS", "S", "M", "L", "XL"],
     "description": "When you’re working in the rain, this women’s rain jacket keeps you dry and comfortable with its fully sealed seams. The waterproof jacket has an adjustable hem, adjustable hood with a built-up neckline, and a longer back hem to offer added wind and rain protection. It also features secure lower pockets, an interior pocket, and articulated sleeves with elastic on the interior for enhanced mobility and protection from the elements.",
-    "color": ["Black", "Blue", "White"]
+    "color": ["Black"]
   },
   {
     "gender": ["women", "all"],
@@ -1928,7 +1928,7 @@
     "price": "135.00",
     "sizes": ["XXS", "XS", "S", "M", "L", "XL"],
     "description": "With a silhouette based on our Eisenhower jacket, the Overbrook women’s style reimagines the icon with a modern look. The puffer jacket offers light insulation and is built for outdoor adventures that continue long into winter. It has a water resistant exterior, a contrasting corduroy collar, and a utility-style pocket on the sleeve.",
-    "color": ["Black", "Blue", "White"]
+    "color": ["Black"]
   },
   {
     "gender": ["kids", "all"],
@@ -1944,7 +1944,7 @@
     "price": "20.00",
     "sizes": ["4", "5", "6", "7", "8", "10", "12", "14", "16", "18", "20"],
     "description": "Keep him feeling and looking his best with our boys’ slim fit pants. Crafted from our signature twill blend, these boys’ pants provide a classic look with a fabric that resists stains, wrinkles, and fading. The long-lasting style features a slim fit, straight leg style, and a printed Dickies interior waistband",
-    "color": ["Black", "Blue", "White"]
+    "color": ["Black"]
   },
   {
     "gender": ["kids", "all"],
@@ -1959,7 +1959,7 @@
     "price": "20.00",
     "sizes": ["4", "5", "6", "7", "8", "10", "12", "14", "16", "18", "20"],
     "description": "Send him to school looking sharp in Dickies' Boys' FlexWaist® Slim Fit Straight Leg Ultimate Khaki Pants. Featuring a mechanical stretch and a Flexwaist® adjustable waistband, he can stretch his legs and move freely all day. Select sizes have reinforced knees to keep him comfortable on those rough-and-tumble days on the playground—all at a value you'll love.",
-    "color": ["Black", "Blue", "White"]
+    "color": ["Black"]
   },
   {
     "gender": ["kids", "all"],
@@ -1974,7 +1974,7 @@
     "price": "20.00",
     "sizes": ["4", "5", "6", "7", "8", "10", "12", "14", "16", "18", "20"],
     "description": "These Flat Front Pants for boys have a classic fit with a straight leg style. Their durable polyester/cotton twill fabric won't get torn up on the playground. FlexWaist® technology keeps comfort top of mind with an adjustable waistband. Care is easy with smooth stain removal and wrinkle and fade resistance.",
-    "color": ["Black", "Blue", "White"]
+    "color": ["Black"]
   },
   {
     "gender": ["kids", "all"],
@@ -1988,7 +1988,7 @@
     "price": "20.00",
     "sizes": ["4", "5", "6", "7", "8", "10", "12", "14", "16", "18", "20"],
     "description": "For all day wear without any tear, these skinny fit pants feature reinforced double knees and resist stains and wrinkles. Flex fabric is perfect for all kinds of play, from roaming around the park to kicking back on the couch with a favorite book. Plus, multi-use pockets keep tiny essentials protected",
-    "color": ["Black", "Blue", "White"]
+    "color": ["Black"]
   },
   {
     "gender": ["kids", "all"],
@@ -2004,7 +2004,7 @@
     "price": "20.00",
     "sizes": ["4", "5", "6", "7", "8", "10", "12", "14", "16", "18", "20"],
     "description": "Whether on the schoolyard, in the classroom, or out on a day trip around town, these pants have the kids covered. This pair features a classic fit and straight leg that sits slightly below the waist. Our signature FlexWaist® allows kids to fine-tune the fit for comfort. With easy care stain removal and fade and wrinkle resistance, these pants hold up through it all.",
-    "color": ["Black", "Blue", "White"]
+    "color": ["Black"]
   },
   {
     "gender": ["kids", "all"],
@@ -2018,7 +2018,7 @@
     "price": "20.00",
     "sizes": ["4", "5", "6", "7", "8", "10", "12", "14", "16", "18", "20"],
     "description": "The Boys' Flex Skinny Fit Straight Leg Pants sit just below the waist and are slim in the seat and thigh for a more fitted look and no stress about getting caught on anything. This well-fitted pair of pants comes in a variety of colors suited for any activity. Stain and wrinkle resistance means less work for parents.",
-    "color": ["Black", "Blue", "White"]
+    "color": ["Black"]
   },
   {
     "gender": ["kids", "all"],
@@ -2034,7 +2034,7 @@
     "price": "20.00",
     "sizes": ["4", "5", "6", "7", "8", "10", "12", "14", "16", "18", "20"],
     "description": "Just like the original. Our Boys' Original 874® Work Pants are styled just like the men’s version with generous room through the seat and thigh for comfort. They're long-lasting with a classic twill blend fabric that resists stains, wrinkles, and fading. The pants sit at the waist and feature our signature printed interior waistband.",
-    "color": ["Black", "Blue", "White"]
+    "color": ["Black"]
   },
   {
     "gender": ["kids", "all"],
@@ -2050,7 +2050,7 @@
     "price": "20.00",
     "sizes": ["4", "5", "6", "7", "8", "10", "12", "14", "16", "18", "20"],
     "description": "Send him to school in comfort and style. The classic double knee pants for boys are styled just like the original with a straight leg style, relaxed fit, reinforced double knees for durability, and moisture-wicking properties to keep him dry and comfortable. The boys’ pants sit just below the waist with an adjustable elastic waistband and are equipped with a workwear twill fabric that resists wrinkles, stains, and fading.",
-    "color": ["Black", "Blue", "White"]
+    "color": ["Black"]
   },
   {
     "gender": ["kids", "all"],
@@ -2066,7 +2066,7 @@
     "price": "15.00",
     "sizes": ["4", "5", "6", "7", "8", "10", "12", "14", "16", "18", "20"],
     "description": "The Boys' FlexWaist® Flat Front Shorts are great for going anywhere from the classroom to the playground and after school activities. Sitting slightly below the waist with a classic fit, these shorts have a flat front style that remains crisp all day. The FlexWaist® waistband can be easily adjusted to always ensure the perfect fit. Parents can rely on easy cleaning with stain-free technology and wrinkle and fade resistance.",
-    "color": ["Black", "Blue", "White"]
+    "color": ["Black"]
   },
   {
     "gender": ["kids", "all"],
@@ -2080,7 +2080,7 @@
     "price": "15.00",
     "sizes": ["4", "5", "6", "7", "8", "10", "12", "14", "16", "18", "20"],
     "description": "The Boys' Flex Slim Fit Shorts are the solution for bringing a uniform into an after-school activity. Sitting slightly below the waist, this twill style has mechanical stretch that allows for movement and creates lasting comfort. Stain release technology means keeping fresh and clean while wrinkle resistance offers a sharp, sturdy fit.",
-    "color": ["Black", "Blue", "White"]
+    "color": ["Black"]
   },
   {
     "gender": ["kids", "all"],
@@ -2096,7 +2096,7 @@
     "price": "15.00",
     "sizes": ["4", "5", "6", "7", "8", "10", "12", "14", "16", "18", "20"],
     "description": "These shorts have a classic fit that sits slightly below the waist. The FlexWaist® adjustable waistband allows your child to create a custom fit for extra comfort. These shorts feature easy care stain removal, wrinkle resistant fabric, and mechanical stretch for comfort and movement.",
-    "color": ["Black", "Blue", "White"]
+    "color": ["Black"]
   },
   {
     "gender": ["kids", "all"],
@@ -2110,7 +2110,7 @@
     "price": "15.00",
     "sizes": ["4", "5", "6", "7", "8", "10", "12", "14", "16", "18", "20"],
     "description": "No exterior logo. Relaxed fit. Right back welt pocket with button closure. Hook and eye front closure. Slash front pockets. Stretch interlining in waistband for expanded comfort waist. Industrial laundry friendly.",
-    "color": ["Black", "Blue", "White"]
+    "color": ["Black"]
   },
   {
     "gender": ["kids", "all"],
@@ -2126,7 +2126,7 @@
     "price": "15.00",
     "sizes": ["S", "M", "L", "XL", "2XL", "3XL", "4XL"],
     "description": "Whether at work or after hours, look sharp in this Short Sleeve Pique Polo Shirt. Designed to be spacious throughout the chest and arms, this style also features a tagless label for extra comfort. Wrinkle and fade resistance means easy care for an all-around great polo shirt.",
-    "color": ["Black", "Blue", "White"]
+    "color": ["Black"]
   },
   {
     "gender": ["kids", "all"],
@@ -2140,7 +2140,7 @@
     "price": "15.00",
     "sizes": ["S", "M", "L", "XL", "2XL", "3XL", "4XL"],
     "description": "The Kids' Short Sleeve Pique Polo Shirt comes in colors to match any kid's uniform. The tagless label is designed for comfort, which means no scratching or irritation throughout the day. The shirt also requires minimal upkeep because it's machine washable and wrinkle and fade resistant.",
-    "color": ["Black", "Blue", "White"]
+    "color": ["Black"]
   },
   {
     "gender": ["kids", "all"],
@@ -2154,7 +2154,7 @@
     "price": "15.00",
     "sizes": ["S", "M", "L", "XL", "2XL", "3XL", "4XL"],
     "description": "This lightweight, water resistant, fleece lined jacket is essential for any unexpected changes in weather. The hooded style has slash hand warmer pockets and one interior pocket. Zip front. Elastic cuffs. Drawstring bottom. Fully lined.",
-    "color": ["Black", "Blue", "White"]
+    "color": ["Black"]
   },
   {
     "gender": ["kids", "all"],
@@ -2171,7 +2171,7 @@
     "price": "15.00",
     "sizes": ["S", "M", "L", "XL", "2XL", "3XL", "4XL"],
     "description": "Send them to play in Dickies' Kids Denim Overalls, a go-to durable and comfortable outfit. Machine washable with a dual tool pocket and hammer loop that can be used to carry necessities.",
-    "color": ["Black", "Blue", "White"]
+    "color": ["Black"]
   },
   {
     "gender": ["kids", "all"],
@@ -2241,7 +2241,7 @@
     "price": "36.99",
     "sizes": ["28", "30", "32", "34", "36", "38", "40", "42"],
     "description": "Carry everything you need, without a bulky look. These Dickies Relaxed Fit Stonewashed Carpenter Denim Jeans have the perfect balance. Deep back pockets and a side stash for nails and small gadgets hide away all your necessities, while you look pulled-together with a smooth front and belt loops that won't bunch.",
-    "color": ["Blue", "Black"]
+    "color": ["Blue"]
   },
   {
     "gender": ["women", "all"],
@@ -2258,7 +2258,7 @@
     "price": "36.99",
     "sizes": ["28", "30", "32", "34", "36", "38", "40", "42"],
     "description": "Renegade denim is designed to help you take on your toughest jobs. These women’s work jeans feature reinforced fabric and stitching at the seams, back hem, and chap front. They’re built for function with utility tool pockets, hammer and tape measure loops, knee pad pockets, and our durable denim construction with a bit of added stretch to ensure you stay comfortable into overtime.",
-    "color": ["Blue", "Black"]
+    "color": ["Blue"]
   },
   {
     "gender": ["men", "all"],
@@ -2273,7 +2273,7 @@
     "price": "36.99",
     "sizes": ["28", "30", "32", "34", "36", "38", "40", "42"],
     "description": "The authentic, classic shape of the original blue jean is unbeatable. The Dickies Regular Fit Jeans are a classic for a reason. Brass rivets reinforce every tough seam on this favorite 5-pocket style, with work-ready details like extra deep pockets and space for a multipurpose knife.",
-    "color": ["Blue", "Black"]
+    "color": ["Blue"]
   },
   {
     "gender": ["women", "all"],
@@ -2290,7 +2290,7 @@
     "price": "36.99",
     "sizes": ["28", "30", "32", "34", "36", "38", "40", "42"],
     "description": "Your flawless workday fit is finally attainable in Dickies Women's Perfect Shape Jeans. You can say goodbye to the days spent pulling up a gapping waistband or sagging knees. Perfect Shape Denim are designed with Cone's S Gene® technology, delivering superior stretch and recovery through a soft performance denim that won't give out over time. Plus, the flex tummy panel offers added support that flattens and smooths to provide a slender silhouette. With a generous 46% stretch, you'll comfortably tackle any task while these jeans hold their shape and yours. The reinforced double needle stitching makes these durable work jeans a go-to for every task you need to tackle. You'll gain long-lasting wear and tear in this abrasion tested denim; where fit, function and feel combine to create effortless perfection.",
-    "color": ["Blue", "Black"]
+    "color": ["Blue"]
   },
   {
     "gender": ["men", "all"],
@@ -2305,7 +2305,7 @@
     "price": "36.99",
     "sizes": ["28", "30", "32", "34", "36", "38", "40", "42"],
     "description": "The FLEX Active Waist Relaxed Fit Jeans are the perfect mix of performance denim and total comfort. Built strong and soft, the flex denim fabric and active waist stretch with you, so you can move effortlessly on the job. When you need to feel comfortable and move freely, this is the pair to reach for time and again.",
-    "color": ["Blue", "Black"]
+    "color": ["Blue"]
   },
   {
     "gender": ["women", "all"],
@@ -2322,7 +2322,7 @@
     "price": "36.99",
     "sizes": ["28", "30", "32", "34", "36", "38", "40", "42"],
     "description": "Keep focused on any job or craft in these comfortable carpenter pants. They're made with a flexible fabric that moves with you, so you can bend and move in any direction with ease, and the mid-rise tailoring gives you plenty of coverage. Plus, there are plenty of pockets for all your stuff.",
-    "color": ["Blue", "Black"]
+    "color": ["Blue"]
   },
   {
     "gender": ["men", "all"],

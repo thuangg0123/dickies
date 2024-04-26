@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import icons from "../../ultils/icons";
 import { getDetailProduct } from "../../store/products/asyncActions";
-// import { apiGetCurrent } from "../../apis/user";
 import { getCurrent } from "../../store/user/asyncActions";
 import { apiUpdateCart } from "../../apis";
 import { toast } from "react-toastify";
@@ -20,7 +19,7 @@ function ProductCard({ product, isHoverEnabled, navigate, dispatch }) {
     CheckBoxRoundedIcon,
     ShoppingCartCheckoutIcon,
   } = icons;
-  const [hoveredImage, setHoveredImage] = useState(product.thumb);
+  const [hoveredImage, setHoveredImage] = useState(product?.thumb);
   const [showActions, setShowActions] = useState(false);
   const { current } = useSelector((state) => state.user);
   useEffect(() => {
@@ -56,8 +55,12 @@ function ProductCard({ product, isHoverEnabled, navigate, dispatch }) {
       });
     }
     const response = await apiUpdateCart({
-      productId: data._id,
-      color: data.color[0],
+      productId: data?._id,
+      thumb: data?.thumb,
+      color: data?.color[0],
+      quantity: 1,
+      size: data?.sizes[0],
+      price: data?.price,
     });
     if (response.success) {
       toast.success(response.message);
@@ -67,11 +70,25 @@ function ProductCard({ product, isHoverEnabled, navigate, dispatch }) {
     }
   };
 
+  const handleProductInCart = () => {
+    toast.warning("You have already added this product to your cart");
+  };
+
+  const handleHoverImage = () => {
+    if (isHoverEnabled) {
+      setHoveredImage(product?.variants[0]?.images[0] || product.thumb);
+    }
+    setShowActions(true);
+  };
+
   return (
     <div
       className="px-2 cursor-pointer relative"
-      onMouseEnter={() => isHoverEnabled && setShowActions(true)}
-      onMouseLeave={() => isHoverEnabled && setShowActions(false)}
+      onMouseEnter={handleHoverImage}
+      onMouseLeave={() => {
+        setHoveredImage(product.thumb);
+        setShowActions(false);
+      }}
     >
       <Link
         to={`/products/${product.gender[0]}s-clothing/${product.category}/${product.slug}/${product?._id}`}
@@ -82,11 +99,18 @@ function ProductCard({ product, isHoverEnabled, navigate, dispatch }) {
         <div className="flex flex-col justify-between gap-2">
           <div>
             <ul className="flex mt-4 gap-3">
-              {product.color.map((color, index) => (
+              {product?.color?.map((color, index) => (
                 <li
                   key={index}
                   className="cursor-pointer w-8 h-8 border-2 border-gray-400 rounded-full flex items-center justify-center overflow-hidden hover:border-black"
                   style={{ backgroundColor: color }}
+                ></li>
+              ))}
+              {product?.variants?.map((variant, index) => (
+                <li
+                  key={index}
+                  className="cursor-pointer w-8 h-8 border-2 border-gray-400 rounded-full flex items-center justify-center overflow-hidden hover:border-black"
+                  style={{ backgroundColor: variant.color }}
                 ></li>
               ))}
             </ul>
@@ -123,7 +147,10 @@ function ProductCard({ product, isHoverEnabled, navigate, dispatch }) {
                   <AddShoppingCartIcon />
                 </div>
               ) : (
-                <div title="Product is added in cart">
+                <div
+                  title="Product is added in cart"
+                  onClick={handleProductInCart}
+                >
                   <CheckBoxRoundedIcon style={{ color: "#00BB27" }} />
                 </div>
               )}

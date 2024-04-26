@@ -11,6 +11,7 @@ const path = {
     RESET_PASSWORD: 'reset-password/:token',
     NOT_FOUND: 'not-found',
     DETAIL_CART: 'my-cart',
+    CHECKOUT: 'checkout',
 
     // Admin
     ADMIN: "admin",

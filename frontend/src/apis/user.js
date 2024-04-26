@@ -18,6 +18,11 @@ export const apiLogin = (data) => axios({
     data
 })
 
+export const apiGetCurrent = () => axios({
+    url: '/user/current',
+    method: 'get',
+})
+
 export const apiForgotPassword = (data) => axios({
     url: '/user/forgot-password',
     method: 'post',
@@ -28,11 +33,6 @@ export const apiResetPassword = (data) => axios({
     url: '/user/reset-password',
     method: 'put',
     data
-})
-
-export const apiGetCurrent = () => axios({
-    url: '/user/current',
-    method: 'get',
 })
 
 export const apiGetUsers = (params) => axios({
@@ -64,7 +64,7 @@ export const apiUpdateCart = (data) => axios({
     data
 })
 
-export const apiRemoveCart = (productId) => axios({
-    url: '/user/remove-cart/' + productId,
+export const apiRemoveCart = (productId, color) => axios({
+    url: `/user/remove-cart/${productId}/${color}`,
     method: 'delete',
 })

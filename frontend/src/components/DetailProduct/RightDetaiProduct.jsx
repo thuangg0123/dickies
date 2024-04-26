@@ -1,13 +1,20 @@
 import React, { useState, useCallback } from "react";
-
 import icons from "../../ultils/icons";
 import Detail from "./Detail";
+import withBaseComponent from "../../hocs/withBaseComponent";
 
-const RightDetaiProduct = ({ detailProduct, currentVariant, setVariant }) => {
+const RightDetaiProduct = ({
+  countProduct,
+  setCountProduct,
+  handleAddToCart,
+  detailProduct,
+  currentVariant,
+  setVariant,
+  setSelectedSize,
+  selectedSize,
+}) => {
   const { StarIcon, StarOutlineIcon, RemoveIcon, AddIcon } = icons;
-  const [selectedSize, setSelectedSize] = useState(null);
   const [selectedColor, setSelectedColor] = useState(null);
-  const [countProduct, setCountProduct] = useState(1);
 
   const floatRatingStars = detailProduct?.totalRatings
     ? detailProduct?.totalRatings.toFixed(1)
@@ -50,9 +57,7 @@ const RightDetaiProduct = ({ detailProduct, currentVariant, setVariant }) => {
     <>
       <div className="col-span-1">
         <div className="flex flex-col gap-4">
-          <h2 className="font-semibold text-2xl">
-            {currentVariant.title || detailProduct?.title}
-          </h2>
+          <h2 className="font-semibold text-2xl">{detailProduct?.title}</h2>
           <span className="font-second font-medium">
             Sold: {+detailProduct?.sold || 0}
           </span>
@@ -175,7 +180,10 @@ const RightDetaiProduct = ({ detailProduct, currentVariant, setVariant }) => {
           </div>
           <div className="flex flex-col gap-4 w-full">
             <div>
-              <button className="bg-black hover:bg-[rgb(140,140,140)] text-white font-bold py-4 px-4 w-full transition duration-300 ease-in-out">
+              <button
+                onClick={handleAddToCart}
+                className="bg-black hover:bg-[rgb(140,140,140)] text-white font-bold py-4 px-4 w-full transition duration-300 ease-in-out"
+              >
                 Add To Cart
               </button>
             </div>
@@ -192,4 +200,4 @@ const RightDetaiProduct = ({ detailProduct, currentVariant, setVariant }) => {
   );
 };
 
-export default RightDetaiProduct;
+export default withBaseComponent(RightDetaiProduct);

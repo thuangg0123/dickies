@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useSearchParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { InputFields, Button, Loading } from "../../../components";
 import {
@@ -35,6 +35,7 @@ const Login = () => {
   const [token, setToken] = useState("");
   const [isRegister, setIsRegister] = useState(false);
   const { isLoggedIn } = useSelector((state) => state.user);
+  const [searchParams] = useSearchParams();
 
   const resetPayload = () => {
     setPayload({
@@ -66,6 +67,7 @@ const Login = () => {
       } else {
         dispatch(showModal({ isShowModal: true, modalChildren: <Loading /> }));
         const result = await apiLogin(data);
+        console.log("result", result);
         if (result.success) {
           dispatch(
             login({
@@ -74,9 +76,13 @@ const Login = () => {
               userData: result.userData,
             })
           );
+          setTimeout(async () => {
+            await dispatch(getCurrent());
+          }, 2000);
           dispatch(showModal({ isShowModal: false, modalChildren: null }));
-          navigate(`/${path.HOME}`);
-          dispatch(getCurrent());
+          searchParams.get("redirect")
+            ? navigate(searchParams.get("redirect"))
+            : navigate(`/${path.HOME}`);
         } else {
           Swal.fire("Oops !", result.message, "error");
           dispatch(showModal({ isShowModal: false, modalChildren: null }));
@@ -131,7 +137,7 @@ const Login = () => {
           <div className="bg-white w-[500px] p-8">
             <h4 className="font-second mb-3">
               We sent a code to your mail. Please check your mail and enter your
-              code:{" "}
+              code:
             </h4>
             <input
               type="text"
