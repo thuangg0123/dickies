@@ -99,7 +99,13 @@ function Cart({ dispatch, navigate }) {
           <span>${parseFloat(subtotalCart).toFixed(2)}</span>
         </div>
         <div className="flex flex-col gap-4">
-          <Button name="Checkout" />
+          <Button
+            name="Checkout"
+            handleOnClick={() => {
+              dispatch(showCart());
+              navigate(`/${path.CHECKOUT}`);
+            }}
+          />
           <Button
             handleOnClick={() => {
               dispatch(showCart());

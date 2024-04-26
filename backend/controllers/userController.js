@@ -333,14 +333,22 @@ const updateCart = asyncHandler(async (req, res) => {
         throw new Error("Missing inputs")
     }
     const user = await User.findById(_id).select("cart")
-    const isExistProduct = user?.cart?.find(element => element.product.toString() === productId)
-    if (isExistProduct && isExistProduct.color === color) {
-        const response = await User.updateOne({ cart: { $elemMatch: isExistProduct } }, { $set: { "cart.$.quantity": quantity, "cart.$.price": price, "cart.$.thumb": thumb, "cart.$.size": size } }, { new: true })
+    const isExistProduct = user?.cart?.find(element => element.product.toString() === productId && element.color === color)
+    if (isExistProduct) {
+        const response = await User.updateOne({ cart: { $elemMatch: isExistProduct } },
+            {
+                $set: {
+                    "cart.$.quantity": quantity,
+                    "cart.$.price": price,
+                    "cart.$.thumb": thumb,
+                    "cart.$.size": size
+                }
+            },
+            { new: true })
         return res.status(200).json({
             success: response ? true : false,
-            message: response ? `Update color is successfully` : "Something wrong, please try again ....",
+            message: response ? `Updated is successfully` : "Something wrong, please try again ....",
             data: response ? response : [],
-            errorcode: response ? 1 : 0
         })
     }
     else {
@@ -349,7 +357,6 @@ const updateCart = asyncHandler(async (req, res) => {
             success: response ? true : false,
             message: response ? `Update your cart is successfully` : "Something wrong, please try again ....",
             data: response ? response : [],
-            errorcode: response ? 1 : 0
         })
     }
 })

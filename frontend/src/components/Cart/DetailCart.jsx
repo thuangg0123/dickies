@@ -177,37 +177,41 @@ function DetailCart({ navigate, dispatch }) {
       <Footer />
       <BtnScrollTop />
       {isShow && (
-        <div className="fixed top-0 left-0 bottom-0 right-0 bg-overlay flex justify-center items-center z-50">
-          <div className="">
-            <div className="min-w-[664px] relative flex flex-col gap-8 bg-white p-10">
-              <div className="flex justify-between">
-                <h2 className="text-2xl font-semibold">Remove Item?</h2>
-                <button
-                  className="custom-text-hover"
-                  onClick={() => setIsShow(false)}
-                >
-                  <CloseIcon />
-                </button>
-              </div>
-              <div className="flex flex-col font-second gap-3">
-                <span>Are you sure you want to remove this item?</span>
-                <span className="font-semibold">{currentCart?.title}</span>
-              </div>
-              <div className="flex gap-5">
-                <Button
-                  name="Move to Wishlist"
-                  style="p-4 border-2 border-black text-black bg-white font-main font-semibold w-full transition duration-300 ease-in-out hover:bg-black hover:text-white"
-                />
-                <Button
-                  name="Remove"
-                  handleOnClick={() =>
-                    handleRemoveItem(
-                      productItem?.product?._id,
-                      productItem?.color
-                    )
-                  }
-                />
-              </div>
+        <div
+          className="fixed top-0 left-0 bottom-0 right-0 bg-overlay flex justify-center items-center z-50"
+          onClick={() => setIsShow(false)}
+        >
+          <div
+            className="min-w-[664px] relative flex flex-col gap-8 bg-white p-10"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="flex justify-between">
+              <h2 className="text-2xl font-semibold">Remove Item?</h2>
+              <button
+                className="custom-text-hover"
+                onClick={() => setIsShow(false)}
+              >
+                <CloseIcon />
+              </button>
+            </div>
+            <div className="flex flex-col font-second gap-3">
+              <span>Are you sure you want to remove this item?</span>
+              <span className="font-semibold">{currentCart?.title}</span>
+            </div>
+            <div className="flex gap-5">
+              <Button
+                name="Move to Wishlist"
+                style="p-4 border-2 border-black text-black bg-white font-main font-semibold w-full transition duration-300 ease-in-out hover:bg-black hover:text-white"
+              />
+              <Button
+                name="Remove"
+                handleOnClick={() =>
+                  handleRemoveItem(
+                    productItem?.product?._id,
+                    productItem?.color
+                  )
+                }
+              />
             </div>
           </div>
         </div>

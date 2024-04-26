@@ -20,6 +20,7 @@ import {
   HistoryOrder,
   MyCart,
   WishList,
+  Checkout,
 } from "./pages/member";
 import {
   Login,
@@ -37,7 +38,6 @@ import {
   NotFound,
   Cart,
   DetailCart,
-  Checkout,
 } from "./components/index";
 import { showCart } from "./store/app/appSlice";
 
@@ -77,12 +77,12 @@ function App() {
       />
       {isShowModal && <Modal>{modalChildren}</Modal>}
       <Routes>
+        <Route path={path.CHECKOUT} element={<Checkout />}></Route>
         <Route path={path.PUBLIC} element={<Public />}>
           <Route path={path.HOME} element={<Home />}></Route>
           <Route path={path.FAQ} element={<FAQ />}></Route>
           <Route path={path.BLOG} element={<Blog />}></Route>
           <Route path={path.DETAIL_CART} element={<DetailCart />}></Route>
-          <Route path={path.CHECKOUT} element={<Checkout />}></Route>
           <Route path={path.RESET_PASSWORD} element={<ResetPassword />}></Route>
           <Route
             path={path.PRODUCTS}
