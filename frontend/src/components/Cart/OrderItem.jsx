@@ -1,15 +1,38 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useEffect, useState, useCallback } from "react";
 import icons from "../../ultils/icons";
+import withBaseComponent from "../../hocs/withBaseComponent";
+import { updateCart } from "../../store/user/userSlice";
 
 function OrderItem({
   element,
-  handleDProduct,
-  handleIProduct,
-  countProduct,
   handleShowModal,
+  defaultQuantity = 1,
+  navigate,
+  dispatch,
 }) {
   const { RemoveIcon, AddIcon } = icons;
-  console.log(countProduct);
+  const [countProduct, setCountProduct] = useState(() => defaultQuantity);
+
+  const handleIProduct = useCallback(() => {
+    setCountProduct((prevCount) => prevCount + 1);
+  }, []);
+
+  const handleDProduct = useCallback(() => {
+    if (countProduct > 1) {
+      setCountProduct((prevCount) => prevCount - 1);
+    }
+  }, [countProduct]);
+
+  useEffect(() => {
+    dispatch(
+      updateCart({
+        productId: element?.product?._id,
+        quantity: countProduct,
+        color: element?.color,
+      })
+    );
+  }, [countProduct]);
+
   return (
     <div>
       <Fragment>
@@ -32,7 +55,8 @@ function OrderItem({
                   <span>Color: {element?.color}</span>
                   <span>Size: {element?.size}</span>
                   <span className="font-medium">
-                    Subtotal: ${parseFloat(element?.product?.price).toFixed(2)}
+                    Subtotal: $
+                    {parseFloat(element?.price * element?.quantity).toFixed(2)}
                   </span>
                 </div>
               </div>
@@ -41,7 +65,8 @@ function OrderItem({
               <button
                 onClick={handleDProduct}
                 className={`absolute left-[15px] top-[10px] ${
-                  element?.quantity === 1
+                  // element?.quantity === 1
+                  countProduct === 1
                     ? "opacity-50 cursor-not-allowed pointer-events-none"
                     : ""
                 }`}
@@ -50,7 +75,8 @@ function OrderItem({
               </button>
               <input
                 type="text"
-                value={element?.quantity}
+                value={countProduct}
+                // value={element?.quantity}
                 readOnly
                 className="border border-gray-400 text-center w-[120px] py-3 focus:outline-none"
               />
@@ -83,4 +109,4 @@ function OrderItem({
   );
 }
 
-export default OrderItem;
+export default withBaseComponent(OrderItem);

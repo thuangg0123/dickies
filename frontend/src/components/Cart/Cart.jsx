@@ -12,8 +12,8 @@ import path from "../../ultils/path";
 
 function Cart({ dispatch, navigate }) {
   const { CloseIcon } = icons;
-  const { current } = useSelector((state) => state.user);
-  const subtotalCart = current?.cart?.reduce(
+  const { currentCart } = useSelector((state) => state.user);
+  const subtotalCart = currentCart?.reduce(
     (currentValue, element) =>
       currentValue + +element?.price * +element?.quantity,
     0
@@ -39,18 +39,18 @@ function Cart({ dispatch, navigate }) {
       </header>
       <section
         className={
-          current?.cart.length > 0
+          currentCart?.length > 0
             ? "row-span-6 h-full max-h-full overflow-y-auto flex flex-col gap-2 px-8"
             : "row-span-6 h-full max-h-full overflow-y-auto flex justify-center items-center px-8"
         }
       >
-        {current?.cart?.length === 0 && (
+        {currentCart?.length === 0 && (
           <span className="text-5xl font-semibold text-center font-second">
             Your Shopping Cart is Empty
           </span>
         )}
-        {current?.cart &&
-          current?.cart?.map((element) => (
+        {currentCart &&
+          currentCart?.map((element) => (
             <div
               className="flex gap-2 mb-2 pb-6 border-b border-black"
               key={element?._id}
@@ -102,7 +102,7 @@ function Cart({ dispatch, navigate }) {
               dispatch(showCart());
               navigate(`/${path.DETAIL_CART}`);
             }}
-            name={`View Cart (${current?.cart?.length || 0})`}
+            name={`View Cart (${currentCart?.length || 0})`}
             style="p-4 text-black border-2 border-black bg-white font-main font-semibold w-full transition duration-300 ease-in-out hover:bg-black hover:text-white"
           />
         </div>

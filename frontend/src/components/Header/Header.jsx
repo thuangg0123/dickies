@@ -32,7 +32,7 @@ function Header({ dispatch, navigate }) {
     if (message) {
       Swal.fire("Oops!", message, "info").then(() => {});
       dispatch(clearMessage());
-      nagivate(`/${path.LOGIN}`);
+      navigate(`/${path.LOGIN}`);
     }
   }, [message]);
 

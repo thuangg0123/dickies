@@ -1,4 +1,4 @@
-import React, { useState, useCallback, Fragment } from "react";
+import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import icons from "../../ultils/icons";
 import paypal from "../../img/paypal.png";
@@ -17,22 +17,11 @@ function DetailCart({ navigate, dispatch }) {
     ComputerIcon,
     Person2OutlinedIcon,
   } = icons;
-  const { current, isLoggedIn } = useSelector((state) => state.user);
-  const [countProduct, setCountProduct] = useState(0);
+  const { isLoggedIn, currentCart } = useSelector((state) => state.user);
   const [isShow, setIsShow] = useState();
   const [productItem, setProductItem] = useState(null);
 
-  const handleIProduct = useCallback(() => {
-    setCountProduct((prevCount) => prevCount + 1);
-  }, []);
-
-  const handleDProduct = useCallback(() => {
-    if (countProduct > 1) {
-      setCountProduct((prevCount) => prevCount - 1);
-    }
-  }, [countProduct]);
-
-  const subtotalCart = current?.cart?.reduce(
+  const subtotalCart = currentCart?.reduce(
     (currentValue, element) =>
       currentValue + +element.price * +element.quantity,
     0
@@ -58,7 +47,7 @@ function DetailCart({ navigate, dispatch }) {
   return (
     <>
       <div className="p-10">
-        {isLoggedIn && current?.cart <= 0 && (
+        {isLoggedIn && currentCart <= 0 && (
           <div className="flex justify-center items-center flex-col gap-10">
             <div className="text-5xl font-semibold text-center ">
               Your Shopping Cart Is Currently Empty
@@ -78,16 +67,14 @@ function DetailCart({ navigate, dispatch }) {
             </div>
           </div>
         )}
-        {isLoggedIn && current?.cart?.length > 0 && (
+        {isLoggedIn && currentCart?.length > 0 && (
           <div className="grid grid-cols-10">
             <div className="col-span-7">
               <h1 className="text-5xl font-semibold mb-10">Your Cart</h1>
-              {current?.cart?.map((element) => (
+              {currentCart?.map((element) => (
                 <OrderItem
+                  defaultQuantity={element?.quantity}
                   element={element}
-                  countProduct={countProduct}
-                  handleDProduct={handleDProduct}
-                  handleIProduct={handleIProduct}
                   key={element._id}
                   handleShowModal={handleShowModal}
                 />
@@ -103,11 +90,11 @@ function DetailCart({ navigate, dispatch }) {
                 </li>
                 <li className="flex justify-between border-b border-gray-400 pb-5">
                   <span className="font-medium">Shipping</span>
-                  <span>{current?.cart?.length > 0 ? "$6.99" : 0}</span>
+                  <span>{currentCart?.length > 0 ? "$6.99" : 0}</span>
                 </li>
                 <li className="flex justify-between border-b border-gray-400 pb-5">
                   <span className="font-medium">Shipping Discount</span>
-                  <span>{current?.cart?.length > 0 ? "-$6.99" : 0}</span>
+                  <span>{currentCart?.length > 0 ? "-$6.99" : 0}</span>
                 </li>
               </ul>
               <div className="font-second flex justify-between py-5 font-semibold">
@@ -204,7 +191,7 @@ function DetailCart({ navigate, dispatch }) {
               </div>
               <div className="flex flex-col font-second gap-3">
                 <span>Are you sure you want to remove this item?</span>
-                <span className="font-semibold">{productItem?.title}</span>
+                <span className="font-semibold">{currentCart?.title}</span>
               </div>
               <div className="flex gap-5">
                 <Button
