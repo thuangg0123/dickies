@@ -39,6 +39,7 @@ import {
   DetailCart,
   Checkout,
 } from "./components/index";
+import { showCart } from "./store/app/appSlice";
 
 function App() {
   const detailProduct = useSelector((state) => state.product.detailProduct);
@@ -54,7 +55,10 @@ function App() {
   return (
     <div className="relative font-main">
       {isShowCart && (
-        <div className="absolute inset-0 bg-overlay z-[51] flex justify-end">
+        <div
+          className="absolute inset-0 bg-overlay z-[51] flex justify-end"
+          onClick={() => dispatch(showCart({ signal: false }))}
+        >
           <Cart />
         </div>
       )}

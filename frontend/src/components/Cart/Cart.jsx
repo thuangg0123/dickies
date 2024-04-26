@@ -27,7 +27,10 @@ function Cart({ dispatch, navigate }) {
     }
   };
   return (
-    <div className="w-[500px] h-full bg-white grid grid-rows-10 text-black py-10 top-0 right-0 fixed">
+    <div
+      className="w-[500px] h-full bg-white grid grid-rows-10 text-black py-10 top-0 right-0 fixed"
+      onClick={(e) => e.stopPropagation()}
+    >
       <header className="font-second font-semibold flex justify-between row-span-1 h-full items-center px-8">
         <span>Added to Cart</span>
         <button
