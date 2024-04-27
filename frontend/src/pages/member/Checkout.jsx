@@ -1,7 +1,7 @@
 import React from "react";
 import withBaseComponent from "../../hocs/withBaseComponent";
 import { useSelector } from "react-redux";
-import { Button } from "../../components";
+import { Button, Paypal } from "../../components";
 import paypal from "../../img/paypal.png";
 import path from "../../ultils/path";
 
@@ -79,6 +79,12 @@ function Checkout({ dispatch, navigate }) {
           <div className="flex justify-between w-full">
             <div className="w-[60%] mx-20">
               <h1 className="text-2xl font-semibold mb-10">Your information</h1>
+              <div>
+                paypal
+                <div className="w-full">
+                  <Paypal />
+                </div>
+              </div>
             </div>
             <div className="w-[10%]"></div>
             <div className="w-[30%] ml-20">

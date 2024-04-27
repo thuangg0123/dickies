@@ -7,3 +7,7 @@
 .custom-text-hover{
     @apply transition duration-300 ease-in-out hover:text-[#8D8D8D] font-semibold
 }
+
+.paypal-buttons{
+    z-index: 1;
+}

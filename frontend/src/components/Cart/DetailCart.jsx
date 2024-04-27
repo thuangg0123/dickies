@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import icons from "../../ultils/icons";
-import paypal from "../../img/paypal.png";
 import { NeedHelps, Footer, BtnScrollTop, Button } from "../../components";
 import withBaseComponent from "../../hocs/withBaseComponent";
 import path from "../../ultils/path";
@@ -9,6 +8,7 @@ import { apiRemoveCart } from "../../apis";
 import { getCurrent } from "../../store/user/asyncActions";
 import { toast } from "react-toastify";
 import OrderItem from "./OrderItem";
+import { Paypal } from "../index";
 
 function DetailCart({ navigate, dispatch }) {
   const {
@@ -107,11 +107,9 @@ function DetailCart({ navigate, dispatch }) {
                   handleOnClick={() => navigate(`/${path.CHECKOUT}`)}
                 />
                 <div className="py-2 text-center">OR</div>
-                <Button
-                  image={paypal}
-                  name="Checkout"
-                  style="flex items-center justify-center gap-1 text-center p-4 text-black bg-[#FFC439] font-main font-semibold w-full transition duration-300 ease-in-out hover:bg-[#FFC001]"
-                />
+                <div>
+                  <Paypal amount={120} />
+                </div>
               </div>
             </div>
           </div>
