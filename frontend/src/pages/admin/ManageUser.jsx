@@ -98,7 +98,8 @@ function ManageUser() {
             nameKey={"q"}
             value={queries.q}
             setValue={setQueries}
-            style={"w-full"}
+            style
+            styleLogin="form-input text-sm my-auto w-full"
             fullWidth
             isHideLabel
             placeholder={"Search name or mail user ..."}

@@ -27,7 +27,7 @@ function InputFields({
         className={clsx(
           !style && "px-4 py-4",
           style && "px-2 py-2 w-full",
-          styleLogin
+          styleLogin && styleLogin
         )}
         placeholder={
           placeholder ||

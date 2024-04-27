@@ -235,6 +235,8 @@ const Login = () => {
                 {isRegister && (
                   <>
                     <InputFields
+                      styleLogin="px-4 py-4 w-full border border-[#000] color-black outline-none"
+                      isHideLabel
                       value={payload.firstName}
                       setValue={setPayload}
                       nameKey="firstName"
@@ -242,6 +244,8 @@ const Login = () => {
                       setInValidFields={setInvalidFields}
                     />
                     <InputFields
+                      styleLogin="px-4 py-4 w-full border border-[#000] color-black outline-none"
+                      isHideLabel
                       value={payload.lastName}
                       setValue={setPayload}
                       nameKey="lastName"
@@ -249,6 +253,8 @@ const Login = () => {
                       setInValidFields={setInvalidFields}
                     />
                     <InputFields
+                      styleLogin="px-4 py-4 w-full border border-[#000] color-black outline-none"
+                      isHideLabel
                       value={payload.phone}
                       setValue={setPayload}
                       nameKey="phone"
@@ -258,15 +264,17 @@ const Login = () => {
                   </>
                 )}
                 <InputFields
+                  isHideLabel
                   value={payload.email}
                   setValue={setPayload}
                   nameKey="email"
                   invalidFields={invalidFields}
                   setInValidFields={setInvalidFields}
                   fullWidth
-                  style="px-4 py-4"
+                  styleLogin="px-4 py-4 w-full border border-[#000] color-black outline-none"
                 />
                 <InputFields
+                  isHideLabel
                   value={payload.password}
                   setValue={setPayload}
                   nameKey="password"
@@ -274,7 +282,7 @@ const Login = () => {
                   invalidFields={invalidFields}
                   setInValidFields={setInvalidFields}
                   fullWidth
-                  style="px-4 py-4"
+                  styleLogin="px-4 py-4 w-full border border-[#000] color-black outline-none"
                 />
               </div>
             </div>

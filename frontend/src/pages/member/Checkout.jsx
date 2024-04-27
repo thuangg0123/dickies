@@ -1,10 +1,21 @@
 import React from "react";
 import withBaseComponent from "../../hocs/withBaseComponent";
+import { useSelector } from "react-redux";
+import { Button } from "../../components";
+import paypal from "../../img/paypal.png";
+import path from "../../ultils/path";
 
 function Checkout({ dispatch, navigate }) {
+  const { isLoggedIn, currentCart } = useSelector((state) => state.user);
+  const subtotalCart = currentCart?.reduce(
+    (currentValue, element) =>
+      currentValue + +element.price * +element.quantity,
+    0
+  );
+  // console.log(currentCart);
   return (
     <div>
-      <header className="flex w-full justify-between items-center border h-[80px] px-10 py-2 fixed top-0 left-0 z-50 font-second font-medium">
+      <header className="flex w-full justify-between items-center border h-[80px] px-10 py-2 fixed top-0 left-0 z-50 font-second font-medium bg-white">
         <div>
           <svg
             width="148"
@@ -63,6 +74,73 @@ function Checkout({ dispatch, navigate }) {
           <a href="tel:0123456789">1-800-Dickies</a>
         </div>
       </header>
+      <div className="pt-20 mt-10 py-8 px-10 max-auto">
+        {isLoggedIn && currentCart?.length > 0 && (
+          <div className="flex justify-between w-full">
+            <div className="w-[60%] mx-20">
+              <h1 className="text-2xl font-semibold mb-10">Your information</h1>
+            </div>
+            <div className="w-[10%]"></div>
+            <div className="w-[30%] ml-20">
+              <h3 className="text-xl font-semibold mb-10 flex justify-between items-center">
+                Order Summary
+                <button
+                  className="underline text-xs custom-text-hover font-second"
+                  onClick={() => navigate(`${path.DETAIL_CART}`)}
+                >
+                  Edit
+                </button>
+              </h3>
+              <ul className="flex flex-col font-second gap-5 text-sm">
+                <li className="flex justify-between border-b border-gray-400 pb-5">
+                  <span className="font-medium">Subtotal</span>
+                  <span>${parseFloat(subtotalCart).toFixed(2)}</span>
+                </li>
+              </ul>
+              <div className="font-second flex justify-between py-5 font-semibold border-b border-gray-400">
+                <span>Total</span>
+                <span>${parseFloat(subtotalCart).toFixed(2)}</span>
+              </div>
+              {currentCart &&
+                currentCart?.map((product) => (
+                  <div
+                    className="flex gap-3 w-full py-5 border-b border-gray-400"
+                    key={product._id}
+                  >
+                    <div className="w-[50%]">
+                      <img
+                        src={product?.thumb}
+                        alt={product?.product?.title}
+                        title={product?.product?.title}
+                      />
+                    </div>
+                    <div className="w-[50%]">
+                      <div className="font-bold text-[15px] mb-3">
+                        {product?.product?.title}
+                      </div>
+                      <div className="text-[13px] flex flex-col font-second gap-2">
+                        <span className="font-medium">
+                          ${parseFloat(product?.price).toFixed(2)}
+                        </span>
+                        <span>Color: {product?.color}</span>
+                        <span>Size: {product?.size}</span>
+                        <span>Quantity: {product?.quantity}</span>
+                        <span>
+                          Subtotal: $
+                          <span className="font-medium">
+                            {parseFloat(
+                              product?.quantity * product?.price
+                            ).toFixed(2)}
+                          </span>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+            </div>
+          </div>
+        )}
+      </div>
     </div>
   );
 }
