@@ -106,10 +106,6 @@ function DetailCart({ navigate, dispatch }) {
                   name="Secure Checkout"
                   handleOnClick={() => navigate(`/${path.CHECKOUT}`)}
                 />
-                <div className="py-2 text-center">OR</div>
-                <div>
-                  <Paypal amount={120} />
-                </div>
               </div>
             </div>
           </div>

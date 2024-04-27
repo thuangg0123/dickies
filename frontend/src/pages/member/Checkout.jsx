@@ -1,9 +1,9 @@
 import React from "react";
 import withBaseComponent from "../../hocs/withBaseComponent";
 import { useSelector } from "react-redux";
-import { Button, Paypal } from "../../components";
-import paypal from "../../img/paypal.png";
+import { Button, Paypal, InputForm } from "../../components";
 import path from "../../ultils/path";
+import { useForm } from "react-hook-form";
 
 function Checkout({ dispatch, navigate }) {
   const { isLoggedIn, currentCart } = useSelector((state) => state.user);
@@ -12,7 +12,14 @@ function Checkout({ dispatch, navigate }) {
       currentValue + +element.price * +element.quantity,
     0
   );
-  // console.log(currentCart);
+  const {
+    register,
+    formState: { errors },
+    reset,
+    handleSubmit,
+    formState,
+    watch,
+  } = useForm();
   return (
     <div>
       <header className="flex w-full justify-between items-center border h-[80px] px-10 py-2 fixed top-0 left-0 z-50 font-second font-medium bg-white">
@@ -78,11 +85,24 @@ function Checkout({ dispatch, navigate }) {
         {isLoggedIn && currentCart?.length > 0 && (
           <div className="flex justify-between w-full">
             <div className="w-[60%] mx-20">
-              <h1 className="text-2xl font-semibold mb-10">Your information</h1>
+              <h1 className="text-2xl font-semibold mb-5">Your information</h1>
               <div>
-                paypal
                 <div className="w-full">
-                  <Paypal />
+                  <div className="flex justify-between w-full gap-5">
+                    <InputForm
+                      register={register}
+                      label="Your address"
+                      errors={errors}
+                      id="address"
+                      validate={{
+                        required: "Need fill this fields",
+                      }}
+                      fullWidth
+                      placeholder="Please type your address for shipping"
+                      style="w-full py-4 h-full"
+                    />
+                  </div>
+                  <Paypal amount={parseFloat(subtotalCart).toFixed(2)} />
                 </div>
               </div>
             </div>
