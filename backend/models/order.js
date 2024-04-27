@@ -1,6 +1,5 @@
-const mongoose = require('mongoose'); // Erase if already required
+const mongoose = require('mongoose');
 
-// Declare the Schema of the Mongo model
 var orderSchema = new mongoose.Schema({
     products: [
         {
@@ -17,8 +16,8 @@ var orderSchema = new mongoose.Schema({
     ],
     status: {
         type: String,
-        default: "Processing",
-        enum: ['Cancelled', 'Processing', 'Succeed']
+        default: "Cancelled",
+        enum: ['Cancelled', 'Succeed']
     },
     paymentIntent: {
 

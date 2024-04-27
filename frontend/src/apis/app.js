@@ -49,3 +49,9 @@ export const apiAddVariant = (data, productId) => axios({
     method: 'put',
     data
 })
+
+export const apiCreateOrder = (data) => axios({
+    url: `/order/`,
+    method: 'post',
+    data
+})

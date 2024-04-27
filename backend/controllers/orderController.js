@@ -1,11 +1,13 @@
 const Order = require('../models/order')
 const User = require('../models/user')
-const Coupon = require('../models/coupon')
 const asyncHandler = require('express-async-handler')
 
 const createNewOrder = asyncHandler(async (req, res) => {
     const { _id } = req.user
-    const { products, total } = req.body
+    const { products, total, address } = req.body
+    if (address) {
+        await User.findByIdAndUpdate(_id, { address })
+    }
     const response = await Order.create({ products, total, postedBy: _id })
     return res.status(200).json({
         success: response ? true : false,

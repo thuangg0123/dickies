@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import withBaseComponent from "../../hocs/withBaseComponent";
 import { useSelector } from "react-redux";
 import { Button, Paypal, InputForm } from "../../components";
@@ -6,20 +6,30 @@ import path from "../../ultils/path";
 import { useForm } from "react-hook-form";
 
 function Checkout({ dispatch, navigate }) {
-  const { isLoggedIn, currentCart } = useSelector((state) => state.user);
-  const subtotalCart = currentCart?.reduce(
-    (currentValue, element) =>
-      currentValue + +element.price * +element.quantity,
-    0
+  const { isLoggedIn, currentCart, current } = useSelector(
+    (state) => state.user
   );
+  const subtotalCart = parseFloat(
+    currentCart?.reduce(
+      (currentValue, element) =>
+        currentValue + +element?.price * +element?.quantity,
+      0
+    )
+  ).toFixed(2);
   const {
     register,
     formState: { errors },
-    reset,
-    handleSubmit,
-    formState,
     watch,
+    setValue,
   } = useForm();
+  const address = watch("address");
+
+  useEffect(() => {
+    setValue("address", current?.address);
+  }, [current]);
+
+  console.log(address);
+
   return (
     <div>
       <header className="flex w-full justify-between items-center border h-[80px] px-10 py-2 fixed top-0 left-0 z-50 font-second font-medium bg-white">
@@ -102,7 +112,16 @@ function Checkout({ dispatch, navigate }) {
                       style="w-full py-4 h-full"
                     />
                   </div>
-                  <Paypal amount={parseFloat(subtotalCart).toFixed(2)} />
+                  {address && address?.length > 10 && (
+                    <Paypal
+                      payload={{
+                        products: currentCart,
+                        total: subtotalCart,
+                        address,
+                      }}
+                      amount={subtotalCart}
+                    />
+                  )}
                 </div>
               </div>
             </div>
@@ -120,12 +139,12 @@ function Checkout({ dispatch, navigate }) {
               <ul className="flex flex-col font-second gap-5 text-sm">
                 <li className="flex justify-between border-b border-gray-400 pb-5">
                   <span className="font-medium">Subtotal</span>
-                  <span>${parseFloat(subtotalCart).toFixed(2)}</span>
+                  <span>${subtotalCart}</span>
                 </li>
               </ul>
               <div className="font-second flex justify-between py-5 font-semibold border-b border-gray-400">
                 <span>Total</span>
-                <span>${parseFloat(subtotalCart).toFixed(2)}</span>
+                <span>${subtotalCart}</span>
               </div>
               {currentCart &&
                 currentCart?.map((product) => (
