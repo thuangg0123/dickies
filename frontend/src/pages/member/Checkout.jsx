@@ -1,11 +1,13 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import withBaseComponent from "../../hocs/withBaseComponent";
 import { useSelector } from "react-redux";
-import { Button, Paypal, InputForm } from "../../components";
+import { Button, Paypal, InputForm, Congratulation } from "../../components";
 import path from "../../ultils/path";
 import { useForm } from "react-hook-form";
+import { getCurrent } from "../../store/user/asyncActions";
 
 function Checkout({ dispatch, navigate }) {
+  const [isSuccess, setIsSuccess] = useState(false);
   const { isLoggedIn, currentCart, current } = useSelector(
     (state) => state.user
   );
@@ -26,12 +28,20 @@ function Checkout({ dispatch, navigate }) {
 
   useEffect(() => {
     setValue("address", current?.address);
-  }, [current]);
+  }, [current?.address]);
 
-  console.log(address);
+  useEffect(() => {
+    if (isSuccess) {
+      dispatch(getCurrent());
+      setTimeout(() => {
+        navigate("/");
+      }, 3000);
+    }
+  }, [isSuccess]);
 
   return (
     <div>
+      {isSuccess && <Congratulation />}
       <header className="flex w-full justify-between items-center border h-[80px] px-10 py-2 fixed top-0 left-0 z-50 font-second font-medium bg-white">
         <div>
           <svg
@@ -119,6 +129,7 @@ function Checkout({ dispatch, navigate }) {
                         total: subtotalCart,
                         address,
                       }}
+                      setIsSuccess={setIsSuccess}
                       amount={subtotalCart}
                     />
                   )}
@@ -131,7 +142,7 @@ function Checkout({ dispatch, navigate }) {
                 Order Summary
                 <button
                   className="underline text-xs custom-text-hover font-second"
-                  onClick={() => navigate(`${path.DETAIL_CART}`)}
+                  onClick={() => navigate(`/${path.DETAIL_CART}`)}
                 >
                   Edit
                 </button>

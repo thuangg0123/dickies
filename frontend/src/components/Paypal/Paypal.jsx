@@ -5,10 +5,18 @@ import {
 } from "@paypal/react-paypal-js";
 import { useEffect } from "react";
 import { apiCreateOrder } from "../../apis";
+import Swal from "sweetalert2";
+import { useDispatch } from "react-redux";
 
 const style = { layout: "vertical" };
 
-const ButtonWrapper = ({ currency, showSpinner, amount, payload }) => {
+const ButtonWrapper = ({
+  currency,
+  showSpinner,
+  amount,
+  payload,
+  setIsSuccess,
+}) => {
   const [{ isPending, options }, dispatch] = usePayPalScriptReducer();
 
   useEffect(() => {
@@ -24,9 +32,13 @@ const ButtonWrapper = ({ currency, showSpinner, amount, payload }) => {
   const handleSaveOrder = async () => {
     const response = await apiCreateOrder({ ...payload, status: "Succeed" });
     if (response.success) {
-      window.close();
+      setIsSuccess(true);
+      setTimeout(() => {
+        Swal.fire("Congratulation", "Order was created", "success").then(() => {
+          window.close();
+        });
+      }, 500);
     }
-    console.log(response);
   };
 
   return (
@@ -48,8 +60,6 @@ const ButtonWrapper = ({ currency, showSpinner, amount, payload }) => {
         }
         onApprove={(data, actions) =>
           actions.order.capture().then(async (response) => {
-            console.log(response);
-            console.log(payload);
             if (response.status === "COMPLETED") {
               handleSaveOrder();
             }
@@ -60,13 +70,14 @@ const ButtonWrapper = ({ currency, showSpinner, amount, payload }) => {
   );
 };
 
-export default function Paypal({ amount, payload }) {
+export default function Paypal({ amount, payload, setIsSuccess }) {
   return (
     <div style={{ maxWidth: "750px", minHeight: "200px" }}>
       <PayPalScriptProvider
         options={{ clientId: "test", components: "buttons", currency: "USD" }}
       >
         <ButtonWrapper
+          setIsSuccess={setIsSuccess}
           payload={payload}
           currency={"USD"}
           amount={amount}

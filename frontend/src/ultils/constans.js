@@ -210,26 +210,19 @@ export const memberSidebar = [
     {
         id: 3,
         type: "SINGLE",
-        text: "My cart",
-        path: `${path.MY_CART}`,
-        icon: React.createElement(ShoppingCartOutlinedIcon, null)
-    },
-    {
-        id: 4,
-        type: "SINGLE",
         text: "Wish lists",
         path: `${path.WISH_LIST}`,
         icon: React.createElement(BookmarkBorderOutlinedIcon, null)
     },
     {
-        id: 5,
+        id: 4,
         type: "SINGLE",
         text: "History order",
         path: `${path.HISOTRY_ORDER}`,
         icon: React.createElement(Inventory2OutlinedIcon, null)
     },
     {
-        id: 6,
+        id: 5,
         type: "SINGLE",
         text: "Logout",
         icon: React.createElement(LogoutIcon, null)

@@ -19,9 +19,6 @@ var orderSchema = new mongoose.Schema({
         default: "Cancelled",
         enum: ['Cancelled', 'Succeed']
     },
-    paymentIntent: {
-
-    },
     total: Number,
     orderBy: {
         type: mongoose.Types.ObjectId,

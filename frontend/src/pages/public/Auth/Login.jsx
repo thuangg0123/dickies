@@ -74,7 +74,6 @@ const Login = () => {
       } else {
         dispatch(showModal({ isShowModal: true, modalChildren: <Loading /> }));
         const result = await apiLogin(data);
-        console.log("result", result);
         if (result.success) {
           dispatch(
             login({

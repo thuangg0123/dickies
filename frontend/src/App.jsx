@@ -18,7 +18,6 @@ import {
   MemberLayout,
   Personal,
   HistoryOrder,
-  MyCart,
   WishList,
   Checkout,
 } from "./pages/member";
@@ -121,7 +120,6 @@ function App() {
           <Route path={path.PERSONAL} element={<Personal />} />
           <Route path={path.WISH_LIST} element={<WishList />} />
           <Route path={path.HISOTRY_ORDER} element={<HistoryOrder />} />
-          <Route path={path.MY_CART} element={<MyCart />} />
         </Route>
         <Route path={path.MEMBER} element={<MemberLayout />}>
           <Route path={path.PERSONAL} element={<Personal />} />

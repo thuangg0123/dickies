@@ -28,9 +28,7 @@ export const userSlice = createSlice({
         },
         updateCart: (state, action) => {
             const { productId, quantity, color } = action.payload
-            console.log({ productId, quantity, color })
             const updatingCart = JSON.parse(JSON.stringify(state.currentCart))
-            console.log("updatingCart", [...updatingCart])
             state.currentCart = updatingCart.map(element => {
                 if (element.color === color && element.product?._id === productId) {
                     return { ...element, quantity }
