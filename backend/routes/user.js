@@ -16,10 +16,10 @@ router.put("/reset-password", userController.resetPassword)
 router.get("/", verifyAccessToken, isAdmin, userController.getUsers)
 router.put("/current", verifyAccessToken, uploader.single('avatar'), userController.updateUser)
 router.delete("/:userId", verifyAccessToken, isAdmin, userController.deleteUser)
+router.put("/wishlist/:productId", verifyAccessToken, userController.updateWishlist)
 router.put("/update-address", verifyAccessToken, isAdmin, userController.updateAddressUser)
 router.put("/cart", verifyAccessToken, userController.updateCart)
 router.delete("/remove-cart/:productId/:color", verifyAccessToken, userController.removeProductInCart)
-
 router.put("/update-user-by-admin/:userId", verifyAccessToken, isAdmin, userController.updateUserByAdmin)
 
 //CREATE (POST) + PUT: body

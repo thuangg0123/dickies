@@ -389,8 +389,29 @@ const createUsers = asyncHandler(async (req, res) => {
     })
 })
 
+const updateWishlist = asyncHandler(async (req, res) => {
+    const { productId } = req.params
+    const { _id } = req.user
+    const user = await User.findById(_id)
+    const isInWishList = user.wishList?.find(element => element === productId)
+    if (isInWishList) {
+        const response = await User.findByIdAndUpdate(_id, { $pull: { wishList: productId } }, { new: true })
+        return res.status(200).json({
+            success: response ? true : false,
+            message: response ? 'Updated your wishlist' : "Failed to update wishlist"
+        })
+    }
+    else {
+        const response = await User.findByIdAndUpdate(_id, { $push: { wishList: productId } }, { new: true })
+        return res.status(200).json({
+            success: response ? true : false,
+            message: response ? 'Add product to Wish list is success' : "Failed to update wishlist"
+        })
+    }
+})
+
 module.exports = {
     register, login, getCurrent, refreshAccesstoken, logout, forgotPassword, resetPassword,
     getUsers, deleteUser, updateUser, updateUserByAdmin, updateAddressUser, updateCart, finalRegister,
-    createUsers, removeProductInCart
+    createUsers, removeProductInCart, updateWishlist
 }

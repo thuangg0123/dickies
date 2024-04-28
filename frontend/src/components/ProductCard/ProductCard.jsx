@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 import icons from "../../ultils/icons";
 import { getDetailProduct } from "../../store/products/asyncActions";
 import { getCurrent } from "../../store/user/asyncActions";
-import { apiUpdateCart } from "../../apis";
+import { apiUpdateCart, apiUpdateWishlist } from "../../apis";
 import { toast } from "react-toastify";
 import withBaseComponent from "../../hocs/withBaseComponent";
 import Swal from "sweetalert2";
@@ -81,6 +81,16 @@ function ProductCard({ product, isHoverEnabled, navigate, dispatch }) {
     setShowActions(true);
   };
 
+  const handleWishList = async (product) => {
+    const response = await apiUpdateWishlist(product._id);
+    if (response.success) {
+      dispatch(getCurrent());
+      toast.success(response.message);
+    } else {
+      toast.error(response.message);
+    }
+  };
+
   return (
     <div
       className="px-2 cursor-pointer relative"
@@ -132,7 +142,10 @@ function ProductCard({ product, isHoverEnabled, navigate, dispatch }) {
       </Link>
       {showActions && (
         <div className="flex w-full justify-between absolute top-0 left-0 p-3">
-          <div className="cursor-pointer transition duration-300 ease-in-out hover:text-[#8D8D8D]">
+          <div
+            className="cursor-pointer transition duration-300 ease-in-out hover:text-[#8D8D8D]"
+            onClick={() => handleWishList(product)}
+          >
             <BookmarkBorderOutlinedIcon />
           </div>
           <div className="flex flex-col items-center justify-between">
