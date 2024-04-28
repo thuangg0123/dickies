@@ -3,7 +3,7 @@ import React from 'react';
 import icons from './icons'
 
 const { DashboardIcon, GroupsIcon, InventoryIcon, CategoryIcon, Person2OutlinedIcon,
-    ShoppingCartOutlinedIcon, BookmarkBorderOutlinedIcon, LogoutIcon, HomeOutlinedIcon, Inventory2OutlinedIcon } = icons
+    BookmarkBorderOutlinedIcon, LogoutIcon, HomeOutlinedIcon, Inventory2OutlinedIcon } = icons
 
 export const nav = [
     {
@@ -227,4 +227,15 @@ export const memberSidebar = [
         text: "Logout",
         icon: React.createElement(LogoutIcon, null)
     }
+]
+
+export const statusOrders = [
+    {
+        label: "Cancelled",
+        value: "Cancelled"
+    },
+    {
+        label: "Succeed",
+        value: "Succeed"
+    },
 ]

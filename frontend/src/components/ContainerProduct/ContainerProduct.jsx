@@ -35,7 +35,7 @@ function ContainerProduct({ path }) {
   const counts = useSelector((state) => state.product.counts);
 
   const capitalizeFirstLetter = (string) => {
-    return string?.charAt(0)?.toUpperCase() + string?.slice(1);
+    return string ? string?.charAt(0)?.toUpperCase() + string?.slice(1) : "";
   };
 
   useEffect(() => {

@@ -50,9 +50,13 @@ function FilterProduct({
     }
     if (selectedGender.length > 0) {
       queries.gender = selectedGender.join(",");
+    } else {
+      delete queries.gender;
     }
     if (selectedCategory.length > 0) {
       queries.category = selectedCategory.join(",");
+    } else {
+      delete queries.category;
     }
     queries.page = 1;
     navigate({
