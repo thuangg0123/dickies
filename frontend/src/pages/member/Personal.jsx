@@ -1,15 +1,17 @@
 import React, { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { Button, InputForm } from "../../components";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import moment from "moment";
 import avatarDefault from "../../img/anonymous.png";
 import { apiUpdateCurrent } from "../../apis";
 import { getCurrent } from "../../store/user/asyncActions";
 import { toast } from "react-toastify";
+import { useSearchParams } from "react-router-dom";
+import withBaseComponent from "../../hocs/withBaseComponent";
 
-function Personal() {
-  const dispatch = useDispatch();
+function Personal({ dispatch, navigate }) {
+  const [searchParams] = useSearchParams();
   const {
     register,
     formState: { errors, isDirty, isSubmitted },
@@ -27,6 +29,7 @@ function Personal() {
       phone: current?.phone,
       email: current?.email,
       avatar: current?.avatar,
+      address: current?.address,
     });
   }, [current]);
 
@@ -43,6 +46,10 @@ function Personal() {
     if (response.success) {
       dispatch(getCurrent());
       toast.success(response.message);
+      if (searchParams.get("redirect")) {
+        navigate(searchParams.get("redirect"));
+      }
+      window.scrollTo(0, 0);
     } else {
       toast.error(response.message);
     }
@@ -100,6 +107,15 @@ function Personal() {
               required: `Require fill this fields`,
             }}
           />
+          <InputForm
+            label="Address"
+            register={register}
+            errors={errors}
+            id="address"
+            validate={{
+              required: `Require fill this fields`,
+            }}
+          />
           {isSubmitted && !errors && (
             <small className="text-xs text-red-500 whitespace-nowrap">
               Please fill out all required fields.
@@ -153,4 +169,4 @@ function Personal() {
   );
 }
 
-export default Personal;
+export default withBaseComponent(Personal);

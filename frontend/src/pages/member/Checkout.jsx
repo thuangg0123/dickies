@@ -3,7 +3,6 @@ import withBaseComponent from "../../hocs/withBaseComponent";
 import { useSelector } from "react-redux";
 import { Button, Paypal, InputForm, Congratulation } from "../../components";
 import path from "../../ultils/path";
-import { useForm } from "react-hook-form";
 import { getCurrent } from "../../store/user/asyncActions";
 
 function Checkout({ dispatch, navigate }) {
@@ -18,17 +17,6 @@ function Checkout({ dispatch, navigate }) {
       0
     )
   ).toFixed(2);
-  const {
-    register,
-    formState: { errors },
-    watch,
-    setValue,
-  } = useForm();
-  const address = watch("address");
-
-  useEffect(() => {
-    setValue("address", current?.address);
-  }, [current?.address]);
 
   useEffect(() => {
     if (isSuccess) {
@@ -108,26 +96,19 @@ function Checkout({ dispatch, navigate }) {
               <h1 className="text-2xl font-semibold mb-5">Your information</h1>
               <div>
                 <div className="w-full">
-                  <div className="flex justify-between w-full gap-5">
-                    <InputForm
-                      register={register}
-                      label="Your address"
-                      errors={errors}
-                      id="address"
-                      validate={{
-                        required: "Need fill this fields",
-                      }}
-                      fullWidth
-                      placeholder="Please type your address for shipping"
-                      style="w-full py-4 h-full"
-                    />
-                  </div>
-                  {address && address?.length > 10 && (
+                  <input
+                    type="text"
+                    placeholder="Your address for shipping"
+                    className="w-full border border-gray-500 p-4 outline-none mb-5"
+                    value={current?.address}
+                    readOnly
+                  />
+                  {current?.address && (
                     <Paypal
                       payload={{
                         products: currentCart,
                         total: subtotalCart,
-                        address,
+                        address: current?.address,
                       }}
                       setIsSuccess={setIsSuccess}
                       amount={subtotalCart}

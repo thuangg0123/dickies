@@ -9,10 +9,12 @@ import { getCurrent } from "../../store/user/asyncActions";
 import { toast } from "react-toastify";
 import { apiRemoveCart } from "../../apis";
 import path from "../../ultils/path";
+import Swal from "sweetalert2";
+import { createSearchParams } from "react-router-dom";
 
 function Cart({ dispatch, navigate }) {
   const { CloseIcon } = icons;
-  const { currentCart } = useSelector((state) => state.user);
+  const { currentCart, current } = useSelector((state) => state.user);
   const subtotalCart = currentCart?.reduce(
     (currentValue, element) =>
       currentValue + +element?.price * +element?.quantity,
@@ -26,6 +28,34 @@ function Cart({ dispatch, navigate }) {
       toast.error(response.message);
     }
   };
+
+  const handleSubmit = () => {
+    if (!current?.address) {
+      return Swal.fire({
+        icon: "info",
+        title: "Almost!",
+        text: "Please update your address before checkout",
+        showCancelButton: true,
+        showConfirmButton: true,
+        confirmButtonText: "Go update!",
+        cancelButtonText: "Cancel",
+      }).then((result) => {
+        if (result.isConfirmed) {
+          navigate({
+            pathname: `/${path.MEMBER}/${path.PERSONAL}`,
+            search: createSearchParams({
+              redirect: location.pathname,
+            }).toString(),
+          });
+          dispatch(showCart());
+        }
+      });
+    } else {
+      dispatch(showCart());
+      window.open(`/${path.CHECKOUT}`, "_blank");
+    }
+  };
+
   return (
     <div
       className="w-[500px] h-full bg-white grid grid-rows-10 text-black py-10 top-0 right-0 fixed"
@@ -99,13 +129,7 @@ function Cart({ dispatch, navigate }) {
           <span>${parseFloat(subtotalCart).toFixed(2)}</span>
         </div>
         <div className="flex flex-col gap-4">
-          <Button
-            name="Checkout"
-            handleOnClick={() => {
-              dispatch(showCart());
-              navigate(`/${path.CHECKOUT}`);
-            }}
-          />
+          <Button name="Checkout" handleOnClick={handleSubmit} />
           <Button
             handleOnClick={() => {
               dispatch(showCart());

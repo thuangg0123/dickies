@@ -8,7 +8,8 @@ import { apiRemoveCart } from "../../apis";
 import { getCurrent } from "../../store/user/asyncActions";
 import { toast } from "react-toastify";
 import OrderItem from "./OrderItem";
-import { Paypal } from "../index";
+import Swal from "sweetalert2";
+import { createSearchParams } from "react-router-dom";
 
 function DetailCart({ navigate, dispatch }) {
   const {
@@ -17,7 +18,9 @@ function DetailCart({ navigate, dispatch }) {
     ComputerIcon,
     Person2OutlinedIcon,
   } = icons;
-  const { isLoggedIn, currentCart } = useSelector((state) => state.user);
+  const { isLoggedIn, currentCart, current } = useSelector(
+    (state) => state.user
+  );
   const [isShow, setIsShow] = useState();
   const [productItem, setProductItem] = useState(null);
 
@@ -42,6 +45,31 @@ function DetailCart({ navigate, dispatch }) {
     }
     setIsShow(false);
     setProductItem(null);
+  };
+
+  const handleSubmit = () => {
+    if (!current?.address) {
+      return Swal.fire({
+        icon: "info",
+        title: "Almost!",
+        text: "Please update your address before checkout",
+        showCancelButton: true,
+        showConfirmButton: true,
+        confirmButtonText: "Go update!",
+        cancelButtonText: "Cancel",
+      }).then((result) => {
+        if (result.isConfirmed) {
+          navigate({
+            pathname: `/${path.MEMBER}/${path.PERSONAL}`,
+            search: createSearchParams({
+              redirect: location.pathname,
+            }).toString(),
+          });
+        }
+      });
+    } else {
+      window.open(`/${path.CHECKOUT}`, "_blank");
+    }
   };
 
   return (
@@ -102,10 +130,7 @@ function DetailCart({ navigate, dispatch }) {
                 <span>${parseFloat(subtotalCart).toFixed(2)}</span>
               </div>
               <div>
-                <Button
-                  name="Secure Checkout"
-                  handleOnClick={() => navigate(`/${path.CHECKOUT}`)}
-                />
+                <Button name="Secure Checkout" handleOnClick={handleSubmit} />
               </div>
             </div>
           </div>
