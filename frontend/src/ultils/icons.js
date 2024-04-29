@@ -38,8 +38,10 @@ import ComputerIcon from '@mui/icons-material/Computer';
 import BookmarkIcon from '@mui/icons-material/Bookmark';
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import DownloadIcon from '@mui/icons-material/Download';
+import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
 
 const icons = {
+    AttachMoneyIcon,
     DownloadIcon,
     VisibilityIcon,
     BookmarkIcon,

@@ -15,7 +15,6 @@ function DetailOrder({ setDetailOrder, dataDetailOrder }) {
       <div className="w-full pl-4 flex flex-col gap-4 relative bg-[#F5F5F5]">
         <div className="py-4 border-b w-full flex justify-between items-center">
           <h1 className="text-3xl font-bold tracking-tight">Detail order</h1>
-
           <span
             className="p-2 rounded-sm hover:bg-[rgb(180,91,81)] cursor-pointer text-white bg-[#B22714]"
             onClick={() => setDetailOrder(false)}
@@ -113,14 +112,12 @@ function DetailOrder({ setDetailOrder, dataDetailOrder }) {
             {dataDetailOrder?.status === "Succeed" && (
               <tr>
                 <td colSpan="6" className="text-right p-2">
-                  <a
-                    href="#"
+                  <span
                     className="p-1 rounded-xl font-bold text-[#B22714] cursor-pointer"
                     onClick={handleExportPDF}
-                    target="_blank"
                   >
                     Export PDF <DownloadIcon />
-                  </a>
+                  </span>
                 </td>
               </tr>
             )}

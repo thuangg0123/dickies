@@ -11,7 +11,7 @@ function AdminLayout() {
   }
   return (
     <div className="flex w-full bg-[#F5F5F5] min-h-screen relative text-black font-second">
-      <div className="w-[280px] top-0 bottom-0 flex-none fixed text-white">
+      <div className="w-[280px] top-0 bottom-0 flex-none fixed text-white z-[99]">
         <AdminSidebar />
       </div>
       <div className="w-[280px]"></div>
