@@ -28,7 +28,7 @@ const updateStatus = asyncHandler(async (req, res) => {
     const response = await Order.findByIdAndUpdate(orderId, { status }, { new: true })
     return res.status(200).json({
         success: response ? true : false,
-        data: response ? response : 'cannot create new order'
+        message: response ? "Update order status is success" : "Update order status is failed"
     })
 })
 
@@ -109,7 +109,7 @@ const getOrders = asyncHandler(async (req, res) => {
     // }
     const qr = { ...formattedQueries }
 
-    let queryCommand = Order.find(qr)
+    let queryCommand = Order.find(qr).populate('products.product', 'title').populate("orderBy", "firstName lastName")
     //excute query
 
     //sorting

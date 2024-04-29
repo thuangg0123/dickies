@@ -11,6 +11,7 @@ function Checkout({ dispatch, navigate }) {
   const { isLoggedIn, currentCart, current } = useSelector(
     (state) => state.user
   );
+  const { isShowCart } = useSelector((state) => state.app);
   const subtotalCart = parseFloat(
     currentCart?.reduce(
       (currentValue, element) =>
@@ -19,12 +20,10 @@ function Checkout({ dispatch, navigate }) {
     )
   ).toFixed(2);
 
-  const setShowCart = () => {
-    dispatch(showCart({ signal: false }));
-  };
-
   useEffect(() => {
-    setShowCart();
+    if (isShowCart) {
+      showCart({ signal: false });
+    }
   }, []);
 
   useEffect(() => {

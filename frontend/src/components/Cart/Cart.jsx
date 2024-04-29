@@ -52,11 +52,7 @@ function Cart({ dispatch, navigate }) {
           dispatch(showCart());
         }
       });
-    } else {
-      dispatch(showCart());
-      window.open(`/${path.CHECKOUT}`, "_blank");
-    }
-    if (!current?.address) {
+    } else if (!current?.address) {
       return Swal.fire({
         icon: "info",
         title: "Almost!",
@@ -77,6 +73,7 @@ function Cart({ dispatch, navigate }) {
         }
       });
     } else {
+      // Nếu có địa chỉ, thực hiện mở tab checkout
       dispatch(showCart());
       window.open(`/${path.CHECKOUT}`, "_blank");
     }

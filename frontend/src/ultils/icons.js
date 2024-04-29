@@ -36,8 +36,10 @@ import ShoppingCartCheckoutIcon from '@mui/icons-material/ShoppingCartCheckout';
 import CloseIcon from '@mui/icons-material/Close';
 import ComputerIcon from '@mui/icons-material/Computer';
 import BookmarkIcon from '@mui/icons-material/Bookmark';
+import VisibilityIcon from '@mui/icons-material/Visibility';
 
 const icons = {
+    VisibilityIcon,
     BookmarkIcon,
     ComputerIcon,
     CloseIcon,

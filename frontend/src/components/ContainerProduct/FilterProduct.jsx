@@ -28,7 +28,6 @@ function FilterProduct({
           : [...prev, value]
       );
     } else if (filterType === "category") {
-      // Thay thế các dấu cách bằng dấu '-'
       const formattedValue = value.replace(/\s+/g, "-");
       setSelectedCategory((prev) =>
         prev.includes(formattedValue)

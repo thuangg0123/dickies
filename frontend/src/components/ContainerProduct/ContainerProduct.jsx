@@ -18,7 +18,6 @@ import {
 import icons from "../../ultils/icons";
 import FilterProduct from "./FilterProduct";
 import { sortPrice } from "../../ultils/constans";
-import "../../index.css";
 
 function ContainerProduct({ path }) {
   const navigate = useNavigate();

@@ -57,7 +57,13 @@ export const apiCreateOrder = (data) => axios({
 })
 
 export const apiGetOrders = (params) => axios({
-    url: `/order/admin`,
+    url: `/order/`,
+    method: 'get',
+    params
+})
+
+export const apiAllOrdersByAdmin = (params) => axios({
+    url: `/order/admin/`,
     method: 'get',
     params
 })
@@ -66,4 +72,10 @@ export const apiGetUserOrders = (params) => axios({
     url: `/order/`,
     method: 'get',
     params
+})
+
+export const apiUpdateStatusOrder = (orderId, status) => axios({
+    url: `/order/update-status/${orderId}/`,
+    method: 'put',
+    data: { status }
 })

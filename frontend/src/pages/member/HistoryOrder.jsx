@@ -109,7 +109,9 @@ function HistoryOrder({ dispatch, navigate, location }) {
                 <td
                   className={`py-2 max-w-[150px] overflow-hidden truncate font-bold ${
                     order.status === "Succeed"
-                      ? " text-[#5EBF5C]"
+                      ? "text-[#5EBF5C]"
+                      : order.status === "Pending"
+                      ? "text-[#F4BB3E]"
                       : "text-[#B22714]"
                   }`}
                 >

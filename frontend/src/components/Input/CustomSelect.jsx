@@ -22,7 +22,7 @@ function CustomSelect({
         isSearchable
         onChange={(value) => onChange(value)}
         formatOptionLabel={(option) => (
-          <div className="flex text-black items-center gap-2">
+          <div className="flex text-black items-center gap-2 z-50">
             <span>{option.label}</span>
           </div>
         )}

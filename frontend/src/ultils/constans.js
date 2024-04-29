@@ -218,6 +218,10 @@ export const statusOrders = [
         value: "Cancelled"
     },
     {
+        label: "Pending",
+        value: "Pending"
+    },
+    {
         label: "Succeed",
         value: "Succeed"
     },

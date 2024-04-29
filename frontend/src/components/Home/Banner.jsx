@@ -1,6 +1,7 @@
 import React, { memo } from "react";
 import { Link } from "react-router-dom";
 import banner from "../../img/banner-home.jpg";
+import path from "../../ultils/path";
 
 function Banner() {
   return (
@@ -16,7 +17,7 @@ function Banner() {
           </div>
           <div className="mt-5 px-4 py-1 flex md:mt-3">
             <button className="bg-white text-black font-semibold px-4 py-2 mr-4">
-              <Link to={`/category/pants`}>Shop Now</Link>
+              <Link to={`${path.PRODUCTS}`}>Shop Now</Link>
             </button>
           </div>
         </div>
