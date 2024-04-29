@@ -1,5 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { apiAllOrdersByAdmin, apiUpdateStatusOrder } from "../../apis";
+import {
+  apiAllOrdersByAdmin,
+  apiGetDetailOrder,
+  apiUpdateStatusOrder,
+} from "../../apis";
 import { CustomSelect, InputForm, Pagination } from "../../components";
 import { useForm } from "react-hook-form";
 import { createSearchParams, useSearchParams } from "react-router-dom";
@@ -53,6 +57,11 @@ function ManageOrder({ dispatch, navigate, location }) {
     } else {
       toast.error(response.message);
     }
+  };
+
+  const handleDetailOrder = async (orderId) => {
+    const response = await apiGetDetailOrder(orderId);
+    console.log(response);
   };
 
   return (
@@ -141,8 +150,13 @@ function ManageOrder({ dispatch, navigate, location }) {
                   </select>
                 </td>
 
-                <td className="py-2 max-w-[150px] overflow-hidden truncate cursor-pointer text-[#204387]">
-                  <VisibilityIcon titleAccess="View detail order" />
+                <td className="py-2 max-w-[150px] overflow-hidden truncate text-[#204387]">
+                  <span
+                    onClick={() => handleDetailOrder(order._id)}
+                    className="cursor-pointer"
+                  >
+                    <VisibilityIcon titleAccess="View detail order" />
+                  </span>
                 </td>
               </tr>
             ))}

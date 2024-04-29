@@ -19,6 +19,15 @@ const createNewOrder = asyncHandler(async (req, res) => {
     })
 })
 
+const getDetailOrder = asyncHandler(async (req, res) => {
+    const { orderId } = req.params
+    const response = await Order.findById(orderId)
+    return res.status(200).json({
+        success: response ? true : false,
+        data: response ? response : 'cannot get detail order'
+    })
+})
+
 const updateStatus = asyncHandler(async (req, res) => {
     const { orderId } = req.params
     const { status } = req.body
@@ -144,5 +153,5 @@ const getOrders = asyncHandler(async (req, res) => {
 })
 
 module.exports = {
-    createNewOrder, updateStatus, getUserOrders, getOrders
+    createNewOrder, updateStatus, getUserOrders, getOrders, getDetailOrder
 }
