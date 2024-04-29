@@ -2,6 +2,7 @@ import React, { Fragment, useEffect, useState, useCallback } from "react";
 import icons from "../../ultils/icons";
 import withBaseComponent from "../../hocs/withBaseComponent";
 import { updateCart } from "../../store/user/userSlice";
+import { Link } from "react-router-dom";
 
 function OrderItem({
   element,
@@ -46,9 +47,9 @@ function OrderItem({
               />
               <div className="flex flex-col gap-4 font-second">
                 <div className="flex flex-col gap-2 text-sm">
-                  <span className="text-base font-semibold font-main">
+                  <Link className="text-base font-semibold font-main">
                     {element?.product?.title}
-                  </span>
+                  </Link>
                   <span className="font-medium">
                     Price: ${parseFloat(element?.price).toFixed(2)}
                   </span>
@@ -91,10 +92,10 @@ function OrderItem({
           <div className="flex justify-between items-start font-second text-xs underline">
             <div></div>
             <div>
-              <button className="underline custom-text-hover">Edit</button>
+              {/* <button className="underline custom-text-hover">Edit</button> */}
             </div>
             <div className="flex gap-3">
-              <button className="custom-text-hover">Save For Latter</button>
+              {/* <button className="custom-text-hover">Save For Latter</button> */}
               <button
                 className="custom-text-hover"
                 onClick={() => handleShowModal(element)}

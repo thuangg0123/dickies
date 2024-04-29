@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
 import withBaseComponent from "../../hocs/withBaseComponent";
 import { useSelector } from "react-redux";
-import { Button, Paypal, InputForm, Congratulation } from "../../components";
+import { Paypal, Congratulation } from "../../components";
 import path from "../../ultils/path";
 import { getCurrent } from "../../store/user/asyncActions";
+import { showCart } from "../../store/app/appSlice";
 
 function Checkout({ dispatch, navigate }) {
   const [isSuccess, setIsSuccess] = useState(false);
@@ -18,6 +19,14 @@ function Checkout({ dispatch, navigate }) {
     )
   ).toFixed(2);
 
+  const setShowCart = () => {
+    dispatch(showCart({ signal: false }));
+  };
+
+  useEffect(() => {
+    setShowCart();
+  }, []);
+
   useEffect(() => {
     if (isSuccess) {
       dispatch(getCurrent());
@@ -26,6 +35,16 @@ function Checkout({ dispatch, navigate }) {
       }, 3000);
     }
   }, [isSuccess]);
+
+  useEffect(() => {
+    if (!isLoggedIn) {
+      navigate(`${path.LOGIN}`);
+    }
+
+    if (currentCart <= 0) {
+      navigate(`/${path.DETAIL_CART}`);
+    }
+  }, [isLoggedIn, currentCart]);
 
   return (
     <div>

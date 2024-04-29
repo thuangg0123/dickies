@@ -147,7 +147,8 @@ function ProductCard({ product, isHoverEnabled, navigate, dispatch }) {
             className="cursor-pointer transition duration-300 ease-in-out hover:text-[#8D8D8D]"
             onClick={() => handleWishList(product)}
           >
-            {current?.wishList?.some((item) => item === product._id) ? (
+            {current?.wishList.findIndex((item) => item._id === product._id) !==
+            -1 ? (
               <BookmarkIcon />
             ) : (
               <BookmarkBorderOutlinedIcon />
@@ -156,7 +157,7 @@ function ProductCard({ product, isHoverEnabled, navigate, dispatch }) {
           <div className="flex flex-col items-center justify-between">
             <div className="cursor-pointer transition duration-300 ease-in-out hover:text-[#8D8D8D] py-">
               {!current?.cart?.some(
-                (element) => element.product === product._id
+                (element) => element.product._id === product._id
               ) ? (
                 <div
                   title="Add to cart"

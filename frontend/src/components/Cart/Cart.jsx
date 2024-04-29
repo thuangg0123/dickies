@@ -14,7 +14,9 @@ import { createSearchParams } from "react-router-dom";
 
 function Cart({ dispatch, navigate }) {
   const { CloseIcon } = icons;
-  const { currentCart, current } = useSelector((state) => state.user);
+  const { currentCart, current, isLoggedIn } = useSelector(
+    (state) => state.user
+  );
   const subtotalCart = currentCart?.reduce(
     (currentValue, element) =>
       currentValue + +element?.price * +element?.quantity,
@@ -30,6 +32,30 @@ function Cart({ dispatch, navigate }) {
   };
 
   const handleSubmit = () => {
+    if (!isLoggedIn) {
+      return Swal.fire({
+        icon: "info",
+        title: "Almost!",
+        text: "Please login your account before checkout",
+        showCancelButton: true,
+        showConfirmButton: true,
+        confirmButtonText: "Go login!",
+        cancelButtonText: "Cancel",
+      }).then((result) => {
+        if (result.isConfirmed) {
+          navigate({
+            pathname: `/${path.LOGIN}`,
+            search: createSearchParams({
+              redirect: location.pathname,
+            }).toString(),
+          });
+          dispatch(showCart());
+        }
+      });
+    } else {
+      dispatch(showCart());
+      window.open(`/${path.CHECKOUT}`, "_blank");
+    }
     if (!current?.address) {
       return Swal.fire({
         icon: "info",
@@ -123,23 +149,25 @@ function Cart({ dispatch, navigate }) {
             </div>
           ))}
       </section>
-      <div className="row-span-3 h-full py-3 px-10">
-        <div className="flex justify-between font-medium mb-5">
-          <span>Subtotal</span>
-          <span>${parseFloat(subtotalCart).toFixed(2)}</span>
+      {currentCart.length > 0 && (
+        <div className="row-span-3 h-full py-3 px-10">
+          <div className="flex justify-between font-medium mb-5">
+            <span>Subtotal</span>
+            <span>${parseFloat(subtotalCart).toFixed(2)}</span>
+          </div>
+          <div className="flex flex-col gap-4">
+            <Button name="Checkout" handleOnClick={handleSubmit} />
+            <Button
+              handleOnClick={() => {
+                dispatch(showCart());
+                navigate(`/${path.DETAIL_CART}`);
+              }}
+              name={`View Cart (${currentCart?.length || 0})`}
+              style="p-4 text-black border-2 border-black bg-white font-main font-semibold w-full transition duration-300 ease-in-out hover:bg-black hover:text-white"
+            />
+          </div>
         </div>
-        <div className="flex flex-col gap-4">
-          <Button name="Checkout" handleOnClick={handleSubmit} />
-          <Button
-            handleOnClick={() => {
-              dispatch(showCart());
-              navigate(`/${path.DETAIL_CART}`);
-            }}
-            name={`View Cart (${currentCart?.length || 0})`}
-            style="p-4 text-black border-2 border-black bg-white font-main font-semibold w-full transition duration-300 ease-in-out hover:bg-black hover:text-white"
-          />
-        </div>
-      </div>
+      )}
     </div>
   );
 }

@@ -10,13 +10,13 @@ import {
 } from "../../components";
 
 function WishList({ dispatch, navigate }) {
-  const { current } = useSelector((state) => state.user);
+  const { current, isLoggedIn } = useSelector((state) => state.user);
   console.log(current);
   return (
     <>
       <div className="w-full relative font-second font-medium">
         <header className="text-4xl font-semibold py-4 px-8">Wish List</header>
-        {current?.wishList.length <= 0 ? (
+        {current?.wishList.length <= 0 || !isLoggedIn ? (
           <div className="flex justify-center items-center m-10">
             <div className="flex flex-col">
               <div className="text-5xl mb-5">You currently have no items</div>

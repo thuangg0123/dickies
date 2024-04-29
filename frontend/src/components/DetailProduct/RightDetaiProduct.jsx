@@ -2,6 +2,10 @@ import React, { useState, useCallback } from "react";
 import icons from "../../ultils/icons";
 import Detail from "./Detail";
 import withBaseComponent from "../../hocs/withBaseComponent";
+import { apiUpdateWishlist } from "../../apis";
+import { getCurrent } from "../../store/user/asyncActions";
+import { toast } from "react-toastify";
+import { useSelector } from "react-redux";
 
 const RightDetaiProduct = ({
   countProduct,
@@ -12,7 +16,9 @@ const RightDetaiProduct = ({
   setVariant,
   setSelectedSize,
   selectedSize,
+  dispatch,
 }) => {
+  const { current } = useSelector((state) => state.user);
   const { StarIcon, StarOutlineIcon, RemoveIcon, AddIcon } = icons;
   const [selectedColor, setSelectedColor] = useState(null);
 
@@ -51,6 +57,16 @@ const RightDetaiProduct = ({
       stars.push(<StarOutlineIcon key={i} style={{ fontSize: 16 }} />);
     }
     return stars;
+  };
+
+  const handleWishList = async (product) => {
+    const response = await apiUpdateWishlist(product._id);
+    if (response.success) {
+      dispatch(getCurrent());
+      toast.success(response.message);
+    } else {
+      toast.error(response.message);
+    }
   };
 
   return (
@@ -188,8 +204,15 @@ const RightDetaiProduct = ({
               </button>
             </div>
             <div>
-              <button className="bg-white hover:bg-black hover:text-white text-black font-bold py-4 px-4 w-full border-2 border-black transition duration-300 ease-in-out">
-                Save For Later
+              <button
+                onClick={() => handleWishList(detailProduct)}
+                className="bg-white hover:bg-black hover:text-white text-black font-bold py-4 px-4 w-full border-2 border-black transition duration-300 ease-in-out"
+              >
+                {current?.wishList.findIndex(
+                  (item) => item._id === detailProduct._id
+                ) !== -1
+                  ? "Added in Wish List"
+                  : "Save For Later"}
               </button>
             </div>
           </div>
