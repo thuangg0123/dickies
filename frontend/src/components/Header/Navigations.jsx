@@ -45,12 +45,9 @@ function Navigations() {
                 >
                   {item.value}
                 </NavLink>
-                {showSubMenu &&
-                  currentCategory === item.value &&
-                  item.value !== "Blog" &&
-                  item.value !== "FAQ" && (
-                    <DropDrownMenu category={currentCategory} />
-                  )}
+                {showSubMenu && currentCategory === item.value && (
+                  <DropDrownMenu category={currentCategory} />
+                )}
               </div>
             );
           })}

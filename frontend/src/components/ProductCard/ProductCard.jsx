@@ -18,6 +18,7 @@ function ProductCard({ product, isHoverEnabled, navigate, dispatch }) {
     AddShoppingCartIcon,
     CheckBoxRoundedIcon,
     ShoppingCartCheckoutIcon,
+    BookmarkIcon,
   } = icons;
   const [hoveredImage, setHoveredImage] = useState(product?.thumb);
   const [showActions, setShowActions] = useState(false);
@@ -146,7 +147,11 @@ function ProductCard({ product, isHoverEnabled, navigate, dispatch }) {
             className="cursor-pointer transition duration-300 ease-in-out hover:text-[#8D8D8D]"
             onClick={() => handleWishList(product)}
           >
-            <BookmarkBorderOutlinedIcon />
+            {current?.wishList?.some((item) => item === product._id) ? (
+              <BookmarkIcon />
+            ) : (
+              <BookmarkBorderOutlinedIcon />
+            )}
           </div>
           <div className="flex flex-col items-center justify-between">
             <div className="cursor-pointer transition duration-300 ease-in-out hover:text-[#8D8D8D] py-">

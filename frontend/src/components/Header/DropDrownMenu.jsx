@@ -9,7 +9,7 @@ import {
 const categoryToSubcategories = {
   Men: mensCategories,
   Women: womenCategories,
-  Kids: kidCategories,
+  Kid: kidCategories,
 };
 
 function DropDrownMenu({ category }) {

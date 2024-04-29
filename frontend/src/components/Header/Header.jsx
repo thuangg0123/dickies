@@ -20,6 +20,7 @@ function Header({ dispatch, navigate }) {
     Person2OutlinedIcon,
     BookmarkBorderOutlinedIcon,
     ShoppingCartOutlinedIcon,
+    BookmarkIcon,
   } = icons;
 
   useEffect(() => {
@@ -119,7 +120,7 @@ function Header({ dispatch, navigate }) {
                   id="profile"
                   title="View account"
                 >
-                  <span className="text-sm font-bold">My account</span>
+                  <span className="text-sm font-bold">My Account</span>
                 </div>
                 {isOpen && (
                   <div
@@ -176,8 +177,12 @@ function Header({ dispatch, navigate }) {
             )}
           </div>
           <div className="cursor-pointer hover:text-[#ccc] transition-colors duration-300">
-            <Link to={`/member/${path.WISH_LIST}`} title="Wish list">
-              <BookmarkBorderOutlinedIcon />
+            <Link to={`/${path.WISH_LIST}`} title="Wish list">
+              {current?.wishList?.length > 0 ? (
+                <BookmarkIcon />
+              ) : (
+                <BookmarkBorderOutlinedIcon />
+              )}
             </Link>
           </div>
           <div className="cursor-pointer hover:text-[#ccc] transition-colors duration-300 relative">

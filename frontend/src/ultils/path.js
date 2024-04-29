@@ -12,6 +12,7 @@ const path = {
     NOT_FOUND: 'not-found',
     DETAIL_CART: 'my-cart',
     CHECKOUT: 'checkout',
+    WISH_LIST: "wish-list",
 
     // Admin
     ADMIN: "admin",
@@ -24,7 +25,6 @@ const path = {
     //member
     MEMBER: "member",
     PERSONAL: "personal",
-    WISH_LIST: "wish-list",
     HISOTRY_ORDER: "history-order",
 }
 

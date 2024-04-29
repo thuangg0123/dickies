@@ -14,13 +14,7 @@ import {
   ManageUser,
   CreateProducts,
 } from "./pages/admin";
-import {
-  MemberLayout,
-  Personal,
-  HistoryOrder,
-  WishList,
-  Checkout,
-} from "./pages/member";
+import { MemberLayout, Personal, HistoryOrder, Checkout } from "./pages/member";
 import {
   Login,
   Home,
@@ -37,6 +31,7 @@ import {
   NotFound,
   Cart,
   DetailCart,
+  WishList,
 } from "./components/index";
 import { showCart } from "./store/app/appSlice";
 
@@ -79,8 +74,9 @@ function App() {
         <Route path={path.CHECKOUT} element={<Checkout />}></Route>
         <Route path={path.PUBLIC} element={<Public />}>
           <Route path={path.HOME} element={<Home />}></Route>
-          <Route path={path.FAQ} element={<FAQ />}></Route>
-          <Route path={path.BLOG} element={<Blog />}></Route>
+          {/* <Route path={path.FAQ} element={<FAQ />}></Route>
+          <Route path={path.BLOG} element={<Blog />}></Route> */}
+          <Route path={path.WISH_LIST} element={<WishList />} />
           <Route path={path.DETAIL_CART} element={<DetailCart />}></Route>
           <Route path={path.RESET_PASSWORD} element={<ResetPassword />}></Route>
           <Route
@@ -118,11 +114,7 @@ function App() {
         </Route>
         <Route path={path.MEMBER} element={<MemberLayout />}>
           <Route path={path.PERSONAL} element={<Personal />} />
-          <Route path={path.WISH_LIST} element={<WishList />} />
           <Route path={path.HISOTRY_ORDER} element={<HistoryOrder />} />
-        </Route>
-        <Route path={path.MEMBER} element={<MemberLayout />}>
-          <Route path={path.PERSONAL} element={<Personal />} />
         </Route>
       </Routes>
     </div>

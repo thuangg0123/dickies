@@ -3,13 +3,13 @@ import React from 'react';
 import icons from './icons'
 
 const { DashboardIcon, GroupsIcon, InventoryIcon, CategoryIcon, Person2OutlinedIcon,
-    BookmarkBorderOutlinedIcon, LogoutIcon, HomeOutlinedIcon, Inventory2OutlinedIcon } = icons
+    LogoutIcon, HomeOutlinedIcon, Inventory2OutlinedIcon } = icons
 
 export const nav = [
     {
         id: 1,
         value: "Men",
-        path: `?gender=men`
+        path: `?page=1&gender=men`
     },
     {
         id: 2,
@@ -18,19 +18,9 @@ export const nav = [
     },
     {
         id: 3,
-        value: "Kids",
+        value: "Kid",
         path: `?gender=kid`
     },
-    {
-        id: 4,
-        value: "Blog",
-        path: `/${path.BLOG}`
-    },
-    {
-        id: 5,
-        value: "FAQ",
-        path: `/${path.FAQ}`
-    }
 ]
 
 export const sortPrice = [
@@ -210,19 +200,12 @@ export const memberSidebar = [
     {
         id: 3,
         type: "SINGLE",
-        text: "Wish lists",
-        path: `${path.WISH_LIST}`,
-        icon: React.createElement(BookmarkBorderOutlinedIcon, null)
-    },
-    {
-        id: 4,
-        type: "SINGLE",
-        text: "History order",
+        text: "History Order",
         path: `${path.HISOTRY_ORDER}`,
         icon: React.createElement(Inventory2OutlinedIcon, null)
     },
     {
-        id: 5,
+        id: 4,
         type: "SINGLE",
         text: "Logout",
         icon: React.createElement(LogoutIcon, null)

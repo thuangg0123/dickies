@@ -101,13 +101,18 @@ const login = asyncHandler(async (req, res) => {
 
 const getCurrent = asyncHandler(async (req, res) => {
     const { _id } = req.user
-    const user = await User.findById(_id).select('-refreshToken -password').populate({
-        path: "cart",
-        populate: {
-            path: "product",
-            select: 'title thumb color price sizes'
-        }
-    })
+    const user = await User.findById(_id)
+        .select('-refreshToken -password')
+        .populate({
+            path: "cart",
+            populate: {
+                path: "product",
+                select: 'title thumb color price sizes'
+            }
+        })
+        .populate(
+            "wishList", "title thumb color sizes price gender category slug"
+        )
 
     return res.status(200).json({
         success: user ? true : false,
@@ -393,12 +398,12 @@ const updateWishlist = asyncHandler(async (req, res) => {
     const { productId } = req.params
     const { _id } = req.user
     const user = await User.findById(_id)
-    const isInWishList = user.wishList?.find(element => element === productId)
+    const isInWishList = user.wishList?.find(element => element.toString() === productId)
     if (isInWishList) {
         const response = await User.findByIdAndUpdate(_id, { $pull: { wishList: productId } }, { new: true })
         return res.status(200).json({
             success: response ? true : false,
-            message: response ? 'Updated your wishlist' : "Failed to update wishlist"
+            message: response ? 'This product is removed form Wishlist' : "Failed to update wishlist"
         })
     }
     else {

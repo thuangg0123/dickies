@@ -35,8 +35,10 @@ import CheckBoxRoundedIcon from '@mui/icons-material/CheckCircleRounded';
 import ShoppingCartCheckoutIcon from '@mui/icons-material/ShoppingCartCheckout';
 import CloseIcon from '@mui/icons-material/Close';
 import ComputerIcon from '@mui/icons-material/Computer';
+import BookmarkIcon from '@mui/icons-material/Bookmark';
 
 const icons = {
+    BookmarkIcon,
     ComputerIcon,
     CloseIcon,
     ShoppingCartCheckoutIcon,
