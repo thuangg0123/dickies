@@ -37,8 +37,10 @@ import CloseIcon from '@mui/icons-material/Close';
 import ComputerIcon from '@mui/icons-material/Computer';
 import BookmarkIcon from '@mui/icons-material/Bookmark';
 import VisibilityIcon from '@mui/icons-material/Visibility';
+import DownloadIcon from '@mui/icons-material/Download';
 
 const icons = {
+    DownloadIcon,
     VisibilityIcon,
     BookmarkIcon,
     ComputerIcon,

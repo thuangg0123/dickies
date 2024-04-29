@@ -22,6 +22,8 @@ const createNewOrder = asyncHandler(async (req, res) => {
 const getDetailOrder = asyncHandler(async (req, res) => {
     const { orderId } = req.params
     const response = await Order.findById(orderId)
+        .populate("orderBy", "address email firstName lastName phone")
+        .populate("products.product", "title")
     return res.status(200).json({
         success: response ? true : false,
         data: response ? response : 'cannot get detail order'

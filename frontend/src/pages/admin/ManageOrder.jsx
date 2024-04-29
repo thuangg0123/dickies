@@ -5,17 +5,20 @@ import {
   apiUpdateStatusOrder,
 } from "../../apis";
 import { CustomSelect, InputForm, Pagination } from "../../components";
-import { useForm } from "react-hook-form";
+import { set, useForm } from "react-hook-form";
 import { createSearchParams, useSearchParams } from "react-router-dom";
 import moment from "moment";
 import { statusOrders } from "../../ultils/constans";
 import withBaseComponent from "../../hocs/withBaseComponent";
 import icons from "../../ultils/icons";
 import { toast } from "react-toastify";
+import DetailOrder from "./DetailOrder";
 
-function ManageOrder({ dispatch, navigate, location }) {
+function ManageOrder({ navigate, location }) {
   const { VisibilityIcon } = icons;
   const [orders, setOrders] = useState(null);
+  const [detailOrder, setDetailOrder] = useState(false);
+  const [dataDetailOrder, setDataDetailOrder] = useState(null);
   const [counts, setCounts] = useState(0);
   const [params] = useSearchParams();
   const {
@@ -60,12 +63,21 @@ function ManageOrder({ dispatch, navigate, location }) {
   };
 
   const handleDetailOrder = async (orderId) => {
-    const response = await apiGetDetailOrder(orderId);
-    console.log(response);
+    const data = await apiGetDetailOrder(orderId);
+    setDataDetailOrder(data.data);
+    setDetailOrder(true);
   };
 
   return (
     <div className="w-full relative p-4 font-second font-medium">
+      {detailOrder && (
+        <div className="absolute inset-0 min-h-screen bg-white z-50">
+          <DetailOrder
+            setDetailOrder={setDetailOrder}
+            dataDetailOrder={dataDetailOrder}
+          />
+        </div>
+      )}
       <header className="text-3xl font-semibold py-4 border-b">
         History Order
       </header>
@@ -91,6 +103,7 @@ function ManageOrder({ dispatch, navigate, location }) {
         <thead>
           <tr className="border bg-black text-white">
             <th className="text-center px-2 py-2">#</th>
+            <th className="text-center px-2 py-2">Id order</th>
             <th className="text-center px-2 py-2">Total quantity products</th>
             <th className="text-center px-2 py-2">Total price</th>
             <th className="text-center px-2 py-2">Order by</th>
@@ -111,6 +124,7 @@ function ManageOrder({ dispatch, navigate, location }) {
                     index +
                     1}
                 </td>
+                <td className="py-2">{order?._id}</td>
                 <td className="py-2">{order?.products?.length}</td>
                 <td className="py-2 max-w-[150px] overflow-hidden truncate">
                   ${parseFloat(order.total).toFixed(2)}
