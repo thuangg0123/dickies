@@ -6,6 +6,7 @@
 - **Guidance**: hip06
 - **UI Design Inspiration**: [Dickies](https://www.dickies.com/)
 - **Time Taken**: Approximately 3 months
+- **Video Demo**: [![Alt text](https://img.youtube.com/vi/CcOQ6-8_5Xk/0.jpg)](https://youtu.be/CcOQ6-8_5Xk)
 
 ### Overview
 
