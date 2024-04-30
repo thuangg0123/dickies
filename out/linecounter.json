@@ -5,46 +5,36 @@
     "linecount": [
         {
             "version": "0.2.7",
-            "counttime": "2024-04-29 21:30:02",
-            "filesum": 162,
-            "codesum": 27241,
-            "commentsum": 137,
-            "blanksum": 868,
+            "counttime": "2024-04-30 11:20:52",
+            "filesum": 167,
+            "codesum": 35890,
+            "commentsum": 113,
+            "blanksum": 1593,
             "statistics": {
                 ".js": {
-                    "code": 3008,
-                    "comment": 115,
-                    "blank": 303
+                    "code": 3025,
+                    "comment": 90,
+                    "blank": 304
                 },
-                ".json": {
-                    "code": 17729,
-                    "comment": 0,
-                    "blank": 214
+                ".md": {
+                    "code": 47,
+                    "comment": 1,
+                    "blank": 20
                 },
                 ".jsx": {
-                    "code": 6392,
+                    "code": 6404,
                     "comment": 5,
-                    "blank": 341
+                    "blank": 343
+                },
+                ".json": {
+                    "code": 26302,
+                    "comment": 0,
+                    "blank": 916
                 },
                 ".css": {
                     "code": 11,
                     "comment": 0,
                     "blank": 2
-                },
-                ".svg": {
-                    "code": 30,
-                    "comment": 0,
-                    "blank": 0
-                },
-                ".http": {
-                    "code": 6,
-                    "comment": 3,
-                    "blank": 2
-                },
-                ".md": {
-                    "code": 0,
-                    "comment": 0,
-                    "blank": 0
                 },
                 "": {
                     "code": 31,
@@ -60,6 +50,16 @@
                     "code": 13,
                     "comment": 0,
                     "blank": 3
+                },
+                ".svg": {
+                    "code": 30,
+                    "comment": 0,
+                    "blank": 0
+                },
+                ".http": {
+                    "code": 6,
+                    "comment": 3,
+                    "blank": 2
                 }
             },
             "filelist": [
@@ -118,9 +118,9 @@
                     "filename": "backend\\controllers\\insertData.js"
                 },
                 {
-                    "blank": 17,
-                    "code": 109,
-                    "comment": 33,
+                    "blank": 18,
+                    "code": 126,
+                    "comment": 8,
                     "filename": "backend\\controllers\\orderController.js"
                 },
                 {
@@ -176,12 +176,6 @@
                     "code": 40,
                     "comment": 1,
                     "filename": "backend\\middleware\\verifyToken.js"
-                },
-                {
-                    "blank": 0,
-                    "code": 0,
-                    "comment": 0,
-                    "filename": "backend\\models\\bill.js"
                 },
                 {
                     "blank": 2,
@@ -326,6 +320,36 @@
                     "code": 23,
                     "comment": 8,
                     "filename": "backend\\ultils\\sendMail.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 534,
+                    "comment": 0,
+                    "filename": "data\\e-mern.orders.json"
+                },
+                {
+                    "blank": 0,
+                    "code": 201,
+                    "comment": 0,
+                    "filename": "data\\e-mern.productcategories.json"
+                },
+                {
+                    "blank": 601,
+                    "code": 6034,
+                    "comment": 0,
+                    "filename": "data\\e-mern.products.json"
+                },
+                {
+                    "blank": 0,
+                    "code": 110,
+                    "comment": 0,
+                    "filename": "data\\e-mern.users.json"
+                },
+                {
+                    "blank": 101,
+                    "code": 1694,
+                    "comment": 0,
+                    "filename": "e-MERN.postman_collection.json"
                 },
                 {
                     "blank": 0,
@@ -831,7 +855,7 @@
                 },
                 {
                     "blank": 14,
-                    "code": 191,
+                    "code": 190,
                     "comment": 0,
                     "filename": "frontend\\src\\pages\\admin\\Dashboard.jsx"
                 },
@@ -848,8 +872,8 @@
                     "filename": "frontend\\src\\pages\\admin\\index.js"
                 },
                 {
-                    "blank": 9,
-                    "code": 177,
+                    "blank": 11,
+                    "code": 190,
                     "comment": 0,
                     "filename": "frontend\\src\\pages\\admin\\ManageOrder.jsx"
                 },
@@ -1044,6 +1068,12 @@
                     "code": 5,
                     "comment": 1,
                     "filename": "frontend\\vite.config.js"
+                },
+                {
+                    "blank": 20,
+                    "code": 47,
+                    "comment": 1,
+                    "filename": "README.md"
                 }
             ]
         }

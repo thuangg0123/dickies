@@ -2,26 +2,26 @@
 EXTENSION NAME : linecounter
 EXTENSION VERSION : 0.2.7
 -------------------------------------------------------------------------------
-count time : 2024-04-29 21:30:02
+count time : 2024-04-30 11:20:52
 count workspace : c:\Users\hoang\Desktop\e-mern
-total files : 162
-total code lines : 27241
-total comment lines : 137
-total blank lines : 868
+total files : 167
+total code lines : 35890
+total comment lines : 113
+total blank lines : 1593
 
     statistics
    |      extension|     total code|  total comment|    total blank|percent|
    -------------------------------------------------------------------------
-   |            .js|           3008|            115|            303|     11|
-   |          .json|          17729|              0|            214|     65|
-   |           .jsx|           6392|              5|            341|     23|
-   |           .css|             11|              0|              2|  0.040|
-   |           .svg|             30|              0|              0|   0.11|
-   |          .http|              6|              3|              2|  0.022|
-   |            .md|              0|              0|              0|    0.0|
-   |               |             31|             14|              3|   0.11|
-   |           .cjs|             21|              0|              0|  0.077|
-   |          .html|             13|              0|              3|  0.048|
+   |            .js|           3025|             90|            304|    8.4|
+   |            .md|             47|              1|             20|   0.13|
+   |           .jsx|           6404|              5|            343|     18|
+   |          .json|          26302|              0|            916|     73|
+   |           .css|             11|              0|              2|  0.031|
+   |               |             31|             14|              3|  0.086|
+   |           .cjs|             21|              0|              0|  0.059|
+   |          .html|             13|              0|              3|  0.036|
+   |           .svg|             30|              0|              0|  0.084|
+   |          .http|              6|              3|              2|  0.017|
    -------------------------------------------------------------------------
 .gitignore, code is 2, comment is 0, blank is 0.
 backend\.env, code is 11, comment is 3, blank is 1.
@@ -32,7 +32,7 @@ backend\controllers\blogController.js, code is 129, comment is 7, blank is 18.
 backend\controllers\brandController.js, code is 47, comment is 0, blank is 6.
 backend\controllers\couponController.js, code is 60, comment is 0, blank is 6.
 backend\controllers\insertData.js, code is 51, comment is 0, blank is 5.
-backend\controllers\orderController.js, code is 109, comment is 33, blank is 17.
+backend\controllers\orderController.js, code is 126, comment is 8, blank is 18.
 backend\controllers\productCategoryController.js, code is 39, comment is 0, blank is 5.
 backend\controllers\productController.js, code is 219, comment is 13, blank is 19.
 backend\controllers\userController.js, code is 370, comment is 17, blank is 35.
@@ -42,7 +42,6 @@ backend\insert.http, code is 6, comment is 3, blank is 2.
 backend\middleware\errorHandler.js, code is 16, comment is 0, blank is 2.
 backend\middleware\jwt.js, code is 17, comment is 0, blank is 3.
 backend\middleware\verifyToken.js, code is 40, comment is 1, blank is 3.
-backend\models\bill.js, code is 0, comment is 0, blank is 0.
 backend\models\blog.js, code is 58, comment is 3, blank is 2.
 backend\models\blogCategory.js, code is 12, comment is 3, blank is 2.
 backend\models\brand.js, code is 12, comment is 3, blank is 2.
@@ -67,6 +66,11 @@ backend\routes\user.js, code is 22, comment is 2, blank is 4.
 backend\server.js, code is 21, comment is 0, blank is 5.
 backend\ultils\constant.js, code is 43, comment is 0, blank is 1.
 backend\ultils\sendMail.js, code is 23, comment is 8, blank is 4.
+data\e-mern.orders.json, code is 534, comment is 0, blank is 0.
+data\e-mern.productcategories.json, code is 201, comment is 0, blank is 0.
+data\e-mern.products.json, code is 6034, comment is 0, blank is 601.
+data\e-mern.users.json, code is 110, comment is 0, blank is 0.
+e-MERN.postman_collection.json, code is 1694, comment is 0, blank is 101.
 frontend\.env, code is 4, comment is 2, blank is 0.
 frontend\.eslintrc.cjs, code is 21, comment is 0, blank is 0.
 frontend\.gitignore, code is 14, comment is 9, blank is 2.
@@ -149,10 +153,10 @@ frontend\src\main.jsx, code is 21, comment is 0, blank is 3.
 frontend\src\pages\admin\AdminLayout.jsx, code is 23, comment is 0, blank is 2.
 frontend\src\pages\admin\CreateProducts.jsx, code is 298, comment is 0, blank is 14.
 frontend\src\pages\admin\CustomizeVariant.jsx, code is 210, comment is 0, blank is 9.
-frontend\src\pages\admin\Dashboard.jsx, code is 191, comment is 0, blank is 14.
+frontend\src\pages\admin\Dashboard.jsx, code is 190, comment is 0, blank is 14.
 frontend\src\pages\admin\DetailOrder.jsx, code is 134, comment is 0, blank is 2.
 frontend\src\pages\admin\index.js, code is 10, comment is 0, blank is 0.
-frontend\src\pages\admin\ManageOrder.jsx, code is 177, comment is 0, blank is 9.
+frontend\src\pages\admin\ManageOrder.jsx, code is 190, comment is 0, blank is 11.
 frontend\src\pages\admin\ManageProducts.jsx, code is 223, comment is 0, blank is 9.
 frontend\src\pages\admin\ManageUser.jsx, code is 269, comment is 0, blank is 8.
 frontend\src\pages\admin\PDFOrder.jsx, code is 143, comment is 0, blank is 3.
@@ -185,4 +189,5 @@ frontend\src\ultils\itemFooter.js, code is 41, comment is 0, blank is 0.
 frontend\src\ultils\path.js, code is 26, comment is 2, blank is 3.
 frontend\tailwind.config.js, code is 44, comment is 1, blank is 0.
 frontend\vite.config.js, code is 5, comment is 1, blank is 0.
+README.md, code is 47, comment is 1, blank is 20.
 ===============================================================================
