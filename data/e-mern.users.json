@@ -1,0 +1,110 @@
+[{
+  "_id": {
+    "$oid": "662355c70d17c6273f364124"
+  },
+  "firstName": "Thuận",
+  "lastName": "Hoàng",
+  "email": "thuangg246@gmail.com",
+  "phone": "01234567891",
+  "password": "$2b$20$sJhPwazSYeca00zAX1B5wOdkCgYQt2LQfuJsyeQovrKK0szyr46Ku",
+  "role": "111",
+  "wishList": [],
+  "isBlocked": true,
+  "cart": [],
+  "createdAt": {
+    "$date": "2024-04-20T05:42:31.445Z"
+  },
+  "updatedAt": {
+    "$date": "2024-04-21T04:09:25.202Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "662358ba0d17c6273f36412c"
+  },
+  "firstName": "Sol",
+  "lastName": "Hoàng",
+  "email": "tuitenlasol@gmail.com",
+  "phone": "0238989761",
+  "password": "$2b$20$sLKR9rszrdyrRgwQIaTQUOlHuxt5xSHjRg/HGX523kmmx.bcld8Lm",
+  "role": "0",
+  "wishList": [],
+  "isBlocked": false,
+  "cart": [],
+  "createdAt": {
+    "$date": "2024-04-20T05:55:06.225Z"
+  },
+  "updatedAt": {
+    "$date": "2024-04-30T03:20:49.042Z"
+  },
+  "__v": 0,
+  "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjIzNThiYTBkMTdjNjI3M2YzNjQxMmMiLCJyb2xlIjoiMCIsImlhdCI6MTcxNDM2NjQ1MCwiZXhwIjoxNzE0OTcxMjUwfQ.Cia0iyAEkzW9PtsEGte-2tcGYm_Yj2G86KI2R2erxcc",
+  "avatar": "https://res.cloudinary.com/dmaondctu/image/upload/v1713885225/e-mern/dtnqam3a9cm3sdstqmow.jpg",
+  "address": "480 đường Bình Quới, phường 28, quận Bình Thạnh, thành phố Hồ Chí Minh"
+},
+{
+  "_id": {
+    "$oid": "6623a7d33dc92d87173cda6b"
+  },
+  "firstName": "Thịnh",
+  "lastName": "Phạm Dương Quang",
+  "email": "user2@gmail.com",
+  "phone": "023898978",
+  "password": "$2b$20$J4o1BhAzCySMZUjD7iNx.OlyHJZDcBpxHqAtqx6Ba/T4q2JwtVYjS",
+  "role": "111",
+  "wishList": [],
+  "isBlocked": false,
+  "cart": [],
+  "createdAt": {
+    "$date": "2024-04-20T11:32:35.866Z"
+  },
+  "updatedAt": {
+    "$date": "2024-04-20T11:32:35.866Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6623a7d33dc92d87173cda6d"
+  },
+  "firstName": "Vân Anh",
+  "lastName": "Nguyễn",
+  "email": "user4@gmail.com",
+  "phone": "0238989791",
+  "password": "$2b$20$o.tOqQqbaE2uqezlPzsxaejGoDhG98LFV9uxUUf9cZ3lggyo38CmW",
+  "role": "111",
+  "wishList": [],
+  "isBlocked": false,
+  "cart": [],
+  "createdAt": {
+    "$date": "2024-04-20T11:32:35.867Z"
+  },
+  "updatedAt": {
+    "$date": "2024-04-29T04:52:01.228Z"
+  },
+  "__v": 0,
+  "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjIzYTdkMzNkYzkyZDg3MTczY2RhNmQiLCJyb2xlIjoiMTExIiwiaWF0IjoxNzE0MzY1NDcwLCJleHAiOjE3MTQ5NzAyNzB9.Ylgaz2UorMOOy9_sqqxDnVqbTJc8C3S8gkLDW33X0fI",
+  "address": "bình thạnh"
+},
+{
+  "_id": {
+    "$oid": "6623a7d33dc92d87173cda6a"
+  },
+  "firstName": "Chiến",
+  "lastName": "Phùng Xuân",
+  "email": "user1@gmail.com",
+  "phone": "023898970",
+  "password": "$2b$20$FP2VuqD6WtSZuCOduoOWmOVppDE9swoKJXz8s5nTfvyHDI2jLP7tK",
+  "role": "111",
+  "wishList": [],
+  "isBlocked": false,
+  "cart": [],
+  "createdAt": {
+    "$date": "2024-04-20T11:32:35.865Z"
+  },
+  "updatedAt": {
+    "$date": "2024-04-20T11:32:35.865Z"
+  },
+  "__v": 0
+}]

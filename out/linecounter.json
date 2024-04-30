@@ -1,0 +1,1051 @@
+{
+    "extension": "linecounter",
+    "version": "0.2.7",
+    "workspace": "c:\\Users\\hoang\\Desktop\\e-mern",
+    "linecount": [
+        {
+            "version": "0.2.7",
+            "counttime": "2024-04-29 21:30:02",
+            "filesum": 162,
+            "codesum": 27241,
+            "commentsum": 137,
+            "blanksum": 868,
+            "statistics": {
+                ".js": {
+                    "code": 3008,
+                    "comment": 115,
+                    "blank": 303
+                },
+                ".json": {
+                    "code": 17729,
+                    "comment": 0,
+                    "blank": 214
+                },
+                ".jsx": {
+                    "code": 6392,
+                    "comment": 5,
+                    "blank": 341
+                },
+                ".css": {
+                    "code": 11,
+                    "comment": 0,
+                    "blank": 2
+                },
+                ".svg": {
+                    "code": 30,
+                    "comment": 0,
+                    "blank": 0
+                },
+                ".http": {
+                    "code": 6,
+                    "comment": 3,
+                    "blank": 2
+                },
+                ".md": {
+                    "code": 0,
+                    "comment": 0,
+                    "blank": 0
+                },
+                "": {
+                    "code": 31,
+                    "comment": 14,
+                    "blank": 3
+                },
+                ".cjs": {
+                    "code": 21,
+                    "comment": 0,
+                    "blank": 0
+                },
+                ".html": {
+                    "code": 13,
+                    "comment": 0,
+                    "blank": 3
+                }
+            },
+            "filelist": [
+                {
+                    "blank": 0,
+                    "code": 2,
+                    "comment": 0,
+                    "filename": ".gitignore"
+                },
+                {
+                    "blank": 1,
+                    "code": 11,
+                    "comment": 3,
+                    "filename": "backend\\.env"
+                },
+                {
+                    "blank": 4,
+                    "code": 17,
+                    "comment": 0,
+                    "filename": "backend\\config\\cloudinaryConfig.js"
+                },
+                {
+                    "blank": 2,
+                    "code": 17,
+                    "comment": 4,
+                    "filename": "backend\\config\\DbConnect.js"
+                },
+                {
+                    "blank": 5,
+                    "code": 38,
+                    "comment": 0,
+                    "filename": "backend\\controllers\\blogCategoryController.js"
+                },
+                {
+                    "blank": 18,
+                    "code": 129,
+                    "comment": 7,
+                    "filename": "backend\\controllers\\blogController.js"
+                },
+                {
+                    "blank": 6,
+                    "code": 47,
+                    "comment": 0,
+                    "filename": "backend\\controllers\\brandController.js"
+                },
+                {
+                    "blank": 6,
+                    "code": 60,
+                    "comment": 0,
+                    "filename": "backend\\controllers\\couponController.js"
+                },
+                {
+                    "blank": 5,
+                    "code": 51,
+                    "comment": 0,
+                    "filename": "backend\\controllers\\insertData.js"
+                },
+                {
+                    "blank": 17,
+                    "code": 109,
+                    "comment": 33,
+                    "filename": "backend\\controllers\\orderController.js"
+                },
+                {
+                    "blank": 5,
+                    "code": 39,
+                    "comment": 0,
+                    "filename": "backend\\controllers\\productCategoryController.js"
+                },
+                {
+                    "blank": 19,
+                    "code": 219,
+                    "comment": 13,
+                    "filename": "backend\\controllers\\productController.js"
+                },
+                {
+                    "blank": 35,
+                    "code": 370,
+                    "comment": 17,
+                    "filename": "backend\\controllers\\userController.js"
+                },
+                {
+                    "blank": 2,
+                    "code": 64,
+                    "comment": 0,
+                    "filename": "backend\\data\\cate_brand.js"
+                },
+                {
+                    "blank": 139,
+                    "code": 2285,
+                    "comment": 0,
+                    "filename": "backend\\data\\data_dickies.json"
+                },
+                {
+                    "blank": 2,
+                    "code": 6,
+                    "comment": 3,
+                    "filename": "backend\\insert.http"
+                },
+                {
+                    "blank": 2,
+                    "code": 16,
+                    "comment": 0,
+                    "filename": "backend\\middleware\\errorHandler.js"
+                },
+                {
+                    "blank": 3,
+                    "code": 17,
+                    "comment": 0,
+                    "filename": "backend\\middleware\\jwt.js"
+                },
+                {
+                    "blank": 3,
+                    "code": 40,
+                    "comment": 1,
+                    "filename": "backend\\middleware\\verifyToken.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0,
+                    "filename": "backend\\models\\bill.js"
+                },
+                {
+                    "blank": 2,
+                    "code": 58,
+                    "comment": 3,
+                    "filename": "backend\\models\\blog.js"
+                },
+                {
+                    "blank": 2,
+                    "code": 12,
+                    "comment": 3,
+                    "filename": "backend\\models\\blogCategory.js"
+                },
+                {
+                    "blank": 2,
+                    "code": 12,
+                    "comment": 3,
+                    "filename": "backend\\models\\brand.js"
+                },
+                {
+                    "blank": 2,
+                    "code": 18,
+                    "comment": 3,
+                    "filename": "backend\\models\\coupon.js"
+                },
+                {
+                    "blank": 2,
+                    "code": 29,
+                    "comment": 1,
+                    "filename": "backend\\models\\order.js"
+                },
+                {
+                    "blank": 2,
+                    "code": 85,
+                    "comment": 3,
+                    "filename": "backend\\models\\product.js"
+                },
+                {
+                    "blank": 2,
+                    "code": 19,
+                    "comment": 3,
+                    "filename": "backend\\models\\productCategory.js"
+                },
+                {
+                    "blank": 2,
+                    "code": 14,
+                    "comment": 3,
+                    "filename": "backend\\models\\role.js"
+                },
+                {
+                    "blank": 5,
+                    "code": 88,
+                    "comment": 3,
+                    "filename": "backend\\models\\user.js"
+                },
+                {
+                    "blank": 2,
+                    "code": 3753,
+                    "comment": 0,
+                    "filename": "backend\\package-lock.json"
+                },
+                {
+                    "blank": 0,
+                    "code": 32,
+                    "comment": 0,
+                    "filename": "backend\\package.json"
+                },
+                {
+                    "blank": 3,
+                    "code": 13,
+                    "comment": 0,
+                    "filename": "backend\\routes\\blog.js"
+                },
+                {
+                    "blank": 2,
+                    "code": 8,
+                    "comment": 0,
+                    "filename": "backend\\routes\\blogCategory.js"
+                },
+                {
+                    "blank": 3,
+                    "code": 9,
+                    "comment": 0,
+                    "filename": "backend\\routes\\brand.js"
+                },
+                {
+                    "blank": 2,
+                    "code": 8,
+                    "comment": 0,
+                    "filename": "backend\\routes\\category.js"
+                },
+                {
+                    "blank": 3,
+                    "code": 9,
+                    "comment": 0,
+                    "filename": "backend\\routes\\coupon.js"
+                },
+                {
+                    "blank": 3,
+                    "code": 26,
+                    "comment": 0,
+                    "filename": "backend\\routes\\index.js"
+                },
+                {
+                    "blank": 2,
+                    "code": 5,
+                    "comment": 0,
+                    "filename": "backend\\routes\\insert.js"
+                },
+                {
+                    "blank": 2,
+                    "code": 9,
+                    "comment": 0,
+                    "filename": "backend\\routes\\order.js"
+                },
+                {
+                    "blank": 3,
+                    "code": 13,
+                    "comment": 0,
+                    "filename": "backend\\routes\\product.js"
+                },
+                {
+                    "blank": 4,
+                    "code": 22,
+                    "comment": 2,
+                    "filename": "backend\\routes\\user.js"
+                },
+                {
+                    "blank": 5,
+                    "code": 21,
+                    "comment": 0,
+                    "filename": "backend\\server.js"
+                },
+                {
+                    "blank": 1,
+                    "code": 43,
+                    "comment": 0,
+                    "filename": "backend\\ultils\\constant.js"
+                },
+                {
+                    "blank": 4,
+                    "code": 23,
+                    "comment": 8,
+                    "filename": "backend\\ultils\\sendMail.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 4,
+                    "comment": 2,
+                    "filename": "frontend\\.env"
+                },
+                {
+                    "blank": 0,
+                    "code": 21,
+                    "comment": 0,
+                    "filename": "frontend\\.eslintrc.cjs"
+                },
+                {
+                    "blank": 2,
+                    "code": 14,
+                    "comment": 9,
+                    "filename": "frontend\\.gitignore"
+                },
+                {
+                    "blank": 0,
+                    "code": 8,
+                    "comment": 0,
+                    "filename": "frontend\\.vite\\deps\\_metadata.json"
+                },
+                {
+                    "blank": 0,
+                    "code": 3,
+                    "comment": 0,
+                    "filename": "frontend\\.vite\\deps\\package.json"
+                },
+                {
+                    "blank": 3,
+                    "code": 13,
+                    "comment": 0,
+                    "filename": "frontend\\index.html"
+                },
+                {
+                    "blank": 73,
+                    "code": 11590,
+                    "comment": 0,
+                    "filename": "frontend\\package-lock.json"
+                },
+                {
+                    "blank": 0,
+                    "code": 58,
+                    "comment": 0,
+                    "filename": "frontend\\package.json"
+                },
+                {
+                    "blank": 0,
+                    "code": 6,
+                    "comment": 0,
+                    "filename": "frontend\\postcss.config.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "frontend\\public\\vite.svg"
+                },
+                {
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0,
+                    "filename": "frontend\\README.md"
+                },
+                {
+                    "blank": 15,
+                    "code": 71,
+                    "comment": 0,
+                    "filename": "frontend\\src\\apis\\app.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 2,
+                    "comment": 0,
+                    "filename": "frontend\\src\\apis\\index.js"
+                },
+                {
+                    "blank": 13,
+                    "code": 62,
+                    "comment": 0,
+                    "filename": "frontend\\src\\apis\\user.js"
+                },
+                {
+                    "blank": 5,
+                    "code": 119,
+                    "comment": 1,
+                    "filename": "frontend\\src\\App.jsx"
+                },
+                {
+                    "blank": 4,
+                    "code": 26,
+                    "comment": 0,
+                    "filename": "frontend\\src\\axios.js"
+                },
+                {
+                    "blank": 2,
+                    "code": 12,
+                    "comment": 0,
+                    "filename": "frontend\\src\\components\\404\\NotFound.jsx"
+                },
+                {
+                    "blank": 2,
+                    "code": 8,
+                    "comment": 0,
+                    "filename": "frontend\\src\\components\\Animation\\Congratulation.jsx"
+                },
+                {
+                    "blank": 3,
+                    "code": 21,
+                    "comment": 0,
+                    "filename": "frontend\\src\\components\\Breadcrum\\Breadcrum.jsx"
+                },
+                {
+                    "blank": 7,
+                    "code": 36,
+                    "comment": 0,
+                    "filename": "frontend\\src\\components\\Button\\BtnScrollTop.jsx"
+                },
+                {
+                    "blank": 2,
+                    "code": 29,
+                    "comment": 0,
+                    "filename": "frontend\\src\\components\\Button\\Button.jsx"
+                },
+                {
+                    "blank": 4,
+                    "code": 167,
+                    "comment": 1,
+                    "filename": "frontend\\src\\components\\Cart\\Cart.jsx"
+                },
+                {
+                    "blank": 7,
+                    "code": 235,
+                    "comment": 0,
+                    "filename": "frontend\\src\\components\\Cart\\DetailCart.jsx"
+                },
+                {
+                    "blank": 6,
+                    "code": 105,
+                    "comment": 2,
+                    "filename": "frontend\\src\\components\\Cart\\OrderItem.jsx"
+                },
+                {
+                    "blank": 17,
+                    "code": 176,
+                    "comment": 0,
+                    "filename": "frontend\\src\\components\\ContainerProduct\\ContainerProduct.jsx"
+                },
+                {
+                    "blank": 5,
+                    "code": 169,
+                    "comment": 0,
+                    "filename": "frontend\\src\\components\\ContainerProduct\\FilterProduct.jsx"
+                },
+                {
+                    "blank": 3,
+                    "code": 30,
+                    "comment": 0,
+                    "filename": "frontend\\src\\components\\DetailProduct\\AccordionSection.jsx"
+                },
+                {
+                    "blank": 4,
+                    "code": 52,
+                    "comment": 0,
+                    "filename": "frontend\\src\\components\\DetailProduct\\Comment.jsx"
+                },
+                {
+                    "blank": 5,
+                    "code": 106,
+                    "comment": 0,
+                    "filename": "frontend\\src\\components\\DetailProduct\\Detail.jsx"
+                },
+                {
+                    "blank": 10,
+                    "code": 280,
+                    "comment": 0,
+                    "filename": "frontend\\src\\components\\DetailProduct\\DetailProduct.jsx"
+                },
+                {
+                    "blank": 2,
+                    "code": 42,
+                    "comment": 0,
+                    "filename": "frontend\\src\\components\\DetailProduct\\LeftDetaiProduct.jsx"
+                },
+                {
+                    "blank": 2,
+                    "code": 5,
+                    "comment": 0,
+                    "filename": "frontend\\src\\components\\DetailProduct\\Ratings.jsx"
+                },
+                {
+                    "blank": 10,
+                    "code": 216,
+                    "comment": 0,
+                    "filename": "frontend\\src\\components\\DetailProduct\\RightDetaiProduct.jsx"
+                },
+                {
+                    "blank": 4,
+                    "code": 35,
+                    "comment": 0,
+                    "filename": "frontend\\src\\components\\DetailProduct\\VoteBar.jsx"
+                },
+                {
+                    "blank": 4,
+                    "code": 78,
+                    "comment": 0,
+                    "filename": "frontend\\src\\components\\DetailProduct\\VoteOptions.jsx"
+                },
+                {
+                    "blank": 3,
+                    "code": 90,
+                    "comment": 0,
+                    "filename": "frontend\\src\\components\\Footer\\Footer.jsx"
+                },
+                {
+                    "blank": 2,
+                    "code": 165,
+                    "comment": 0,
+                    "filename": "frontend\\src\\components\\Footer\\NeedHelps.jsx"
+                },
+                {
+                    "blank": 4,
+                    "code": 41,
+                    "comment": 0,
+                    "filename": "frontend\\src\\components\\Header\\DropDrownMenu.jsx"
+                },
+                {
+                    "blank": 10,
+                    "code": 197,
+                    "comment": 0,
+                    "filename": "frontend\\src\\components\\Header\\Header.jsx"
+                },
+                {
+                    "blank": 5,
+                    "code": 54,
+                    "comment": 0,
+                    "filename": "frontend\\src\\components\\Header\\Navigations.jsx"
+                },
+                {
+                    "blank": 2,
+                    "code": 27,
+                    "comment": 0,
+                    "filename": "frontend\\src\\components\\Home\\Banner.jsx"
+                },
+                {
+                    "blank": 2,
+                    "code": 26,
+                    "comment": 0,
+                    "filename": "frontend\\src\\components\\Home\\BoxSubBanner.jsx"
+                },
+                {
+                    "blank": 4,
+                    "code": 53,
+                    "comment": 0,
+                    "filename": "frontend\\src\\components\\Home\\CarouselProduct.jsx"
+                },
+                {
+                    "blank": 5,
+                    "code": 64,
+                    "comment": 0,
+                    "filename": "frontend\\src\\components\\Home\\Carousels.jsx"
+                },
+                {
+                    "blank": 2,
+                    "code": 19,
+                    "comment": 0,
+                    "filename": "frontend\\src\\components\\Home\\SubBanner.jsx"
+                },
+                {
+                    "blank": 0,
+                    "code": 40,
+                    "comment": 0,
+                    "filename": "frontend\\src\\components\\index.js"
+                },
+                {
+                    "blank": 2,
+                    "code": 33,
+                    "comment": 0,
+                    "filename": "frontend\\src\\components\\Input\\CustomSelect.jsx"
+                },
+                {
+                    "blank": 3,
+                    "code": 46,
+                    "comment": 0,
+                    "filename": "frontend\\src\\components\\Input\\InputFields.jsx"
+                },
+                {
+                    "blank": 2,
+                    "code": 46,
+                    "comment": 0,
+                    "filename": "frontend\\src\\components\\Input\\InputForm.jsx"
+                },
+                {
+                    "blank": 2,
+                    "code": 18,
+                    "comment": 0,
+                    "filename": "frontend\\src\\components\\Input\\InputSelect.jsx"
+                },
+                {
+                    "blank": 2,
+                    "code": 51,
+                    "comment": 0,
+                    "filename": "frontend\\src\\components\\Input\\MarkDownEditor.jsx"
+                },
+                {
+                    "blank": 3,
+                    "code": 45,
+                    "comment": 0,
+                    "filename": "frontend\\src\\components\\Input\\Select.jsx"
+                },
+                {
+                    "blank": 2,
+                    "code": 10,
+                    "comment": 0,
+                    "filename": "frontend\\src\\components\\Loading\\Loading.jsx"
+                },
+                {
+                    "blank": 2,
+                    "code": 17,
+                    "comment": 0,
+                    "filename": "frontend\\src\\components\\Modal\\Modal.jsx"
+                },
+                {
+                    "blank": 4,
+                    "code": 41,
+                    "comment": 0,
+                    "filename": "frontend\\src\\components\\Pagination\\PagiItem.jsx"
+                },
+                {
+                    "blank": 5,
+                    "code": 41,
+                    "comment": 0,
+                    "filename": "frontend\\src\\components\\Pagination\\Pagination.jsx"
+                },
+                {
+                    "blank": 6,
+                    "code": 81,
+                    "comment": 0,
+                    "filename": "frontend\\src\\components\\Paypal\\Paypal.jsx"
+                },
+                {
+                    "blank": 8,
+                    "code": 182,
+                    "comment": 0,
+                    "filename": "frontend\\src\\components\\ProductCard\\ProductCard.jsx"
+                },
+                {
+                    "blank": 6,
+                    "code": 121,
+                    "comment": 0,
+                    "filename": "frontend\\src\\components\\Sidebar\\AdminSidebar.jsx"
+                },
+                {
+                    "blank": 4,
+                    "code": 58,
+                    "comment": 0,
+                    "filename": "frontend\\src\\components\\Sidebar\\MemberSidebar.jsx"
+                },
+                {
+                    "blank": 3,
+                    "code": 46,
+                    "comment": 0,
+                    "filename": "frontend\\src\\components\\Wishlist\\WishList.jsx"
+                },
+                {
+                    "blank": 3,
+                    "code": 17,
+                    "comment": 0,
+                    "filename": "frontend\\src\\hocs\\withBaseComponent.jsx"
+                },
+                {
+                    "blank": 1,
+                    "code": 13,
+                    "comment": 0,
+                    "filename": "frontend\\src\\hooks\\useDebounce.js"
+                },
+                {
+                    "blank": 10,
+                    "code": 31,
+                    "comment": 0,
+                    "filename": "frontend\\src\\hooks\\usePagination.js"
+                },
+                {
+                    "filename": "frontend\\src\\img\\anonymous.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "frontend\\src\\img\\banner-home.jpg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "frontend\\src\\img\\banner-sub1.jpg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "frontend\\src\\img\\banner-sub2.jpg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "frontend\\src\\img\\banner-sub3.jpg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "blank": 0,
+                    "code": 11,
+                    "comment": 0,
+                    "filename": "frontend\\src\\img\\big-and-tall.svg"
+                },
+                {
+                    "filename": "frontend\\src\\img\\box-banner1.jpg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "frontend\\src\\img\\box-banner2.jpg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "frontend\\src\\img\\logo.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "frontend\\src\\img\\Media.jpg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "frontend\\src\\img\\paypal.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "blank": 0,
+                    "code": 8,
+                    "comment": 0,
+                    "filename": "frontend\\src\\img\\resist-wrinkles.svg"
+                },
+                {
+                    "blank": 0,
+                    "code": 10,
+                    "comment": 0,
+                    "filename": "frontend\\src\\img\\stain-release.svg"
+                },
+                {
+                    "blank": 2,
+                    "code": 11,
+                    "comment": 0,
+                    "filename": "frontend\\src\\index.css"
+                },
+                {
+                    "blank": 3,
+                    "code": 21,
+                    "comment": 0,
+                    "filename": "frontend\\src\\main.jsx"
+                },
+                {
+                    "blank": 2,
+                    "code": 23,
+                    "comment": 0,
+                    "filename": "frontend\\src\\pages\\admin\\AdminLayout.jsx"
+                },
+                {
+                    "blank": 14,
+                    "code": 298,
+                    "comment": 0,
+                    "filename": "frontend\\src\\pages\\admin\\CreateProducts.jsx"
+                },
+                {
+                    "blank": 9,
+                    "code": 210,
+                    "comment": 0,
+                    "filename": "frontend\\src\\pages\\admin\\CustomizeVariant.jsx"
+                },
+                {
+                    "blank": 14,
+                    "code": 191,
+                    "comment": 0,
+                    "filename": "frontend\\src\\pages\\admin\\Dashboard.jsx"
+                },
+                {
+                    "blank": 2,
+                    "code": 134,
+                    "comment": 0,
+                    "filename": "frontend\\src\\pages\\admin\\DetailOrder.jsx"
+                },
+                {
+                    "blank": 0,
+                    "code": 10,
+                    "comment": 0,
+                    "filename": "frontend\\src\\pages\\admin\\index.js"
+                },
+                {
+                    "blank": 9,
+                    "code": 177,
+                    "comment": 0,
+                    "filename": "frontend\\src\\pages\\admin\\ManageOrder.jsx"
+                },
+                {
+                    "blank": 9,
+                    "code": 223,
+                    "comment": 0,
+                    "filename": "frontend\\src\\pages\\admin\\ManageProducts.jsx"
+                },
+                {
+                    "blank": 8,
+                    "code": 269,
+                    "comment": 0,
+                    "filename": "frontend\\src\\pages\\admin\\ManageUser.jsx"
+                },
+                {
+                    "blank": 3,
+                    "code": 143,
+                    "comment": 0,
+                    "filename": "frontend\\src\\pages\\admin\\PDFOrder.jsx"
+                },
+                {
+                    "blank": 19,
+                    "code": 316,
+                    "comment": 0,
+                    "filename": "frontend\\src\\pages\\admin\\UpdateProduct.jsx"
+                },
+                {
+                    "blank": 7,
+                    "code": 196,
+                    "comment": 0,
+                    "filename": "frontend\\src\\pages\\member\\Checkout.jsx"
+                },
+                {
+                    "blank": 6,
+                    "code": 128,
+                    "comment": 0,
+                    "filename": "frontend\\src\\pages\\member\\HistoryOrder.jsx"
+                },
+                {
+                    "blank": 0,
+                    "code": 4,
+                    "comment": 0,
+                    "filename": "frontend\\src\\pages\\member\\index.js"
+                },
+                {
+                    "blank": 2,
+                    "code": 23,
+                    "comment": 0,
+                    "filename": "frontend\\src\\pages\\member\\MemberLayout.jsx"
+                },
+                {
+                    "blank": 5,
+                    "code": 167,
+                    "comment": 0,
+                    "filename": "frontend\\src\\pages\\member\\Personal.jsx"
+                },
+                {
+                    "blank": 2,
+                    "code": 20,
+                    "comment": 0,
+                    "filename": "frontend\\src\\pages\\public\\Auth\\FinalRegister.jsx"
+                },
+                {
+                    "blank": 11,
+                    "code": 163,
+                    "comment": 1,
+                    "filename": "frontend\\src\\pages\\public\\Auth\\Login.jsx"
+                },
+                {
+                    "blank": 3,
+                    "code": 71,
+                    "comment": 0,
+                    "filename": "frontend\\src\\pages\\public\\Auth\\ResetPassword.jsx"
+                },
+                {
+                    "blank": 2,
+                    "code": 5,
+                    "comment": 0,
+                    "filename": "frontend\\src\\pages\\public\\Blog\\Blog.jsx"
+                },
+                {
+                    "blank": 2,
+                    "code": 5,
+                    "comment": 0,
+                    "filename": "frontend\\src\\pages\\public\\FAQ\\FAQ.jsx"
+                },
+                {
+                    "blank": 7,
+                    "code": 83,
+                    "comment": 0,
+                    "filename": "frontend\\src\\pages\\public\\Home\\Home.jsx"
+                },
+                {
+                    "blank": 2,
+                    "code": 7,
+                    "comment": 0,
+                    "filename": "frontend\\src\\pages\\public\\index.js"
+                },
+                {
+                    "blank": 2,
+                    "code": 16,
+                    "comment": 0,
+                    "filename": "frontend\\src\\pages\\public\\Public.jsx"
+                },
+                {
+                    "blank": 4,
+                    "code": 52,
+                    "comment": 1,
+                    "filename": "frontend\\src\\store\\app\\appSlice.js"
+                },
+                {
+                    "blank": 2,
+                    "code": 24,
+                    "comment": 0,
+                    "filename": "frontend\\src\\store\\app\\asyncActions.js"
+                },
+                {
+                    "blank": 3,
+                    "code": 35,
+                    "comment": 0,
+                    "filename": "frontend\\src\\store\\products\\asyncActions.js"
+                },
+                {
+                    "blank": 6,
+                    "code": 52,
+                    "comment": 0,
+                    "filename": "frontend\\src\\store\\products\\productSlice.js"
+                },
+                {
+                    "blank": 5,
+                    "code": 34,
+                    "comment": 0,
+                    "filename": "frontend\\src\\store\\store.js"
+                },
+                {
+                    "blank": 1,
+                    "code": 13,
+                    "comment": 0,
+                    "filename": "frontend\\src\\store\\user\\asyncActions.js"
+                },
+                {
+                    "blank": 3,
+                    "code": 61,
+                    "comment": 0,
+                    "filename": "frontend\\src\\store\\user\\userSlice.js"
+                },
+                {
+                    "blank": 15,
+                    "code": 213,
+                    "comment": 0,
+                    "filename": "frontend\\src\\ultils\\constans.js"
+                },
+                {
+                    "blank": 4,
+                    "code": 54,
+                    "comment": 0,
+                    "filename": "frontend\\src\\ultils\\helper.js"
+                },
+                {
+                    "blank": 3,
+                    "code": 84,
+                    "comment": 0,
+                    "filename": "frontend\\src\\ultils\\icons.js"
+                },
+                {
+                    "blank": 19,
+                    "code": 221,
+                    "comment": 0,
+                    "filename": "frontend\\src\\ultils\\itemCategory.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 41,
+                    "comment": 0,
+                    "filename": "frontend\\src\\ultils\\itemFooter.js"
+                },
+                {
+                    "blank": 3,
+                    "code": 26,
+                    "comment": 2,
+                    "filename": "frontend\\src\\ultils\\path.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 44,
+                    "comment": 1,
+                    "filename": "frontend\\tailwind.config.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 5,
+                    "comment": 1,
+                    "filename": "frontend\\vite.config.js"
+                }
+            ]
+        }
+    ]
+}

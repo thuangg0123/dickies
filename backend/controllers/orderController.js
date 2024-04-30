@@ -91,33 +91,26 @@ const getOrders = asyncHandler(async (req, res) => {
     let queryString = JSON.stringify(queries)
     queryString = queryString.replace(/\b(gte|gt|lt|lte)\b/g, matchedElement => `$${matchedElement}`)
     const formattedQueries = JSON.parse(queryString)
-    // let genderQueryObj = {}
-    // //filtering
-    // if (queries?.title) {
-    //     formattedQueries.title = { $regex: queries.title, $options: 'i' }
-    // }
-    // if (queries?.category) {
-    //     formattedQueries.category = { $regex: queries.category, $options: 'i' } // Sử dụng giá trị từ query parameters
-    // }
-    // if (queries?.gender) {
-    //     delete formattedQueries.gender
-    //     const genderArray = queries.gender?.split(',')
-    //     const genderQuery = genderArray.map(element => ({ gender: { $regex: element, $options: 'i' } }))
-    //     genderQueryObj = { $or: genderQuery }
-    // }
+    //filtering
+    if (queries?._id) {
+        formattedQueries.title = { $regex: queries.title, $options: 'i' }
+    }
+    if (queries?.orderBy) {
+        formattedQueries.category = { $regex: queries.category, $options: 'i' }
+    }
 
-    // let queryObject = {}
-    // if (queries?.q) {
-    //     delete formattedQueries.q
-    //     queryObject = {
-    //         $or: [
-    //             { gender: { $regex: queries.q, $options: 'i' } },
-    //             { title: { $regex: queries.q, $options: 'i' } },
-    //             { category: { $regex: queries.q, $options: 'i' } },
-    //             { brand: { $regex: queries.q, $options: 'i' } }
-    //         ]
-    //     }
-    // }
+    let queryObject = {}
+    if (queries?.q) {
+        delete formattedQueries.q;
+        queryObject = {
+            $or: [
+                { _id: { $regex: queries.q, $options: 'i' } },
+                { "orderBy.firstName": { $regex: queries.q, $options: 'i' } },
+                { "orderBy.lastName": { $regex: queries.q, $options: 'i' } },
+            ]
+        };
+    }
+
     const qr = { ...formattedQueries }
 
     let queryCommand = Order.find(qr).populate('products.product', 'title').populate("orderBy", "firstName lastName")

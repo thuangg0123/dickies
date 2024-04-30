@@ -30,9 +30,13 @@ function Dashboard() {
     setUsers(user);
   };
 
-  const totalMoney = parseFloat(
-    orders?.orders?.reduce((pre, curr) => pre + curr.total, 0)
-  ).toFixed(2);
+  const totalMoney = (orders) => {
+    const succeedOrders = orders?.orders?.filter(
+      (order) => order.status === "Succeed"
+    );
+    const total = succeedOrders?.reduce((pre, curr) => pre + curr.total, 0);
+    return parseFloat(total?.toFixed(2));
+  };
 
   useEffect(() => {
     fetchOrders();
@@ -52,7 +56,7 @@ function Dashboard() {
     let label = "";
     let backgroundColor = "";
     let borderColor = "";
-    let chartType = "line";
+    let chartType = "bar";
 
     const existingChart = Chart.getChart("dashboardChart");
     if (existingChart) {
@@ -64,46 +68,41 @@ function Dashboard() {
         label = "Orders";
         data.push(orders.counts);
         labels.push("Orders");
-        backgroundColor = "rgba(255, 99, 132, 0.2)";
-        borderColor = "rgba(255, 99, 132, 1)";
+        backgroundColor = "#D82F3E";
+        borderColor = "#D82F3E";
         break;
       case "Revenues":
         label = "Revenues";
-        data.push(totalMoney);
+        data.push(totalMoney(orders));
         labels.push("Revenues");
-        backgroundColor = "rgba(54, 162, 235, 0.2)";
-        borderColor = "rgba(54, 162, 235, 1)";
+        backgroundColor = "#167B4A";
+        borderColor = "#167B4A";
         break;
       case "Products":
         label = "Products";
         data.push(products.counts);
         labels.push("Products");
-        backgroundColor = "rgba(255, 206, 86, 0.2)";
-        borderColor = "rgba(255, 206, 86, 1)";
+        backgroundColor = "#0C63FC";
+        borderColor = "#0C63FC";
         break;
       case "Accounts":
         label = "Accounts";
         data.push(users.counts);
         labels.push("Accounts");
-        backgroundColor = "rgba(255, 159, 64, 0.2)";
-        borderColor = "rgba(255, 159, 64, 1)";
+        backgroundColor = "#FEB908";
+        borderColor = "#FEB908";
         break;
       default:
         label = "All";
-        data.push(orders.counts, totalMoney, products.counts, users.counts);
+        data.push(
+          orders.counts,
+          totalMoney(orders),
+          products.counts,
+          users.counts
+        );
         labels.push("Orders", "Revenues", "Products", "Accounts");
-        backgroundColor = [
-          "rgba(255, 99, 132, 0.2)",
-          "rgba(54, 162, 235, 0.2)",
-          "rgba(255, 206, 86, 0.2)",
-          "rgba(255, 159, 64, 0.2)",
-        ];
-        borderColor = [
-          "rgba(255, 99, 132, 1)",
-          "rgba(54, 162, 235, 1)",
-          "rgba(255, 206, 86, 1)",
-          "rgba(255, 159, 64, 1)",
-        ];
+        backgroundColor = ["#D82F3E", "#167B4A", "#0C63FC", "#FEB908"];
+        borderColor = ["#D82F3E", "#167B4A", "#0C63FC", "#FEB908"];
         chartType = "line";
     }
 
@@ -159,7 +158,7 @@ function Dashboard() {
           </div>
           <div className="flex flex-col justify-center items-start p-4 w-40 h-20 border border-gray-300">
             <span className="font-semibold">Revenues</span>
-            <span className="font-bold">${totalMoney}</span>
+            <span className="font-bold">${totalMoney(orders)}</span>
           </div>
         </div>
         <div className="flex">
@@ -194,9 +193,9 @@ function Dashboard() {
           <option value="All">All</option>
         </select>
       </div>
-      <div className="p-8">
+      <div className="p-8 w-full h-[400px] max-w-[800px] flex justify-center items-center m-auto flex-col">
         <h2>Dashboard Chart</h2>
-        <canvas id="dashboardChart" width="400" height="200"></canvas>
+        <canvas id="dashboardChart" width="800" height="400"></canvas>
       </div>
     </div>
   );

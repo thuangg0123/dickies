@@ -5,7 +5,6 @@ import {
   apiUpdateStatusOrder,
 } from "../../apis";
 import { CustomSelect, InputForm, Pagination } from "../../components";
-import { set, useForm } from "react-hook-form";
 import { createSearchParams, useSearchParams } from "react-router-dom";
 import moment from "moment";
 import { statusOrders } from "../../ultils/constans";
@@ -13,6 +12,8 @@ import withBaseComponent from "../../hocs/withBaseComponent";
 import icons from "../../ultils/icons";
 import { toast } from "react-toastify";
 import DetailOrder from "./DetailOrder";
+import { useDebounce } from "../../hooks/useDebounce";
+import { useForm } from "react-hook-form";
 
 function ManageOrder({ navigate, location }) {
   const { VisibilityIcon } = icons;
@@ -21,11 +22,14 @@ function ManageOrder({ navigate, location }) {
   const [dataDetailOrder, setDataDetailOrder] = useState(null);
   const [counts, setCounts] = useState(0);
   const [params] = useSearchParams();
+  const [queries, setQueries] = useState({
+    q: "",
+  });
   const {
     register,
     formState: { errors },
+    handleSubmit,
     watch,
-    setValue,
   } = useForm();
   const status = watch("status");
 
@@ -40,10 +44,19 @@ function ManageOrder({ navigate, location }) {
     }
   };
 
+  const queriesDebounce = useDebounce(queries.q, 800);
+
   useEffect(() => {
-    const pr = Object.fromEntries([...params]);
-    fetchOrders(pr);
-  }, [params]);
+    const queries = Object.fromEntries([...params]);
+    if (queriesDebounce) {
+      queries.q = queriesDebounce;
+    }
+    fetchOrders(queries);
+  }, [queriesDebounce, params]);
+
+  const handleSearchByIdOrName = async (value) => {
+    setQueries({ ...queries, q: value });
+  };
 
   const handleSearchStatus = ({ value }) => {
     navigate({
@@ -85,10 +98,12 @@ function ManageOrder({ navigate, location }) {
         <form className="flex w-full items-center gap-4">
           <InputForm
             id="q"
+            value={queries.q}
+            setValue={(value) => handleSearchByIdOrName(value)}
             register={register}
             errors={errors}
             fullWidth
-            placeholder={"Search orders by status ..."}
+            placeholder={"Search orders by ID or customer name..."}
             style={"w-[70%]"}
           />
           <CustomSelect

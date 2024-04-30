@@ -1,0 +1,188 @@
+===============================================================================
+EXTENSION NAME : linecounter
+EXTENSION VERSION : 0.2.7
+-------------------------------------------------------------------------------
+count time : 2024-04-29 21:30:02
+count workspace : c:\Users\hoang\Desktop\e-mern
+total files : 162
+total code lines : 27241
+total comment lines : 137
+total blank lines : 868
+
+    statistics
+   |      extension|     total code|  total comment|    total blank|percent|
+   -------------------------------------------------------------------------
+   |            .js|           3008|            115|            303|     11|
+   |          .json|          17729|              0|            214|     65|
+   |           .jsx|           6392|              5|            341|     23|
+   |           .css|             11|              0|              2|  0.040|
+   |           .svg|             30|              0|              0|   0.11|
+   |          .http|              6|              3|              2|  0.022|
+   |            .md|              0|              0|              0|    0.0|
+   |               |             31|             14|              3|   0.11|
+   |           .cjs|             21|              0|              0|  0.077|
+   |          .html|             13|              0|              3|  0.048|
+   -------------------------------------------------------------------------
+.gitignore, code is 2, comment is 0, blank is 0.
+backend\.env, code is 11, comment is 3, blank is 1.
+backend\config\cloudinaryConfig.js, code is 17, comment is 0, blank is 4.
+backend\config\DbConnect.js, code is 17, comment is 4, blank is 2.
+backend\controllers\blogCategoryController.js, code is 38, comment is 0, blank is 5.
+backend\controllers\blogController.js, code is 129, comment is 7, blank is 18.
+backend\controllers\brandController.js, code is 47, comment is 0, blank is 6.
+backend\controllers\couponController.js, code is 60, comment is 0, blank is 6.
+backend\controllers\insertData.js, code is 51, comment is 0, blank is 5.
+backend\controllers\orderController.js, code is 109, comment is 33, blank is 17.
+backend\controllers\productCategoryController.js, code is 39, comment is 0, blank is 5.
+backend\controllers\productController.js, code is 219, comment is 13, blank is 19.
+backend\controllers\userController.js, code is 370, comment is 17, blank is 35.
+backend\data\cate_brand.js, code is 64, comment is 0, blank is 2.
+backend\data\data_dickies.json, code is 2285, comment is 0, blank is 139.
+backend\insert.http, code is 6, comment is 3, blank is 2.
+backend\middleware\errorHandler.js, code is 16, comment is 0, blank is 2.
+backend\middleware\jwt.js, code is 17, comment is 0, blank is 3.
+backend\middleware\verifyToken.js, code is 40, comment is 1, blank is 3.
+backend\models\bill.js, code is 0, comment is 0, blank is 0.
+backend\models\blog.js, code is 58, comment is 3, blank is 2.
+backend\models\blogCategory.js, code is 12, comment is 3, blank is 2.
+backend\models\brand.js, code is 12, comment is 3, blank is 2.
+backend\models\coupon.js, code is 18, comment is 3, blank is 2.
+backend\models\order.js, code is 29, comment is 1, blank is 2.
+backend\models\product.js, code is 85, comment is 3, blank is 2.
+backend\models\productCategory.js, code is 19, comment is 3, blank is 2.
+backend\models\role.js, code is 14, comment is 3, blank is 2.
+backend\models\user.js, code is 88, comment is 3, blank is 5.
+backend\package-lock.json, code is 3753, comment is 0, blank is 2.
+backend\package.json, code is 32, comment is 0, blank is 0.
+backend\routes\blog.js, code is 13, comment is 0, blank is 3.
+backend\routes\blogCategory.js, code is 8, comment is 0, blank is 2.
+backend\routes\brand.js, code is 9, comment is 0, blank is 3.
+backend\routes\category.js, code is 8, comment is 0, blank is 2.
+backend\routes\coupon.js, code is 9, comment is 0, blank is 3.
+backend\routes\index.js, code is 26, comment is 0, blank is 3.
+backend\routes\insert.js, code is 5, comment is 0, blank is 2.
+backend\routes\order.js, code is 9, comment is 0, blank is 2.
+backend\routes\product.js, code is 13, comment is 0, blank is 3.
+backend\routes\user.js, code is 22, comment is 2, blank is 4.
+backend\server.js, code is 21, comment is 0, blank is 5.
+backend\ultils\constant.js, code is 43, comment is 0, blank is 1.
+backend\ultils\sendMail.js, code is 23, comment is 8, blank is 4.
+frontend\.env, code is 4, comment is 2, blank is 0.
+frontend\.eslintrc.cjs, code is 21, comment is 0, blank is 0.
+frontend\.gitignore, code is 14, comment is 9, blank is 2.
+frontend\.vite\deps\_metadata.json, code is 8, comment is 0, blank is 0.
+frontend\.vite\deps\package.json, code is 3, comment is 0, blank is 0.
+frontend\index.html, code is 13, comment is 0, blank is 3.
+frontend\package-lock.json, code is 11590, comment is 0, blank is 73.
+frontend\package.json, code is 58, comment is 0, blank is 0.
+frontend\postcss.config.js, code is 6, comment is 0, blank is 0.
+frontend\public\vite.svg, code is 1, comment is 0, blank is 0.
+frontend\README.md, code is 0, comment is 0, blank is 0.
+frontend\src\apis\app.js, code is 71, comment is 0, blank is 15.
+frontend\src\apis\index.js, code is 2, comment is 0, blank is 0.
+frontend\src\apis\user.js, code is 62, comment is 0, blank is 13.
+frontend\src\App.jsx, code is 119, comment is 1, blank is 5.
+frontend\src\axios.js, code is 26, comment is 0, blank is 4.
+frontend\src\components\404\NotFound.jsx, code is 12, comment is 0, blank is 2.
+frontend\src\components\Animation\Congratulation.jsx, code is 8, comment is 0, blank is 2.
+frontend\src\components\Breadcrum\Breadcrum.jsx, code is 21, comment is 0, blank is 3.
+frontend\src\components\Button\BtnScrollTop.jsx, code is 36, comment is 0, blank is 7.
+frontend\src\components\Button\Button.jsx, code is 29, comment is 0, blank is 2.
+frontend\src\components\Cart\Cart.jsx, code is 167, comment is 1, blank is 4.
+frontend\src\components\Cart\DetailCart.jsx, code is 235, comment is 0, blank is 7.
+frontend\src\components\Cart\OrderItem.jsx, code is 105, comment is 2, blank is 6.
+frontend\src\components\ContainerProduct\ContainerProduct.jsx, code is 176, comment is 0, blank is 17.
+frontend\src\components\ContainerProduct\FilterProduct.jsx, code is 169, comment is 0, blank is 5.
+frontend\src\components\DetailProduct\AccordionSection.jsx, code is 30, comment is 0, blank is 3.
+frontend\src\components\DetailProduct\Comment.jsx, code is 52, comment is 0, blank is 4.
+frontend\src\components\DetailProduct\Detail.jsx, code is 106, comment is 0, blank is 5.
+frontend\src\components\DetailProduct\DetailProduct.jsx, code is 280, comment is 0, blank is 10.
+frontend\src\components\DetailProduct\LeftDetaiProduct.jsx, code is 42, comment is 0, blank is 2.
+frontend\src\components\DetailProduct\Ratings.jsx, code is 5, comment is 0, blank is 2.
+frontend\src\components\DetailProduct\RightDetaiProduct.jsx, code is 216, comment is 0, blank is 10.
+frontend\src\components\DetailProduct\VoteBar.jsx, code is 35, comment is 0, blank is 4.
+frontend\src\components\DetailProduct\VoteOptions.jsx, code is 78, comment is 0, blank is 4.
+frontend\src\components\Footer\Footer.jsx, code is 90, comment is 0, blank is 3.
+frontend\src\components\Footer\NeedHelps.jsx, code is 165, comment is 0, blank is 2.
+frontend\src\components\Header\DropDrownMenu.jsx, code is 41, comment is 0, blank is 4.
+frontend\src\components\Header\Header.jsx, code is 197, comment is 0, blank is 10.
+frontend\src\components\Header\Navigations.jsx, code is 54, comment is 0, blank is 5.
+frontend\src\components\Home\Banner.jsx, code is 27, comment is 0, blank is 2.
+frontend\src\components\Home\BoxSubBanner.jsx, code is 26, comment is 0, blank is 2.
+frontend\src\components\Home\CarouselProduct.jsx, code is 53, comment is 0, blank is 4.
+frontend\src\components\Home\Carousels.jsx, code is 64, comment is 0, blank is 5.
+frontend\src\components\Home\SubBanner.jsx, code is 19, comment is 0, blank is 2.
+frontend\src\components\index.js, code is 40, comment is 0, blank is 0.
+frontend\src\components\Input\CustomSelect.jsx, code is 33, comment is 0, blank is 2.
+frontend\src\components\Input\InputFields.jsx, code is 46, comment is 0, blank is 3.
+frontend\src\components\Input\InputForm.jsx, code is 46, comment is 0, blank is 2.
+frontend\src\components\Input\InputSelect.jsx, code is 18, comment is 0, blank is 2.
+frontend\src\components\Input\MarkDownEditor.jsx, code is 51, comment is 0, blank is 2.
+frontend\src\components\Input\Select.jsx, code is 45, comment is 0, blank is 3.
+frontend\src\components\Loading\Loading.jsx, code is 10, comment is 0, blank is 2.
+frontend\src\components\Modal\Modal.jsx, code is 17, comment is 0, blank is 2.
+frontend\src\components\Pagination\PagiItem.jsx, code is 41, comment is 0, blank is 4.
+frontend\src\components\Pagination\Pagination.jsx, code is 41, comment is 0, blank is 5.
+frontend\src\components\Paypal\Paypal.jsx, code is 81, comment is 0, blank is 6.
+frontend\src\components\ProductCard\ProductCard.jsx, code is 182, comment is 0, blank is 8.
+frontend\src\components\Sidebar\AdminSidebar.jsx, code is 121, comment is 0, blank is 6.
+frontend\src\components\Sidebar\MemberSidebar.jsx, code is 58, comment is 0, blank is 4.
+frontend\src\components\Wishlist\WishList.jsx, code is 46, comment is 0, blank is 3.
+frontend\src\hocs\withBaseComponent.jsx, code is 17, comment is 0, blank is 3.
+frontend\src\hooks\useDebounce.js, code is 13, comment is 0, blank is 1.
+frontend\src\hooks\usePagination.js, code is 31, comment is 0, blank is 10.
+frontend\src\img\anonymous.png, it is a binary file.
+frontend\src\img\banner-home.jpg, it is a binary file.
+frontend\src\img\banner-sub1.jpg, it is a binary file.
+frontend\src\img\banner-sub2.jpg, it is a binary file.
+frontend\src\img\banner-sub3.jpg, it is a binary file.
+frontend\src\img\big-and-tall.svg, code is 11, comment is 0, blank is 0.
+frontend\src\img\box-banner1.jpg, it is a binary file.
+frontend\src\img\box-banner2.jpg, it is a binary file.
+frontend\src\img\logo.png, it is a binary file.
+frontend\src\img\Media.jpg, it is a binary file.
+frontend\src\img\paypal.png, it is a binary file.
+frontend\src\img\resist-wrinkles.svg, code is 8, comment is 0, blank is 0.
+frontend\src\img\stain-release.svg, code is 10, comment is 0, blank is 0.
+frontend\src\index.css, code is 11, comment is 0, blank is 2.
+frontend\src\main.jsx, code is 21, comment is 0, blank is 3.
+frontend\src\pages\admin\AdminLayout.jsx, code is 23, comment is 0, blank is 2.
+frontend\src\pages\admin\CreateProducts.jsx, code is 298, comment is 0, blank is 14.
+frontend\src\pages\admin\CustomizeVariant.jsx, code is 210, comment is 0, blank is 9.
+frontend\src\pages\admin\Dashboard.jsx, code is 191, comment is 0, blank is 14.
+frontend\src\pages\admin\DetailOrder.jsx, code is 134, comment is 0, blank is 2.
+frontend\src\pages\admin\index.js, code is 10, comment is 0, blank is 0.
+frontend\src\pages\admin\ManageOrder.jsx, code is 177, comment is 0, blank is 9.
+frontend\src\pages\admin\ManageProducts.jsx, code is 223, comment is 0, blank is 9.
+frontend\src\pages\admin\ManageUser.jsx, code is 269, comment is 0, blank is 8.
+frontend\src\pages\admin\PDFOrder.jsx, code is 143, comment is 0, blank is 3.
+frontend\src\pages\admin\UpdateProduct.jsx, code is 316, comment is 0, blank is 19.
+frontend\src\pages\member\Checkout.jsx, code is 196, comment is 0, blank is 7.
+frontend\src\pages\member\HistoryOrder.jsx, code is 128, comment is 0, blank is 6.
+frontend\src\pages\member\index.js, code is 4, comment is 0, blank is 0.
+frontend\src\pages\member\MemberLayout.jsx, code is 23, comment is 0, blank is 2.
+frontend\src\pages\member\Personal.jsx, code is 167, comment is 0, blank is 5.
+frontend\src\pages\public\Auth\FinalRegister.jsx, code is 20, comment is 0, blank is 2.
+frontend\src\pages\public\Auth\Login.jsx, code is 163, comment is 1, blank is 11.
+frontend\src\pages\public\Auth\ResetPassword.jsx, code is 71, comment is 0, blank is 3.
+frontend\src\pages\public\Blog\Blog.jsx, code is 5, comment is 0, blank is 2.
+frontend\src\pages\public\FAQ\FAQ.jsx, code is 5, comment is 0, blank is 2.
+frontend\src\pages\public\Home\Home.jsx, code is 83, comment is 0, blank is 7.
+frontend\src\pages\public\index.js, code is 7, comment is 0, blank is 2.
+frontend\src\pages\public\Public.jsx, code is 16, comment is 0, blank is 2.
+frontend\src\store\app\appSlice.js, code is 52, comment is 1, blank is 4.
+frontend\src\store\app\asyncActions.js, code is 24, comment is 0, blank is 2.
+frontend\src\store\products\asyncActions.js, code is 35, comment is 0, blank is 3.
+frontend\src\store\products\productSlice.js, code is 52, comment is 0, blank is 6.
+frontend\src\store\store.js, code is 34, comment is 0, blank is 5.
+frontend\src\store\user\asyncActions.js, code is 13, comment is 0, blank is 1.
+frontend\src\store\user\userSlice.js, code is 61, comment is 0, blank is 3.
+frontend\src\ultils\constans.js, code is 213, comment is 0, blank is 15.
+frontend\src\ultils\helper.js, code is 54, comment is 0, blank is 4.
+frontend\src\ultils\icons.js, code is 84, comment is 0, blank is 3.
+frontend\src\ultils\itemCategory.js, code is 221, comment is 0, blank is 19.
+frontend\src\ultils\itemFooter.js, code is 41, comment is 0, blank is 0.
+frontend\src\ultils\path.js, code is 26, comment is 2, blank is 3.
+frontend\tailwind.config.js, code is 44, comment is 1, blank is 0.
+frontend\vite.config.js, code is 5, comment is 1, blank is 0.
+===============================================================================

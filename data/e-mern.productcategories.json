@@ -1,0 +1,201 @@
+[{
+  "_id": {
+    "$oid": "65e85dfe81ffa36c65f50d5a"
+  },
+  "title": "PANTS",
+  "brand": "Dickies",
+  "img": "https://www.dickies.com/dw/image/v2/AAYI_PRD/on/demandware.static/-/Library-Sites-DickiesSharedLibrary/default/dw083422ae/images/hp-new-05.jpg?sw=440&sh=440&q=65",
+  "createdAt": {
+    "$date": "2024-03-06T12:13:50.731Z"
+  },
+  "updatedAt": {
+    "$date": "2024-03-06T12:13:50.731Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65e85dfe81ffa36c65f50d5c"
+  },
+  "title": "SKATE SHORTS",
+  "brand": "Dickies",
+  "createdAt": {
+    "$date": "2024-03-06T12:13:50.732Z"
+  },
+  "updatedAt": {
+    "$date": "2024-03-06T12:13:50.732Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65e85dfe81ffa36c65f50d5b"
+  },
+  "title": "PANT SHORTS",
+  "brand": "Dickies",
+  "createdAt": {
+    "$date": "2024-03-06T12:13:50.732Z"
+  },
+  "updatedAt": {
+    "$date": "2024-03-06T12:13:50.732Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65e85dfe81ffa36c65f50d5d"
+  },
+  "title": "SHIRTS",
+  "brand": "Dickies",
+  "img": "https://www.dickies.com/dw/image/v2/AAYI_PRD/on/demandware.static/-/Library-Sites-DickiesSharedLibrary/default/dwd25d7fca/images/hp-new-06.jpg?sw=440&sh=440&q=65",
+  "createdAt": {
+    "$date": "2024-03-06T12:13:50.732Z"
+  },
+  "updatedAt": {
+    "$date": "2024-03-06T12:13:50.732Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65e85dfe81ffa36c65f50d5e"
+  },
+  "title": "OUTERWEAR",
+  "brand": "Dickies",
+  "img": "https://www.dickies.com/dw/image/v2/AAYI_PRD/on/demandware.static/-/Library-Sites-DickiesSharedLibrary/default/dwf30539c1/images/hp/_2023/Icons%20Carousel/coveralls-icons-category-2.jpg?sw=440&sh=440&q=65",
+  "createdAt": {
+    "$date": "2024-03-06T12:13:50.732Z"
+  },
+  "updatedAt": {
+    "$date": "2024-03-06T12:13:50.732Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65e85dfe81ffa36c65f50d5f"
+  },
+  "title": "COASTS JACKETS",
+  "brand": "Dickies",
+  "img": "https://www.dickies.com/dw/image/v2/AAYI_PRD/on/demandware.static/-/Library-Sites-DickiesSharedLibrary/default/dwf2103e99/images/hp-new-09.jpg?sw=440&sh=440&q=65",
+  "createdAt": {
+    "$date": "2024-03-06T12:13:50.732Z"
+  },
+  "updatedAt": {
+    "$date": "2024-03-06T12:13:50.732Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65e85dfe81ffa36c65f50d60"
+  },
+  "title": "BACKPACK",
+  "brand": "Dickies",
+  "createdAt": {
+    "$date": "2024-03-06T12:13:50.732Z"
+  },
+  "updatedAt": {
+    "$date": "2024-03-06T12:13:50.732Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65e85dfe81ffa36c65f50d61"
+  },
+  "title": "SOCKS",
+  "brand": "Dickies",
+  "createdAt": {
+    "$date": "2024-03-06T12:13:50.732Z"
+  },
+  "updatedAt": {
+    "$date": "2024-03-06T12:13:50.732Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65e85dfe81ffa36c65f50d62"
+  },
+  "title": "HATS",
+  "brand": "Dickies",
+  "createdAt": {
+    "$date": "2024-03-06T12:13:50.732Z"
+  },
+  "updatedAt": {
+    "$date": "2024-03-06T12:13:50.732Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65e85dfe81ffa36c65f50d63"
+  },
+  "title": "SKIRTS DRESSES",
+  "brand": "Dickies",
+  "createdAt": {
+    "$date": "2024-03-06T12:13:50.732Z"
+  },
+  "updatedAt": {
+    "$date": "2024-03-06T12:13:50.732Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65e85dfe81ffa36c65f50d64"
+  },
+  "title": "OVERALLS",
+  "brand": "Dickies",
+  "img": "https://www.dickies.com/dw/image/v2/AAYI_PRD/on/demandware.static/-/Library-Sites-DickiesSharedLibrary/default/dw7b0f9397/images/hp-new-07.jpg?sw=440&sh=440&q=65",
+  "createdAt": {
+    "$date": "2024-03-06T12:13:50.732Z"
+  },
+  "updatedAt": {
+    "$date": "2024-03-06T12:13:50.732Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65e85dfe81ffa36c65f50d65"
+  },
+  "title": "PATCHES",
+  "brand": "Dickies",
+  "createdAt": {
+    "$date": "2024-03-06T12:13:50.732Z"
+  },
+  "updatedAt": {
+    "$date": "2024-03-06T12:13:50.732Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65e85dfe81ffa36c65f50d66"
+  },
+  "title": "CARPENTER PANTS",
+  "brand": "Dickies",
+  "createdAt": {
+    "$date": "2024-03-06T12:13:50.732Z"
+  },
+  "updatedAt": {
+    "$date": "2024-03-06T12:13:50.732Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65e85dfe81ffa36c65f50d67"
+  },
+  "title": "JEAN PANTS",
+  "brand": "Dickies",
+  "createdAt": {
+    "$date": "2024-03-06T12:13:50.732Z"
+  },
+  "updatedAt": {
+    "$date": "2024-03-06T12:13:50.732Z"
+  },
+  "__v": 0
+}]
