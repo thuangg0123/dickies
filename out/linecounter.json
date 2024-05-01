@@ -5,20 +5,20 @@
     "linecount": [
         {
             "version": "0.2.7",
-            "counttime": "2024-04-30 11:20:52",
-            "filesum": 167,
-            "codesum": 35890,
-            "commentsum": 113,
+            "counttime": "2024-05-01 17:38:01",
+            "filesum": 185,
+            "codesum": 36059,
+            "commentsum": 367,
             "blanksum": 1593,
             "statistics": {
                 ".js": {
-                    "code": 3025,
+                    "code": 3026,
                     "comment": 90,
                     "blank": 304
                 },
                 ".md": {
-                    "code": 47,
-                    "comment": 1,
+                    "code": 48,
+                    "comment": 2,
                     "blank": 20
                 },
                 ".jsx": {
@@ -26,19 +26,24 @@
                     "comment": 5,
                     "blank": 343
                 },
-                ".json": {
-                    "code": 26302,
-                    "comment": 0,
-                    "blank": 916
-                },
                 ".css": {
                     "code": 11,
                     "comment": 0,
                     "blank": 2
                 },
+                ".svg": {
+                    "code": 30,
+                    "comment": 0,
+                    "blank": 0
+                },
                 "": {
                     "code": 31,
                     "comment": 14,
+                    "blank": 3
+                },
+                ".html": {
+                    "code": 13,
+                    "comment": 0,
                     "blank": 3
                 },
                 ".cjs": {
@@ -46,14 +51,14 @@
                     "comment": 0,
                     "blank": 0
                 },
-                ".html": {
-                    "code": 13,
+                ".json": {
+                    "code": 26302,
                     "comment": 0,
-                    "blank": 3
+                    "blank": 916
                 },
-                ".svg": {
-                    "code": 30,
-                    "comment": 0,
+                ".pdf": {
+                    "code": 167,
+                    "comment": 253,
                     "blank": 0
                 },
                 ".http": {
@@ -344,6 +349,131 @@
                     "code": 110,
                     "comment": 0,
                     "filename": "data\\e-mern.users.json"
+                },
+                {
+                    "filename": "dữ liệu test\\1.jpg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "dữ liệu test\\2.jpg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "dữ liệu test\\3.jpg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "dữ liệu test\\4.jpg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "dữ liệu test\\5.jpg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "dữ liệu test\\86106_CRB_A1.jpg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "dữ liệu test\\86106_CRB_A2.jpg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "dữ liệu test\\86106_CRB_BK.jpg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "dữ liệu test\\86106_CRB_FR.jpg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "dữ liệu test\\avatar.jpg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "dữ liệu test\\black.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "blank": 0,
+                    "code": 167,
+                    "comment": 253,
+                    "filename": "dữ liệu test\\hóa đơn.pdf"
+                },
+                {
+                    "filename": "dữ liệu test\\j1.jpg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "dữ liệu test\\j2.jpg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "dữ liệu test\\j3.jpg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "dữ liệu test\\j4.jpg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "dữ liệu test\\j5.jpg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "dữ liệu test\\red.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
                 },
                 {
                     "blank": 101,
@@ -1017,7 +1147,7 @@
                 },
                 {
                     "blank": 3,
-                    "code": 61,
+                    "code": 62,
                     "comment": 0,
                     "filename": "frontend\\src\\store\\user\\userSlice.js"
                 },
@@ -1071,8 +1201,8 @@
                 },
                 {
                     "blank": 20,
-                    "code": 47,
-                    "comment": 1,
+                    "code": 48,
+                    "comment": 2,
                     "filename": "README.md"
                 }
             ]

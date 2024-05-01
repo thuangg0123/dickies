@@ -16,12 +16,13 @@ export const userSlice = createSlice({
             state.isLoggedIn = action.payload.isLoggedIn
             state.token = action.payload.token
         },
-        logout: (state, action) => {
+        logout: (state) => {
             state.isLoggedIn = false
             state.token = null
             state.current = null
             state.isLoading = false
             state.message = ""
+            state.currentCart = []
         },
         clearMessage: (state) => {
             state.message = ''

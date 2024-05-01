@@ -2,25 +2,26 @@
 EXTENSION NAME : linecounter
 EXTENSION VERSION : 0.2.7
 -------------------------------------------------------------------------------
-count time : 2024-04-30 11:20:52
+count time : 2024-05-01 17:38:01
 count workspace : c:\Users\hoang\Desktop\e-mern
-total files : 167
-total code lines : 35890
-total comment lines : 113
+total files : 185
+total code lines : 36059
+total comment lines : 367
 total blank lines : 1593
 
     statistics
    |      extension|     total code|  total comment|    total blank|percent|
    -------------------------------------------------------------------------
-   |            .js|           3025|             90|            304|    8.4|
-   |            .md|             47|              1|             20|   0.13|
+   |            .js|           3026|             90|            304|    8.4|
+   |            .md|             48|              2|             20|   0.13|
    |           .jsx|           6404|              5|            343|     18|
-   |          .json|          26302|              0|            916|     73|
    |           .css|             11|              0|              2|  0.031|
+   |           .svg|             30|              0|              0|  0.083|
    |               |             31|             14|              3|  0.086|
-   |           .cjs|             21|              0|              0|  0.059|
    |          .html|             13|              0|              3|  0.036|
-   |           .svg|             30|              0|              0|  0.084|
+   |           .cjs|             21|              0|              0|  0.058|
+   |          .json|          26302|              0|            916|     73|
+   |           .pdf|            167|            253|              0|   0.46|
    |          .http|              6|              3|              2|  0.017|
    -------------------------------------------------------------------------
 .gitignore, code is 2, comment is 0, blank is 0.
@@ -70,6 +71,24 @@ data\e-mern.orders.json, code is 534, comment is 0, blank is 0.
 data\e-mern.productcategories.json, code is 201, comment is 0, blank is 0.
 data\e-mern.products.json, code is 6034, comment is 0, blank is 601.
 data\e-mern.users.json, code is 110, comment is 0, blank is 0.
+dữ liệu test\1.jpg, it is a binary file.
+dữ liệu test\2.jpg, it is a binary file.
+dữ liệu test\3.jpg, it is a binary file.
+dữ liệu test\4.jpg, it is a binary file.
+dữ liệu test\5.jpg, it is a binary file.
+dữ liệu test\86106_CRB_A1.jpg, it is a binary file.
+dữ liệu test\86106_CRB_A2.jpg, it is a binary file.
+dữ liệu test\86106_CRB_BK.jpg, it is a binary file.
+dữ liệu test\86106_CRB_FR.jpg, it is a binary file.
+dữ liệu test\avatar.jpg, it is a binary file.
+dữ liệu test\black.png, it is a binary file.
+dữ liệu test\hóa đơn.pdf, code is 167, comment is 253, blank is 0.
+dữ liệu test\j1.jpg, it is a binary file.
+dữ liệu test\j2.jpg, it is a binary file.
+dữ liệu test\j3.jpg, it is a binary file.
+dữ liệu test\j4.jpg, it is a binary file.
+dữ liệu test\j5.jpg, it is a binary file.
+dữ liệu test\red.png, it is a binary file.
 e-MERN.postman_collection.json, code is 1694, comment is 0, blank is 101.
 frontend\.env, code is 4, comment is 2, blank is 0.
 frontend\.eslintrc.cjs, code is 21, comment is 0, blank is 0.
@@ -180,7 +199,7 @@ frontend\src\store\products\asyncActions.js, code is 35, comment is 0, blank is 
 frontend\src\store\products\productSlice.js, code is 52, comment is 0, blank is 6.
 frontend\src\store\store.js, code is 34, comment is 0, blank is 5.
 frontend\src\store\user\asyncActions.js, code is 13, comment is 0, blank is 1.
-frontend\src\store\user\userSlice.js, code is 61, comment is 0, blank is 3.
+frontend\src\store\user\userSlice.js, code is 62, comment is 0, blank is 3.
 frontend\src\ultils\constans.js, code is 213, comment is 0, blank is 15.
 frontend\src\ultils\helper.js, code is 54, comment is 0, blank is 4.
 frontend\src\ultils\icons.js, code is 84, comment is 0, blank is 3.
@@ -189,5 +208,5 @@ frontend\src\ultils\itemFooter.js, code is 41, comment is 0, blank is 0.
 frontend\src\ultils\path.js, code is 26, comment is 2, blank is 3.
 frontend\tailwind.config.js, code is 44, comment is 1, blank is 0.
 frontend\vite.config.js, code is 5, comment is 1, blank is 0.
-README.md, code is 47, comment is 1, blank is 20.
+README.md, code is 48, comment is 2, blank is 20.
 ===============================================================================
