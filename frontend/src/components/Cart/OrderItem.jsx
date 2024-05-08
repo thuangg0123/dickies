@@ -66,7 +66,6 @@ function OrderItem({
               <button
                 onClick={handleDProduct}
                 className={`absolute left-[15px] top-[10px] ${
-                  // element?.quantity === 1
                   countProduct === 1
                     ? "opacity-50 cursor-not-allowed pointer-events-none"
                     : ""
@@ -77,7 +76,6 @@ function OrderItem({
               <input
                 type="text"
                 value={countProduct}
-                // value={element?.quantity}
                 readOnly
                 className="border border-gray-400 text-center w-[120px] py-3 focus:outline-none"
               />
@@ -90,12 +88,7 @@ function OrderItem({
             </div>
           </div>
           <div className="flex justify-between items-start font-second text-xs underline">
-            <div></div>
-            <div>
-              {/* <button className="underline custom-text-hover">Edit</button> */}
-            </div>
             <div className="flex gap-3">
-              {/* <button className="custom-text-hover">Save For Latter</button> */}
               <button
                 className="custom-text-hover"
                 onClick={() => handleShowModal(element)}

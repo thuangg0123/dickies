@@ -74,8 +74,6 @@ function App() {
         <Route path={path.CHECKOUT} element={<Checkout />}></Route>
         <Route path={path.PUBLIC} element={<Public />}>
           <Route path={path.HOME} element={<Home />}></Route>
-          {/* <Route path={path.FAQ} element={<FAQ />}></Route>
-          <Route path={path.BLOG} element={<Blog />}></Route> */}
           <Route path={path.WISH_LIST} element={<WishList />} />
           <Route path={path.DETAIL_CART} element={<DetailCart />}></Route>
           <Route path={path.RESET_PASSWORD} element={<ResetPassword />}></Route>

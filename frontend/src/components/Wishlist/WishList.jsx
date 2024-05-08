@@ -9,9 +9,8 @@ import {
   Button,
 } from "../../components";
 
-function WishList({ dispatch, navigate }) {
+function WishList({ navigate }) {
   const { current, isLoggedIn } = useSelector((state) => state.user);
-  console.log(current);
   return (
     <>
       <div className="w-full relative font-second font-medium">

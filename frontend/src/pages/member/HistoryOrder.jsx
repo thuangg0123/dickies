@@ -15,7 +15,6 @@ function HistoryOrder({ dispatch, navigate, location }) {
     register,
     formState: { errors },
     watch,
-    setValue,
   } = useForm();
   const status = watch("status");
 

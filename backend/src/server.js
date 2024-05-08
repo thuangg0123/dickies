@@ -3,8 +3,8 @@ require('dotenv').config()
 var cookieParser = require('cookie-parser')
 var cors = require('cors')
 
-const dbConnect = require("./config/dbConnect")
-const { initRoutes } = require('./routes/index')
+const dbConnect = require("../build/config/dbConnect")
+const { initRoutes } = require('../build/routes/index')
 
 const app = express()
 app.use(cors({

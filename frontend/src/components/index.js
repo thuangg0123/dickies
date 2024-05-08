@@ -1,5 +1,4 @@
 export { default as VoteBar } from './DetailProduct/VoteBar'
-export { default as Ratings } from './DetailProduct/Ratings'
 export { default as Comment } from './DetailProduct/Comment'
 export { default as DetailProduct } from './DetailProduct/DetailProduct'
 export { default as LeftDetaiProduct } from './DetailProduct/LeftDetaiProduct'

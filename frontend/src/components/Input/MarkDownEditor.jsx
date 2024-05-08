@@ -8,7 +8,6 @@ const MarkDownEditor = ({
   name,
   invalidFields,
   setInvalidFields,
-  setIsFocusDescription,
 }) => {
   return (
     <div className="flex flex-col">

@@ -6,7 +6,6 @@ import {
 import { useEffect } from "react";
 import { apiCreateOrder } from "../../apis";
 import Swal from "sweetalert2";
-import { useDispatch } from "react-redux";
 
 const style = { layout: "vertical" };
 
